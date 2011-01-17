@@ -1,17 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/**
- * curlGet
- *
- * Sends a CURL get request to specified url
- *
- * @access	public
- * @param	string  url to send request to
- * @param	string	parameters to send
- * @param	number	port to send request to
- * @return	string  response
- */
-
 if ( ! function_exists('growl'))
 {
     function growl($type, $title, $message)
@@ -25,7 +13,9 @@ if ( ! function_exists('growl'))
             if (!$CI->growl_active)
             {
                 $CI->load->library('Growl', array('app_name' => $CI->growl_appname));
-                $CI->growl->addNotification($type);
+                $CI->growl->addNotification('New User');
+                $CI->growl->addNotification('Proxied Auth');
+                $CI->growl->addNotification('Lockout');
                 $CI->growl->register($connection);
                 $CI->growl_active = TRUE;
             }

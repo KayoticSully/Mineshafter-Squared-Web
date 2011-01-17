@@ -6,3 +6,5 @@ application/cache/*
 assets/textures/*
 assets/less/cache/*
 assets/css/*
+app.js
+node_modules/*

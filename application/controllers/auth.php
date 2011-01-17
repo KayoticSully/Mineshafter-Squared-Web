@@ -83,6 +83,14 @@ class Auth extends MS2_Controller {
         redirect($dest);
     }
     
+    private function proxyAuth($username, $password)
+    {
+        $this->load->helper('connection');
+        // data to send to minecraft.net
+        $postParams = "user=".urlencode($username)."&password=".$password."&version=13";
+        return curlGet("server.mineshaftersquared.com/auth/index.php", $postParams, 411);
+    }
+    
     /**
      * @name    Add New User
      * @author  Ryan Sullivan <kayoticsully@gmail.com>
@@ -91,6 +99,8 @@ class Auth extends MS2_Controller {
      */
     private function addNewUser($username, $password)
     {
+        $this->load->helper('growl');
+        
         $bad_count = $this->cache->get("mc-bad-request");
         if($bad_count === FALSE)
         {
@@ -99,14 +109,24 @@ class Auth extends MS2_Controller {
         
         // if we have already hit our maximum bad request quota
         // block the rest of the function and let the client know.
+        $proxy = FALSE;
         if ($bad_count >= 9)
         {
+            $mcnetResponse = $this->proxyAuth($username, $password);
+            $proxy = TRUE;
             
-            return "locked";
+            growl('Proxied Auth', 'Proxy', $mcnetResponse);
+            
+            if ($mcnetResponse == 'locked')
+            {
+                return "locked";
+            }
         }
-        
-        // query MCNet
-        $mcnetResponse = $this->queryMCNet($username, $password);
+        else
+        {
+            // query MCNet
+            $mcnetResponse = $this->queryMCNet($username, $password);
+        }
         
         // find a match for the response
         if (preg_match($this->migration_regex, $mcnetResponse) == 1)
@@ -161,7 +181,6 @@ class Auth extends MS2_Controller {
             $user->save();
             
             // fire off growl
-            $this->load->helper('growl');
             growl('New User', 'New User Signup!', $user->username);
             
             // respond with serialized new user
@@ -170,25 +189,30 @@ class Auth extends MS2_Controller {
         else if (preg_match($this->bad_regex, $mcnetResponse) == 1)
         {
             // increment and save our bad request
-            $bad_count++;
-            $this->cache->save("mc-bad-request", $bad_count, 300);
-            
-            // fire off growl for lockout
-            if ($bad_count >= 9)
+            if(!$proxy)
             {
-                $this->load->helper('growl');
-                growl('Lockout', 'Self Lockout', 'The server has locked itsself out of minecraft.net');
+                $bad_count++;
+                $this->cache->save("mc-bad-request", $bad_count, 300);
+                
+                // fire off growl for lockout
+                if ($bad_count >= 9)
+                {
+                    growl('Lockout', 'Self Lockout', 'The server has locked itsself out of minecraft.net');
+                }
             }
             
             // bad login
-            return "bad login : $bad_count";
+            return "bad login";
         }
         else if (preg_match($this->locked_regex, $mcnetResponse) == 1)
         {
-            $this->cache->save("mc-bad-request", 10, 300);
-            
-            $this->load->helper('growl');
-            growl('Lockout', 'Real Lockout', 'The server has been locked out of minecraft.net');
+            if(!$proxy)
+            {
+                $this->cache->save("mc-bad-request", 10, 300);
+                
+                $this->load->helper('growl');
+                growl('Lockout', 'Real Lockout', 'The server has been locked out of minecraft.net');
+            }
             
             return "locked";
         }
