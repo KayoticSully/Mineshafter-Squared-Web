@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'ms2dev';
-$db['default']['database'] = 'MineshafterSquared';
+$db['default']['password'] = 'caroline'; // change this to your password
+$db['default']['database'] = 'Mineshafter-Squared-Dev';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;
