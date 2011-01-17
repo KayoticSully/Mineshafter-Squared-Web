@@ -42,14 +42,14 @@ function user_login(event) {
     stopitCount = parseInt(localStorage.getItem('stopit-count'));
     stopitTimeout = new Date(localStorage.getItem('stopit-timeout'));
     
-    if(stopitTimeout - new Date() > 600000) {
+    if(new Date() - stopitTimeout > 600000) {
         stopitCount = 0;
         localStorage.setItem('stopit-count', stopitCount);
         stopitTimeout = new Date();
         localStorage.setItem('stopit-timeout', stopitTimeout)
     }
     
-    if(stopitCount < 2 && (stopitTimeout - new Date()) < 0 ) {
+    if(stopitCount < 2) {
         // submit form over ajax
         $.ajax({
             url     : '/auth/login',
