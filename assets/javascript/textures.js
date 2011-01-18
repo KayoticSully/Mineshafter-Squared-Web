@@ -25,7 +25,7 @@ function init() {
         animate();
     }
     
-    
+    $('#control-bar').css('height', $(document).height());
     $(document).scroll(function(){
         var scroll = parseInt($('body').scrollTop()) + 40;
         
