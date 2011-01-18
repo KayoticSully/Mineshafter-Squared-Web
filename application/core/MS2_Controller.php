@@ -138,7 +138,8 @@ class MS2_Controller extends CI_Controller {
         //----------------------------------------------------
         $this->javascripts = array_merge($this->javascripts, array('bootstrap-tooltip', 'bootstrap-popover',
                                                                    'bootstrap-dropdown', 'bootstrap-modal',
-                                                                   'bootstrap-transition', 'bootstrap-collapse'));
+                                                                   'bootstrap-transition', 'bootstrap-collapse',
+                                                                   'bootstrap-scrollspy'));
         
         //----------------------------------------------------
         // DEFAULT OUTPUT

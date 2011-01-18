@@ -12,7 +12,7 @@
 <!-- CSS -->
 <?php echo $css_links; ?>
 </head>
-<body>
+<body data-spy="scroll" data-target="#submenu">
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {

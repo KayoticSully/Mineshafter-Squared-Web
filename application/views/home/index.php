@@ -1,3 +1,14 @@
+<div id="submenu" class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li class="active"><a href="#announcements">Announcements</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#other">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <section id="announcements">
     <div class="container">
         <h1>

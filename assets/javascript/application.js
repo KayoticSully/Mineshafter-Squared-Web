@@ -1,4 +1,5 @@
 var login_form_animation_timeout;
+var submenuOffset = 0;
 
 $(document).ready(function(){
     $('nav li').on('click', nav_click);
@@ -14,6 +15,19 @@ $(document).ready(function(){
     if(localStorage.getItem('stopit-timeout') == undefined) {
         localStorage.setItem('stopit-timeout', 0);
     }
+
+    submenuOffset = $('#submenu').offset();
+    
+    $(document).scroll(function(){
+        var submenu = $('#submenu');
+        var scroll = parseInt($('body').scrollTop()) + 40;
+        console.log(submenuOffset.top + ' ?? ' + scroll);
+        if(scroll >= submenuOffset.top) {
+            submenu.addClass('navbar-fixed-top').removeClass('navbar-static-top');
+        } else if(scroll < submenuOffset.top) {
+            submenu.addClass('navbar-static-top').removeClass('navbar-fixed-top');
+        }
+    });
     
     setTimeout(showSocial, 1500);
 });
