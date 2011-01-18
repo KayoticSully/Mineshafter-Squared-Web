@@ -30,11 +30,16 @@
         <div id="shell-top">
             <div id="banner">
                 <div id="social">
+                    <div id="beerme">
+                        <a href="https://www.beerdonation.com/p/KayoticSully/">
+                            <img src="https://www.beerdonation.com/p/KayoticSully/badge" alt="Beer Me!" title="Beer Me!" />
+                        </a>
+                    </div>
                     <div id="facebook">
-                        <div class="fb-like" data-href="https://www.facebook.com/MineshafterSquared" data-send="false" data-layout="box_count" data-width="130" data-show-faces="false"></div>
+                        <div class="fb-like" data-href="https://www.facebook.com/MineshafterSquared" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false"></div>
                     </div>
                     <div id="googleplus">
-                        <div class="g-plusone" data-size="tall"></div>
+                        <div class="g-plusone" data-size="medium"></div>
                     </div>
                 </div>
             </div>
