@@ -70,15 +70,28 @@ class MS2_Controller extends CI_Controller {
         // Set default assets
         //----------------------------------------------------
         $this->assets = array('application', $this->router->fetch_class());
-        $this->load->spark('php-activerecord/0.0.2');
         
         //----------------------------------------------------
         // Check if user is logged in
         //----------------------------------------------------
-        $user_id = $this->session->userdata('user_id');
-        if($user_id)
+        $remember = $this->rememberme->verifyCookie();
+        if ($remember)
         {
-            $this->user = User::find_by_id($user_id);
+            // find user id of cookie_user stored in application database
+            $this->user = User::find_by_id($remember);
+            // set session if necessary
+            if (!$this->session->userdata('user_id'))
+            {
+                $this->session->set_userdata('user_id', $this->user->id);
+            }
+        }
+        else
+        {
+            $user_id = $this->session->userdata('user_id');
+            if ($user_id)
+            {
+                $this->user = User::find_by_id($user_id);
+            }
         }
         
         //----------------------------------------------------

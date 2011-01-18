@@ -12,6 +12,13 @@
             <input required="required" type="password" id="password" name="password" placeholder="Password">
         </div>
     </div>
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+                <input type="checkbox" name="rememberme"> Remember me
+            </label>
+        </div>
+    </div>
 <?php echo form_close(); ?>
 <script>
     $('#login_form').on('submit', user_login);

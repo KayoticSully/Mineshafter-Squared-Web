@@ -27,6 +27,8 @@
 |
 */
 
+$autoload['sparks'] = array('php-activerecord/0.0.2', 'RememberMe/1.2.2');
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Packges

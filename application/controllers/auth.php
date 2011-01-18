@@ -26,6 +26,7 @@ class Auth extends MS2_Controller {
         // get input
         $username = $this->input->post("username");
         $password = $this->input->post("password");
+        $remember = $this->input->post("rememberme");
         
         // check against local database
         $user = User::login($username, $password);
@@ -56,7 +57,12 @@ class Auth extends MS2_Controller {
         // account
         if($user instanceof User)
         {
-            $this->session->set_userdata('user_id', $user->id);
+            if ($remember)
+            {
+                $this->rememberme->setCookie($user->id);
+            }
+            
+            $this->session->set_userdata('user_id', $user->id);            
             $user->last_web_login = time();
             $user->save();
             $this->load->view('raw', array('raw' => 'OK'));
