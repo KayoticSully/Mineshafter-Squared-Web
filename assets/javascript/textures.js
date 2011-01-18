@@ -4,6 +4,8 @@ var new_page = false;
 var loading = false;
 var textureCap = false;
 var timeoutLocation = null;
+var controlBarLock = false;
+
 $(document).ready(init);
 
 function init() {
@@ -26,12 +28,15 @@ function init() {
     }
     
     $('#control-bar').css('height', $(document).height());
+    
     $(document).scroll(function(){
         var scroll = parseInt($('body').scrollTop()) + 40;
         
-        if(scroll >= 150) {
+        if(scroll >= 150 && !controlBarLock) {
             $('#control-bar').addClass('fixed-control-bar');
-        } else if(scroll < 150) {
+            controlBarLock = true;
+        } else if(scroll < 150 && controlBarLock) {
+            controlBarLock = false;
             $('#control-bar').removeClass('fixed-control-bar');
         }
     });
