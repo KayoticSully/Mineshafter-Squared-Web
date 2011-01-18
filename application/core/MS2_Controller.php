@@ -6,7 +6,7 @@
  * @author      Ryan Sullivan
  */
 class MS2_Controller extends CI_Controller {
-    protected $title            = 'Mineshafter Squared'
+    protected $title            = 'Mineshafter Squared';
     protected $shell_view       = 'shell';
     protected $application_view = 'layouts/application';
     protected $variables        = array();
