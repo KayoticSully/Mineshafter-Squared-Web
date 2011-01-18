@@ -6,6 +6,8 @@
  * @author      Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Servers extends MS2_Controller {
+    protected $title        = 'Minecraft Server';
+    
     /**
      * @name    index
      * @author  Ryan Sullivan <kayoticsully@gmail.com>
@@ -14,6 +16,7 @@ class Servers extends MS2_Controller {
      */
     public function index($name)
     {
+        $this->title = $name . ' Server';
         $this->load->helper('array');
         $real_name = str_replace('_', ' ', $name);
         $server = Server::find_by_name($real_name);

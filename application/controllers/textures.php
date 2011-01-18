@@ -6,9 +6,9 @@
  * @author      Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Textures extends MS2_Controller {
-    
-    const texture_folder = 'assets/textures';
-    const texture_basename = 'base.png';
+    protected $title        = 'Minecraft Skins';
+    const texture_folder    = 'assets/textures';
+    const texture_basename  = 'base.png';
     
     public function index()
     {

@@ -6,6 +6,7 @@
  * @author      Ryan Sullivan
  */
 class MS2_Controller extends CI_Controller {
+    protected $title            = 'Mineshafter Squared'
     protected $shell_view       = 'shell';
     protected $application_view = 'layouts/application';
     protected $variables        = array();
@@ -213,6 +214,7 @@ class MS2_Controller extends CI_Controller {
             // includes user login and other user account features.
             //
             
+            $layout_variables['title']              = $this->title;
             $layout_variables['application']        = $application_render;
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;

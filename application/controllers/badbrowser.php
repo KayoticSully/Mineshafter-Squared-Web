@@ -6,6 +6,9 @@
  * @author      Ryan Sullivan <kayoticsully@gmail.com>
  */
 class Badbrowser extends MS2_Controller {
+    
+    protected $title        = 'Don\'t Use IE';
+    
     public function index() {
         
     }

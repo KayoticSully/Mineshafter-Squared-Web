@@ -9,9 +9,10 @@ class Home extends MS2_Controller {
     /**
      * Class Variables
      */
-    private $tumblr_api_url = 'http://api.tumblr.com/v2/blog/';
-    private $tumblr_basename = 'mineshaftersquared.tumblr.com';
-    private $tumblr_oauth_key = 'qbyWHm4qD00vblTRalf3sO2LRwuAnVqZkh7F6mkhxGVlr6PLow';
+    private $tumblr_api_url     = 'http://api.tumblr.com/v2/blog/';
+    private $tumblr_basename    = 'mineshaftersquared.tumblr.com';
+    private $tumblr_oauth_key   = 'qbyWHm4qD00vblTRalf3sO2LRwuAnVqZkh7F6mkhxGVlr6PLow';
+    protected $title            = 'Mineshafter Squared, Free to play, Minecraft proxy';
     
     /**
      * @name    index

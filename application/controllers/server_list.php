@@ -10,6 +10,7 @@ class Server_list extends MS2_Controller {
      * Class Variables
      */
     private $min_server_name_length = 8;
+    protected $title        = 'Minecraft Servers';
     
     /**
      * @name    index

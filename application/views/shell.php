@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Minecraft Proxy.  Play for free, join an awesome community, and enjoy a top-notch skin management system." />
+    <meta name="keywords" content="minecraft, mineshafter, mineshafter squared, minecraft proxy" />
     <title>
-        Mineshafter Squared 
+        <?php echo $title; ?>
     </title>
     <link rel="canonical" href="http://mineshaftersquared.com" />
 <!-- CSS -->

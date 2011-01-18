@@ -11,6 +11,7 @@ class Skins extends MS2_Controller {
     
     public function index($skin_name)
     {
+        $this->title    =  'Minecraft Skin ' . $skin_name;
         $this->load->helper('array');
         
         // get skin
