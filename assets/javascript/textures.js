@@ -24,6 +24,17 @@ function init() {
     if(init3d()) {
         animate();
     }
+    
+    
+    $(document).scroll(function(){
+        var scroll = parseInt($('body').scrollTop()) + 40;
+        
+        if(scroll >= 150) {
+            $('#control-bar').addClass('fixed-control-bar');
+        } else if(scroll < 150) {
+            $('#control-bar').removeClass('fixed-control-bar');
+        }
+    });
 }
 
 function texture_actions() {

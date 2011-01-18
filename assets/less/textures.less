@@ -81,8 +81,13 @@ div[data-minecrafthead], div[data-minecraftmodel] {
     //background-color: #FAFAFA;
     background: url('/assets/img/noisy_net.png');
     //background: url('/assets/img/dark_fish_skin.png');
-    position: fixed;
+    float: left;
     text-align: left;
+    
+    &.fixed-control-bar {
+        position: fixed;
+        top:40px;
+    }
 }
 
 #texture-display {
