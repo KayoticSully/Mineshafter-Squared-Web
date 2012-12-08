@@ -5,17 +5,17 @@ Table of Contents
 ------------------
 1.  [Getting Started](#getting-started)
 2.  [Contributing](#contributing)
-3.  [The Asset Pipeline](docs/Assets.md)
-    *   [Auto-loading](docs/Assets.md#what-is-auto-loaded)
-    *   [Loading Other Files](docs/Assets.md#how-to-load-other-files)
-    *   [Using LESS](docs/Assets.md#you-can-use-less)
-4.  [CSS and LESS](docs/CSS.md)
-    *   [Autoloaded Files](docs/CSS.md#auto-loaded-files)
-    *   [LESS Utilities](docs/CSS.md#specific-less-utilities)
-        *   [Colors](docs/CSS.md#colors-colorsless)
-5.  [JavaScript](docs/JavaScript.md)
-    *   [Autoloaded Files](docs/JavaScript.md#auto-loaded-files)
-    *   [Object Oriented](docs/JavaScript.md#object-oriented-javascript)
+3.  [The Asset Pipeline](Mineshafter-Squared-Web/blob/master/docs/Assets.md)
+    *   [Auto-loading](Mineshafter-Squared-Web/blob/master/docs/Assets.md#what-is-auto-loaded)
+    *   [Loading Other Files](Mineshafter-Squared-Web/blob/master/docs/Assets.md#how-to-load-other-files)
+    *   [Using LESS](Mineshafter-Squared-Web/blob/master/docs/Assets.md#you-can-use-less)
+4.  [CSS and LESS](Mineshafter-Squared-Web/blob/master/docs/CSS.md)
+    *   [Autoloaded Files](Mineshafter-Squared-Web/blob/master/docs/CSS.md#auto-loaded-files)
+    *   [LESS Utilities](Mineshafter-Squared-Web/blob/master/docs/CSS.md#specific-less-utilities)
+        *   [Colors](Mineshafter-Squared-Web/blob/master/docs/CSS.md#colors-colorsless)
+5.  [JavaScript](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md)
+    *   [Autoloaded Files](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md#auto-loaded-files)
+    *   [Object Oriented](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md#object-oriented-javascript)
 
 Getting Started
 ---------------
