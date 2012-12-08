@@ -25,7 +25,7 @@ How to load other files?
 ------------------------
 In order to load other asset files there are two arrays built into the MS2 Controller
 class. ```$this->javascripts```, ```$this->css```, ```$this->assets```
-can be overriden or appended to.  This will cause the files to be loaded in the layout.
+can be overridden or appended to.  This will cause the files to be loaded in the layout.
 Only **file names** / **file paths**  relative to either **assets/javascript** or **assets/css**
 should be used.  File extensions should be left off as well.
 
