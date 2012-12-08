@@ -1,0 +1,27 @@
+/* application.less */
+
+//-----------------------------------
+// Application Imports
+//-----------------------------------
+// Split logical units out into their own less
+// files to keep each file small and organized.
+//
+@import 'shell';
+@import 'text-selection';
+@import 'nav';
+
+.selection;
+
+#content {
+    background: #FFFFFF;
+    padding: 0px 20px;
+    margin-top:@nav-width/2;
+}
+
+section {
+    padding:10px 0px;
+}
+
+ul.none {
+    list-style: none;
+}

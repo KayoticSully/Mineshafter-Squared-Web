@@ -1,0 +1,93 @@
+/* nav.less */
+
+//-----------------------------------
+// Nav Variables
+//-----------------------------------
+@nav-width: 100px;
+@main-nav-width: 457px;
+
+nav {
+    &#main-nav {
+        top:auto;
+        z-index: 999;
+        font-size: 12px;
+        margin-top: -@nav-width/2;
+        margin-left: @shell-top-margin;
+        position: fixed;
+        width:@main-nav-width;
+        
+        i[class^="icon"] {
+            background-position: 0 0;
+            display: block;
+            margin-top: 26px;
+            //margin-bottom: 5px;
+            height: 26px;
+            //line-height: 26px;
+        }
+        
+        i[class="icon-home"] {
+            width: 27px;
+            margin-left: (@nav-width - 27px) / 2px;
+            background-image: url("../img/glyphicons_home.png");
+        }
+        
+        i[class="icon-list"] {
+            width: 24px;
+            margin-left: (@nav-width - 24px) / 2px;
+            background-image: url("../img/glyphicons_list.png");
+        }
+        
+        i[class="icon-group"] {
+            width: 35px;
+            margin-left: (@nav-width - 35px) / 2px;
+            background-image: url("../img/glyphicons_group.png");
+        }
+        
+        i[class="icon-question-sign"] {
+            width: 26px;
+            margin-left: (@nav-width - 26px) / 2px;
+            background-image: url("../img/glyphicons_question_mark.png");
+        }
+        
+        ul li {
+            width: @nav-width;
+            height:@nav-width - 5;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+            background-color: #F0F0F0;
+            border: 1px solid #000000;
+            margin:0px 5px;
+        }
+        
+        ul li:hover {
+            background-color: #E0E0E0;
+        }
+        
+        ul li.active {
+            color: #FFFFFF;
+            background-color: #AAAAAA;
+        }
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0px;
+        padding:0px;
+    }
+
+    &.navbar {
+        margin-bottom: 0px;
+        
+        .navbar-inner {
+            border: none;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            padding: 0px;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+/* shell.less */
+
+//-----------------------------------
+// Bootstrap
+//-----------------------------------
+// Only imports what is used of bootstrap.  To
+// add other bootstrap abilities uncomment the
+// imports in this file and re-compile the less.
+//
+@import 'bootstrap';
+
+//-----------------------------------
+// Shell Imports
+//-----------------------------------
+// Split logical units out into their own less
+// files to keep each file small and organized.
+//
+@import 'colors';
+@import 'development';
+
+//-----------------------------------
+// Shell Variables
+//-----------------------------------
+@shell-padding: 20px;
+@shell-top-width: 80%;
+@shell-top-margin: (100% - @shell-top-width) / 2;
+@shell-bg: #C0C0C0;
+@page-bg: #FFFFFF;
+@shell-top-height: 39px;
+@shell-top-buffer: @nav-width/2;
+@shell-top-element-height: @shell-top-height + @shell-top-buffer + (@shell-padding*2) + 9;
+
+
+html, body {
+    background-color: @page-bg;
+}
+
+#shell-top {
+    height: @shell-top-height;
+    width: @shell-top-width;
+    padding: 0px @shell-top-margin @shell-padding @shell-top-margin;
+    background-color: @shell-bg;
+    z-index: 999;
+    
+    #logo {
+        font-size: 3em;
+        line-height: 1em;
+        margin: @shell-padding 0px 0px 0px;
+        float:left;
+        width: @main-nav-width;
+        text-align: center;
+    }
+    
+    #login_form {
+        float:left;
+        margin: 15px 0px 0px 20px;
+        
+        input {
+            margin-left: 2px;
+            margin-right: 2px;
+            display: block;
+            
+            &[type=submit] {
+                display: inline;
+            }
+        }
+    }
+    
+    #login_form_inline {
+        font-size: 14px;
+        input {
+            width:100px;
+        }
+        
+        display: none;
+    }
+}
+
+#shell-top-wrapper {
+    background-color: @shell-bg;
+    z-index: 888;
+    height: @shell-top-element-height;
+    position: fixed;
+    width:100%;
+}
+
+body>footer {
+    position: fixed;
+    bottom:0px;
+    text-align: center;
+    width:100%;
+    font-size: 12px;
+    padding:2px 0px;
+    background-color: #c0c0c0;
+}
+
+.formLink {
+    padding:5px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#shell-application {
+    position: absolute;
+    margin-top: @shell-top-height + @shell-top-buffer + (@shell-padding*2) + 9;
+}
+
+#topAd {
+    width:728px;
+    margin:(@shell-top-element-height - 90)/2 0px 0px 20px;
+    height: 90px;
+    float: left;
+}
