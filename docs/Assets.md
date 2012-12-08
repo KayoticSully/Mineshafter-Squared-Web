@@ -7,26 +7,26 @@ perfected, but its a start.
 
 For more information on **JavaScript**, **CSS**, **Less**, and **Bootstrap** and how they
 are used within this project please refer to:
-*   [JavaScript](KayoticSully/Mineshafter-Squared-Web/blob/master/docs/JavaScript.md)
-*   [CSS](KayoticSully/Mineshafter-Squared-Web/blob/master/docs/CSS.md)
+*   [CSS](CSS.md)
+*   [JavaScript](JavaScript.md)
 
 What is Auto-loaded?
 --------------------
-The assets pipeline will automatically load **application.css / application.js** and
-the **css / js** file named after the controller that was loaded.
+The assets pipeline will automatically load **application.css** / **application.js** and
+the **css** / **js** file named after the controller that was loaded.
 
 For example, on any page within the **home** controller the following files will be auto-loaded:
 *   assets/css/application.css
-*   assets/css/__home__.css
+*   assets/css/home.css
 *   assets/javascript/application.js
-*   assets/javascript/__home__.js
+*   assets/javascript/home.js
 
 How to load other files?
 ------------------------
 In order to load other asset files there are two arrays built into the MS2 Controller
-class. ```php $this->javascripts```, ```php $this->css```, ```php $this->assets```
+class. ```$this->javascripts```, ```$this->css```, ```$this->assets```
 can be overriden or appended to.  This will cause the files to be loaded in the layout.
-Only *file names / file paths*  relative to either *assets/javascript* or *assets/css*
+Only **file names** / **file paths**  relative to either **assets/javascript** or **assets/css**
 should be used.  File extensions should be left off as well.
 
 For example:
@@ -43,7 +43,10 @@ $this->css[] = "my_awesome_asset";
 
 To keep code clean if you need to load more than one *javascript* or *css* file you can just override the *javascripts* and *css*
 variables.  If you need to add more than one file to the *asset* variable do not override it unless you do not want to load
-the auto-loaded files.  Instead you can do this: ```php $this->assets = array_merge($this->assets, array('awesome_asset_one', 'awesome_asset_two'));```
+the auto-loaded files.  Instead you can do this:
+```php
+$this->assets = array_merge($this->assets, array('awesome_asset_one', 'awesome_asset_two'));
+```
 
 You can use LESS!
 ------------------
