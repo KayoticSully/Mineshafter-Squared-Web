@@ -2,9 +2,8 @@
 
 /**
  * MS2_Controller
- * @author      Ryan Sullivan
  * 
- * @extends CI_Controller
+ * @author      Ryan Sullivan
  */
 class MS2_Controller extends CI_Controller {
     protected $shell_view       = 'shell';
@@ -57,7 +56,7 @@ class MS2_Controller extends CI_Controller {
         if (ENVIRONMENT == 'development')
         {
             $this->less = new lessc;
-            $this->less->setFormatter('compressed');
+            $this->less->setFormatter('lessjs');
             $this->less->setImportDir($this->less_path);
         }
     }
