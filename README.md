@@ -24,7 +24,7 @@ To get this project up and running on a Windows machine you will need to install
 *   __MySQL__ - You need to install MySQL and set your database storage location to the database folder in this project.  If you need to set up a root password I am using _ms2dev_ as the MySql password on this project.
 *   __OpenSSL__ - If you are getting errors talking about issues with _curl_ try installing OpenSSL.
 
-NGINX is the web server of choice and this repo comes with a fully configured NGINX environment. Just double click the start-server.js file and navigate to _http://localhost_ in your browser.
+NGINX is the web server of choice and this repo comes with a fully configured NGINX environment. Just double click the **start-server.js** file and navigate to _http://localhost_ in your browser.
 
 Contributing
 ------------
