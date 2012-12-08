@@ -11,9 +11,9 @@
         Downloads
     </h1>
     <div>
-            <?php foreach($downloads as $download): ?>
-                <?php echo $download->name; ?>
-                <br>
-            <?php endforeach; ?>
+        <?php foreach($downloads as $download): ?>
+            <?php echo $download->name; ?>
+            <br>
+        <?php endforeach; ?>
     </div>
 </section>

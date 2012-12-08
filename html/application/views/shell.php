@@ -12,14 +12,14 @@
         <div id="shell-top">
             <div id="logo">
                 Mineshafter Squared
-                <div id="login_form_inline">
+                <div id="login_form_inline" class="hidden-desktop">
                     <input type="text" placeholder="Username" />
                     <input type="password" placeholder="Password" />
                     <input type="submit" value="Login" class="btn" />
                     <a class="formLink" target="_blank" href="http://minecraft.net/resetpassword">lost password?</a>
                 </div>
             </div>
-            <div id="login_form">
+            <div id="login_form" class="visible-desktop">
                 <input type="text" placeholder="Username" />
                 <input type="password" placeholder="Password" />
                 <input type="submit" value="Login" class="btn" />

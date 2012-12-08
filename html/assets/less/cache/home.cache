@@ -1,1 +1,46 @@
-a:4:{s:4:"root";s:21:"assets/less/home.less";s:8:"compiled";s:627:".ellipsis{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;display:block;}#about{height:600px;}article{width:45%;position:relative;display:inline-block;margin:20px 2% 20px 2%;border:1px solid #000;}article header{font-weight:bold;font-size:20px;padding:6px;border-bottom:1px solid #000;background-color:#c0c0c0;height:20px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;display:block;}article .body{height:200px;padding:10px;overflow-y:scroll;}article footer{border-top:1px solid #000;background-color:#c0c0c0;text-align:right;padding:0px 5px;font-size:12px;}section.col{width:44%;margin:0px 3%;float:left;}";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1354938065;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1354938064;}s:7:"updated";i:1354973142;}
+a:4:{s:4:"root";s:21:"assets/less/home.less";s:8:"compiled";s:781:".ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+#about {
+  height: 600px;
+}
+article {
+  width: 45%;
+  position: relative;
+  display: inline-block;
+  margin: 20px 2% 20px 2%;
+  border: 1px solid #000000;
+}
+article header {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 6px;
+  border-bottom: 1px solid #000000;
+  background-color: #c0c0c0;
+  height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+article .body {
+  height: 200px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+article footer {
+  border-top: 1px solid #000000;
+  background-color: #c0c0c0;
+  text-align: right;
+  padding: 0px 5px;
+  font-size: 12px;
+}
+section.col {
+  width: 44%;
+  margin: 0px 3%;
+  float: left;
+}
+";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1354975242;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1354938064;}s:7:"updated";i:1354976977;}
