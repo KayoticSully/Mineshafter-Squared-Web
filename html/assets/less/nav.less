@@ -11,12 +11,16 @@ nav {
         top:auto;
         z-index: 999;
         font-size: 12px;
-        margin-top: -@nav-width/2;
-        margin-left: @shell-top-margin;
+        margin: -@nav-width/2 - 27 0px 0px 0px;
         position: fixed;
-        width:@main-nav-width;
+        width: 100%;
         
-        i[class^="icon"] {
+        #nav_list {
+            width: 1000px;
+            margin: 0px auto;
+        }
+        
+        i[class^="icon"], #test {
             background-position: 0 0;
             display: block;
             margin-top: 26px;
@@ -49,7 +53,13 @@ nav {
             background-image: url("../img/glyphicons_question_mark.png");
         }
         
-        ul li {
+        i[class="icon-user"] {
+            width: 23px;
+            margin-left: (@nav-width - 23px) / 2px;
+            background-image: url("../img/glyphicons_user.png");
+        }
+        
+        ul li, #login_form {
             width: @nav-width;
             height:@nav-width - 5;
             text-align: center;
@@ -60,6 +70,10 @@ nav {
             margin:0px 5px;
         }
         
+        ul li:first-child {
+            margin-left: 0px;
+        }
+        
         ul li:hover {
             background-color: #E0E0E0;
         }
@@ -67,6 +81,33 @@ nav {
         ul li.active {
             color: #FFFFFF;
             background-color: #AAAAAA;
+        }
+        
+        #login_wrapper {
+            border: none;
+            background: transparent;
+            
+            #login_form {
+                width: 500px;
+                margin-top: 27px;
+                
+                .nav_form_label {
+                    float: left;
+                    width: @nav-width;
+                    margin: 0px 0px 0px 0px;
+                }
+                
+                .login_section {
+                    margin: 15px 0px 0px 0px;
+                    float: left;
+                    
+                    input {
+                        margin-left: 2px;
+                        margin-right: 2px;
+                        display: block;
+                    }
+                }
+            }
         }
     }
     

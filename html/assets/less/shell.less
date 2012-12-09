@@ -26,7 +26,7 @@
 @shell-top-margin: (100% - @shell-top-width) / 2;
 @shell-bg: #C0C0C0;
 @page-bg: #FFFFFF;
-@shell-top-height: 39px;
+@shell-top-height: 80px;
 @shell-top-buffer: @nav-width/2;
 @shell-top-element-height: @shell-top-height + @shell-top-buffer + (@shell-padding*2) + 9;
 
@@ -37,42 +37,19 @@ html, body {
 
 #shell-top {
     height: @shell-top-height;
-    width: @shell-top-width;
-    padding: 0px @shell-top-margin @shell-padding @shell-top-margin;
+    padding: 0px @shell-top-margin @shell-padding @shell-top-margin/2;
     background-color: @shell-bg;
     z-index: 999;
+    width: 1210px;
+    margin: 0 auto;
     
     #logo {
         font-size: 3em;
         line-height: 1em;
-        margin: @shell-padding 0px 0px 0px;
+        margin: 45px 0px 0px 0px;
         float:left;
         width: @main-nav-width;
         text-align: center;
-    }
-    
-    #login_form {
-        float:left;
-        margin: 15px 0px 0px 20px;
-        
-        input {
-            margin-left: 2px;
-            margin-right: 2px;
-            display: block;
-            
-            &[type=submit] {
-                display: inline;
-            }
-        }
-    }
-    
-    #login_form_inline {
-        font-size: 14px;
-        input {
-            width:100px;
-        }
-        
-        display: none;
     }
 }
 
@@ -109,7 +86,7 @@ body>footer {
 
 #topAd {
     width:728px;
-    margin:(@shell-top-element-height - 90)/2 0px 0px 20px;
+    margin: 20px 0px 0px 20px;
     height: 90px;
     float: left;
 }

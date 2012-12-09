@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:175689:"article,
+a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:176137:"article,
 aside,
 details,
 figcaption,
@@ -6339,43 +6339,25 @@ body {
   background-color: #FFFFFF;
 }
 #shell-top {
-  height: 39px;
-  width: 80%;
-  padding: 0px 10% 20px 10%;
+  height: 80px;
+  padding: 0px 10% 20px 5%;
   background-color: #C0C0C0;
   z-index: 999;
+  width: 1210px;
+  margin: 0 auto;
 }
 #shell-top #logo {
   font-size: 3em;
   line-height: 1em;
-  margin: 20px 0px 0px 0px;
+  margin: 45px 0px 0px 0px;
   float: left;
   width: 457px;
   text-align: center;
 }
-#shell-top #login_form {
-  float: left;
-  margin: 15px 0px 0px 20px;
-}
-#shell-top #login_form input {
-  margin-left: 2px;
-  margin-right: 2px;
-  display: block;
-}
-#shell-top #login_form input[type=submit] {
-  display: inline;
-}
-#shell-top #login_form_inline {
-  font-size: 14px;
-  display: none;
-}
-#shell-top #login_form_inline input {
-  width: 100px;
-}
 #shell-top-wrapper {
   background-color: #C0C0C0;
   z-index: 888;
-  height: 138px;
+  height: 179px;
   position: fixed;
   width: 100%;
 }
@@ -6396,11 +6378,11 @@ body>footer {
 }
 #shell-application {
   position: absolute;
-  margin-top: 138px;
+  margin-top: 179px;
 }
 #topAd {
   width: 728px;
-  margin: 24px 0px 0px 20px;
+  margin: 20px 0px 0px 20px;
   height: 90px;
   float: left;
 }
@@ -6408,12 +6390,16 @@ nav#main-nav {
   top: auto;
   z-index: 999;
   font-size: 12px;
-  margin-top: -50px;
-  margin-left: 10%;
+  margin: -77px 0px 0px 0px;
   position: fixed;
-  width: 457px;
+  width: 100%;
 }
-nav#main-nav i[class^="icon"] {
+nav#main-nav #nav_list {
+  width: 1000px;
+  margin: 0px auto;
+}
+nav#main-nav i[class^="icon"],
+nav#main-nav #test {
   background-position: 0 0;
   display: block;
   margin-top: 26px;
@@ -6439,7 +6425,13 @@ nav#main-nav i[class="icon-question-sign"] {
   margin-left: 37px;
   background-image: url("../img/glyphicons_question_mark.png");
 }
-nav#main-nav ul li {
+nav#main-nav i[class="icon-user"] {
+  width: 23px;
+  margin-left: 38.5px;
+  background-image: url("../img/glyphicons_user.png");
+}
+nav#main-nav ul li,
+nav#main-nav #login_form {
   width: 100px;
   height: 95px;
   text-align: center;
@@ -6449,12 +6441,37 @@ nav#main-nav ul li {
   border: 1px solid #000000;
   margin: 0px 5px;
 }
+nav#main-nav ul li:first-child {
+  margin-left: 0px;
+}
 nav#main-nav ul li:hover {
   background-color: #E0E0E0;
 }
 nav#main-nav ul li.active {
   color: #FFFFFF;
   background-color: #AAAAAA;
+}
+nav#main-nav #login_wrapper {
+  border: none;
+  background: transparent;
+}
+nav#main-nav #login_wrapper #login_form {
+  width: 500px;
+  margin-top: 27px;
+}
+nav#main-nav #login_wrapper #login_form .nav_form_label {
+  float: left;
+  width: 100px;
+  margin: 0px 0px 0px 0px;
+}
+nav#main-nav #login_wrapper #login_form .login_section {
+  margin: 15px 0px 0px 0px;
+  float: left;
+}
+nav#main-nav #login_wrapper #login_form .login_section input {
+  margin-left: 2px;
+  margin-right: 2px;
+  display: block;
 }
 nav ul {
   list-style: none;
@@ -6497,4 +6514,4 @@ section {
 ul.none {
   list-style: none;
 }
-";s:5:"files";a:25:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1354976275;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1354977275;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1351652396;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1354938064;}s:7:"updated";i:1354977325;}
+";s:5:"files";a:25:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355026559;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355038404;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355039527;}s:7:"updated";i:1355039530;}
