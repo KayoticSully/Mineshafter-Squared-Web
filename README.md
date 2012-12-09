@@ -1,6 +1,9 @@
 Mineshafter-Squared Documentation
 =================================
 
+###Project Status: In Early Development
+For a more in depth look at what is done and what is planned please reference the [Status](Mineshafter-Squared-Web/blob/master/docs/Status.md) page
+
 Table of Contents
 ------------------
 1.  [Getting Started](#getting-started)
