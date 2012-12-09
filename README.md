@@ -2,7 +2,10 @@ Mineshafter-Squared Documentation
 =================================
 
 ###Project Status: In Early Development
-For a more in depth look at what is done and what is planned please reference the [Status](Mineshafter-Squared-Web/blob/master/docs/Status.md) page
+For a more in depth look at what is done and what is planned please reference the [Status](Mineshafter-Squared-Web/blob/master/docs/Status.md) page.
+
+Not much is currently done, feel free to email me if you want to help and need to know what to work on.  A lot of the authentication code I will pull
+over from the current site when I have a chance.  I am still working out the new database structure.
 
 Table of Contents
 ------------------
