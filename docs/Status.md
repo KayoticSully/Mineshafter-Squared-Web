@@ -17,3 +17,4 @@ reused.
 *   Consolidation of Accounts
 *   Server Admin Console
 *   Server Status API
+*   Fully Responsive to fit any device
