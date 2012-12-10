@@ -15,8 +15,8 @@ breakdown of what is involved with finished items in **bold**
     *   **Get Downloads from Database**
     *   Display downloads in block-themed format
         *   Group downloads by type (Client, Server, Other, Etc.)
-        *   Modify database to include type description text
-*   Add PHP MyAdmin to project to make database editing easy for everyone
+    *   Re-create and re-design Downloads Table.
+    *   Modify database to include type description text
 
 Planned Features
 -----------------
@@ -40,4 +40,4 @@ Finished Features
 These are the features that have been "finished" they may still need tweaking
 but they are release-ready.
 
-*   Nothing Yet
+*   **Add PHP MyAdmin to project to make database editing easy for everyone**
