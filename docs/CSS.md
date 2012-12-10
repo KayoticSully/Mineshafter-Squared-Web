@@ -5,6 +5,12 @@ CSS / LESS
 is incorporated into application.css at less compile time.  There are a few
 extra helpful tools that we built in that can be leveraged.
 
+Auto-Less Compilation
+----------------------
+Less Files are automatically compiled to css for you while the website is in *development* mode.  The corresponding LESS
+file of a CSS file that would be [Auto-Loaded](Assets.md) will be auto-compiled along with any LESS scripts that are imported
+into those files. (If this is confusing please let me know, but I think you get the idea).
+
 Auto loaded files
 -----------------
 All Less files are compiled down into a few CSS.

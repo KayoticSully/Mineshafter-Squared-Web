@@ -37,19 +37,23 @@ html, body {
 
 #shell-top {
     height: @shell-top-height;
-    padding: 0px @shell-top-margin @shell-padding @shell-top-margin/2;
+    //padding: 0px @shell-top-margin @shell-padding @shell-top-margin/2;
     background-color: @shell-bg;
     z-index: 999;
-    width: 1210px;
+    width: 1012px;
     margin: 0 auto;
     
     #logo {
-        font-size: 3em;
-        line-height: 1em;
-        margin: 45px 0px 0px 0px;
-        float:left;
-        width: @main-nav-width;
+        font-size: 1.7em;
+        line-height: 1.2em;
+        cursor: pointer;
+        //float:left;
+        width: 150px;
         text-align: center;
+        
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
 
@@ -71,10 +75,6 @@ body>footer {
     background-color: #c0c0c0;
 }
 
-.formLink {
-    padding:5px;
-}
-
 .clearfix {
     clear: both;
 }
@@ -86,7 +86,7 @@ body>footer {
 
 #topAd {
     width:728px;
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 13px;
     height: 90px;
     float: left;
 }

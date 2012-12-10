@@ -1,13 +1,55 @@
 /* nav.less */
 
 //-----------------------------------
+// Nav Imports
+//-----------------------------------
+@import 'nav-icons';
+
+//-----------------------------------
 // Nav Variables
 //-----------------------------------
-@nav-width: 100px;
+@nav-width: 94px;
 @main-nav-width: 457px;
 
 nav {
+    
+    .horizontal_nav {
+        ul li {
+            display: inline-block;
+            width: @nav-width;
+            height:@nav-width - 6;
+            text-align: center;
+        }
+    }
+    
+    .nav-actions {
+        ul li:hover {
+            background-color: #E0E0E0;
+        }
+        
+        ul li.active {
+            color: #FFFFFF;
+            background-color: #AAAAAA;
+        }
+    }
+    
+    &#home_nav {
+        .horizontal_nav;
+        .nav-actions;
+        
+        height:@nav-width - 6;
+        cursor: pointer;
+        width: 248px;
+        background-color: #F0F0F0;
+        border: 1px solid #000000;
+        margin: 20px 0px 0px 0px;
+        float: left;
+    }
+    
     &#main-nav {
+        .horizontal_nav;
+        .nav-actions;
+        
         top:auto;
         z-index: 999;
         font-size: 12px;
@@ -16,55 +58,12 @@ nav {
         width: 100%;
         
         #nav_list {
-            width: 1000px;
+            width: 1011px;
             margin: 0px auto;
         }
         
-        i[class^="icon"], #test {
-            background-position: 0 0;
-            display: block;
-            margin-top: 26px;
-            //margin-bottom: 5px;
-            height: 26px;
-            //line-height: 26px;
-        }
-        
-        i[class="icon-home"] {
-            width: 27px;
-            margin-left: (@nav-width - 27px) / 2px;
-            background-image: url("../img/glyphicons_home.png");
-        }
-        
-        i[class="icon-list"] {
-            width: 24px;
-            margin-left: (@nav-width - 24px) / 2px;
-            background-image: url("../img/glyphicons_list.png");
-        }
-        
-        i[class="icon-group"] {
-            width: 35px;
-            margin-left: (@nav-width - 35px) / 2px;
-            background-image: url("../img/glyphicons_group.png");
-        }
-        
-        i[class="icon-question-sign"] {
-            width: 26px;
-            margin-left: (@nav-width - 26px) / 2px;
-            background-image: url("../img/glyphicons_question_mark.png");
-        }
-        
-        i[class="icon-user"] {
-            width: 23px;
-            margin-left: (@nav-width - 23px) / 2px;
-            background-image: url("../img/glyphicons_user.png");
-        }
-        
-        ul li, #login_form {
-            width: @nav-width;
-            height:@nav-width - 5;
-            text-align: center;
+        ul li, #login_form, #home_nav ul li {
             cursor: pointer;
-            display: inline-block;
             background-color: #F0F0F0;
             border: 1px solid #000000;
             margin:0px 5px;
@@ -74,22 +73,15 @@ nav {
             margin-left: 0px;
         }
         
-        ul li:hover {
-            background-color: #E0E0E0;
-        }
-        
-        ul li.active {
-            color: #FFFFFF;
-            background-color: #AAAAAA;
-        }
-        
         #login_wrapper {
             border: none;
             background: transparent;
+            margin: 0px 2px;
             
             #login_form {
-                width: 500px;
-                margin-top: 27px;
+                width: 551px;
+                margin-top: 22px;
+                height:@nav-width - 5;
                 
                 .nav_form_label {
                     float: left;
@@ -98,13 +90,17 @@ nav {
                 }
                 
                 .login_section {
-                    margin: 15px 0px 0px 0px;
+                    margin: 10px 10px 0px 0px;
                     float: left;
                     
                     input {
                         margin-left: 2px;
                         margin-right: 2px;
                         display: block;
+                    }
+                    
+                    .btn:last-child {
+                        margin-top: 9px;
                     }
                 }
             }
@@ -115,20 +111,5 @@ nav {
         list-style: none;
         margin: 0px;
         padding:0px;
-    }
-
-    &.navbar {
-        margin-bottom: 0px;
-        
-        .navbar-inner {
-            border: none;
-            -webkit-border-radius: 0px;
-            -moz-border-radius: 0px;
-            border-radius: 0px;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-            padding: 0px;
-        }
     }
 }
