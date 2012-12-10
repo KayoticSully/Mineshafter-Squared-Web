@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:21:"assets/less/home.less";s:8:"compiled";s:781:".ellipsis {
+a:4:{s:4:"root";s:21:"assets/less/home.less";s:8:"compiled";s:865:".ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -43,4 +43,10 @@ section.col {
   margin: 0px 3%;
   float: left;
 }
-";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1354975242;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1354938064;}s:7:"updated";i:1355029871;}
+@media (max-width: 1200px) {
+  article {
+    display: block;
+    width: auto;
+  }
+}
+";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1355179744;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1354938064;}s:7:"updated";i:1355179750;}

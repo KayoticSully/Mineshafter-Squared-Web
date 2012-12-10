@@ -6493,7 +6493,7 @@ nav#main-nav #login_wrapper {
 }
 nav#main-nav #login_wrapper #login_form {
   width: 551px;
-  margin-top: 22px;
+  margin-top: 21px;
   height: 89px;
 }
 nav#main-nav #login_wrapper #login_form .nav_form_label {
@@ -6517,6 +6517,37 @@ nav ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
+}
+@media (max-width: 990px) {
+  nav#main-nav ul li {
+    width: 84px;
+    height: 78px;
+  }
+  nav#main-nav #login_wrapper #login_form {
+    width: 450px;
+    margin-top: 11px;
+    height: 79px;
+  }
+  nav#main-nav #login_wrapper #login_form .nav_form_label {
+    width: 84px;
+  }
+  nav#main-nav #login_wrapper #login_form .login_section {
+    margin: 10px 10px 0px 0px;
+    float: left;
+  }
+  nav#main-nav #login_wrapper #login_form .login_section input {
+    font-size: 13px;
+    padding: 2px 6px;
+    margin-bottom: 8px;
+  }
+  nav#main-nav #login_wrapper #login_form .login_section .btn:last-child {
+    margin-top: 0px;
+    padding: 2px 6px;
+    font-size: 13px;
+  }
+  nav#main-nav#main-nav {
+    margin: -53px 0px 0px 0px;
+  }
 }
 ::selection {
   background-color: #E13300;
