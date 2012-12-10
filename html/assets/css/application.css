@@ -6340,24 +6340,25 @@ body {
 }
 #shell-top {
   height: 80px;
-  padding: 0px 10% 20px 5%;
   background-color: #C0C0C0;
   z-index: 999;
-  width: 1210px;
+  width: 1012px;
   margin: 0 auto;
 }
 #shell-top #logo {
-  font-size: 3em;
-  line-height: 1em;
-  margin: 45px 0px 0px 0px;
-  float: left;
-  width: 457px;
+  font-size: 1.7em;
+  line-height: 1.2em;
+  cursor: pointer;
+  width: 150px;
   text-align: center;
+}
+#shell-top #logo:hover {
+  background-color: transparent;
 }
 #shell-top-wrapper {
   background-color: #C0C0C0;
   z-index: 888;
-  height: 179px;
+  height: 176px;
   position: fixed;
   width: 100%;
 }
@@ -6370,79 +6371,98 @@ body>footer {
   padding: 2px 0px;
   background-color: #c0c0c0;
 }
-.formLink {
-  padding: 5px;
-}
 .clearfix {
   clear: both;
 }
 #shell-application {
   position: absolute;
-  margin-top: 179px;
+  margin-top: 176px;
 }
 #topAd {
   width: 728px;
-  margin: 20px 0px 0px 20px;
+  margin: 20px 0px 0px 13px;
   height: 90px;
   float: left;
 }
-nav#main-nav {
-  top: auto;
-  z-index: 999;
-  font-size: 12px;
-  margin: -77px 0px 0px 0px;
-  position: fixed;
-  width: 100%;
-}
-nav#main-nav #nav_list {
-  width: 1000px;
-  margin: 0px auto;
-}
-nav#main-nav i[class^="icon"],
-nav#main-nav #test {
+nav i[class^="icon"] {
   background-position: 0 0;
   display: block;
   margin-top: 26px;
   height: 26px;
 }
-nav#main-nav i[class="icon-home"] {
+nav i[class="icon-home"] {
   width: 27px;
-  margin-left: 36.5px;
+  margin-left: 33.5px;
   background-image: url("../img/glyphicons_home.png");
 }
-nav#main-nav i[class="icon-list"] {
+nav i[class="icon-list"] {
   width: 24px;
-  margin-left: 38px;
+  margin-left: 35px;
   background-image: url("../img/glyphicons_list.png");
 }
-nav#main-nav i[class="icon-group"] {
+nav i[class="icon-group"] {
   width: 35px;
-  margin-left: 32.5px;
+  margin-left: 29.5px;
   background-image: url("../img/glyphicons_group.png");
 }
-nav#main-nav i[class="icon-question-sign"] {
+nav i[class="icon-question-sign"] {
   width: 26px;
-  margin-left: 37px;
+  margin-left: 34px;
   background-image: url("../img/glyphicons_question_mark.png");
 }
-nav#main-nav i[class="icon-user"] {
+nav i[class="icon-user"] {
   width: 23px;
-  margin-left: 38.5px;
+  margin-left: 35.5px;
   background-image: url("../img/glyphicons_user.png");
 }
-nav#main-nav ul li,
-nav#main-nav #login_form {
-  width: 100px;
-  height: 95px;
-  text-align: center;
-  cursor: pointer;
+nav .horizontal_nav ul li {
   display: inline-block;
+  width: 94px;
+  height: 88px;
+  text-align: center;
+}
+nav .nav-actions ul li:hover {
+  background-color: #E0E0E0;
+}
+nav .nav-actions ul li.active {
+  color: #FFFFFF;
+  background-color: #AAAAAA;
+}
+nav#home_nav {
+  height: 88px;
+  cursor: pointer;
+  width: 248px;
   background-color: #F0F0F0;
   border: 1px solid #000000;
-  margin: 0px 5px;
+  margin: 20px 0px 0px 0px;
+  float: left;
 }
-nav#main-nav ul li:first-child {
-  margin-left: 0px;
+nav#home_nav ul li {
+  display: inline-block;
+  width: 94px;
+  height: 88px;
+  text-align: center;
+}
+nav#home_nav ul li:hover {
+  background-color: #E0E0E0;
+}
+nav#home_nav ul li.active {
+  color: #FFFFFF;
+  background-color: #AAAAAA;
+}
+nav#main-nav {
+  top: auto;
+  z-index: 999;
+  font-size: 12px;
+  margin: -74px 0px 0px 0px;
+  position: fixed;
+  width: 100%;
+}
+nav#main-nav ul li {
+  display: inline-block;
+  width: 94px;
+  height: 88px;
+  text-align: center;
 }
 nav#main-nav ul li:hover {
   background-color: #E0E0E0;
@@ -6451,21 +6471,38 @@ nav#main-nav ul li.active {
   color: #FFFFFF;
   background-color: #AAAAAA;
 }
+nav#main-nav #nav_list {
+  width: 1011px;
+  margin: 0px auto;
+}
+nav#main-nav ul li,
+nav#main-nav #login_form,
+nav#main-nav #home_nav ul li {
+  cursor: pointer;
+  background-color: #F0F0F0;
+  border: 1px solid #000000;
+  margin: 0px 5px;
+}
+nav#main-nav ul li:first-child {
+  margin-left: 0px;
+}
 nav#main-nav #login_wrapper {
   border: none;
   background: transparent;
+  margin: 0px 2px;
 }
 nav#main-nav #login_wrapper #login_form {
-  width: 500px;
-  margin-top: 27px;
+  width: 551px;
+  margin-top: 22px;
+  height: 89px;
 }
 nav#main-nav #login_wrapper #login_form .nav_form_label {
   float: left;
-  width: 100px;
+  width: 94px;
   margin: 0px 0px 0px 0px;
 }
 nav#main-nav #login_wrapper #login_form .login_section {
-  margin: 15px 0px 0px 0px;
+  margin: 10px 10px 0px 0px;
   float: left;
 }
 nav#main-nav #login_wrapper #login_form .login_section input {
@@ -6473,22 +6510,12 @@ nav#main-nav #login_wrapper #login_form .login_section input {
   margin-right: 2px;
   display: block;
 }
+nav#main-nav #login_wrapper #login_form .login_section .btn:last-child {
+  margin-top: 9px;
+}
 nav ul {
   list-style: none;
   margin: 0px;
-  padding: 0px;
-}
-nav.navbar {
-  margin-bottom: 0px;
-}
-nav.navbar .navbar-inner {
-  border: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
   padding: 0px;
 }
 ::selection {
@@ -6506,7 +6533,7 @@ nav.navbar .navbar-inner {
 #content {
   background: #FFFFFF;
   padding: 0px 20px;
-  margin-top: 50px;
+  margin-top: 47px;
 }
 section {
   padding: 10px 0px;

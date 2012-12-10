@@ -10,9 +10,17 @@
 <body>
     <div id="shell-top-wrapper">
         <div id="shell-top">
-            <div id="logo">
-                Mineshafter Squared
-            </div>
+            <nav id="home_nav">
+                <ul>
+                    <li class="active">
+                        <i class="icon-home"></i>
+                        Home
+                    </li>
+                    <li id="logo">
+                        Mineshafter Squared
+                    </li>
+                </ul>
+            </nav>
             <div id="topAd">
                 <script type="text/javascript"><!--
                     google_ad_client = "ca-pub-2130540909688027";
