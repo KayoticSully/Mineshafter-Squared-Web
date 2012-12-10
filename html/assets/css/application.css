@@ -6340,9 +6340,10 @@ body {
 }
 #shell-top {
   height: 80px;
+  padding: 0px 20px;
   background-color: #C0C0C0;
   z-index: 999;
-  width: 1012px;
+  width: 992px;
   margin: 0 auto;
 }
 #shell-top #logo {
@@ -6472,8 +6473,9 @@ nav#main-nav ul li.active {
   background-color: #AAAAAA;
 }
 nav#main-nav #nav_list {
-  width: 1011px;
+  width: 992px;
   margin: 0px auto;
+  padding: 0px 20px;
 }
 nav#main-nav ul li,
 nav#main-nav #login_form,
