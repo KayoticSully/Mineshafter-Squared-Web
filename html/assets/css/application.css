@@ -6340,7 +6340,6 @@ body {
 }
 #shell-top {
   height: 80px;
-  padding: 0px 20px;
   background-color: #C0C0C0;
   z-index: 999;
   width: 992px;
@@ -6475,7 +6474,6 @@ nav#main-nav ul li.active {
 nav#main-nav #nav_list {
   width: 992px;
   margin: 0px auto;
-  padding: 0px 20px;
 }
 nav#main-nav ul li,
 nav#main-nav #login_form,
