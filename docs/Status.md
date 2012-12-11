@@ -8,10 +8,13 @@ These are the features that are currently in progress.  They generally contain a
 breakdown of what is involved with finished items in **bold**
 *   Downloads
     *   **Get Downloads from Database**
-    *   Display downloads in block-themed format
-        *   Group downloads by type (Client, Server, Other, Etc.)
-    *   Re-create and re-design Downloads Table.
-    *   Modify database to include type description text
+    *   **Display downloads in block-themed format**
+        *   **Group downloads by type (Client, Server, Other, Etc.)**
+    *   **Re-create and re-design Downloads Table.**
+    *   **Modify database to include type description text**
+    *   Add all the download records
+    *   Add file link locations
+    *   Make files downloadable
 
 Planned Features
 -----------------

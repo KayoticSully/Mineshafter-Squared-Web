@@ -1,6 +1,7 @@
 /* home.less */
 @import 'utils';
 
+@body-height: 200px;
 //-----------------------------------
 // About
 //-----------------------------------
@@ -15,6 +16,7 @@ article {
     margin:2%;
     border: 1px solid #000000;
     
+    
     header {
         font-weight: bold;
         font-size: 20px;
@@ -26,12 +28,30 @@ article {
     }
     
     .body {
-        height:200px;
+        height:@body-height;
         padding: 10px;
-        overflow-y: scroll;
+        overflow-y: auto;
+        position: relative;
+    }
+    
+    .download {
+        .description {
+            height:@body-height/1.5;
+        }
+        
+        .links {
+            height:@body-height/4;
+            list-style: none;
+            margin-left: 0px;
+            
+            li {
+                display: inline;
+            }
+        }
     }
     
     footer {
+        //clear: both;
         border-top: 1px solid #000000;
         background-color: #c0c0c0;
         text-align: right;

@@ -10,13 +10,30 @@
     <h1>
         Downloads
     </h1>
-    <code class="comment">
-        // Downloads will be grouped by type and look similar to the announcements 
-    </code>
     <div>
-        <?php foreach($downloads as $download): ?>
-            <?php echo $download->name; ?>
-            <br>
+        <?php foreach($download_groups as $group): ?>
+            <article>
+                <header>
+                    <?php echo $group->name; ?>
+                </header>
+                <div class="body download">
+                    <div class="description">
+                        <?php echo $group->description; ?>
+                    </div>
+                    <ul class="download links">
+                        <?php foreach($group->downloads as $download): ?>
+                            <li>
+                                <a href="<?php echo $download->link; ?>" class="btn btn-link">
+                                    <?php echo $download->name; ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <footer class="center">
+                    Version <?php echo $group->version; ?>
+                </footer>
+            </article>
         <?php endforeach; ?>
     </div>
 </section>
