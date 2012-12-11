@@ -15,7 +15,7 @@ class Home extends MS2_Controller {
     {
         $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'post', 'announcements');
         
-        $this->load->view('home', array("downloads" => Download::all()));
+        $this->load->view('home', array("download_groups" => DownloadGroup::all()));
     }
     
     public function announcements($limit=1, $offset=0)
