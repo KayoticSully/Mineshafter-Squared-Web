@@ -11,15 +11,17 @@
     <div id="shell-top-wrapper">
         <div id="shell-top">
             <nav id="home_nav">
-                <ul>
-                    <li class="active">
-                        <i class="icon-home"></i>
-                        Home
-                    </li>
-                    <li id="logo">
-                        Mineshafter Squared
-                    </li>
-                </ul>
+                <a href="<?php echo $home_link ?>">
+                    <ul>
+                        <li class="active">
+                            <i class="icon-home"></i>
+                            Home
+                        </li>
+                        <li id="logo">
+                            Mineshafter Squared
+                        </li>
+                    </ul>
+                </a>
             </nav>
             <div id="topAd">
                 <script type="text/javascript"><!--

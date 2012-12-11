@@ -12,7 +12,7 @@ breakdown of what is involved with finished items in **bold**
         *   **Group downloads by type (Client, Server, Other, Etc.)**
     *   **Re-create and re-design Downloads Table.**
     *   **Modify database to include type description text**
-    *   Add all the download records
+    *   **Add all the download records**
     *   Add file link locations
     *   Make files downloadable
 

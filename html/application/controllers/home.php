@@ -18,6 +18,11 @@ class Home extends MS2_Controller {
         $this->load->view('home', array("download_groups" => DownloadGroup::all()));
     }
     
+    public function admin()
+    {
+        
+    }
+    
     public function announcements($limit=1, $offset=0)
     {
         $query = array();
