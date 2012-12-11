@@ -6644,6 +6644,9 @@ ul.none {
   list-style: none;
 }
 @media (max-width: 990px) {
+  body {
+    overflow-x: hidden;
+  }
   #content {
     margin-top: 0px;
   }

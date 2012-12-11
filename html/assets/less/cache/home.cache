@@ -62,7 +62,7 @@ section.col {
   article {
     display: block;
     width: auto;
-    margin: 20px 0px;
+    margin: 40px 0px;
   }
 }
-";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1355201270;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1355201300;}s:7:"updated";i:1355201303;}
+";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1355215743;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1355201300;}s:7:"updated";i:1355215747;}
