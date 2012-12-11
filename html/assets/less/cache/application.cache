@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:177360:"article,
+a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:178495:"article,
 aside,
 details,
 figcaption,
@@ -6337,6 +6337,7 @@ code.comment {
 html,
 body {
   background-color: #FFFFFF;
+  padding: 0px;
 }
 #shell-top {
   height: 80px;
@@ -6349,8 +6350,10 @@ body {
   font-size: 1.7em;
   line-height: 1.2em;
   cursor: pointer;
-  width: 150px;
+  position: absolute;
+  width: 154px;
   text-align: center;
+  margin-top: 15px;
 }
 #shell-top #logo:hover {
   background-color: transparent;
@@ -6362,7 +6365,7 @@ body {
   position: fixed;
   width: 100%;
 }
-body>footer {
+body > footer {
   position: fixed;
   bottom: 0px;
   text-align: center;
@@ -6384,10 +6387,24 @@ body>footer {
   height: 90px;
   float: left;
 }
+@media (max-width: 990px) {
+  #shell-top-wrapper {
+    height: 156px;
+  }
+  #shell-top-wrapper #logo {
+    margin-top: 11px;
+  }
+  #shell-top {
+    padding: 0px 20px;
+  }
+  #topAd {
+    margin: 15px 0px 0px 13px;
+  }
+}
 nav i[class^="icon"] {
   background-position: 0 0;
   display: block;
-  margin-top: 26px;
+  margin-top: 23px;
   height: 26px;
 }
 nav i[class="icon-home"] {
@@ -6414,6 +6431,36 @@ nav i[class="icon-user"] {
   width: 23px;
   margin-left: 35.5px;
   background-image: url("../img/glyphicons_user.png");
+}
+@media (max-width: 990px) {
+  nav i[class^="icon"] {
+    margin-top: 20px;
+  }
+  nav i[class="icon-home"] {
+    width: 27px;
+    margin-left: 28.5px;
+    background-image: url("../img/glyphicons_home.png");
+  }
+  nav i[class="icon-list"] {
+    width: 24px;
+    margin-left: 30px;
+    background-image: url("../img/glyphicons_list.png");
+  }
+  nav i[class="icon-group"] {
+    width: 35px;
+    margin-left: 24.5px;
+    background-image: url("../img/glyphicons_group.png");
+  }
+  nav i[class="icon-question-sign"] {
+    width: 26px;
+    margin-left: 29px;
+    background-image: url("../img/glyphicons_question_mark.png");
+  }
+  nav i[class="icon-user"] {
+    width: 23px;
+    margin-left: 30.5px;
+    background-image: url("../img/glyphicons_user.png");
+  }
 }
 nav .horizontal_nav ul li {
   display: inline-block;
@@ -6454,7 +6501,7 @@ nav#main-nav {
   top: auto;
   z-index: 999;
   font-size: 12px;
-  margin: -74px 0px 0px 0px;
+  margin: -47px 0px 0px 0px;
   position: fixed;
   width: 100%;
 }
@@ -6490,11 +6537,14 @@ nav#main-nav #login_wrapper {
   border: none;
   background: transparent;
   margin: 0px 2px;
+  position: absolute;
 }
 nav#main-nav #login_wrapper #login_form {
-  width: 551px;
-  margin-top: 21px;
+  width: 554px;
   height: 89px;
+}
+nav#main-nav #login_wrapper #login_form .btn-link {
+  padding-left: 3px;
 }
 nav#main-nav #login_wrapper #login_form .nav_form_label {
   float: left;
@@ -6523,17 +6573,15 @@ nav ul {
     width: 84px;
     height: 78px;
   }
+  nav#main-nav #nav_list {
+    padding: 0px 20px;
+  }
   nav#main-nav #login_wrapper #login_form {
     width: 450px;
-    margin-top: 11px;
     height: 79px;
   }
   nav#main-nav #login_wrapper #login_form .nav_form_label {
     width: 84px;
-  }
-  nav#main-nav #login_wrapper #login_form .login_section {
-    margin: 10px 10px 0px 0px;
-    float: left;
   }
   nav#main-nav #login_wrapper #login_form .login_section input {
     font-size: 13px;
@@ -6546,7 +6594,14 @@ nav ul {
     font-size: 13px;
   }
   nav#main-nav#main-nav {
-    margin: -53px 0px 0px 0px;
+    margin: -63px 0px 0px 0px;
+  }
+  nav#home_nav {
+    height: 78px;
+  }
+  nav#home_nav ul li {
+    width: 84px;
+    height: 78px;
   }
 }
 ::selection {
@@ -6572,4 +6627,4 @@ section {
 ul.none {
   list-style: none;
 }
-";s:5:"files";a:26:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355026559;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355177203;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355180916;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355174203;}s:7:"updated";i:1355180920;}
+";s:5:"files";a:26:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355026559;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355190883;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355191516;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355188786;}s:7:"updated";i:1355191519;}

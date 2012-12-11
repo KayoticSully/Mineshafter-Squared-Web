@@ -23,7 +23,7 @@
 //-----------------------------------
 @shell-padding: 20px;
 @shell-top-width: 80%;
-@shell-top-margin: (100% - @shell-top-width) / 2;
+@top-side-padding: 20px;
 @shell-bg: #C0C0C0;
 @page-bg: #FFFFFF;
 @shell-top-height: 80px;
@@ -33,6 +33,7 @@
 
 html, body {
     background-color: @page-bg;
+    padding:0px;
 }
 
 #shell-top {
@@ -46,9 +47,10 @@ html, body {
         font-size: 1.7em;
         line-height: 1.2em;
         cursor: pointer;
-        //float:left;
-        width: 150px;
+        position: absolute;
+        width: 154px;
         text-align: center;
+        margin-top:15px;
         
         &:hover {
             background-color: transparent;
@@ -64,7 +66,7 @@ html, body {
     width:100%;
 }
 
-body>footer {
+body > footer {
     position: fixed;
     bottom:0px;
     text-align: center;
@@ -88,4 +90,22 @@ body>footer {
     margin: 20px 0px 0px 13px;
     height: 90px;
     float: left;
+}
+
+@media (max-width: 990px) {
+    #shell-top-wrapper {
+        height: @shell-top-element-height - 20;
+        
+        #logo {
+            margin-top:11px;
+        }
+    }
+    
+    #shell-top {
+        padding: 0px @top-side-padding;
+    }
+    
+    #topAd {
+        margin: 15px 0px 0px 13px;
+    }
 }

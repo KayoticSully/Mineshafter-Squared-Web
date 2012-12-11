@@ -2,10 +2,8 @@ nav {
     i[class^="icon"] {
         background-position: 0 0;
         display: block;
-        margin-top: 26px;
-        //margin-bottom: 5px;
+        margin-top: 23px;
         height: 26px;
-        //line-height: 26px;
     }
     
     i[class="icon-home"] {
@@ -36,5 +34,43 @@ nav {
         width: 23px;
         margin-left: (@nav-width - 23px) / 2px;
         background-image: url("../img/glyphicons_user.png");
+    }
+}
+
+@media(max-width:990px) {
+    nav {
+        i[class^="icon"] {
+            margin-top: 20px;
+        }
+        
+        i[class="icon-home"] {
+            width: 27px;
+            margin-left: (@nav-width - 27px) / 2px - 5;
+            background-image: url("../img/glyphicons_home.png");
+        }
+        
+        i[class="icon-list"] {
+            width: 24px;
+            margin-left: (@nav-width - 24px) / 2px - 5;
+            background-image: url("../img/glyphicons_list.png");
+        }
+        
+        i[class="icon-group"] {
+            width: 35px;
+            margin-left: (@nav-width - 35px) / 2px - 5;
+            background-image: url("../img/glyphicons_group.png");
+        }
+        
+        i[class="icon-question-sign"] {
+            width: 26px;
+            margin-left: (@nav-width - 26px) / 2px - 5;
+            background-image: url("../img/glyphicons_question_mark.png");
+        }
+        
+        i[class="icon-user"] {
+            width: 23px;
+            margin-left: (@nav-width - 23px) / 2px - 5;
+            background-image: url("../img/glyphicons_user.png");
+        }
     }
 }

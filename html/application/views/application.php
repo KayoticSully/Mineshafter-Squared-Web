@@ -27,8 +27,8 @@
                     <input type="password" placeholder="Password" />
                 </div>
                 <div class="login_section">
-                    <input type="submit" value="Login" class="btn" />
-                    <a class="btn" target="_blank" href="http://minecraft.net/resetpassword">lost password?</a>
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                    <a class="btn btn-link" target="_blank" href="http://minecraft.net/resetpassword">Lost Password?</a>
                 </div>
             </div>
         </li>
