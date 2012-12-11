@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:178495:"article,
+a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:178330:"article,
 aside,
 details,
 figcaption,
@@ -6533,34 +6533,30 @@ nav#main-nav #home_nav ul li {
 nav#main-nav ul li:first-child {
   margin-left: 0px;
 }
-nav#main-nav #login_wrapper {
-  border: none;
-  background: transparent;
-  margin: 0px 2px;
+nav#main-nav #login_form {
   position: absolute;
-}
-nav#main-nav #login_wrapper #login_form {
   width: 554px;
-  height: 89px;
+  height: 88px;
+  margin: 0px 7px;
 }
-nav#main-nav #login_wrapper #login_form .btn-link {
+nav#main-nav #login_form .btn-link {
   padding-left: 3px;
 }
-nav#main-nav #login_wrapper #login_form .nav_form_label {
+nav#main-nav #login_form .nav_form_label {
   float: left;
   width: 94px;
   margin: 0px 0px 0px 0px;
 }
-nav#main-nav #login_wrapper #login_form .login_section {
+nav#main-nav #login_form .login_section {
   margin: 10px 10px 0px 0px;
   float: left;
 }
-nav#main-nav #login_wrapper #login_form .login_section input {
+nav#main-nav #login_form .login_section input {
   margin-left: 2px;
   margin-right: 2px;
   display: block;
 }
-nav#main-nav #login_wrapper #login_form .login_section .btn:last-child {
+nav#main-nav #login_form .login_section .btn:last-child {
   margin-top: 9px;
 }
 nav ul {
@@ -6627,4 +6623,4 @@ section {
 ul.none {
   list-style: none;
 }
-";s:5:"files";a:26:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355026559;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355190883;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355191516;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355188786;}s:7:"updated";i:1355191519;}
+";s:5:"files";a:26:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355026559;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355190883;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355192393;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355188786;}s:7:"updated";i:1355192396;}

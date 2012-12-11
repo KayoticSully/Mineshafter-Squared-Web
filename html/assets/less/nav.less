@@ -73,39 +73,34 @@ nav {
             margin-left: 0px;
         }
         
-        #login_wrapper {
-            border: none;
-            background: transparent;
-            margin: 0px 2px;
+        #login_form {
             position: absolute;
+            width: 554px;
+            height:@nav-width - 6;
+            margin: 0px 7px;
             
-            #login_form {
-                width: 554px;
-                height:@nav-width - 5;
+            .btn-link {
+                padding-left: 3px;
+            }
+            
+            .nav_form_label {
+                float: left;
+                width: @nav-width;
+                margin: 0px 0px 0px 0px;
+            }
+            
+            .login_section {
+                margin: 10px 10px 0px 0px;
+                float: left;
                 
-                .btn-link {
-                    padding-left: 3px;
+                input {
+                    margin-left: 2px;
+                    margin-right: 2px;
+                    display: block;
                 }
                 
-                .nav_form_label {
-                    float: left;
-                    width: @nav-width;
-                    margin: 0px 0px 0px 0px;
-                }
-                
-                .login_section {
-                    margin: 10px 10px 0px 0px;
-                    float: left;
-                    
-                    input {
-                        margin-left: 2px;
-                        margin-right: 2px;
-                        display: block;
-                    }
-                    
-                    .btn:last-child {
-                        margin-top: 9px;
-                    }
+                .btn:last-child {
+                    margin-top: 9px;
                 }
             }
         }
