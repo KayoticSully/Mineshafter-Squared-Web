@@ -6533,34 +6533,30 @@ nav#main-nav #home_nav ul li {
 nav#main-nav ul li:first-child {
   margin-left: 0px;
 }
-nav#main-nav #login_wrapper {
-  border: none;
-  background: transparent;
-  margin: 0px 2px;
+nav#main-nav #login_form {
   position: absolute;
-}
-nav#main-nav #login_wrapper #login_form {
   width: 554px;
-  height: 89px;
+  height: 88px;
+  margin: 0px 7px;
 }
-nav#main-nav #login_wrapper #login_form .btn-link {
+nav#main-nav #login_form .btn-link {
   padding-left: 3px;
 }
-nav#main-nav #login_wrapper #login_form .nav_form_label {
+nav#main-nav #login_form .nav_form_label {
   float: left;
   width: 94px;
   margin: 0px 0px 0px 0px;
 }
-nav#main-nav #login_wrapper #login_form .login_section {
+nav#main-nav #login_form .login_section {
   margin: 10px 10px 0px 0px;
   float: left;
 }
-nav#main-nav #login_wrapper #login_form .login_section input {
+nav#main-nav #login_form .login_section input {
   margin-left: 2px;
   margin-right: 2px;
   display: block;
 }
-nav#main-nav #login_wrapper #login_form .login_section .btn:last-child {
+nav#main-nav #login_form .login_section .btn:last-child {
   margin-top: 9px;
 }
 nav ul {
