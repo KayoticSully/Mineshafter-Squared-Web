@@ -23,6 +23,8 @@ Table of Contents
 6.  [JavaScript](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md)
     *   [Autoloaded Files](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md#auto-loaded-files)
     *   [Object Oriented](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md#object-oriented-javascript)
+6.  [Views](Mineshafter-Squared-Web/blob/master/docs/Views.md)
+    *   [Default View](Mineshafter-Squared-Web/blob/master/docs/Views.md#default-view)
 
 Getting Started
 ---------------

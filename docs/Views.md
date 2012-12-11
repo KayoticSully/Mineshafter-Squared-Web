@@ -1,7 +1,7 @@
 Views
 ======
 
-Default Views
+Default View
 --------------
 By default the view file at **views/{controller}/{function}.php** will be used if no other
 view is rendered within the controller's function.  This is a simple convention that is easily
