@@ -6354,6 +6354,7 @@ body {
   width: 154px;
   text-align: center;
   margin-top: 15px;
+  color: #000;
 }
 #shell-top #logo:hover {
   background-color: transparent;
@@ -6441,34 +6442,32 @@ nav i[class="icon-user"] {
   margin-left: 35.5px;
   background-image: url("../img/glyphicons_user.png");
 }
+nav i[class="icon-download"] {
+  width: 26px;
+  margin-left: 34px;
+  background-image: url("../img/glyphicons_download.png");
+}
 @media (max-width: 990px) {
   nav i[class^="icon"] {
     margin-top: 20px;
   }
   nav i[class="icon-home"] {
-    width: 27px;
     margin-left: 28.5px;
-    background-image: url("../img/glyphicons_home.png");
   }
   nav i[class="icon-list"] {
-    width: 24px;
     margin-left: 30px;
-    background-image: url("../img/glyphicons_list.png");
   }
   nav i[class="icon-group"] {
-    width: 35px;
     margin-left: 24.5px;
-    background-image: url("../img/glyphicons_group.png");
   }
   nav i[class="icon-question-sign"] {
-    width: 26px;
     margin-left: 29px;
-    background-image: url("../img/glyphicons_question_mark.png");
   }
   nav i[class="icon-user"] {
-    width: 23px;
     margin-left: 30.5px;
-    background-image: url("../img/glyphicons_user.png");
+  }
+  nav i[class="icon-download"] {
+    margin-left: 29px;
   }
 }
 nav .horizontal_nav ul li {
@@ -6481,8 +6480,11 @@ nav .nav-actions ul li:hover {
   background-color: #E0E0E0;
 }
 nav .nav-actions ul li.active {
-  color: #FFFFFF;
   background-color: #AAAAAA;
+  color: #FFFFFF;
+}
+nav .nav-actions ul li a:hover {
+  text-decoration: none;
 }
 nav#home_nav {
   height: 88px;
@@ -6503,8 +6505,11 @@ nav#home_nav ul li:hover {
   background-color: #E0E0E0;
 }
 nav#home_nav ul li.active {
-  color: #FFFFFF;
   background-color: #AAAAAA;
+  color: #FFFFFF;
+}
+nav#home_nav ul li a:hover {
+  text-decoration: none;
 }
 nav#main-nav {
   top: auto;
@@ -6524,8 +6529,11 @@ nav#main-nav ul li:hover {
   background-color: #E0E0E0;
 }
 nav#main-nav ul li.active {
-  color: #FFFFFF;
   background-color: #AAAAAA;
+  color: #FFFFFF;
+}
+nav#main-nav ul li a:hover {
+  text-decoration: none;
 }
 nav#main-nav #nav_list {
   width: 992px;

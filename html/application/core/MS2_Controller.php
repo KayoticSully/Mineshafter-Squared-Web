@@ -8,6 +8,7 @@
 class MS2_Controller extends CI_Controller {
     protected $shell_view       = 'shell';
     protected $application_view = 'application';
+    protected $admin_view       = 'admin';
     
     protected $assets            = array();
     protected $css              = array();
@@ -74,18 +75,8 @@ class MS2_Controller extends CI_Controller {
     public function _output($output)
     {
         // only ouput full site if controller function is index
-        if ($this->router->method == 'index')
+        if ($this->router->method == 'index' || $this->router->method == 'admin')
         {
-            //----------------------------------------------------
-            // APPLICATION
-            //----------------------------------------------------
-            // This loads the application part of the page.  This
-            // contains the current page's output and all the
-            // navigation for the site.
-            //
-            $application_variables['content'] = $output;
-            $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
-            
             //----------------------------------------------------
             // ASSETS
             //----------------------------------------------------
@@ -115,8 +106,28 @@ class MS2_Controller extends CI_Controller {
                 $file_path = $this->javascript_path . $js_asset . $this->javascript_ext;
                 if(file_exists($file_path))
                 {
-                    $javascript_links .= '<script src="' . $file_path . ASSET_FORCE . '"></script>'."\n";
+                    $javascript_links .= '<script src="/' . $file_path . ASSET_FORCE . '"></script>'."\n";
                 }
+            }
+            
+            //----------------------------------------------------
+            // APPLICATION
+            //----------------------------------------------------
+            // This loads the application part of the page.  This
+            // contains the current page's output and all the
+            // navigation for the site.
+            //
+            $application_variables['content'] = $output;
+            
+            if ($this->router->method == 'index')
+            {
+                $home_link = '/';
+                $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
+            }
+            else
+            {
+                $home_link = '/admin';
+                $application_render = $this->load->view($this->admin_view, $application_variables, TRUE);
             }
             
             //----------------------------------------------------
@@ -127,9 +138,10 @@ class MS2_Controller extends CI_Controller {
             // of a page.  The shell contains the top bar, which
             // includes user login and other user account features.
             //
-            $layout_variables['application'] = $application_render;
-            $layout_variables['css_links'] = $css_links;
-            $layout_variables['javascript_links'] = $javascript_links;
+            $layout_variables['application']        = $application_render;
+            $layout_variables['css_links']          = $css_links;
+            $layout_variables['javascript_links']   = $javascript_links;
+            $layout_variables['home_link']          = $home_link;
             echo $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
     }
@@ -171,15 +183,19 @@ class MS2_Controller extends CI_Controller {
     private function compile_less($asset_name)
     {
         $cache_file = $this->cache_path . $asset_name . $this->cache_ext;
-        
+        $less_file  = $this->less_path . $asset_name . $this->less_ext;
         // see if the cache exists
-        if (file_exists($cache_file))
+        if (file_exists($cache_file)) // see if there is a cache
         {
             $cache = unserialize(file_get_contents($cache_file));
         }
-        else
+        else if (file_exists($less_file)) // make sure less file exists
         {
-            $cache = $this->less_path . $asset_name . $this->less_ext;
+            $cache = $less_file;
+        }
+        else // nothing to do here
+        {
+            return null;
         }
         
         // compile file and check cache
