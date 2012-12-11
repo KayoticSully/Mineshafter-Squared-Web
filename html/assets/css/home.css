@@ -11,7 +11,7 @@ article {
   width: 45%;
   position: relative;
   display: inline-block;
-  margin: 20px 2% 20px 2%;
+  margin: 2%;
   border: 1px solid #000000;
 }
 article header {
@@ -47,5 +47,6 @@ section.col {
   article {
     display: block;
     width: auto;
+    margin: 20px 0px;
   }
 }

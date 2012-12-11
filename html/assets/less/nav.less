@@ -53,7 +53,7 @@ nav {
         top:auto;
         z-index: 999;
         font-size: 12px;
-        margin: -@nav-width/2 - 27 0px 0px 0px;
+        margin: -@nav-width/2 0px 0px 0px;
         position: fixed;
         width: 100%;
         
@@ -77,11 +77,15 @@ nav {
             border: none;
             background: transparent;
             margin: 0px 2px;
+            position: absolute;
             
             #login_form {
-                width: 551px;
-                margin-top: 21px;
+                width: 554px;
                 height:@nav-width - 5;
+                
+                .btn-link {
+                    padding-left: 3px;
+                }
                 
                 .nav_form_label {
                     float: left;
@@ -115,7 +119,6 @@ nav {
 }
 
 @media (max-width: 990px) {
-
     nav {
         &#main-nav {
             ul li {
@@ -123,9 +126,12 @@ nav {
                 height:@nav-width - 16;
             }
             
+            #nav_list {
+                padding: 0px @top-side-padding;
+            }
+            
             #login_wrapper #login_form {
                 width: 450px;
-                margin-top: 11px;
                 height:@nav-width - 15;
                 
                 .nav_form_label {
@@ -133,9 +139,6 @@ nav {
                 }
                 
                 .login_section {
-                    margin: 10px 10px 0px 0px;
-                    float: left;
-                    
                     input {
                         font-size: 13px;
                         padding: 2px 6px;
@@ -151,7 +154,15 @@ nav {
             }
             
             &#main-nav {
-                margin: -@nav-width / 2 - 6 0px 0px 0px;
+                margin: -@nav-width / 2 - 16 0px 0px 0px;
+            }
+        }
+        
+        &#home_nav {
+            height:@nav-width - 16;
+            ul li {
+                width: @nav-width - 10;
+                height:@nav-width - 16;
             }
         }
     }
