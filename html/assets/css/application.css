@@ -6405,6 +6405,10 @@ body > footer {
   #topAd {
     margin: 15px 0px 0px 13px;
   }
+  body > footer {
+    position: static;
+    clear: both;
+  }
 }
 nav i[class^="icon"] {
   background-position: 0 0;
