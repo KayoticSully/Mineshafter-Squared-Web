@@ -6389,10 +6389,15 @@ body > footer {
 }
 @media (max-width: 990px) {
   #shell-top-wrapper {
+    position: static;
     height: 156px;
   }
   #shell-top-wrapper #logo {
     margin-top: 11px;
+  }
+  #shell-application {
+    position: static;
+    margin-top: 20px;
   }
   #shell-top {
     padding: 0px 20px;
@@ -6565,6 +6570,9 @@ nav ul {
   padding: 0px;
 }
 @media (max-width: 990px) {
+  nav#main-nav {
+    position: static;
+  }
   nav#main-nav ul li {
     width: 84px;
     height: 78px;
@@ -6622,4 +6630,9 @@ section {
 }
 ul.none {
   list-style: none;
+}
+@media (max-width: 990px) {
+  #content {
+    margin-top: 0px;
+  }
 }
