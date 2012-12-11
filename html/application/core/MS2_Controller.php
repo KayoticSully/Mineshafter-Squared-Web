@@ -7,12 +7,13 @@
  */
 class MS2_Controller extends CI_Controller {
     protected $shell_view       = 'shell';
-    protected $application_view = 'application';
-    protected $admin_view       = 'admin';
+    protected $application_view = 'layouts/application';
+    protected $admin_view       = 'layouts/admin';
+    protected $variables        = array();
     
-    protected $assets            = array();
+    protected $assets           = array();
     protected $css              = array();
-    protected $javascripts       = array();
+    protected $javascripts      = array();
     
     protected $assets_folder    = 'assets/';
     protected $less_path;
@@ -74,7 +75,29 @@ class MS2_Controller extends CI_Controller {
      */
     public function _output($output)
     {
-        // only ouput full site if controller function is index
+        //----------------------------------------------------
+        // DEFAULT OUTPUT
+        //----------------------------------------------------
+        // By default the view at "views/controller/function.php"
+        // will be loaded.  Any view rendered within the function
+        // completely overrides this behavior.
+        //
+        if (!$output)
+        {
+            $view = $this->router->class . '/' . $this->router->method;
+            
+            if (file_exists(APPPATH.'views/' . $view . '.php'))
+            {
+                $output = $this->load->view($view, $this->variables, TRUE);
+            }
+        }
+        
+        //----------------------------------------------------
+        // SPECIAL METHODS
+        //----------------------------------------------------
+        // There are some special methods that recieve default
+        // behavior.
+        //
         if ($this->router->method == 'index' || $this->router->method == 'admin')
         {
             //----------------------------------------------------
@@ -111,23 +134,21 @@ class MS2_Controller extends CI_Controller {
             }
             
             //----------------------------------------------------
-            // APPLICATION
+            // LAYOUT
             //----------------------------------------------------
-            // This loads the application part of the page.  This
-            // contains the current page's output and all the
-            // navigation for the site.
+            // This loads the layout part of the page.
             //
             $application_variables['content'] = $output;
-            
-            if ($this->router->method == 'index')
-            {
-                $home_link = '/';
-                $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
-            }
-            else
-            {
-                $home_link = '/admin';
-                $application_render = $this->load->view($this->admin_view, $application_variables, TRUE);
+            switch ($this->router->method) {
+                case 'index':
+                    $home_link = '/';
+                    $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
+                break;
+                
+                case 'admin':
+                    $home_link = '/admin';
+                    $application_render = $this->load->view($this->admin_view, $application_variables, TRUE);
+                break;
             }
             
             //----------------------------------------------------

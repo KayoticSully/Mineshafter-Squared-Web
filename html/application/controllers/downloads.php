@@ -7,11 +7,6 @@
  */
 class Downloads extends MS2_Controller {
     
-    public function index()
-    {
-        
-    }
-    
     public function admin()
     {
         
