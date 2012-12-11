@@ -14,8 +14,7 @@ class Home extends MS2_Controller {
     public function index()
     {
         $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'post', 'announcements');
-        
-        $this->load->view('home', array("download_groups" => DownloadGroup::all()));
+        $this->variables = array("download_groups" => DownloadGroup::all());
     }
     
     public function admin()
