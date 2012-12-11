@@ -6572,19 +6572,19 @@ nav ul {
   nav#main-nav #nav_list {
     padding: 0px 20px;
   }
-  nav#main-nav #login_wrapper #login_form {
+  nav#main-nav #login_form {
     width: 450px;
     height: 79px;
   }
-  nav#main-nav #login_wrapper #login_form .nav_form_label {
+  nav#main-nav #login_form .nav_form_label {
     width: 84px;
   }
-  nav#main-nav #login_wrapper #login_form .login_section input {
+  nav#main-nav #login_form .login_section input {
     font-size: 13px;
     padding: 2px 6px;
     margin-bottom: 8px;
   }
-  nav#main-nav #login_wrapper #login_form .login_section .btn:last-child {
+  nav#main-nav #login_form .login_section .btn:last-child {
     margin-top: 0px;
     padding: 2px 6px;
     font-size: 13px;
