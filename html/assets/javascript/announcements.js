@@ -89,7 +89,7 @@
             if (posts == null || (timeout != null && date.getTime() - timeout > timeLimit))
             {
                 $.ajax({
-                    url: '/home/announcements/' + props.limit + '/' + props.offset,
+                    url: '/home/announcements/' + props.limit + '/' + props.offset + '/json',
                     dataType: 'json',
                     context: this,
                     success: props.callback

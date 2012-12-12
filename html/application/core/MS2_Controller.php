@@ -27,6 +27,9 @@ class MS2_Controller extends CI_Controller {
     protected $javascript_ext   = '.js';
     
     protected $less             = NULL;
+    
+    protected $page_cache_key;
+    protected $page_cache_time  = 60; // seconds
 
     /**
      * __construct
@@ -53,6 +56,16 @@ class MS2_Controller extends CI_Controller {
         $this->load->spark('php-activerecord/0.0.2');
         
         //----------------------------------------------------
+        // Setup cache
+        //----------------------------------------------------
+        $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+        
+        if (! $this->cache->apc->is_supported())
+        {
+            $this->load->driver('cache', array('adapter' => 'file'));
+        }
+        
+        //----------------------------------------------------
         // Development setup
         //----------------------------------------------------
         if (ENVIRONMENT == 'development')
@@ -60,6 +73,20 @@ class MS2_Controller extends CI_Controller {
             $this->less = new lessc;
             $this->less->setFormatter('lessjs');
             $this->less->setImportDir($this->less_path);
+        }
+        
+        if (ENVIRONMENT == 'production')
+        {
+            // cache all pages
+            $this->page_cache_key = $this->router->class . '-' . $this->router->method;
+            $page = $this->cache->get($this->page_cache_key);
+            
+            // if page is cached then print it and exit
+            if($page)
+            {
+                echo $page;
+                exit(0);
+            }
         }
     }
     
@@ -164,6 +191,11 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['javascript_links']   = $javascript_links;
             $layout_variables['home_link']          = $home_link;
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
+        }
+        
+        if(ENVIRONMENT == "production")
+        {
+            $this->cache->save($this->page_cache_key, $output, $this->page_cache_time);
         }
         
         echo $output;

@@ -21,15 +21,24 @@ class Home extends MS2_Controller {
         
     }
     
-    public function announcements($limit=1, $offset=0, $type='json')
+    public function announcements($limit=1, $offset=0, $type='html')
     {
         $query = array();
         $query['limit'] = $limit;
         $query['offset'] = $offset;
+        $cache_key = 'tumblr-posts';
         
-        $json = $this->tumblr_request('posts', $query);
-        $tumblr = json_decode($json);
-        $posts  = $tumblr->response->posts;
+        $posts = $this->cache->get($cache_key);
+        
+        if(! $posts)
+        {
+            $json = $this->tumblr_request('posts', $query);
+            $tumblr = json_decode($json);
+            $posts  = $tumblr->response->posts;
+            
+            // cache for the day
+            $this->cache->save($cache_key, $posts, 86400);
+        }
         
         switch ($type)
         {
