@@ -163,8 +163,10 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
             $layout_variables['home_link']          = $home_link;
-            echo $this->load->view($this->shell_view, $layout_variables, TRUE);
+            $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
+        
+        echo $output;
     }
     
     /**

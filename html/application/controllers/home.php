@@ -13,8 +13,7 @@ class Home extends MS2_Controller {
     
     public function index()
     {
-        $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'post', 'announcements');
-        $this->variables = array("download_groups" => DownloadGroup::all());
+        $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'post', 'announcements', 'loadAndCache');
     }
     
     public function admin()
@@ -22,13 +21,26 @@ class Home extends MS2_Controller {
         
     }
     
-    public function announcements($limit=1, $offset=0)
+    public function announcements($limit=1, $offset=0, $type='json')
     {
         $query = array();
         $query['limit'] = $limit;
         $query['offset'] = $offset;
         
-        echo $this->tumblr_request('posts', $query);
+        $json = $this->tumblr_request('posts', $query);
+        $tumblr = json_decode($json);
+        $posts  = $tumblr->response->posts;
+        
+        switch ($type)
+        {
+            case 'json':
+                $this->load->view('json', array('json' => json_encode($posts)));
+            break;
+            
+            case 'html':
+                $this->variables = array('posts' => $posts);
+            break;
+        }
     }
     
     public function phpinfo() {

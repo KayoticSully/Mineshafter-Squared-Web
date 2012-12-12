@@ -11,6 +11,11 @@
  */
 
 (function( $ ){
+    
+    var storage     = 'announcements-posts';
+    var cacheTime   = 'announcements-cache-time';
+    var timeLimit   = 86400000;
+    
     /*-------------------------------------------
      * "Plugin Constructor"
      *-------------------------------------------
@@ -58,9 +63,9 @@
                 return str;
             },
             
-            set : function(data) {
-                for(var post in data.response.posts)
-                    this.addPost(data.response.posts[post]);
+            set : function(posts) {
+                for(var post in posts)
+                    this.addPost(posts[post]);
             }
         });
     }
@@ -74,15 +79,34 @@
             var props = $.extend({
                 limit: 4,
                 offset: 0,
-                callback: this.loadAndRender
+                callback: this.ajaxLoad
             }, options);
             
-            $.ajax({
-                url: '/home/announcements/' + props.limit + '/' + props.offset,
-                dataType: 'json',
-                context: this,
-                success: props.callback
-            });
+            var posts   = JSON.parse(localStorage.getItem(storage));
+            var timeout = localStorage.getItem(cacheTime);
+            var date    = new Date();
+            
+            if (posts == null || (timeout != null && date.getTime() - timeout > timeLimit))
+            {
+                $.ajax({
+                    url: '/home/announcements/' + props.limit + '/' + props.offset,
+                    dataType: 'json',
+                    context: this,
+                    success: props.callback
+                });
+            }
+            else
+            {
+                this.loadAndRender(posts);
+            }
+        },
+        
+        ajaxLoad : function(data) {
+            this.loadAndRender(data);
+            
+            var date = new Date();
+            localStorage.setItem(storage, JSON.stringify(data));
+            localStorage.setItem(cacheTime, date.getTime());
         },
         
         loadAndRender : function(data) {
@@ -96,7 +120,7 @@
             this.blog_posts.push(post);
         },
         
-        render : function()
+        render : function(html)
         {
             this.$this.html(this.posts);
         },
