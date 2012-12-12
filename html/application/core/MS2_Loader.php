@@ -49,10 +49,9 @@ class MS2_Loader extends CI_Loader
         {
             define('SPARKPATH', 'sparks/');
         }
-
-        $this->_is_lt_210 = (is_callable(array('CI_Loader', 'ci_autoloader'))
-                               || is_callable(array('CI_Loader', '_ci_autoloader')));
-
+        
+        $this->_is_lt_210 = (is_callable(array('CI_Loader', 'ci_autoloader')) || is_callable(array('CI_Loader', '_ci_autoloader')));
+        
         parent::__construct();
     }
 
@@ -65,12 +64,12 @@ class MS2_Loader extends CI_Loader
     function initialize()
     {
         parent::initialize();
-
+        
         if(!$this->_is_lt_210)
         {
             $this->ci_autoloader();
         }
-
+        
         return $this;
     }
 
@@ -94,33 +93,33 @@ class MS2_Loader extends CI_Loader
                 $this->spark($s);
             }
         }
-
+        
         $spark = ltrim($spark, '/');
         $spark = rtrim($spark, '/');
-
+        
         $spark_path = SPARKPATH . $spark . '/';
         $parts      = explode('/', $spark);
         $spark_slug = strtolower($parts[0]);
-
+        
         # If we've already loaded this spark, bail
         if(array_key_exists($spark_slug, $this->_ci_loaded_sparks))
         {
             return true;
         }
-
+        
         # Check that it exists. CI Doesn't check package existence by itself
         if(!file_exists($spark_path))
         {
             show_error("Cannot find spark path at $spark_path");
         }
-
+        
         if(count($parts) == 2)
         {
             $this->_ci_loaded_sparks[$spark_slug] = $spark;
         }
-
+        
         $this->add_package_path($spark_path);
-
+        
         foreach($autoload as $type => $read)
         {
             if($type == 'library')
@@ -136,35 +135,35 @@ class MS2_Loader extends CI_Loader
             else
                 show_error ("Could not autoload object of type '$type' ($read) for spark $spark");
         }
-
+        
         // Looks for a spark's specific autoloader
         $this->ci_autoloader($spark_path);
-
+        
         return true;
     }
-
-	/**
-	 * Pre-CI 2.0.3 method for backward compatility.
-	 *
-	 * @param null $basepath
-	 * @return void
-	 */
-	function _ci_autoloader($basepath = NULL)
-	{
-		$this->ci_autoloader($basepath);
-	}
-
-	/**
-	 * Specific Autoloader (99% ripped from the parent)
-	 *
-	 * The config/autoload.php file contains an array that permits sub-systems,
-	 * libraries, and helpers to be loaded automatically.
-	 *
-	 * @param array|null $basepath
-	 * @return void
-	 */
-	function ci_autoloader($basepath = NULL)
-	{
+    
+    /**
+     * Pre-CI 2.0.3 method for backward compatility.
+     *
+     * @param null $basepath
+     * @return void
+     */
+    function _ci_autoloader($basepath = NULL)
+    {
+        $this->ci_autoloader($basepath);
+    }
+        
+    /**
+     * Specific Autoloader (99% ripped from the parent)
+     *
+     * The config/autoload.php file contains an array that permits sub-systems,
+     * libraries, and helpers to be loaded automatically.
+     *
+     * @param array|null $basepath
+     * @return void
+     */
+    function ci_autoloader($basepath = NULL)
+    {
         if($basepath !== NULL)
         {
             $autoload_path = $basepath.'config/autoload'.EXT;
@@ -173,19 +172,19 @@ class MS2_Loader extends CI_Loader
         {
             $autoload_path = APPPATH.'config/autoload'.EXT;
         }
-
+        
         if(! file_exists($autoload_path))
         {
             return FALSE;
         }
-
-		include($autoload_path);
-
-		if ( ! isset($autoload))
-		{
-			return FALSE;
-		}
-
+        
+        include($autoload_path);
+            
+        if ( ! isset($autoload))
+        {
+            return FALSE;
+        }
+        
         if($this->_is_lt_210 || $basepath !== NULL)
         {
             // Autoload packages
@@ -197,16 +196,16 @@ class MS2_Loader extends CI_Loader
                 }
             }
         }
-
+        
         // Autoload sparks
-		if (isset($autoload['sparks']))
-		{
-			foreach ($autoload['sparks'] as $spark)
-			{
-				$this->spark($spark);
-			}
-		}
-
+        if (isset($autoload['sparks']))
+        {
+            foreach ($autoload['sparks'] as $spark)
+            {
+                $this->spark($spark);
+            }
+        }
+        
         if($this->_is_lt_210 || $basepath !== NULL)
         {
             if (isset($autoload['config']))
@@ -221,7 +220,7 @@ class MS2_Loader extends CI_Loader
                     }
                 }
             }
-
+            
             // Autoload helpers and languages
             foreach (array('helper', 'language') as $type)
             {
@@ -230,14 +229,14 @@ class MS2_Loader extends CI_Loader
                     $this->$type($autoload[$type]);
                 }
             }
-
+            
             // A little tweak to remain backward compatible
             // The $autoload['core'] item was deprecated
             if ( ! isset($autoload['libraries']) AND isset($autoload['core']))
             {
                 $autoload['libraries'] = $autoload['core'];
             }
-
+            
             // Load libraries
             if (isset($autoload['libraries']) AND count($autoload['libraries']) > 0)
             {
@@ -247,19 +246,19 @@ class MS2_Loader extends CI_Loader
                     $this->database();
                     $autoload['libraries'] = array_diff($autoload['libraries'], array('database'));
                 }
-
+                
                 // Load all other libraries
                 foreach ($autoload['libraries'] as $item)
                 {
                     $this->library($item);
                 }
             }
-
+                
             // Autoload models
             if (isset($autoload['model']))
             {
                 $this->model($autoload['model']);
             }
         }
-	}
+    }
 }

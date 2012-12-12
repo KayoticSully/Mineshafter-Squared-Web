@@ -11,6 +11,11 @@ class Downloads extends MS2_Controller {
     {
         
     }
+    
+    public function html()
+    {
+        $this->variables = array("download_groups" => DownloadGroup::all());
+    }
 }
 
 /* End of file home.php */

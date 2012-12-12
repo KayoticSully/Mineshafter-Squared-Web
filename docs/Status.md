@@ -39,6 +39,7 @@ Finished Features
 These are the features that have been "finished" they may still need tweaking
 but they are release-ready.
 
+*   **Announcements and Downloads now cache using localStorage** (12/11/2012)
 *   **Announcements** (12/10/2012)
     *   **Get feed from Tumblr**
     *   **Display feed from Tunblr**
