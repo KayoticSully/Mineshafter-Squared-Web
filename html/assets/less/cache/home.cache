@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:21:"assets/less/home.less";s:8:"compiled";s:1128:".ellipsis {
+a:4:{s:4:"root";s:21:"assets/less/home.less";s:8:"compiled";s:1129:".ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -49,7 +49,7 @@ article .download .links li {
 article footer {
   border-top: 1px solid #000000;
   background-color: #c0c0c0;
-  text-align: right;
+  text-align: center;
   padding: 0px 5px;
   font-size: 12px;
 }
@@ -65,4 +65,4 @@ section.col {
     margin: 40px 0px;
   }
 }
-";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1355215743;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1355201300;}s:7:"updated";i:1355217982;}
+";s:5:"files";a:2:{s:57:"S:\Git\Mineshafter-Squared-Web\html\assets\less\home.less";i:1355367320;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\utils.less";i:1355201300;}s:7:"updated";i:1355367387;}

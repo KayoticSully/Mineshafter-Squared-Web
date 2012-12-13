@@ -17,7 +17,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <footer class="center">
+        <footer>
             Version <?php echo $group->version; ?>
         </footer>
     </article>
