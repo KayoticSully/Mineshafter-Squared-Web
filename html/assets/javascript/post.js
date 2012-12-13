@@ -52,7 +52,7 @@ Post.prototype = {
                     this.body +
                 '</div>' +
                 '<footer>' +
-                    date.toLocaleString() +
+                    date.toGMTString() +
                 '</footer>' +
             '</article>';
     },
