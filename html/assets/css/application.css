@@ -175,6 +175,79 @@ a:hover {
   -moz-border-radius: 500px;
   border-radius: 500px;
 }
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container-fluid {
+  padding-right: 20px;
+  padding-left: 20px;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+}
+.container-fluid:before,
+.container-fluid:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container-fluid:after {
+  clear: both;
+}
+.container-fluid:before,
+.container-fluid:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container-fluid:after {
+  clear: both;
+}
 p {
   margin: 0 0 10px;
 }
@@ -6380,7 +6453,8 @@ body > footer {
 }
 #shell-application {
   position: absolute;
-  margin-top: 176px;
+  margin-top: 223px;
+  width: 100%;
 }
 #topAd {
   width: 728px;
@@ -6515,7 +6589,7 @@ nav#main-nav {
   top: auto;
   z-index: 999;
   font-size: 12px;
-  margin: -47px 0px 0px 0px;
+  margin: -94px 0px 0px 0px;
   position: fixed;
   width: 100%;
 }
@@ -6631,11 +6705,6 @@ nav ul {
 ::webkit-selection {
   background-color: #E13300;
   color: #FFFFFF;
-}
-#content {
-  background: #FFFFFF;
-  padding: 0px 20px;
-  margin-top: 47px;
 }
 section {
   padding: 10px 0px;

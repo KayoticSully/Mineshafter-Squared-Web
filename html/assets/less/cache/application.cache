@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:178567:"article,
+a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:179587:"article,
 aside,
 details,
 figcaption,
@@ -174,6 +174,79 @@ a:hover {
   -webkit-border-radius: 500px;
   -moz-border-radius: 500px;
   border-radius: 500px;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after {
+  clear: both;
+}
+.container-fluid {
+  padding-right: 20px;
+  padding-left: 20px;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+}
+.container-fluid:before,
+.container-fluid:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container-fluid:after {
+  clear: both;
+}
+.container-fluid:before,
+.container-fluid:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container-fluid:after {
+  clear: both;
 }
 p {
   margin: 0 0 10px;
@@ -6380,7 +6453,8 @@ body > footer {
 }
 #shell-application {
   position: absolute;
-  margin-top: 176px;
+  margin-top: 223px;
+  width: 100%;
 }
 #topAd {
   width: 728px;
@@ -6515,7 +6589,7 @@ nav#main-nav {
   top: auto;
   z-index: 999;
   font-size: 12px;
-  margin: -47px 0px 0px 0px;
+  margin: -94px 0px 0px 0px;
   position: fixed;
   width: 100%;
 }
@@ -6632,11 +6706,6 @@ nav ul {
   background-color: #E13300;
   color: #FFFFFF;
 }
-#content {
-  background: #FFFFFF;
-  padding: 0px 20px;
-  margin-top: 47px;
-}
 section {
   padding: 10px 0px;
 }
@@ -6651,4 +6720,4 @@ ul.none {
     margin-top: 0px;
   }
 }
-";s:5:"files";a:26:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355216839;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355213720;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1354976944;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355213878;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355214415;}s:7:"updated";i:1355217982;}
+";s:5:"files";a:27:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355395408;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355395258;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1355394948;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\layouts.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355395321;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355214415;}s:7:"updated";i:1355395448;}
