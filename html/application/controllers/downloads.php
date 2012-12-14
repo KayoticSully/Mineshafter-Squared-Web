@@ -9,7 +9,7 @@ class Downloads extends MS2_Controller {
     
     public function admin()
     {
-        
+        $this->variables = array("download_groups" => DownloadGroup::all());
     }
     
     public function html()

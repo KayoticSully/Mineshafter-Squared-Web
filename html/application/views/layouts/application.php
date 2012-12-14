@@ -43,6 +43,6 @@
     </ul>
 </nav>
 <?php //$this->load->view('page-nav'); ?>
-<div id="content" data-spy="scroll" data-target="#page-nav">
+<div class="clearfix">
     <?php echo $content; ?>
 </div>

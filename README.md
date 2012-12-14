@@ -37,6 +37,10 @@ To get this project up and running on a Windows machine you will need to install
 
 [NGINX](http://www.nginx.org/) is the web server of choice and this repo comes with a fully configured NGINX environment. Just double click the **start-server.js** file and navigate to _http://localhost_ in your browser.
 
+### Once The Server is Started
+ **Site:** [localhost](http://localhost)
+ **Database Management:** [phpMyAdmin](http://localhost:8080)
+
 Contributing
 ------------
 If you want to help develop the site there are a few things I would ask you to do / follow:
