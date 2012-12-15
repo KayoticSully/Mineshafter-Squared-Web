@@ -1,6 +1,6 @@
 <nav id="main-nav">
     <ul id="nav_list">
-        <li>
+        <li <?php if($active_menu == 'downloads') echo 'class="active"'; ?>>
             <a href="/downloads/admin">
                 <i class="icon-download"></i>
                 Downloads
@@ -57,6 +57,6 @@
     </ul>
 </nav>
 <?php //$this->load->view('page-nav'); ?>
-<div id="content" data-spy="scroll" data-target="#page-nav">
+<div class="clearfix">
     <?php echo $content; ?>
 </div>
