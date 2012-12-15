@@ -130,3 +130,18 @@ Version: '5.5.28'  socket: ''  port: 3306  MySQL Community Server (GPL)
 121215 16:02:53 [Note] Event Scheduler: Loaded 0 events
 121215 16:02:53 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: ready for connections.
 Version: '5.5.28'  socket: ''  port: 3306  MySQL Community Server (GPL)
+121215 18:39:14 [Note] Plugin 'FEDERATED' is disabled.
+121215 18:39:14 InnoDB: The InnoDB memory heap is disabled
+121215 18:39:14 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+121215 18:39:14 InnoDB: Compressed tables use zlib 1.2.3
+121215 18:39:14 InnoDB: Initializing buffer pool, size = 107.0M
+121215 18:39:15 InnoDB: Completed initialization of buffer pool
+121215 18:39:15 InnoDB: highest supported file format is Barracuda.
+121215 18:39:15  InnoDB: Waiting for the background threads to start
+121215 18:39:16 InnoDB: 1.1.8 started; log sequence number 1822486
+121215 18:39:16 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+121215 18:39:16 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+121215 18:39:16 [Note] Server socket created on IP: '0.0.0.0'.
+121215 18:39:16 [Note] Event Scheduler: Loaded 0 events
+121215 18:39:16 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: ready for connections.
+Version: '5.5.28'  socket: ''  port: 3306  MySQL Community Server (GPL)
