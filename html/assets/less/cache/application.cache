@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:180866:"article,
+a:4:{s:4:"root";s:28:"assets/less/application.less";s:8:"compiled";s:187027:"article,
 aside,
 details,
 figcaption,
@@ -1697,6 +1697,268 @@ legend + .control-group {
 }
 .form-horizontal .form-actions {
   padding-left: 180px;
+}
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table th {
+  font-weight: bold;
+}
+.table thead th {
+  vertical-align: bottom;
+}
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+.table tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+}
+.table-bordered {
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  border-left: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid #ddd;
+}
+.table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+.table-bordered thead:first-child tr:first-child th:first-child,
+.table-bordered tbody:first-child tr:first-child td:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+.table-bordered thead:first-child tr:first-child th:last-child,
+.table-bordered tbody:first-child tr:first-child td:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+}
+.table-bordered thead:last-child tr:last-child th:first-child,
+.table-bordered tbody:last-child tr:last-child td:first-child,
+.table-bordered tfoot:last-child tr:last-child td:first-child {
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+}
+.table-bordered thead:last-child tr:last-child th:last-child,
+.table-bordered tbody:last-child tr:last-child td:last-child,
+.table-bordered tfoot:last-child tr:last-child td:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+.table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+.table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+}
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #f5f5f5;
+}
+table td[class*="span"],
+table th[class*="span"],
+.row-fluid table td[class*="span"],
+.row-fluid table th[class*="span"] {
+  display: table-cell;
+  float: none;
+  margin-left: 0;
+}
+.table td.span1,
+.table th.span1 {
+  float: none;
+  width: 44px;
+  margin-left: 0;
+  float: none;
+  width: 44px;
+  margin-left: 0;
+}
+.table td.span2,
+.table th.span2 {
+  float: none;
+  width: 124px;
+  margin-left: 0;
+  float: none;
+  width: 124px;
+  margin-left: 0;
+}
+.table td.span3,
+.table th.span3 {
+  float: none;
+  width: 204px;
+  margin-left: 0;
+  float: none;
+  width: 204px;
+  margin-left: 0;
+}
+.table td.span4,
+.table th.span4 {
+  float: none;
+  width: 284px;
+  margin-left: 0;
+  float: none;
+  width: 284px;
+  margin-left: 0;
+}
+.table td.span5,
+.table th.span5 {
+  float: none;
+  width: 364px;
+  margin-left: 0;
+  float: none;
+  width: 364px;
+  margin-left: 0;
+}
+.table td.span6,
+.table th.span6 {
+  float: none;
+  width: 444px;
+  margin-left: 0;
+  float: none;
+  width: 444px;
+  margin-left: 0;
+}
+.table td.span7,
+.table th.span7 {
+  float: none;
+  width: 524px;
+  margin-left: 0;
+  float: none;
+  width: 524px;
+  margin-left: 0;
+}
+.table td.span8,
+.table th.span8 {
+  float: none;
+  width: 604px;
+  margin-left: 0;
+  float: none;
+  width: 604px;
+  margin-left: 0;
+}
+.table td.span9,
+.table th.span9 {
+  float: none;
+  width: 684px;
+  margin-left: 0;
+  float: none;
+  width: 684px;
+  margin-left: 0;
+}
+.table td.span10,
+.table th.span10 {
+  float: none;
+  width: 764px;
+  margin-left: 0;
+  float: none;
+  width: 764px;
+  margin-left: 0;
+}
+.table td.span11,
+.table th.span11 {
+  float: none;
+  width: 844px;
+  margin-left: 0;
+  float: none;
+  width: 844px;
+  margin-left: 0;
+}
+.table td.span12,
+.table th.span12 {
+  float: none;
+  width: 924px;
+  margin-left: 0;
+  float: none;
+  width: 924px;
+  margin-left: 0;
+}
+.table tbody tr.success td {
+  background-color: #dff0d8;
+}
+.table tbody tr.error td {
+  background-color: #f2dede;
+}
+.table tbody tr.warning td {
+  background-color: #fcf8e3;
+}
+.table tbody tr.info td {
+  background-color: #d9edf7;
+}
+.table-hover tbody tr.success:hover td {
+  background-color: #d0e9c6;
+}
+.table-hover tbody tr.error:hover td {
+  background-color: #ebcccc;
+}
+.table-hover tbody tr.warning:hover td {
+  background-color: #faf2cc;
+}
+.table-hover tbody tr.info:hover td {
+  background-color: #c4e3f3;
 }
 [class^="icon-"],
 [class*=" icon-"] {
@@ -6782,4 +7044,4 @@ ul li.active a {
     margin-top: 0px;
   }
 }
-";s:5:"files";a:29:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355535388;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355395258;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1355545044;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\layouts.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\wells.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\utilities.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355395321;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355214415;}s:7:"updated";i:1355545049;}
+";s:5:"files";a:30:{s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\application.less";i:1355535388;s:58:"S:\Git\Mineshafter-Squared-Web\html\assets\less\shell.less";i:1355395258;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap.less";i:1355547385;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\reset.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\variables.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\mixins.less";i:1351652396;s:74:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\scaffolding.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\layouts.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\type.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\code.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\forms.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\tables.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\sprites.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\dropdowns.less";i:1351652396;s:68:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\wells.less";i:1351652396;s:70:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\buttons.less";i:1351652396;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navs.less";i:1351652396;s:69:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\navbar.less";i:1351652396;s:73:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-utilities.less";i:1351652396;s:84:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-1200px-min.less";i:1351652396;s:85:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-768px-979px.less";i:1351652396;s:83:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-767px-max.less";i:1355026992;s:80:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\responsive-navbar.less";i:1351652396;s:72:"S:\Git\Mineshafter-Squared-Web\html\assets\less\bootstrap\utilities.less";i:1351652396;s:59:"S:\Git\Mineshafter-Squared-Web\html\assets\less\colors.less";i:1354938065;s:64:"S:\Git\Mineshafter-Squared-Web\html\assets\less\development.less";i:1354938066;s:67:"S:\Git\Mineshafter-Squared-Web\html\assets\less\text-selection.less";i:1354938065;s:56:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav.less";i:1355395321;s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\nav-icons.less";i:1355214415;}s:7:"updated";i:1355547389;}
