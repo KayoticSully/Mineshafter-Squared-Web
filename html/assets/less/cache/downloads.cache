@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:26:"assets/less/downloads.less";s:8:"compiled";s:164:".container {
+a:4:{s:4:"root";s:26:"assets/less/downloads.less";s:8:"compiled";s:238:".container {
   margin-top: 20px;
 }
 .loading {
@@ -6,4 +6,9 @@ a:4:{s:4:"root";s:26:"assets/less/downloads.less";s:8:"compiled";s:164:".contain
   background-repeat: no-repeat;
   background-position: right;
 }
-";s:5:"files";a:1:{s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\downloads.less";i:1355542188;}s:7:"updated";i:1355542190;}
+#description {
+  height: 175px;
+  min-width: 425px;
+  max-width: 675px;
+}
+";s:5:"files";a:1:{s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\downloads.less";i:1355545237;}s:7:"updated";i:1355545240;}

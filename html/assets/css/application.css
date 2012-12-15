@@ -6419,6 +6419,24 @@ input[type="submit"].btn.btn-mini {
     overflow: visible !important;
   }
 }
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.invisible {
+  visibility: hidden;
+}
+.affix {
+  position: fixed;
+}
 .bg-graphite {
   background-color: #2E2E2E;
   color: #FFFFFF;
