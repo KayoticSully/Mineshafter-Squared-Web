@@ -36,10 +36,10 @@
             if(cache == null || (time - timeout > timeLimit))
             {
                 $.ajax({
-                    url: href,
-                    dataType: 'html',
-                    context: this,
-                    success: ajaxLoad
+                    url         : href,
+                    dataType    : 'html',
+                    context     : this,
+                    success     : ajaxLoad
                 });
             }
             else

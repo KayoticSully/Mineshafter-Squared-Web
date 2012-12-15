@@ -8,4 +8,9 @@
 class DownloadGroup extends ActiveRecord\Model {
     static $table_name = 'download_groups';
     static $has_many = array(array('downloads'));
+    
+    public function edit_link()
+    {
+        return '/downloads/edit_group/' . str_replace(' ', '_', $this->name);
+    }
 }
