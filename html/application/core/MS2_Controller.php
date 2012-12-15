@@ -77,8 +77,15 @@ class MS2_Controller extends CI_Controller {
         
         if (ENVIRONMENT == 'production')
         {
+            $cache_key = str_replace('/', '-', $this->router->uri->uri_string);
+            
+            if (trim($cache_key) == '')
+            {
+               $cache_key = "home"; 
+            }
+            
             // cache all pages
-            $this->page_cache_key = $this->router->class . '-' . $this->router->method;
+            $this->page_cache_key = $cache_key;
             $page = $this->cache->get($this->page_cache_key);
             
             // if page is cached then print it and exit
