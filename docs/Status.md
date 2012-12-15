@@ -16,9 +16,9 @@ breakdown of what is involved with finished items in **bold**
     *   Add file link locations
     *   Make files downloadable
 *   Downloads Admin
-    *   Edit Downloads
+    *   **Edit Downloads**
     *   Add New Downloads
-    *   Delete Downloads
+    *   **Delete Downloads**
 *   User Login
     *   Login with Minecraft Account
     *   Login with Mojang Account

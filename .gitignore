@@ -3,3 +3,6 @@
 *.old.*
 temp
 logs
+
+html/application/cache/*
+html/assets/less/cache/*
