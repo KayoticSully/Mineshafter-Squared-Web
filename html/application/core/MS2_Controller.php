@@ -77,8 +77,15 @@ class MS2_Controller extends CI_Controller {
         
         if (ENVIRONMENT == 'production')
         {
+            $cache_key = str_replace('/', '-', $this->router->uri->uri_string);
+            
+            if (trim($cache_key) == '')
+            {
+               $cache_key = "home"; 
+            }
+            
             // cache all pages
-            $this->page_cache_key = $this->router->class . '-' . $this->router->method;
+            $this->page_cache_key = $cache_key;
             $page = $this->cache->get($this->page_cache_key);
             
             // if page is cached then print it and exit
@@ -165,7 +172,9 @@ class MS2_Controller extends CI_Controller {
             //----------------------------------------------------
             // This loads the layout part of the page.
             //
-            $application_variables['content'] = $output;
+            $application_variables['content']       = $output;
+            $application_variables['active_menu']   = $this->router->class;
+            
             switch ($this->router->method) {
                 case 'index':
                     $home_link = '/';
@@ -190,6 +199,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
             $layout_variables['home_link']          = $home_link;
+            $layout_variables['active_menu']        = $this->router->class;
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
         

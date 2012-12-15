@@ -1,0 +1,35 @@
+.container {
+  margin-top: 20px;
+}
+.loading {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.loading_link a,
+.loading_link a:hover {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.loading_legend {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position: left;
+  display: inline-block;
+  width: 200px;
+  margin-left: 15px;
+}
+#description {
+  height: 175px;
+  min-width: 425px;
+  max-width: 675px;
+}
+.file-action {
+  cursor: pointer;
+  margin: 0 5px;
+}
+.group-action {
+  margin: 0px 0px 5px 15px;
+}

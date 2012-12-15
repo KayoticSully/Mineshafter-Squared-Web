@@ -13,7 +13,7 @@
             <nav id="home_nav">
                 <a href="<?php echo $home_link ?>">
                     <ul>
-                        <li class="active">
+                        <li <?php if($active_menu == 'home') echo 'class="active"'; ?>>
                             <i class="icon-home"></i>
                             Home
                         </li>
