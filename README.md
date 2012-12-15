@@ -44,7 +44,8 @@ To get this project up and running on a Windows machine you will need to install
 Contributing
 ------------
 If you want to help develop the site there are a few things I would ask you to do / follow:
-*   __[Follow The Code Igniter Style Guide](http://ellislab.com/codeigniter/user-guide/general/styleguide.html)__ - This is a very good clean coding style and want to keep this project as readable and maintainable as possible.
+*   __[Follow The Code Igniter Style Guide for PHP](http://ellislab.com/codeigniter/user-guide/general/styleguide.html)__ - This is a very good clean coding style and want to keep this project as readable and maintainable as possible.
+*   __[Follow the idiomatic.js Style Guide for JavaScript](https://github.com/rwldrn/idiomatic.js)__ - This is another great read for keeping JavaScript style consistent.  When in doubt, follow what this guide says.
 *   __Comment Everything__ - Comments help everyone understand what you did, how, and why.  Please try to leave useful comments and keep with the commenting style of the rest of the project.
 *   __Create Issues__ - If you find a bug, or have an idea for a feature, please create a GitHub Issue for it.  This will help us keep track of everything that is important in maintaining and evolving the site and service.
 *   __Update Documentation__ - If you find an area of the documentation that is hard to follow or is misleading please add to or refine the document.  Also make sure to update documentation for anything you change or add.

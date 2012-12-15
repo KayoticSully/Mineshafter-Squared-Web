@@ -6,15 +6,18 @@
                     Download Groups
                 </li>
                 <?php foreach($download_groups as $group): ?>
-                    <li>
-                        <a href="#">
+                    <li class="group">
+                        <a href="<?php echo $group->edit_link(); ?>">
                             <?php echo $group->name; ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </div>
-        <div class="span10">
+        <div id="app-body" class="span9">
+            <h4>
+                Welcome to the downloads manager.  Select a group to the left to get started.
+            </h4>
         </div>
     </div>
 </div>

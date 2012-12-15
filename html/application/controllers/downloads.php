@@ -16,6 +16,14 @@ class Downloads extends MS2_Controller {
     {
         $this->variables = array("download_groups" => DownloadGroup::all());
     }
+    
+    public function edit_group($group_name)
+    {
+        $group_name = str_replace('_', ' ', $group_name);
+        $group = DownloadGroup::find_by_name($group_name);
+        
+        $this->variables = array("group" => $group);
+    }
 }
 
 /* End of file home.php */

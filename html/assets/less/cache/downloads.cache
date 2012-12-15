@@ -1,4 +1,9 @@
-a:4:{s:4:"root";s:26:"assets/less/downloads.less";s:8:"compiled";s:35:".container {
+a:4:{s:4:"root";s:26:"assets/less/downloads.less";s:8:"compiled";s:164:".container {
   margin-top: 20px;
 }
-";s:5:"files";a:1:{s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\downloads.less";i:1355534657;}s:7:"updated";i:1355534660;}
+.loading {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+";s:5:"files";a:1:{s:62:"S:\Git\Mineshafter-Squared-Web\html\assets\less\downloads.less";i:1355542188;}s:7:"updated";i:1355542190;}
