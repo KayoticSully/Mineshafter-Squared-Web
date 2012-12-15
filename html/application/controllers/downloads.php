@@ -24,6 +24,42 @@ class Downloads extends MS2_Controller {
         
         $this->variables = array("group" => $group);
     }
+    
+    public function save_file($id)
+    {
+        $file = Download::find_by_id($id);
+        $file->name = trim($this->input->post('name'));
+        $file->link = trim($this->input->post('link'));
+        
+        if ($file->save())
+            echo "true";
+        else
+            echo "false";
+    }
+    
+    public function delete_file($id)
+    {
+        $file = Download::find_by_id($id);
+        
+        if($file->delete())
+            echo "true";
+        else
+            echo "false";
+    }
+    
+    public function save_group($id)
+    {
+        $group = DownloadGroup::find_by_id($id);
+        
+        $group->name = trim($this->input->post('name'));;
+        $group->version = trim($this->input->post('version'));
+        $group->description = trim($this->input->post('description'));
+        
+        if ($group->save())
+            echo "true";
+        else
+            echo "false";
+    }
 }
 
 /* End of file home.php */
