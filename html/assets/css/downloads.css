@@ -4,12 +4,18 @@
 .loading {
   background-image: url('/assets/img/list-load.gif');
   background-repeat: no-repeat;
+  background-position: left;
+}
+.loading_link a,
+.loading_link a:hover {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
   background-position: right;
 }
 .loading_legend {
   background-image: url('/assets/img/list-load.gif');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: left;
   background-position: left;
   display: inline-block;
   width: 200px;

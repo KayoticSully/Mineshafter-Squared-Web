@@ -32,7 +32,7 @@ function select_group( event )
     event.preventDefault();
     
     // display feedback for loading 
-    $(this).addClass('loading');
+    $(this).addClass('loading_link');
     
     // load page content for that group
     $.ajax({
@@ -44,7 +44,7 @@ function select_group( event )
             $('#app-body').html(html);
             
             // visually select group
-            $(group_class).removeClass('loading active');
+            $(group_class).removeClass('loading_link active');
             $(this).addClass('active');
             
             // reset events
