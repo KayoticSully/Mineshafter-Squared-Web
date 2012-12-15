@@ -165,7 +165,9 @@ class MS2_Controller extends CI_Controller {
             //----------------------------------------------------
             // This loads the layout part of the page.
             //
-            $application_variables['content'] = $output;
+            $application_variables['content']       = $output;
+            $application_variables['active_menu']   = $this->router->class;
+            
             switch ($this->router->method) {
                 case 'index':
                     $home_link = '/';
@@ -190,6 +192,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
             $layout_variables['home_link']          = $home_link;
+            $layout_variables['active_menu']        = $this->router->class;
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
         
