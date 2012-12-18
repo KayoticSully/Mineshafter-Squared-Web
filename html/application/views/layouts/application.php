@@ -25,7 +25,7 @@
             </a>
         </li>
         <li id="login_form">
-            <form action="#" method="GET">
+            <form action="/auth/login" method="GET">
                 <div class="nav_form_label">
                     <i class="icon-user"></i>
                     Login
@@ -43,6 +43,6 @@
     </ul>
 </nav>
 <?php //$this->load->view('page-nav'); ?>
-<div class="clearfix">
+<div id="site-body" class="clearfix">
     <?php echo $content; ?>
 </div>
