@@ -25,14 +25,14 @@
             </a>
         </li>
         <li id="login_form">
-            <form action="/auth/login" method="GET">
+            <form action="/auth/login" method="POST">
                 <div class="nav_form_label">
                     <i class="icon-user"></i>
                     Login
                 </div>
                 <div class="login_section">
-                    <input type="text" placeholder="Username" />
-                    <input type="password" placeholder="Password" />
+                    <input type="text" name="username" placeholder="Username" />
+                    <input type="password" name="password" placeholder="Password" />
                 </div>
                 <div class="login_section">
                     <input type="submit" value="Login" class="btn btn-primary" />
