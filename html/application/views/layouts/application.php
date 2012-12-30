@@ -24,20 +24,21 @@
                 Community
             </a>
         </li>
-        <li id="login_form">
-            <form action="/auth/login" method="POST">
+        <li id="login_form_wrapper">
+            <form action="/auth/login" method="POST" id="login_form">
                 <div class="nav_form_label">
                     <i class="icon-user"></i>
                     Login
                 </div>
                 <div class="login_section">
-                    <input type="text" name="username" placeholder="Username" />
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="text" id="username" name="username" placeholder="Username" />
+                    <input type="password" id="password" name="password" placeholder="Password" />
                 </div>
                 <div class="login_section">
-                    <input type="submit" value="Login" class="btn btn-primary" />
+                    <input type="submit" value="Login" class="btn btn-small btn-primary" />
                     <a class="btn btn-link" target="_blank" href="http://minecraft.net/resetpassword">Lost Password?</a>
                 </div>
+                <div class="login_section login_load hide">&nbsp;</div>
             </form>
         </li>
     </ul>
