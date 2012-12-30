@@ -36,6 +36,7 @@ class Auth extends MS2_Controller {
             switch ($user)
             {
                 case BAD_USER:
+                    // attempt to add new user
                     echo $this->addNewUser($username, $password);
                 break;
                 
@@ -75,26 +76,25 @@ class Auth extends MS2_Controller {
      */
     private function addNewUser($username, $password)
     {
+        // query MCNet
         $mcnetResponse = $this->queryMCNet($username, $password);
-        echo $mcnetResponse;
-        //echo preg_match($this->premium_regex($username), $mcnetResponse);
-        /*
+        
+        // find a match for the response
         if (preg_match($this->migration_regex, $mcnetResponse) == 1)
         {
             // migration
-            echo "migration";
+            return "migration";
         }
         else if (preg_match($this->premium_regex($username), $mcnetResponse) == 1 || preg_match($this->free_regex, $mcnetResponse) == 1)
         {
             // create new user
-            echo "create new user";
+            return "create new user";
         }
         else if (preg_match($this->bad_regex, $mcnetResponse) == 1)
         {
             // bad login
-            echo "bad login";
+            return "bad login";
         }
-        */
         // something went really wrong
         // TODO: Log what happened
     }
