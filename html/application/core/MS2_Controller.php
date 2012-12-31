@@ -30,6 +30,9 @@ class MS2_Controller extends CI_Controller {
     
     protected $page_cache_key;
     protected $page_cache_time  = 60; // seconds
+    
+    // THIS MAY MOVE TO KEEP THE SUPERCLASS CLEAN
+    protected $user             = NULL;
 
     /**
      * __construct
@@ -56,6 +59,15 @@ class MS2_Controller extends CI_Controller {
         $this->load->spark('php-activerecord/0.0.2');
         
         //----------------------------------------------------
+        // Check if user is logged in
+        //----------------------------------------------------
+        $user_id = $this->session->userdata('user_id');
+        if($user_id)
+        {
+            $this->user = User::find_by_id($user_id);
+        }
+        
+        //----------------------------------------------------
         // Setup cache
         //----------------------------------------------------
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
@@ -75,6 +87,9 @@ class MS2_Controller extends CI_Controller {
             $this->less->setImportDir($this->less_path);
         }
         
+        //----------------------------------------------------
+        // Production setup
+        //----------------------------------------------------
         if (ENVIRONMENT == 'production')
         {
             $cache_key = str_replace('/', '-', $this->router->uri->uri_string);
@@ -174,6 +189,7 @@ class MS2_Controller extends CI_Controller {
             //
             $application_variables['content']       = $output;
             $application_variables['active_menu']   = $this->router->class;
+            $application_variables['user']          = $this->user;
             
             switch ($this->router->method) {
                 case 'index':
@@ -200,6 +216,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['javascript_links']   = $javascript_links;
             $layout_variables['home_link']          = $home_link;
             $layout_variables['active_menu']        = $this->router->class;
+            
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
         
