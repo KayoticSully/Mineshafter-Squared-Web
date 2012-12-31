@@ -65,7 +65,7 @@ nav {
             margin: 0px auto;
         }
         
-        ul li, #login_form, #home_nav ul li {
+        ul li, #login_form_wrapper, #home_nav ul li {
             cursor: pointer;
             background-color: #F0F0F0;
             border: 1px solid #000000;
@@ -76,11 +76,15 @@ nav {
             margin-left: 0px;
         }
         
-        #login_form {
+        #login_form_wrapper {
             position: absolute;
             width: 554px;
             height:@nav-width - 6;
             margin: 0px 7px;
+            
+            input[type=submit] {
+                margin-top: 2px;
+            }
             
             .btn-link {
                 padding-left: 3px;
@@ -103,7 +107,7 @@ nav {
                 }
                 
                 .btn:last-child {
-                    margin-top: 9px;
+                    margin-top: 12px;
                 }
             }
         }
@@ -130,7 +134,7 @@ nav {
                 padding: 0px @top-side-padding;
             }
             
-            #login_form {
+            #login_form_wrapper {
                 width: 450px;
                 height:@nav-width - 15;
                 

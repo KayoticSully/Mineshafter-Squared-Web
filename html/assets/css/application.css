@@ -6935,7 +6935,7 @@ nav#main-nav #nav_list {
   margin: 0px auto;
 }
 nav#main-nav ul li,
-nav#main-nav #login_form,
+nav#main-nav #login_form_wrapper,
 nav#main-nav #home_nav ul li {
   cursor: pointer;
   background-color: #F0F0F0;
@@ -6945,31 +6945,34 @@ nav#main-nav #home_nav ul li {
 nav#main-nav ul li:first-child {
   margin-left: 0px;
 }
-nav#main-nav #login_form {
+nav#main-nav #login_form_wrapper {
   position: absolute;
   width: 554px;
   height: 88px;
   margin: 0px 7px;
 }
-nav#main-nav #login_form .btn-link {
+nav#main-nav #login_form_wrapper input[type=submit] {
+  margin-top: 2px;
+}
+nav#main-nav #login_form_wrapper .btn-link {
   padding-left: 3px;
 }
-nav#main-nav #login_form .nav_form_label {
+nav#main-nav #login_form_wrapper .nav_form_label {
   float: left;
   width: 94px;
   margin: 0px 0px 0px 0px;
 }
-nav#main-nav #login_form .login_section {
+nav#main-nav #login_form_wrapper .login_section {
   margin: 10px 10px 0px 0px;
   float: left;
 }
-nav#main-nav #login_form .login_section input {
+nav#main-nav #login_form_wrapper .login_section input {
   margin-left: 2px;
   margin-right: 2px;
   display: block;
 }
-nav#main-nav #login_form .login_section .btn:last-child {
-  margin-top: 9px;
+nav#main-nav #login_form_wrapper .login_section .btn:last-child {
+  margin-top: 12px;
 }
 nav ul {
   list-style: none;
@@ -6987,19 +6990,19 @@ nav ul {
   nav#main-nav #nav_list {
     padding: 0px 20px;
   }
-  nav#main-nav #login_form {
+  nav#main-nav #login_form_wrapper {
     width: 450px;
     height: 79px;
   }
-  nav#main-nav #login_form .nav_form_label {
+  nav#main-nav #login_form_wrapper .nav_form_label {
     width: 84px;
   }
-  nav#main-nav #login_form .login_section input {
+  nav#main-nav #login_form_wrapper .login_section input {
     font-size: 13px;
     padding: 2px 6px;
     margin-bottom: 8px;
   }
-  nav#main-nav #login_form .login_section .btn:last-child {
+  nav#main-nav #login_form_wrapper .login_section .btn:last-child {
     margin-top: 0px;
     padding: 2px 6px;
     font-size: 13px;
@@ -7035,6 +7038,24 @@ ul.none {
 }
 ul li.active a {
   color: #FFFFFF;
+}
+#username {
+  font-size: 14px;
+}
+.login_load {
+  background-image: url('/assets/img/login-load.gif');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 15px;
+  width: 150px;
+  padding: 50px 0px 0px 0px;
+}
+.login_message {
+  width: 250px;
+  font-size: 13px;
+}
+#site-body {
+  margin-bottom: 20px;
 }
 @media (max-width: 990px) {
   body {

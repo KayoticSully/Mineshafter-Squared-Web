@@ -53,10 +53,21 @@ article footer {
   padding: 0px 5px;
   font-size: 12px;
 }
+section {
+  margin: 0px 3%;
+}
 section.col {
   width: 44%;
-  margin: 0px 3%;
   float: left;
+}
+section.full {
+  clear: both;
+  position: relative;
+}
+section.full article {
+  width: 100%;
+  border: none;
+  margin-top: 0px;
 }
 @media (max-width: 1200px) {
   article {
