@@ -466,7 +466,7 @@ abstract class Connection
 	 */
 	public function datetime_to_string($datetime)
 	{
-		return $datetime->format('Y-m-d H:i:s T');
+		return $datetime->format('Y-m-d H:i:s');
 	}
 
 	/**
@@ -483,7 +483,7 @@ abstract class Connection
 		if ($errors['warning_count'] > 0 || $errors['error_count'] > 0)
 			return null;
 
-		return new DateTime($date->format('Y-m-d H:i:s T'));
+		return new DateTime($date->format('Y-m-d H:i:s'));
 	}
 
 	/**

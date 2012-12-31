@@ -9,8 +9,7 @@ class Auth extends MS2_Controller {
     
     //Minecraft Auth "API" Variables
     private $mc_auth_url        = 'http://login.minecraft.net';
-    private $premium_regex_1    = "/\b[0-9]{13}\b:\b\w+\b:";
-    private $premium_regex_2    = ":\b[0-9|a-z]+\b:\b[0-9|a-z]+\b/";
+    private $premium_regex    = "/\b[0-9]{13}\b:\b\w+\b:\S+:\b[0-9|a-z]+\b:\b[0-9|a-z]+\b/";
     private $migration_regex    = "/Account migrated, use e-mail as username./";
     private $free_regex         = "/User not premium/";
     private $bad_regex          = "/Bad login/";
@@ -28,7 +27,7 @@ class Auth extends MS2_Controller {
         $password = $this->input->post("password");
         
         // check against local database
-        $user = User::validate($username, $password);
+        $user = User::login($username, $password);
         
         // if we got back an error code, handle it
         if(! $user instanceof User)
@@ -37,23 +36,31 @@ class Auth extends MS2_Controller {
             {
                 case BAD_USER:
                     // attempt to add new user
-                    echo $this->addNewUser($username, $password);
+                    $user = $this->addNewUser($username, $password);
                 break;
                 
                 case BAD_INPUT:
-                    echo "Bad Input";
+                    $user = "Bad Input";
                 break;
                 
                 case BAD_PASSWORD:
-                    echo "Bad Password";
+                    $user = "Bad Password";
                 break;
             }
         }
         
         // Login
+        // This check needs to be performed again incase addNewUser
+        // is able to verify at Minecraft.net and create a new user
+        // account
         if($user instanceof User)
         {
             $this->session->set_userdata('user_id', $user->id);
+            echo "OK";
+        }
+        else
+        {
+            echo $user;
         }
     }
     
@@ -85,16 +92,57 @@ class Auth extends MS2_Controller {
             // migration
             return "migrated";
         }
-        else if (preg_match($this->premium_regex($username), $mcnetResponse) == 1 || preg_match($this->free_regex, $mcnetResponse) == 1)
+        else if (preg_match($this->premium_regex, $mcnetResponse) == 1 || preg_match($this->free_regex, $mcnetResponse) == 1)
         {
             // create new user
-            return "create new user";
+            $user = new User();
+            // set the password
+            $user->password = $password;
+            
+            // load email helper
+            $this->load->helper('email');
+            // check to see if username is an email address
+            if (valid_email($username))
+            {
+                // Mojang account, set email address
+                $user->email = $username;
+                
+                // get username
+                $responseArray = explode(':', $mcnetResponse);
+                // set username
+                $user->username = $responseArray[2];
+                
+                // must be premium
+                $user->premium = 1;
+            }
+            else
+            {
+                // normal minecraft account
+                $user->username = $username;
+                
+                // check again for premium, just to keep track of it
+                // TODO: Find a better way so we don't have to run this regex twice
+                if (preg_match($this->premium_regex, $mcnetResponse) == 1)
+                {
+                    $user->premium = 1;
+                }
+                else
+                {
+                    $user->premium = 0;
+                }
+            }
+            
+            $user->save();
+            
+            // respond with serialized new user
+            return $user;
         }
         else if (preg_match($this->bad_regex, $mcnetResponse) == 1)
         {
             // bad login
             return "bad login";
         }
+        
         // something went really wrong
         // TODO: Log what happened
     }
@@ -116,17 +164,6 @@ class Auth extends MS2_Controller {
         $response = trim(curlPost($this->mc_auth_url, $postParams));
         
         return $response;
-    }
-    
-    /**
-     * @name    premium regex
-     * @author  Ryan Sullivan <kayoticsully@gmail.com>
-     *
-     * Builds the premium regex
-     */
-    private function premium_regex($username)
-    {
-        return $this->premium_regex_1 . $username . $this->premium_regex_2;
     }
 }
 
