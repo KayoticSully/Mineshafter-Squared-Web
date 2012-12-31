@@ -14,7 +14,7 @@
     
     var storage     = 'announcements-posts';
     var cacheTime   = 'announcements-cache-time';
-    var timeLimit   = 86400000;
+    var timeLimit   = 86400000; // 1 day
     
     /*-------------------------------------------
      * "Plugin Constructor"
