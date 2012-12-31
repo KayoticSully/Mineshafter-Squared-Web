@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('nav li').on('click', nav_click);
     $('#login_form').on('submit', user_login);
+    $('#login_form').on('click', '#dismiss', dismiss);
 });
 
 function nav_click(event) {
@@ -30,8 +31,28 @@ function user_login(event) {
             username : username,
             password : password
         },
-        success : function(data) {
-            alert(data);
-        }
+        success : handle_login
     });
+}
+
+function handle_login(response) {
+    switch(response) {
+        case 'migrated':
+            display_login_message("This account has been migrated to a Mojang account.  Please use your email address to log in for the first time.");
+        break;
+    }
+}
+
+function display_login_message(message) {
+    $('.login_section').hide();
+    $('.login_message').html(message).show();
+    $('.message_dismiss').show();
+}
+
+function dismiss(event) {
+    $('.login_section').hide();
+    $('.login_message').html('');
+    
+    $('#login_fields').show();
+    $('#login_actions').show();
 }
