@@ -83,7 +83,7 @@ class Auth extends MS2_Controller {
         if (preg_match($this->migration_regex, $mcnetResponse) == 1)
         {
             // migration
-            return "migration";
+            return "migrated";
         }
         else if (preg_match($this->premium_regex($username), $mcnetResponse) == 1 || preg_match($this->free_regex, $mcnetResponse) == 1)
         {
