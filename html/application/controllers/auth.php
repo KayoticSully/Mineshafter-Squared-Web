@@ -72,7 +72,10 @@ class Auth extends MS2_Controller {
      */
     public function logout()
     {
+        $this->load->helper('url');
+        
         $this->session->unset_userdata('user_id');
+        redirect('/');
     }
     
     /**
