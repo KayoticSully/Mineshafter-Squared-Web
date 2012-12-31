@@ -38,7 +38,11 @@ function user_login(event) {
 function handle_login(response) {
     switch(response) {
         case 'migrated':
-            display_login_message("This account has been migrated to a Mojang account.  Please use your email address to log in for the first time.");
+            display_login_message('This account has been migrated to a Mojang account.  Please use your email address to log in for the first time.');
+        break;
+        
+        case 'bad login':
+            display_login_message('Either your username or password is invalid.  Check that you can login on <a href="http://minecraft.net/login">Minecraft.net</a> before trying again.');
         break;
     }
 }
