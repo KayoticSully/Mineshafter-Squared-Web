@@ -27,15 +27,14 @@
         <li id="login_form_wrapper">
             <?php if ($user): ?>
                 <div class="nav_form_label">
-                    <i class="icon-user"></i>
-                    *Active Skin Here*
+                    <code class="comment">Active Skin Here</code>
                 </div>
                 <div class="login_section">
                     <a href="#" id="username">
                         <?php echo $user->username; ?>
                     </a>
                     <br>
-                    Other info here
+                    <code class="comment">Other info here</code>
                 </div>
                 <div class="login_section">
                     <a href="/auth/logout" class="btn btn-small btn-primary">Logout</a>
