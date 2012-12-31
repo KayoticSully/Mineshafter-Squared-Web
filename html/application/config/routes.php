@@ -42,6 +42,8 @@ $route['default_controller']    = "home";
 $route['admin']                 = "home/admin";
 $route['404_override']          = '';
 
+$route['update/(:any)']         = 'game/update/$1';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

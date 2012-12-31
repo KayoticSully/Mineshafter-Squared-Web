@@ -170,5 +170,5 @@ class Auth extends MS2_Controller {
     }
 }
 
-/* End of file home.php */
+/* End of file auth.php */
 /* Location: ./application/controllers/auth.php */
