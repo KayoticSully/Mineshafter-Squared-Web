@@ -20,12 +20,17 @@ breakdown of what is involved with finished items in **bold**
     *   Add New Downloads
     *   **Delete Downloads**
 *   User Login
-    *   Login with Minecraft Account
-    *   Login with Mojang Account
+    *   **Login with Minecraft Account**
+    *   **Login with Mojang Account**
     *   Consolidate Accounts
     *   Migrate Account from old site (should happen automatically)
     *   Re-work users database table
     *   Integrate user login with forum
+*   Game Authentication
+    *   **Game Login**
+    *   Server Login
+    *   Skins
+    *   Capes
     
 
 Planned Features
@@ -41,7 +46,6 @@ reused.
 *   Server List
 *   Help System
 *   User Forums
-*   Game Authentication
 *   Consolidation of Accounts
 *   Server Admin Console
 *   Server Status API

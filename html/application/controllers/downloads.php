@@ -62,5 +62,5 @@ class Downloads extends MS2_Controller {
     }
 }
 
-/* End of file home.php */
+/* End of file downloads.php */
 /* Location: ./application/controllers/downloads.php */
