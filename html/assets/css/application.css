@@ -6832,6 +6832,11 @@ nav i[class="icon-question-sign"] {
   margin-left: 34px;
   background-image: url("../img/glyphicons_question_mark.png");
 }
+nav i[class="icon-book-open"] {
+  width: 24px;
+  margin-left: 35px;
+  background-image: url("../img/glyphicons_book_open.png");
+}
 nav i[class="icon-user"] {
   width: 23px;
   margin-left: 35.5px;

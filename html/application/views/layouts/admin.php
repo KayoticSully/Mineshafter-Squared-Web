@@ -6,10 +6,10 @@
                 Downloads
             </a>
         </li>
-        <li>
-            <a href="#">
-                <i class="icon-question-sign"></i>
-                ????
+        <li <?php if($active_menu == 'datas') echo 'class="active"'; ?>>
+            <a href="/datas/admin">
+                <i class="icon-book-open"></i>
+                Data
             </a>
         </li>
         <li>

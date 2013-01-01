@@ -43,6 +43,7 @@ $route['admin']                 = "home/admin";
 $route['404_override']          = '';
 
 $route['update/(:any)']         = 'game/update/$1';
+$route['game/getversion']       = 'game/get_version';
 
 
 /* End of file routes.php */
