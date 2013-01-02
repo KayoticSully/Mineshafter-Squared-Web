@@ -18,7 +18,7 @@ class Home extends MS2_Controller {
     
     public function admin()
     {
-        
+        $this->protect('admin');
     }
     
     public function announcements($limit=1, $offset=0, $type='html')

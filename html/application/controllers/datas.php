@@ -7,6 +7,13 @@
  */
 class Datas extends MS2_Controller {
     
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $this->protect('admin');
+    }
+    
     public function admin()
     {
         $this->variables['datas'] = Data::find('all');
