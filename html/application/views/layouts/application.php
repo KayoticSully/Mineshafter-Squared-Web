@@ -37,6 +37,8 @@
                     <code class="comment">Other info here</code>
                 </div>
                 <div class="login_section">
+                    <a href="/admin" class="btn btn-small btn-info">Admin</a>
+                    <br>
                     <a href="/auth/logout" class="btn btn-small btn-primary">Logout</a>
                 </div>
             <?php else: ?>

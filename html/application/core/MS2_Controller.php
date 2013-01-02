@@ -290,6 +290,37 @@ class MS2_Controller extends CI_Controller {
             file_put_contents($output_file, $new_cache['compiled']);
         }
     }
+    
+    protected function protect($type)
+    {
+        $this->load->helper('url');
+        
+        // if not logged in
+        if (!$this->user)
+        {
+            // prevent view
+            redirect('');
+        }
+        
+        // if input is direct level use that
+        if (is_numeric($type))
+        {
+            $level = $type;
+        }
+        else
+        {
+            // look up usertype level by name
+            $usertype = Usertype::find_by_name($type);
+            $level = $usertype->level;
+        }
+        
+        // if current user does not have access to specified level
+        if ($this->user->type->level > $level)
+        {
+            // prevent view
+            redirect('');
+        }
+    }
 }
 
 /* End of file MS2_Controller.php */
