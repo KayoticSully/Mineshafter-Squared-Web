@@ -1,0 +1,18 @@
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+.center {
+  text-align: center;
+}
+.loading {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.row-action {
+  cursor: pointer;
+  margin: 0 5px;
+}
