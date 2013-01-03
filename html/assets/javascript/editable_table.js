@@ -4,20 +4,11 @@ ajax_uri        = '',
 delete_function = 'delete_row',
 save_function   = 'save_row';
 
-// Start JS only when DOM is ready
-$(document).ready(init);
-
 // Initialize the page
-function init()
+function editable_table_init()
 {
     // acts as init
     ajax_uri = $('table#editable').data('ajax-uri');
-    events_reset();
-}
-
-// Set up all events for this page
-function events_reset()
-{
     $(action_class).off('click').on('click', do_action);
 }
 

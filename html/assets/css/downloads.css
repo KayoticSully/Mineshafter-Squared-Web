@@ -1,10 +1,23 @@
-.container {
-  margin-top: 20px;
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+.center {
+  text-align: center;
 }
 .loading {
   background-image: url('/assets/img/list-load.gif');
   background-repeat: no-repeat;
   background-position: left;
+}
+.row-action {
+  cursor: pointer;
+  margin: 0 5px;
+}
+.container {
+  margin-top: 20px;
 }
 .loading_link a,
 .loading_link a:hover {
@@ -25,10 +38,6 @@
   height: 175px;
   min-width: 425px;
   max-width: 675px;
-}
-.file-action {
-  cursor: pointer;
-  margin: 0 5px;
 }
 .group-action {
   margin: 0px 0px 5px 15px;
