@@ -1,8 +1,6 @@
 var // page globals
 group_class     = '.group',
-action_class    = '.file-action',
 group_action    = '.group-action',
-save_file_url   = '/downloads/save_file/',
 save_group_url   = '/downloads/save_group/';
 
 // Start JS only when DOM is ready
@@ -18,8 +16,8 @@ function init()
 // Set up all events for this page
 function events_reset()
 {
+    editable_table_init();
     $(group_class).off('click').on('click', select_group);
-    $(action_class).off('click').on('click', do_action);
     $(group_action + '#edit').off('click').on('click', edit_group);
     $(group_action + '#save').off('click').on('click', save_group);
     $(group_action + '#cancel').off('click').on('click', cancel_edit_group);
@@ -49,132 +47,6 @@ function select_group( event )
             
             // reset events
             events_reset();
-        }
-    });
-}
-
-// handles actions on file records
-function do_action()
-{
-    var $this = $(this),
-        row   = $this.parents('tr');
-    
-    
-    switch($this.data('action'))
-    {
-        case 'edit':
-            edit_download(row);
-        break;
-        
-        case 'delete':
-            delete_download(row);
-        break;
-        
-        case 'save':
-            save_row(row);
-        break;
-        
-        case 'cancel':
-            cancel_edit(row);
-        break;
-    }
-}
-
-// edit action handler
-function edit_download(row)
-{
-    // switch all editable fields over to input
-    row.find('.editable').each(function(){
-        var $this   = $(this),
-            data    = $this.html().trim(),
-            field   = $this.data('field'),
-            html    = '<input type="text" name="' + field + '" value="' + data + '" />';
-            
-        $this.html(html);
-        $this.data('old', data);
-    });
-    
-    // switch actions over
-    row.find('.actions').hide();
-    row.find('.edit-actions').show();
-}
-
-function delete_download(row)
-{
-    var file_id = row.data('file-id');
-    
-    // make server request
-    $.ajax({
-        url     : save_file_url + file_id,
-        context : row,
-        success : function(response)
-        {
-            if(response == true)
-                $(this).detach();
-        }
-    });
-}
-
-function cancel_edit(row)
-{
-    // switch all editable fields over to old values
-    row.find('.editable').each(function(){
-        var $this   = $(this),
-            data    = $this.data('old').trim();
-            
-        $this.html(data);
-    });
-    
-    // switch actions over
-    row.find('.edit-actions').hide();
-    row.find('.actions').show();
-}
-
-function save_row(row)
-{
-    // remove actions
-    row.find('.edit-actions').hide();
-    
-    // add loading animation
-    row.find('.loading').show();
-    
-    // serialize row
-    var data_map = {},
-        file_id  = row.data('file-id');
-    
-    row.find('.editable').each(function(){
-        var $this   = $(this),
-            data    = $this.find('input').val().trim(),
-            field   = $this.data('field').trim();
-        
-        data_map[field] = data;
-    });
-    
-    // make server request
-    $.ajax({
-        url     : save_file_url + file_id,
-        type    : 'post',
-        data    : data_map,
-        context : row,
-        success : function(response)
-        {
-            if(response == 'true')
-            {
-                var $this = $(this);
-                $this.find('.editable').each(function(){
-                    var $this   = $(this),
-                        data    = $this.find('input').val().trim();
-                        
-                    $this.html(data);
-                });
-                
-                // remove loading animation
-                $this.find('.loading').hide();
-                
-                // switch actions over
-                $this.find('.edit-actions').hide();
-                $this.find('.actions').show();
-            }
         }
     });
 }

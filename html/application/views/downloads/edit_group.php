@@ -23,53 +23,14 @@
     </form>
 </section>
 <section>
-    <legend>
-        Files
-    </legend>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Link
-                </th>
-                <th>
-                    Downloads
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($group->downloads as $download): ?>
-                <tr data-file-id="<?php echo $download->id; ?>">
-                    <td class="editable" data-field="name">
-                        <?php echo $download->name; ?>
-                    </td>
-                    <td class="editable" data-field="link">
-                        <?php echo $download->link; ?>
-                    </td>
-                    <td>
-                        <?php echo $download->number_of_downloads; ?>
-                    </td>
-                    <td>
-                        <div class="actions">
-                            <i class="icon-edit file-action" title="Edit" data-action="edit"></i>
-                            <i class="icon-trash file-action" title="Delete" data-action="delete"></i>
-                        </div>
-                        <div class="edit-actions hide">
-                            <i class="icon-ok file-action" title="Save" data-action="save"></i>
-                            <i class="icon-remove file-action" title="Cancel" data-action="cancel"></i>
-                        </div>
-                        <div class="loading hide">
-                            &nbsp;
-                        </div>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <?php editable_table("Files",
+                         "/downloads",
+                         $group->downloads,
+                         array(
+                               array('Name', 'name', true),
+                               array('Link', 'link', true),
+                               array('Downloads', 'number_of_downloads', false)
+                         )
+                        );
+    ?>
 </section>
