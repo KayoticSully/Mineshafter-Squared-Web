@@ -37,8 +37,10 @@
                     <code class="comment">Other info here</code>
                 </div>
                 <div class="login_section">
-                    <a href="/admin" class="btn btn-small btn-info">Admin</a>
-                    <br>
+                    <?php if ($user->type->level <= 0): ?>
+                        <a href="/admin" class="btn btn-small btn-info">Admin</a>
+                        <br>
+                    <?php endif; ?>
                     <a href="/auth/logout" class="btn btn-small btn-primary">Logout</a>
                 </div>
             <?php else: ?>
