@@ -100,7 +100,7 @@ class Game extends MS2_Controller {
             $user->server = $server_id;
             
             if($user->save())
-            {
+            {   
                 // everything saved properly
                 echo "OK";
             }
@@ -143,7 +143,12 @@ class Game extends MS2_Controller {
             // if we can't resolve anything check the minecraft servers to keep
             // compatability with non-cracked clients
             $this->load->helper('connection');
-            echo curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
+            
+            // This will be the line of code once the site goes live
+            //echo curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
+            
+            // for now to keep compatibility with the old system we will go through there.
+            echo curlPost('http://mineshaftersquared.com/game/checkserver', 'user='.$username.'&serverId='.$server_id);
         }
     }
 }
