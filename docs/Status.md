@@ -31,7 +31,11 @@ breakdown of what is involved with finished items in **bold**
     *   Server Login
     *   Skins
     *   Capes
-    
+*   Data Admin
+    *   **Edit fields**
+    *   Add fields
+    *   **Delete fields**
+    *   Game build number update button
 
 Planned Features
 -----------------
@@ -47,7 +51,7 @@ reused.
 *   Help System
 *   User Forums
 *   Consolidation of Accounts
-*   Server Admin Console
+*   Server Admin Console (In progress as things are built)
 *   Server Status API
 *   **Fully responsive to fit any device** (Partially Implemented)
 

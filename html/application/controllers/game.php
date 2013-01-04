@@ -23,7 +23,7 @@ class Game extends MS2_Controller {
     
     /**
      * @name    get_version
-     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     * @author  Ryan Sullivan (kayoticsully@gmail.com)
      *
      * @returns (echoes out) login token string or error message
      * 
@@ -71,6 +71,79 @@ class Game extends MS2_Controller {
                     echo 'User does not exist';
                 break;
             }
+        }
+    }
+    
+    /**
+     * @name    join_server
+     * @author  Ryan Sullivan (kayoticsully@gmail.com)
+     *
+     * Second step in multiplayer server logon. (First step
+     * is between the server anc the game client). This takes
+     * the server id and logs it into the database for the provided
+     * user.
+     */
+    public function join_server()
+    {
+        // get input
+        $username   = $this->input->get('user');
+        $session_id = $this->input->get('sessionId');
+        $server_id  = $this->input->get('serverId');
+        
+        // retrieve user info and verify session for user
+        $user = User::find_by_username_and_session($username, $session_id);
+        
+        // if everything is valid
+        if ($user)
+        {
+            // save the server id for the user
+            $user->server = $server_id;
+            
+            if($user->save())
+            {
+                // everything saved properly
+                echo "OK";
+            }
+            else
+            {
+                echo "Problem with login";
+            }
+        }
+        else
+        {
+            echo "Bad login";
+        }
+    }
+    
+    /**
+     * @name    check_server
+     * @author  Ryan Sullivan (kayoticsully@gmail.com)
+     *
+     * Third step in the multiplayer logon process.  Server
+     * sends up the user and its server id, this is checked against
+     * the database to make sure nothing strange is going on
+     */
+    public function check_server()
+    {
+        // get input
+        $username   = $this->input->get('user');
+        $server_id  = $this->input->get('serverId');
+        
+        // retrieve user info
+        $user       = User::find_by_username_and_server($username, $server_id);
+        
+        if ($user)
+        {
+            // if everything checks out, let the server know
+            // the player is good to go
+            echo "YES";
+        }
+        else
+        {
+            // if we can't resolve anything check the minecraft servers to keep
+            // compatability with non-cracked clients
+            $this->load->helper('connection');
+            echo curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
         }
     }
 }

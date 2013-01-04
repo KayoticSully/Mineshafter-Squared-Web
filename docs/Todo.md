@@ -2,9 +2,11 @@ Todo List
 =========
 
 *   Data Admin
-    *   Edit fields
+    *   **Edit fields**
     *   Add fields
-    *   Delete fields
+    *   **Delete fields**
     *   Game build number update button
+*   Downloads Admin
+    *   Add File
 *   Game Server Login
-*   Create Library for editable tables
+*   **Create Library for editable tables**
