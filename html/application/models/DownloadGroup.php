@@ -7,7 +7,7 @@
  */
 class DownloadGroup extends ActiveRecord\Model {
     static $table_name = 'download_groups';
-    static $has_many = array(array('downloads'));
+    static $has_many = array(array('Downloads'));
     
     public function edit_link()
     {
