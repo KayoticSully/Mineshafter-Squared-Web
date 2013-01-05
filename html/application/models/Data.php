@@ -6,5 +6,6 @@
  * @author  Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Data extends ActiveRecord\Model {
+    // database information
     static $table_name = 'data';
 }
