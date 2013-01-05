@@ -6,5 +6,5 @@
  * @author  Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Download extends ActiveRecord\Model {
-    static $belongs_to = array(array('Downloadgroup'));
+    static $belongs_to = array(array('DownloadGroup'));
 }
