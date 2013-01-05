@@ -6,5 +6,6 @@
  * @author  Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Usertype extends ActiveRecord\Model {
+    // database information
     static $has_many = array(array('Users'));
 }

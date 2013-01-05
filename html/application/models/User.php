@@ -6,7 +6,7 @@
  * @author  Ryan Sullivan (kayoticsully@gmail.com)
  */
 class User extends ActiveRecord\Model {
-    
+    // database information
     static $belongs_to = array(array('type', 'class_name' => 'Usertype'));
     
     /**

@@ -6,6 +6,7 @@
  * @author  Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Downloadgroup extends ActiveRecord\Model {
+    // database information
     static $table_name = 'download_groups';
     static $has_many = array(array('Downloads', 'foreign_key' => 'download_group_id'));
     
