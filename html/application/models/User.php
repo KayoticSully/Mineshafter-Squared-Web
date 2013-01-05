@@ -7,7 +7,7 @@
  */
 class User extends ActiveRecord\Model {
     
-    static $belongs_to = array(array('type', 'class_name' => 'usertype'));
+    static $belongs_to = array(array('type', 'class_name' => 'Usertype'));
     
     /**
      * @name    Validate
