@@ -10,14 +10,13 @@ class Downloads extends MS2_Controller {
     public function __construct()
     {
         parent::__construct();
-        
-        $this->protect('admin');
     }
     
     public function admin()
     {
-        $this->javascripts = array('editable_table');
+        $this->protect('admin');
         
+        $this->javascripts = array('editable_table');
         $this->variables = array("download_groups" => DownloadGroup::all());
     }
     
@@ -28,6 +27,8 @@ class Downloads extends MS2_Controller {
     
     public function save_row($id)
     {
+        $this->protect('admin');
+        
         $file = Download::find_by_id($id);
         $file->name = trim($this->input->post('name'));
         $file->link = trim($this->input->post('link'));
@@ -40,6 +41,8 @@ class Downloads extends MS2_Controller {
     
     public function delete_row($id)
     {
+        $this->protect('admin');
+        
         $file = Download::find_by_id($id);
         
         if($file->delete())
@@ -50,6 +53,8 @@ class Downloads extends MS2_Controller {
     
     public function edit_group($group_name)
     {
+        $this->protect('admin');
+        
         $this->load->helper('table');
         
         $group_name = str_replace('_', ' ', $group_name);
@@ -60,6 +65,8 @@ class Downloads extends MS2_Controller {
     
     public function save_group($id)
     {
+        $this->protect('admin');
+        
         $group = DownloadGroup::find_by_id($id);
         
         $group->name = trim($this->input->post('name'));;
