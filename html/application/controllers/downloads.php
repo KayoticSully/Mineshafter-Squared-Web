@@ -17,12 +17,12 @@ class Downloads extends MS2_Controller {
         $this->protect('admin');
         
         $this->javascripts = array('editable_table');
-        $this->variables = array("download_groups" => Downloadgroup::all());
+        $this->variables = array("download_groups" => Downloadgroup::find('all'));
     }
     
     public function html()
     {
-        $this->variables = array("download_groups" => Downloadgroup::all());
+        $this->variables = array("download_groups" => Downloadgroup::find('all'));
     }
     
     public function save_row($id)
