@@ -9,7 +9,7 @@ class Auth extends MS2_Controller {
     
     //Minecraft Auth "API" Variables
     private $mc_auth_url        = 'http://login.minecraft.net';
-    private $premium_regex    = "/\b[0-9]{13}\b:\b\w+\b:\S+:\b[0-9|a-z]+\b:\b[0-9|a-z]+\b/";
+    private $premium_regex      = "/\b[0-9]{13}\b:\b\w+\b:\S+:\b[0-9|a-z]+\b:\b[0-9|a-z]+\b/";
     private $migration_regex    = "/Account migrated, use e-mail as username./";
     private $free_regex         = "/User not premium/";
     private $bad_regex          = "/Bad login/";
@@ -100,7 +100,8 @@ class Auth extends MS2_Controller {
             // create new user
             $user = new User();
             // set the password
-            $user->password = $password;
+            $user->password     = $password;
+            $user->usertype_id  = 2;
             
             // load email helper
             $this->load->helper('email');
