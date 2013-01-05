@@ -17,12 +17,12 @@ class Downloads extends MS2_Controller {
         $this->protect('admin');
         
         $this->javascripts = array('editable_table');
-        $this->variables = array("download_groups" => DownloadGroup::all());
+        $this->variables = array("download_groups" => Downloadgroup::all());
     }
     
     public function html()
     {
-        $this->variables = array("download_groups" => DownloadGroup::all());
+        $this->variables = array("download_groups" => Downloadgroup::all());
     }
     
     public function save_row($id)
@@ -58,7 +58,7 @@ class Downloads extends MS2_Controller {
         $this->load->helper('table');
         
         $group_name = str_replace('_', ' ', $group_name);
-        $group = DownloadGroup::find_by_name($group_name);
+        $group = Downloadgroup::find_by_name($group_name);
         
         $this->variables = array("group" => $group);
     }
@@ -67,7 +67,7 @@ class Downloads extends MS2_Controller {
     {
         $this->protect('admin');
         
-        $group = DownloadGroup::find_by_id($id);
+        $group = Downloadgroup::find_by_id($id);
         
         $group->name = trim($this->input->post('name'));;
         $group->version = trim($this->input->post('version'));
