@@ -45,6 +45,10 @@ function handle_login(response) {
             window.location = window.location;
         break;
         
+        case 'locked':
+            display_login_message('New user signup has been disabled. Please wait 5 minutes and try again.');
+        break;
+        
         case 'bad login':
         case 'Bad Input':
         case 'Bad Password':

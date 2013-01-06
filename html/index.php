@@ -59,6 +59,7 @@ if (defined('ENVIRONMENT'))
 	define('BAD_INPUT', 	0);
 	define('BAD_PASSWORD', 	1);
 	define('BAD_USER', 	2);
+	define('MC_TIMEOUT', 	3);
 
 /*
  *---------------------------------------------------------------

@@ -2,7 +2,6 @@
     <h1>
         Announcements
     </h1>
-    <code class="comment">Let me know what you think.</code>
     <div id="post_track">
         
     </div>
@@ -11,7 +10,6 @@
     <h1>
         Downloads
     </h1>
-    <code class="comment">Download links do not work yet.</code>
     <div id="download_track" data-href="/downloads/html">
        
     </div>
