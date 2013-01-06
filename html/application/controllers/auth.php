@@ -13,6 +13,7 @@ class Auth extends MS2_Controller {
     private $migration_regex    = "/Account migrated, use e-mail as username./";
     private $free_regex         = "/User not premium/";
     private $bad_regex          = "/Bad login/";
+    private $locked_regex       = "/Too many failed logins/";
     
     /**
      * @name    Login
@@ -86,6 +87,19 @@ class Auth extends MS2_Controller {
      */
     private function addNewUser($username, $password)
     {
+        $bad_count = $this->cache->get("mc-bad-request");
+        if($bad_count === FALSE)
+        {
+            $bad_count = 0;
+        }
+        
+        // if we have already hit our maximum bad request quota
+        // block the rest of the function and let the client know.
+        if ($bad_count >= 9)
+        {
+            return "locked : " . $bad_count;
+        }
+        
         // query MCNet
         $mcnetResponse = $this->queryMCNet($username, $password);
         
@@ -136,6 +150,7 @@ class Auth extends MS2_Controller {
                 }
             }
             
+            // TODO Uncomment
             $user->save();
             
             // respond with serialized new user
@@ -143,8 +158,17 @@ class Auth extends MS2_Controller {
         }
         else if (preg_match($this->bad_regex, $mcnetResponse) == 1)
         {
+            // increment and save our bad request
+            $bad_count++;
+            $this->cache->save("mc-bad-request", $bad_count, 300);
+            
             // bad login
-            return "bad login";
+            return "bad login : $bad_count";
+        }
+        else if (preg_match($this->locked_regex, $mcnetResponse) == 1)
+        {
+            $this->cache->save("mc-bad-request", 10, 300);
+            return "locked";
         }
         
         // something went really wrong
