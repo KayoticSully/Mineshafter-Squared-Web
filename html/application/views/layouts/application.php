@@ -1,7 +1,7 @@
 <nav id="main-nav">
     <ul id="nav_list">
-        <li <?php if($active_menu == 'server list') echo 'class="active"'; ?>>
-            <a href="#">
+        <li <?php if($active_menu == 'server_list') echo 'class="active"'; ?>>
+            <a href="/server_list">
                 <i class="icon-list"></i>
                 Server List
             </a>
@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="/help">
                 <i class="icon-question-sign"></i>
                 Help
             </a>

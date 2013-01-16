@@ -42,8 +42,7 @@
     <footer>
         Copyright 2011 - 2012
         <a href="http://www.kayoticlabs.com" alt="">Kayotic Labs</a> |
-        <a href="http://www.ryansullivan.org">Ryan Sullivan</a> | 
-        <a href="http://www.jasonparraga.com" alt="">Jason Parraga</a>
+        <a href="http://www.ryansullivan.org">Ryan Sullivan</a>
         &nbsp;
         Icons from <a href="http://www.glyphicons.com/">Glyphicons Free</a> licensed under
         <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
