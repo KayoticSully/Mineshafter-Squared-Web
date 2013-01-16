@@ -68,7 +68,8 @@ class Game extends MS2_Controller {
                 break;
                 
                 case BAD_USER:
-                    echo 'User does not exist';
+                    $this->load->helper('url');
+                    echo 'Please sign in on the website first';
                 break;
             }
         }
