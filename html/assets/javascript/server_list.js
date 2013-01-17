@@ -6,6 +6,7 @@ function init() {
     $('.editable').on('focusin', clearText);
     $('.editable').on('focusout', restoreText);
     $('#server-list .navbar li').on('click', toggleFilter);
+    $('#create-server').on('click', addServer);
 }
 
 function display_new_server_form() {
@@ -40,4 +41,66 @@ function restoreText() {
 
 function toggleFilter() {
     $(this).toggleClass('active');
+}
+
+function addServer() {
+    var name    = $('#new-server #serverName').html().trim();
+    var address = $('#new-server #serverAddress').html().trim();
+    var text    = $('#new-server #serverText').html().trim();
+    
+    var fieldsFilled = true;
+    $('#server-list .editable').each(function(){
+        if($(this).data('default') == undefined)
+        {
+            fieldsFilled = false;
+        }
+    });
+    
+    if(fieldsFilled) {
+        $.ajax({
+            url : '/server_list/add_new_server',
+            data : {
+                serverName          : name,
+                serverAddress       : address,
+                serverDescription   : text
+            },
+            success : handleAddServerResponse
+        });
+    } else {
+        handleAddServerResponse('fields not filled');
+    }
+}
+
+function handleAddServerResponse(data) {
+    alert(data);
+    
+    switch(data) {
+        case 'fields not filled':
+            break;
+        
+        case 'name too short':
+            break;
+        
+        case 'invalid characters':
+            
+            break;
+        
+        case 'name taken':
+            break;
+        
+        case 'invalid address':
+            break;
+        
+        case 'address taken':
+            break;
+        
+        case 'manager error':
+            break;
+        
+        case 'server error':
+            break;
+        
+        case 'OK':
+            break;
+    }
 }
