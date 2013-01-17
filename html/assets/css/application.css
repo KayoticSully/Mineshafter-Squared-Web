@@ -6820,11 +6820,33 @@ body {
   padding: 0px;
 }
 #shell-top {
-  height: 80px;
   background-color: #C0C0C0;
   z-index: 999;
   width: 992px;
   margin: 0 auto;
+  padding: 20px;
+  height: 92px;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+}
+#shell-top:before,
+#shell-top:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#shell-top:after {
+  clear: both;
+}
+#shell-top:before,
+#shell-top:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#shell-top:after {
+  clear: both;
 }
 #shell-top #logo {
   font-size: 1.7em;
@@ -6840,9 +6862,10 @@ body {
   background-color: transparent;
 }
 #shell-top-wrapper {
+  margin-top: 40px;
   background-color: #C0C0C0;
   z-index: 888;
-  height: 176px;
+  height: 132px;
   position: fixed;
   width: 100%;
 }
@@ -6860,12 +6883,11 @@ body > footer {
 }
 #shell-application {
   position: absolute;
-  margin-top: 223px;
+  margin-top: 170px;
   width: 100%;
 }
 #topAd {
   width: 728px;
-  margin: 20px 0px 0px 13px;
   height: 90px;
   float: left;
 }
@@ -6892,70 +6914,6 @@ body > footer {
     clear: both;
   }
 }
-nav i[class^="icon"] {
-  background-position: 0 0;
-  display: block;
-  margin-top: 23px;
-  height: 26px;
-}
-nav i[class="icon-home"] {
-  width: 27px;
-  margin-left: 33.5px;
-  background-image: url("../img/glyphicons_home.png");
-}
-nav i[class="icon-list"] {
-  width: 24px;
-  margin-left: 35px;
-  background-image: url("../img/glyphicons_list.png");
-}
-nav i[class="icon-group"] {
-  width: 35px;
-  margin-left: 29.5px;
-  background-image: url("../img/glyphicons_group.png");
-}
-nav i[class="icon-question-sign"] {
-  width: 26px;
-  margin-left: 34px;
-  background-image: url("../img/glyphicons_question_mark.png");
-}
-nav i[class="icon-book-open"] {
-  width: 24px;
-  margin-left: 35px;
-  background-image: url("../img/glyphicons_book_open.png");
-}
-nav i[class="icon-user"] {
-  width: 23px;
-  margin-left: 35.5px;
-  background-image: url("../img/glyphicons_user.png");
-}
-nav i[class="icon-download"] {
-  width: 26px;
-  margin-left: 34px;
-  background-image: url("../img/glyphicons_download.png");
-}
-@media (max-width: 990px) {
-  nav i[class^="icon"] {
-    margin-top: 20px;
-  }
-  nav i[class="icon-home"] {
-    margin-left: 28.5px;
-  }
-  nav i[class="icon-list"] {
-    margin-left: 30px;
-  }
-  nav i[class="icon-group"] {
-    margin-left: 24.5px;
-  }
-  nav i[class="icon-question-sign"] {
-    margin-left: 29px;
-  }
-  nav i[class="icon-user"] {
-    margin-left: 30.5px;
-  }
-  nav i[class="icon-download"] {
-    margin-left: 29px;
-  }
-}
 nav .horizontal_nav ul li {
   display: inline-block;
   width: 94px;
@@ -6973,13 +6931,14 @@ nav .nav-actions ul li a:hover {
   text-decoration: none;
 }
 nav#home_nav {
-  height: 88px;
-  cursor: pointer;
-  width: 248px;
+  width: 220px;
+  padding: 10px;
   background-color: #F0F0F0;
   border: 1px solid #000000;
-  margin: 20px 0px 0px 0px;
+  margin: 0px 11px 0px 0px;
   float: left;
+  overflow: hidden;
+  height: 70px;
 }
 nav#home_nav ul li {
   display: inline-block;
@@ -7138,8 +7097,8 @@ ul li.active a {
   background-repeat: no-repeat;
   background-position: right;
   height: 15px;
-  width: 150px;
-  padding: 50px 0px 0px 0px;
+  width: 172px;
+  padding: 54px 0px 0px 0px;
 }
 .login_message {
   width: 250px;
@@ -7147,6 +7106,7 @@ ul li.active a {
 }
 #site-body {
   margin-bottom: 20px;
+  padding: 20px;
 }
 @media (max-width: 990px) {
   body {

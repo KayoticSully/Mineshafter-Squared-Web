@@ -8,7 +8,7 @@
 class MS2_Controller extends CI_Controller {
     protected $shell_view       = 'shell';
     protected $application_view = 'layouts/application';
-    protected $admin_view       = 'layouts/admin';
+    // protected $admin_view       = 'layouts/admin';
     protected $variables        = array();
     
     protected $assets           = array();
@@ -183,23 +183,25 @@ class MS2_Controller extends CI_Controller {
             }
             
             //----------------------------------------------------
-            // LAYOUT
+            // Application Wrapper
             //----------------------------------------------------
-            // This loads the layout part of the page.
             //
             $application_variables['content']       = $output;
-            $application_variables['active_menu']   = $this->router->class;
-            $application_variables['user']          = $this->user;
+            $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
             
+            //----------------------------------------------------
+            // Navbar
+            //----------------------------------------------------
+            //
             switch ($this->router->method) {
                 case 'index':
                     $home_link = '/';
-                    $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
+                    $navbar = 'public';
                 break;
                 
                 case 'admin':
                     $home_link = '/admin';
-                    $application_render = $this->load->view($this->admin_view, $application_variables, TRUE);
+                    $navbar = 'admin';
                 break;
             }
             
@@ -215,7 +217,9 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
             $layout_variables['home_link']          = $home_link;
+            $layout_variables['navbar']             = 'navs/' . $navbar;
             $layout_variables['active_menu']        = $this->router->class;
+            $layout_variables['user']               = $this->user;
             
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }

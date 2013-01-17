@@ -9,6 +9,7 @@ class Server_list extends MS2_Controller {
     
     public function index()
     {
+        $this->javascripts = array('bootstrap-affix');
         
     }
 }

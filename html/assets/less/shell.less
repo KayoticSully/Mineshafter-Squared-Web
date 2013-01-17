@@ -22,7 +22,10 @@
 // Shell Variables
 //-----------------------------------
 @shell-padding: 20px;
+@shell-top-margin: 40px;
 @shell-top-width: 80%;
+@shell-top-padding: 20px;
+
 @top-side-padding: 20px;
 @shell-bg: #C0C0C0;
 @page-bg: #FFFFFF;
@@ -37,11 +40,14 @@ html, body {
 }
 
 #shell-top {
-    height: @shell-top-height;
+    //height: @shell-top-height;
     background-color: @shell-bg;
     z-index: 999;
     width: 992px;
     margin: 0 auto;
+    padding: @shell-top-padding;
+    height: 132px - (@shell-top-padding * 2);
+    .clearfix();
     
     #logo {
         font-size: 1.7em;
@@ -60,9 +66,10 @@ html, body {
 }
 
 #shell-top-wrapper {
+    margin-top: @shell-top-margin;
     background-color: @shell-bg;
     z-index: 888;
-    height: @shell-top-element-height;
+    height: 132px;
     position: fixed;
     width:100%;
 }
@@ -83,13 +90,13 @@ body > footer {
 
 #shell-application {
     position: absolute;
-    margin-top: @shell-top-height + @shell-top-buffer + (@shell-padding*2) + 9 + @nav-width/2;
+    margin-top: 90px + @shell-top-margin + (@shell-top-padding * 2);
     width:100%;
 }
 
 #topAd {
     width:728px;
-    margin: 20px 0px 0px 13px;
+    //margin: 20px 0px 0px 13px;
     height: 90px;
     float: left;
 }

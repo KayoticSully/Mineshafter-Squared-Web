@@ -1,19 +1,55 @@
 @import "bootstrap/mixins";
+@import "utils";
+
+@item-height: 120px;
+
+#server-list {
+    padding-top: 15px;
+}
 
 section {
     border: 1px solid #000000;
     margin: 20px 0px;
     padding: 0px;
     position: relative;
+    height: @item-height;
     .clearfix();
     
     .quick-info {
         float:left;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 1%;
-        padding-right: 1%;
-        width:14%;
+        padding: 0px 10px;
+        width:12%;
+        position: relative;
+        height: @item-height;
+        
+        .players {
+            margin-left: 10px;
+        }
+        
+        .online-info {
+            margin: 18px 0px 19px 0px;
+            padding-left:10px;
+        }
+        
+        .vote-info {
+            margin: 20px 0px;
+            font-size: 20px;
+            padding-left:10px;
+            
+            [class^="icon"] {
+                margin-top:5px;
+                opacity: .4;
+                cursor: pointer;
+                
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            
+            .small-text {
+                font-size: 16px;
+            }
+        }
     }
     
     .details {
@@ -23,7 +59,13 @@ section {
         padding-left: 1%;
         padding-right: 1%;
         border-left: 1px solid #000;
-        width:81%;
+        width:83%;
+        height: @item-height - 20px;
+        overflow: hidden;
+        
+        a.editable {
+            display: block;
+        }
     }
     
     hr {
@@ -42,4 +84,9 @@ section {
 
 .description {
     
+}
+
+#new-server {
+    display: none;
+    border-color: #468847;
 }
