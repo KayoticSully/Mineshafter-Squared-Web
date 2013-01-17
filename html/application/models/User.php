@@ -8,6 +8,10 @@
 class User extends ActiveRecord\Model {
     // database information
     static $belongs_to = array(array('type', 'class_name' => 'Usertype'));
+    static $has_many = array(
+        array('Managers'),
+        array('Servers', 'through' => 'managers')
+    );
     
     /**
      * @name    Validate

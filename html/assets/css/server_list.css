@@ -25,11 +25,29 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+.center {
+  text-align: center;
+}
+.loading {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+#server-list {
+  padding-top: 15px;
+}
 section {
   border: 1px solid #000000;
   margin: 20px 0px;
   padding: 0px;
   position: relative;
+  height: 120px;
   *zoom: 1;
 }
 section:before,
@@ -43,11 +61,33 @@ section:after {
 }
 section .quick-info {
   float: left;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 1%;
-  padding-right: 1%;
-  width: 14%;
+  padding: 0px 10px;
+  width: 12%;
+  position: relative;
+  height: 120px;
+}
+section .quick-info .players {
+  margin-left: 10px;
+}
+section .quick-info .online-info {
+  margin: 18px 0px 19px 0px;
+  padding-left: 10px;
+}
+section .quick-info .vote-info {
+  margin: 20px 0px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+section .quick-info .vote-info [class^="icon"] {
+  margin-top: 5px;
+  opacity: .4;
+  cursor: pointer;
+}
+section .quick-info .vote-info [class^="icon"]:hover {
+  opacity: 1;
+}
+section .quick-info .vote-info .small-text {
+  font-size: 16px;
 }
 section .details {
   float: left;
@@ -56,7 +96,12 @@ section .details {
   padding-left: 1%;
   padding-right: 1%;
   border-left: 1px solid #000;
-  width: 81%;
+  width: 83%;
+  height: 100px;
+  overflow: hidden;
+}
+section .details a.editable {
+  display: block;
 }
 section hr {
   margin: 7px 0px;
@@ -67,4 +112,8 @@ section hr {
 .info {
   font-size: 16px;
   color: #808080;
+}
+#new-server {
+  display: none;
+  border-color: #468847;
 }
