@@ -34,7 +34,7 @@
             </div>
             <hr>
             <div class="vote-info">
-               <button type="button" class="btn btn-success">Save Server</button>
+               <button type="button" class="btn btn-success" id="create-server">Save Server</button>
             </div>
         </div>
         <div class="details">
@@ -52,7 +52,7 @@
             </div>
         </div>
     </section>
-    <?php for($i = 0; $i < 2; $i++): ?>
+    <?php foreach($servers as $server): ?>
         <section>
             <div class="quick-info">
                 <div class="online-info">
@@ -74,18 +74,17 @@
             <div class="details">
                 <div class="name">
                     <a href="#">
-                        Mineshafter Squared Official Server
+                        <?php echo $server->name; ?>
                     </a>
                 </div>
                 <div class="info">
-                    server.mineshaftersquared.com
+                    <?php echo $server->address; ?>
                 </div>
                 <hr />
                 <div class="description">
-                    The official Mineshafter Squared server is a place where everyone is welcome (except griefers).
-                    It also provides you with a way to make sure your proxy is working.
+                    <?php echo $server->description; ?>
                 </div>
             </div>
         </section>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
