@@ -20,9 +20,10 @@
                         <br>
                     </div>
                     <div class="login_section">
+                        <div id="user-logged-in" data-id"<?php echo $user->id; ?>"></div>
+                        <br>
                         <?php if ($user->type->level <= 0): ?>
                             <a href="/admin" class="btn btn-small btn-info">Admin</a>
-                            <br>
                         <?php endif; ?>
                         <a href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>" class="btn btn-small btn-primary">Logout</a>
                     </div>

@@ -10,7 +10,9 @@ class User extends ActiveRecord\Model {
     static $belongs_to = array(array('type', 'class_name' => 'Usertype'));
     static $has_many = array(
         array('Managers'),
-        array('Servers', 'through' => 'managers')
+        array('Servervotes'),
+        array('Servers', 'through' => 'managers'),
+        array('Votes', 'class' => 'Server', 'through' => 'servervotes')
     );
     
     /**

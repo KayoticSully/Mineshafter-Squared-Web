@@ -32,7 +32,7 @@ class MS2_Controller extends CI_Controller {
     protected $page_cache_time  = 60; // seconds
     
     // THIS MAY MOVE TO KEEP THE SUPERCLASS CLEAN
-    protected $user             = NULL;
+    public $user             = NULL;
 
     /**
      * __construct

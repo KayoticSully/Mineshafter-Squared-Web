@@ -58,6 +58,14 @@ var Server = (function() {
     return Server;
 })();
 
+Server.prototype.votedClass = function() {
+    if(this.voted) {
+        return 'voted';
+    } else {
+        return '';
+    }
+}
+
 Server.prototype.meetsRequirements = function(filter) {
     var good = true;
     
@@ -77,8 +85,17 @@ Server.prototype.toString = function() {
                             this.onlineInfo() +
                         '</div>' + 
                         '<hr>' +
-                        '<div class="vote-info">' +
-                            '<i class="icon-arrow-up"></i> 999 <span class="small-text">votes</span>' +
+                        '<div class="vote-info">';
+                        if($('#user-logged-in').size() == 1) {
+                            str += '<i class="icon-arrow-up up_vote ' + this.votedClass() + '" data-id="' + this.id + '"></i> ';
+                        } else {
+                            str += '&nbsp;&nbsp;&nbsp;';
+                        }
+                        str +=
+                            '<span class="votes">' +
+                                this.votes +
+                            '</span> ' +
+                            '<span class="small-text">votes</span>' +
                         '</div>' +
                     '</div>' +
                     '<div class="details">' +
@@ -231,4 +248,6 @@ Server.prototype.displayInfo = function() {
         
         $('#' + key).html(before + text);
     }
+    
+    $('.loading').removeClass('loading');
 }
