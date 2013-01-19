@@ -44,6 +44,8 @@ function toggleFilter() {
 }
 
 function addServer() {
+    $('#serverlist-error').fadeOut();
+    
     var name    = $('#new-server #serverName').html().trim();
     var address = $('#new-server #serverAddress').html().trim();
     var text    = $('#new-server #serverText').html().trim();
@@ -57,6 +59,8 @@ function addServer() {
     });
     
     if(fieldsFilled) {
+        $('html').css('cursor', 'wait');
+        
         $.ajax({
             url : '/server_list/add_new_server',
             data : {
@@ -72,35 +76,10 @@ function addServer() {
 }
 
 function handleAddServerResponse(data) {
-    alert(data);
+    $('html').css('cursor', 'auto');
     
-    switch(data) {
-        case 'fields not filled':
-            break;
-        
-        case 'name too short':
-            break;
-        
-        case 'invalid characters':
-            
-            break;
-        
-        case 'name taken':
-            break;
-        
-        case 'invalid address':
-            break;
-        
-        case 'address taken':
-            break;
-        
-        case 'manager error':
-            break;
-        
-        case 'server error':
-            break;
-        
-        case 'OK':
-            break;
+    if(data != 'OK') {
+        var alert = '<strong>Error!</strong> ' + data;
+        $('#serverlist-error').html(alert).slideDown();
     }
 }

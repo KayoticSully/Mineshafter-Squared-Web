@@ -45,6 +45,11 @@ $route['404_override']          = '';
 $route['update/(:any)']         = 'game/update/$1';
 $route['game/getversion']       = 'game/get_version';
 
+$route['server_list/(:any)']    = 'servers/index/$1';
+$route['server/(:any)']         = 'servers/index/$1';
+
+$route['server_query']          = 'server_query/json';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

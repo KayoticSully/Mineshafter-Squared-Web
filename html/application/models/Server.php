@@ -10,4 +10,9 @@ class Server extends ActiveRecord\Model {
         array('Managers'),
         array('Users', 'through' => 'managers')
     );
+    
+    public function page_link()
+    {
+        echo '/server/' . str_replace(' ', '_', $this->name);
+    }
 }

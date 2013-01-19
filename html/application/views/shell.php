@@ -24,7 +24,7 @@
                             <a href="/admin" class="btn btn-small btn-info">Admin</a>
                             <br>
                         <?php endif; ?>
-                        <a href="/auth/logout" class="btn btn-small btn-primary">Logout</a>
+                        <a href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>" class="btn btn-small btn-primary">Logout</a>
                     </div>
                 <?php else: ?>
                     <form action="/auth/login" method="POST" id="login_form">
