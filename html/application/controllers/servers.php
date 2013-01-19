@@ -18,7 +18,9 @@ class Servers extends MS2_Controller {
             redirect('/server_list');
         }
         
-        $this->variables = array('server' => $server);
+        $this->javascripts = array('Server');
+        $this->variables = array('server' => $server,
+                                 'json' => json_encode($server->toAssoc()));
     }
 }
 /* End of file server.php */

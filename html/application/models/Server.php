@@ -13,6 +13,30 @@ class Server extends ActiveRecord\Model {
     
     public function page_link()
     {
-        echo '/server/' . str_replace(' ', '_', $this->name);
+        return '/server/' . str_replace(' ', '_', $this->name);
+    }
+    
+    public function toAssoc()
+    {
+        $server = array();
+        $server['id']          = $this->id;
+        $server['name']        = $this->name;
+        $server['address']     = $this->address;
+        $server['port']        = $this->port;
+        $server['page_link']   = $this->page_link();
+        $server['description'] = $this->description;
+        return $server;
+    }
+    
+    public function full_address()
+    {
+        $address = $this->address;
+        
+        if ($this->port != 25565)
+        {
+            $address .= ':' . $this->port;
+        }
+        
+        return $address;
     }
 }

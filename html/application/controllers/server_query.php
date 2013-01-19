@@ -7,6 +7,8 @@
  */
 class Server_query extends MS2_Controller {
     
+    private $query_cache_time = 300;
+    
     public function json()
     {
         // get input
@@ -14,46 +16,58 @@ class Server_query extends MS2_Controller {
         $server_port = $this->input->get('port');
         $filters     = $this->input->get('filters');
         
-        if(!$server_name || $server_name == '')
-        {
-            exit('Error: No Input');
-        }
+        $info = $this->cache->get('query-' . $server_name);
         
-        // see if server name is an address
-        $this->load->helper('address');
-        if (valid_address($server_name))
+        if (!$info)
         {
-            $address = $server_name;
-            
-            // if port was not set use default minecraft port
-            if (! $server_port)
+            if(!$server_name || $server_name == '')
             {
-                $server_port = 25565;
+                exit('Error: No Input');
             }
-        }
-        else
-        {
-            // if its not an address, see if it is a name of a known server
-            $server = Server::find_by_name($server_name);
-            if ($server)
+            
+            // see if server name is an address
+            $this->load->helper('address');
+            if (valid_address($server_name))
             {
-                $address = $server->address;
-                $server_port = $server->port;
+                $address = $server_name;
+                
+                // if port was not set use default minecraft port
+                if (! $server_port)
+                {
+                    $server_port = 25565;
+                }
             }
             else
             {
-                exit("Error: Invalid Server");
+                // if its not an address, see if it is a name of a known server
+                $server = Server::find_by_name($server_name);
+                if ($server)
+                {
+                    $address = $server->address;
+                    $server_port = $server->port;
+                }
+                else
+                {
+                    exit("Error: Invalid Server");
+                }
             }
+            
+            // run query
+            $this->load->library('Minecraftquery');
+            
+            try {
+                $this->minecraftquery->connect($address, $server_port);
+            } catch(Exception $ex) {
+                //exit('Error: ' . $ex->getMessage());
+            }
+            
+            // build up return object
+            $info = $this->minecraftquery->getInfo();
+            $info['PlayerList'] = $this->minecraftquery->getPlayerList();
+            $info['Online'] = $this->minecraftquery->isOnline();
+            
+            $this->cache->save('query-' . $server_name, $info, $this->query_cache_time);
         }
-        
-        // run query
-        $this->load->library('Minecraftquery');
-        $this->minecraftquery->connect($address, $server_port);
-        
-        // build up return object
-        $info = $this->minecraftquery->getInfo();
-        $info['PlayerList'] = $this->minecraftquery->getPlayerList();
-        $info['Online'] = $this->minecraftquery->isOnline();
         
         if ($filters)
         {
