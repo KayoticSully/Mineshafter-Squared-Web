@@ -87,6 +87,9 @@ section .quick-info .vote-info [class^="icon"] {
   cursor: pointer;
 }
 section .quick-info .vote-info [class^="icon"]:hover {
+  opacity: .8;
+}
+section .quick-info .vote-info .voted {
   opacity: 1;
 }
 section .quick-info .vote-info .small-text {
@@ -119,12 +122,6 @@ section hr {
 #new-server {
   display: none;
   border-color: #468847;
-}
-.server_list_load {
-  background-image: url('/assets/img/login-load.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 15px;
 }
 .listAd {
   text-align: center;

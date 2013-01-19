@@ -6,21 +6,11 @@ $(document).ready(init);
 function init() {
     serverList = new ServerList();
     
-    $('#add-server').on('click', display_new_server_form);
     $('.editable').on('focusin', clearText);
     $('.editable').on('focusout', restoreText);
     $('#server-list .navbar li').on('click', toggleFilter);
     $('#create-server').on('click', addServer);
-    //loadServers();
     $(window).on('scroll', pageScroll);
-}
-
-function display_new_server_form() {
-    var element = $('#new-server');
-    
-    if(element.css('display') == 'none') {
-        element.slideDown();
-    }
 }
 
 function clearText() {
@@ -62,44 +52,24 @@ function toggleFilter() {
 function addServer() {
     $('#serverlist-error').fadeOut();
     
-    var name    = $('#new-server #serverName').html().trim();
-    var address = $('#new-server #serverAddress').html().trim();
-    var text    = $('#new-server #serverText').html().trim();
+    $('html').css('cursor', 'wait');
     
-    var fieldsFilled = true;
-    $('#server-list .editable').each(function(){
-        if($(this).data('default') == undefined)
-        {
-            fieldsFilled = false;
-        }
+    $.ajax({
+        url : '/server_list/add_new_server',
+        data : $('#server-form').serialize(),
+        success : handleAddServerResponse
     });
-    
-    if(fieldsFilled) {
-        $('html').css('cursor', 'wait');
-        
-        $.ajax({
-            url : '/server_list/add_new_server',
-            data : {
-                serverName          : name,
-                serverAddress       : address,
-                serverDescription   : text
-            },
-            success : handleAddServerResponse
-        });
-    } else {
-        handleAddServerResponse('fields not filled');
-    }
 }
 
 function handleAddServerResponse(data) {
     $('html').css('cursor', 'auto');
     
     if(data != 'OK') {
-        var alert = '<strong>Error!</strong> ' + data;
+        var alert = '<h4>Error!</h4> ' + data;
         $('#serverlist-error').html(alert).slideDown();
     } else {
-        var name = $('#new-server #serverName').html().trim();
-        window.location = 'server/' + name.split(' ').join('_');
+        var name = $('#server-form #name').val();
+        window.location = '/server/' + name.trim().split(' ').join('_');
     }
 }
 
@@ -135,6 +105,7 @@ function renderServers(serverArray) {
     
     $('.server_list_load').replaceWith(html);
     
+    $('.up_vote').off('click').on('click', handle_vote);
     serverList.add(newServers);
 }
 
@@ -159,4 +130,35 @@ function pageScroll(event) {
         
         loadServers(offset);
     }
+}
+
+function handle_vote() {
+    var $this = $(this);
+    var operation = 'up_vote';
+    
+    if($this.hasClass('voted')) {
+        operation = 'remove_vote';
+    }
+    
+    $.ajax({
+        url : '/server_list/' + operation + '/' + $this.data('id'),
+        context : $this,
+        success : function(success) {
+            if(success.trim() == 'true') {
+                var $this = $(this)
+                var $votes = $this.parent().find('.votes');
+                
+                var num = parseInt($votes.html());
+                
+                if($this.hasClass('voted')) {
+                    num = num - 1;
+                } else {
+                    num = num + 1;
+                }
+                
+                $votes.html(num);
+                $this.toggleClass('voted');
+            }
+        }
+    });
 }
