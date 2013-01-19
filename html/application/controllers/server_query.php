@@ -56,7 +56,7 @@ class Server_query extends MS2_Controller {
             $this->load->library('Minecraftquery');
             
             try {
-                $this->minecraftquery->connect($address, $server_port);
+                $this->minecraftquery->connect($address, $server_port, 1);
             } catch(Exception $ex) {
                 //exit('Error: ' . $ex->getMessage());
             }

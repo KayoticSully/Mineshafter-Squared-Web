@@ -16,7 +16,16 @@ class Server_list extends MS2_Controller {
     }
     
     public function test() {
-        $this->load->view('test');
+        if ( ! $foo = $this->cache->get('foo'))
+        {
+            echo 'Saving to the cache!<br />';
+            $foo = 'foobarbaz!';
+            
+            // Save into the cache for 5 minutes
+            $this->cache->save('foo', $foo, 300);
+        }
+        
+        echo $foo;
     }
     
     public function json($offset)
