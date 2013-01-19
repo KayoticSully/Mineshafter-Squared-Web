@@ -44,7 +44,7 @@ class Server extends ActiveRecord\Model {
         // check for unique name
         $check = $this->find_by_sql('SELECT * FROM servers WHERE name=?', array($name));
         
-        if (is_array($check))
+        if (is_array($check) && count($check) > 0)
         {
             $check = $check[0];
         }
@@ -108,7 +108,7 @@ class Server extends ActiveRecord\Model {
         $check = $this->find_by_sql('SELECT * FROM servers WHERE address=? AND port=?',
                                     array($server_address, $server_port));
         
-        if (is_array($check))
+        if (is_array($check) && count($check) > 0)
         {
             $check = $check[0];
         }
