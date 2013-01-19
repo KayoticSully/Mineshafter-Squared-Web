@@ -42,9 +42,9 @@ class Server extends ActiveRecord\Model {
         }
         
         // check for unique name
-        $check_arr = $this->find_by_sql('SELECT * FROM servers WHERE name=?', array($name));
+        $check = $this->find_by_sql('SELECT * FROM servers WHERE name=?', array($name));
         
-        $check = $check_arr[0];
+        //$check = $check_arr[0];
         if ($check && $check->id != $this->id)
         {
             throw new Exception("That server name has already been taken.  Please use a different name");
@@ -101,10 +101,10 @@ class Server extends ActiveRecord\Model {
         }
         
         // check for unique address
-        $check_arr = $this->find_by_sql('SELECT * FROM servers WHERE address=? AND port=?',
+        $check = $this->find_by_sql('SELECT * FROM servers WHERE address=? AND port=?',
                                     array($server_address, $server_port));
         
-        $check = $check_arr[0];
+        //$check = $check_arr[0];
         if ($check && $check->id != $this->id)
         {
             throw new Exception("This server address and port combination is already in use.");
