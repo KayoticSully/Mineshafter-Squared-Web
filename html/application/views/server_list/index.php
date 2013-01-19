@@ -1,4 +1,10 @@
 <div id="server-list" class="container">
+    <div class="alert alert-block">
+        <h4>Warning!</h4>
+        Since this is an alpha there is a chance that the server list
+        information might need to be deleted before release.  I will put up
+        announcements anytime data on the alpha needs to be purged.
+    </div>
     <div class="navbar">
         <div class="navbar-inner">
             <a class="brand" href="#">Filters</a>
@@ -13,14 +19,18 @@
                     </form>
                 </li>
             </ul>
-            <ul class="nav pull-right">
-                <li>
-                    <form class="navbar-form">
-                        <a class="btn btn-success" id="add-server">Add a Server</a>
-                    </form>
-                </li>
-            </ul>
+            <?php if ($user): ?>
+                <ul class="nav pull-right">
+                    <li>
+                        <form class="navbar-form">
+                            <a class="btn btn-success" id="add-server">Add a Server</a>
+                        </form>
+                    </li>
+                </ul>
+            <?php endif; ?>
         </div>
+    </div>
+    <div class="alert alert-error hide" id="serverlist-error">
     </div>
     <section id="new-server">
         <div class="quick-info">
@@ -73,12 +83,18 @@
             </div>
             <div class="details">
                 <div class="name">
-                    <a href="#">
+                    <a href="<?php echo $server->page_link(); ?>">
                         <?php echo $server->name; ?>
                     </a>
                 </div>
                 <div class="info">
-                    <?php echo $server->address; ?>
+                    <?php
+                        echo $server->address;
+                        if ($server->port != '25565')
+                        {
+                            echo ':' . $server->port;
+                        }
+                    ?>
                 </div>
                 <hr />
                 <div class="description">

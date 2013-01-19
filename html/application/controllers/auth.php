@@ -76,7 +76,9 @@ class Auth extends MS2_Controller {
         $this->load->helper('url');
         
         $this->session->unset_userdata('user_id');
-        redirect('/');
+        
+        $dest = $this->input->get('page') ? $this->input->get('page') : '/';
+        redirect($dest);
     }
     
     /**
