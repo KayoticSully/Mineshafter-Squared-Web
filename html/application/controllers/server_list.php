@@ -80,7 +80,8 @@ class Server_list extends MS2_Controller {
         }
         
         // make sure we only have the base name
-        $server_address = explode('/', $server_address)[0];
+        $server_address_arr = explode('/', $server_address);
+        $server_address = $server_address_arr[0];
         
         // get port or set to default
         if (array_key_exists('port', $address_object))
