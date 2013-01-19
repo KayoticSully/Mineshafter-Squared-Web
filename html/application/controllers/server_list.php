@@ -10,9 +10,26 @@ class Server_list extends MS2_Controller {
     
     public function index()
     {
-        //$this->javascripts = array('bootstrap-affix');
-        $this->variables = array('servers' => Server::find('all'),
-                                 'user' => $this->user);
+        $this->javascripts = array('Server', 'ServerList');
+        
+        $this->variables = array('user' => $this->user);
+    }
+    
+    public function test() {
+        $this->load->view('test');
+    }
+    
+    public function json($offset)
+    {
+        $servers = Server::find('all', array('limit' => 5, 'offset' => $offset));
+        
+        $server_arr = array();
+        foreach($servers as $server)
+        {
+            $server_arr[] = $server->toAssoc();
+        }
+        
+        $this->load->view('json', array('json' => json_encode($server_arr)));
     }
     
     public function add_new_server()

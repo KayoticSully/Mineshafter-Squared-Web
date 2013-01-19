@@ -1,7 +1,6 @@
-<div id="server-list" class="container">
+<div id="server-list" class="container extra-top-padding">
     <div class="alert alert-block">
-        <h4>Warning!</h4>
-        Since this is an alpha there is a chance that the server list
+        <strong>Warning!</strong> Since this is an alpha there is a chance that the server list
         information might need to be deleted before release.  I will put up
         announcements anytime data on the alpha needs to be purged.
     </div>
@@ -62,45 +61,4 @@
             </div>
         </div>
     </section>
-    <?php foreach($servers as $server): ?>
-        <section>
-            <div class="quick-info">
-                <div class="online-info">
-                    <?php /*<span class="badge badge-important">
-                        <i class="icon-remove icon-white"></i>
-                    </span> */ ?>
-                    <span class="badge badge-success">
-                        <i class="icon-ok icon-white"></i>
-                    </span>
-                    <span class="players">
-                        ? / 20
-                    </span>
-                </div>
-                <hr>
-                <div class="vote-info">
-                   <i class="icon-arrow-up"></i> 999 <span class="small-text">votes</span>
-                </div>
-            </div>
-            <div class="details">
-                <div class="name">
-                    <a href="<?php echo $server->page_link(); ?>">
-                        <?php echo $server->name; ?>
-                    </a>
-                </div>
-                <div class="info">
-                    <?php
-                        echo $server->address;
-                        if ($server->port != '25565')
-                        {
-                            echo ':' . $server->port;
-                        }
-                    ?>
-                </div>
-                <hr />
-                <div class="description">
-                    <?php echo $server->description; ?>
-                </div>
-            </div>
-        </section>
-    <?php endforeach; ?>
 </div>

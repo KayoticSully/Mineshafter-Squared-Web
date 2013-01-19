@@ -1,12 +1,18 @@
+var serverList = null;
+var serverCap = false;
 
 $(document).ready(init);
 
 function init() {
+    serverList = new ServerList();
+    
     $('#add-server').on('click', display_new_server_form);
     $('.editable').on('focusin', clearText);
     $('.editable').on('focusout', restoreText);
     $('#server-list .navbar li').on('click', toggleFilter);
     $('#create-server').on('click', addServer);
+    //loadServers();
+    $(window).on('scroll', pageScroll);
 }
 
 function display_new_server_form() {
@@ -40,7 +46,17 @@ function restoreText() {
 }
 
 function toggleFilter() {
+    $('section:not(#new-server), .remove').detach();
     $(this).toggleClass('active');
+    
+    var filter = {};
+    if($(this).hasClass('active')) {
+        filter['Online'] = true;
+    } else {
+        filter['Online'] = '';
+    }
+    
+    $('#server-list').append(serverList.render(filter));
 }
 
 function addServer() {
@@ -81,5 +97,66 @@ function handleAddServerResponse(data) {
     if(data != 'OK') {
         var alert = '<strong>Error!</strong> ' + data;
         $('#serverlist-error').html(alert).slideDown();
+    } else {
+        var name = $('#new-server #serverName').html().trim();
+        window.location = 'server/' + name.split(' ').join('_');
+    }
+}
+
+function loadServers(offset) {
+    
+    if(offset === undefined) {
+        offset = 0;
+    }
+    
+    $.ajax({
+        url : '/server_list/json/' + offset,
+        dataType: 'json',
+        success: renderServers
+    });
+}
+
+function renderServers(serverArray) {
+    var newServers = new ServerList();
+    
+    for(index in serverArray)
+    {
+        var server = new Server(serverArray[index]);
+        newServers.add(server);
+    }
+    
+    var html = '';
+    if(newServers.size() > 0) {
+        html = newServers.toString();
+    } else {
+        serverCap = true;
+        html = '<div class="center medium strong remove">You\'ve reached the end!</div>';
+    }
+    
+    $('.server_list_load').replaceWith(html);
+    
+    serverList.add(newServers);
+}
+
+function pageScroll(event) {
+    var $window = $(window);
+    var scrollTop = $window.scrollTop();
+    var windowHeight = $window.height();
+    var documentHeight = $(document).height();
+    
+    if(scrollTop + windowHeight >= documentHeight && $('.server_list_load').size() == 0 && !serverCap) {
+        
+        var loading = '<div class="server_list_load remove">' +
+                        '&nbsp;' +
+                    '</div>';
+                    
+        $('#server-list').append(loading);
+        
+        var offset = 0;
+        if(serverList != null) {
+            offset = serverList.size();
+        }
+        
+        loadServers(offset);
     }
 }
