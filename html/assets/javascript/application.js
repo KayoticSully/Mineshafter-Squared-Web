@@ -6,6 +6,8 @@ $(document).ready(function(){
     $('#login_form').on('click', '#dismiss', dismiss);
     $('#login_form').on('focusin', show_login_form);
     $('#login_form').on('focusout', hide_login_form);
+    
+    $('a[rel=popover]').popover();
 });
 
 function show_login_form() {

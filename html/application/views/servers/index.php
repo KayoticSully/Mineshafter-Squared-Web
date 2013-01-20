@@ -31,7 +31,7 @@
             <?php if ($owner): ?>
                 <ul class="nav pull-right">
                     <li>
-                        <form class="navbar-form">
+                        <form id="owner-actions" class="navbar-form">
                             <a data-toggle="modal" href="/servers/form/<?php echo $server->id; ?>" data-target="#server-modal" class="btn">Edit Server</a>
                         </form>
                     </li>

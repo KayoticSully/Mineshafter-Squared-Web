@@ -8,9 +8,9 @@ function init() {
     
     $('.editable').on('focusin', clearText);
     $('.editable').on('focusout', restoreText);
-    $('#server-list .navbar li').on('click', toggleFilter);
     $('#create-server').on('click', addServer);
     $(window).on('scroll', pageScroll);
+    $(window).scroll();
 }
 
 function clearText() {
@@ -33,20 +33,6 @@ function restoreText() {
         $this.html(text);
         $this.data('default', '');
     }
-}
-
-function toggleFilter() {
-    $('section:not(#new-server), .remove').detach();
-    $(this).toggleClass('active');
-    
-    var filter = {};
-    if($(this).hasClass('active')) {
-        filter['Online'] = true;
-    } else {
-        filter['Online'] = '';
-    }
-    
-    $('#server-list').append(serverList.render(filter));
 }
 
 function addServer() {

@@ -9,6 +9,7 @@
  |   Updated: 1/18/2013
  |---------------------------------------------------------------------
  */
+var server_count = 0;
 
 var ServerList = (function() {
     function ServerList() {
@@ -34,21 +35,10 @@ ServerList.prototype.toString = function() {
     var str = '';
     for(server in this.servers) {
         str += this.servers[server];
+        server_count++;
         
-        if(server != 0 && server % 4 == 0) {
+        if(server_count % 4 == 0) {
             str += this.getAd();
-        }
-    }
-    
-    return str;
-}
-
-ServerList.prototype.render = function(filters) {
-    str = '';
-    
-    for(server in this.servers) {
-        if(this.servers[server].meetsRequirements(filters)) {
-            str += this.servers[server].toString();
         }
     }
     
