@@ -32,7 +32,7 @@
                 <ul class="nav pull-right">
                     <li>
                         <form id="owner-actions" class="navbar-form">
-                            <a data-toggle="modal" href="/servers/form/<?php echo $server->id; ?>" data-target="#server-modal" class="btn">Edit Server</a>
+                            <a data-toggle="modal" href="/servers/form/<?php echo $server->id; ?>" data-target="#server-modal" class="btn btn-primary">Edit Server</a>
                         </form>
                     </li>
                 </ul>
@@ -90,6 +90,15 @@
                                 <th>Software</th><td id="Software"></td>
                             </tr>
                         </tbody>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Plugins</th>
+                                </tr>
+                            </thead>
+                            <tbody id="Plugins">
+                            </tbody>
+                        </table>
                     </table>
                 </div>
                 <div class="span4">
@@ -103,21 +112,6 @@
                         </tbody>
                     </table>
                 </div>
-        </section>
-        <section>
-            <div class="row">
-                <div class="span6">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Plugins</th>
-                            </tr>
-                        </thead>
-                        <tbody id="Plugins">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </section>
     </div>
 </div>
