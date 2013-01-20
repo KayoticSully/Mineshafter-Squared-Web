@@ -39,44 +39,13 @@
                 <ul class="nav pull-right">
                     <li>
                         <form class="navbar-form">
-                            <a data-toggle="modal" href="/servers/form" data-target="#server-modal" class="btn">Add a Server</a>
+                            <a data-toggle="modal" href="/servers/form" data-target="#server-modal" class="btn btn-primary">Add a Server</a>
                         </form>
                     </li>
                 </ul>
             <?php endif; ?>
         </div>
     </div>
-    
-    <?php /*<section id="new-server">
-        <div class="quick-info">
-            <div class="online-info">
-                <span class="badge">
-                    ?
-                </span>
-                <span class="players">
-                    ? / ?
-                </span>
-            </div>
-            <hr>
-            <div class="vote-info">
-               <button type="button" class="btn btn-success" id="create-server">Save Server</button>
-            </div>
-        </div>
-        <div class="details">
-            <div class="name">
-                <a href="#" class="editable" id="serverName" contenteditable>
-                    Server Name
-                </a>
-            </div>
-            <div class="info editable" id="serverAddress" contenteditable>
-                Server IP / URL
-            </div>
-            <hr />
-            <div class="description editable" id="serverText" contenteditable>
-                Add a short description.
-            </div>
-        </div>
-    </section> */ ?>
 </div>
 <div class="listAd">
     <script type="text/javascript">
