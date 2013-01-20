@@ -79,13 +79,15 @@
         Icons from <a href="http://www.glyphicons.com/">Glyphicons Free</a> licensed under
         <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
     </footer>
+    <!-- Google Analytics -->
     <script type="text/javascript">
-        var _urq = _urq || [];
-        _urq.push(['initSite', '6eade05c-3cd7-440a-be2d-d38963acaa7e']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24037493-2']);
+        _gaq.push(['_trackPageview']);
         (function() {
-        var ur = document.createElement('script'); ur.type = 'text/javascript'; ur.async = true;
-        ur.src = 'http://sdscdn.userreport.com/userreport.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
 </body>
