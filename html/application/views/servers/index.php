@@ -90,7 +90,7 @@
                                 <th>Software</th><td id="Software"></td>
                             </tr>
                         </tbody>
-                        <table class="table table-striped">
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th colspan="2">Plugins</th>
@@ -102,7 +102,7 @@
                     </table>
                 </div>
                 <div class="span4">
-                    <table class="table table-striped">
+                    <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th id="Players">Players</th>
