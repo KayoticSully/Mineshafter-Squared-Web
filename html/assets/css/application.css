@@ -7359,6 +7359,11 @@ body > footer {
     margin-top: 0px;
   }
 }
+@media (max-width: 990px) {
+  #shell-application {
+    margin-top: 0px;
+  }
+}
 nav .horizontal_nav ul li {
   display: inline-block;
   width: 94px;
