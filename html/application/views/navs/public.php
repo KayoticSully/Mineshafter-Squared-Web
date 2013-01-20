@@ -11,6 +11,15 @@
                         Home
                     </a>
                 </li>
+                <?php if($admin): ?>
+                    <li class="dropdown">
+                        <a id="admin-menu" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="admin-menu">
+                            <li><a tabindex="-1" href="/datas/admin">Data</a></li>
+                            <li><a tabindex="-1" href="/downloads/admin">Downloads</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
                 <li <?php if($active_menu == 'server_list') echo 'class="active"'; ?>>
                     <a href="/server_list">
                         <i class="icon-th-list"></i>

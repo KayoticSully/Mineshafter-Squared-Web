@@ -9,6 +9,7 @@
                         Home
                     </a>
                 </li>
+                
                 <li <?php if($active_menu == 'server_list') echo 'class="active"'; ?>>
                     <a href="/server_list">
                         <i class="icon-th-list"></i>

@@ -9,24 +9,24 @@
 <?php echo $css_links; ?>
 </head>
 <body>
-    <?php $this->load->view($navbar); ?>
+    <?php
+        $admin = $user && $user->type->level == 0 ? true : false;
+        $this->load->view($navbar, array('admin' => $admin));
+    ?>
     <div id="shell-top-wrapper">
         <div id="shell-top">
             <nav id="home_nav">
                 <?php if ($user): ?>
                     <div class="login_section">
-                        <a href="#" id="username">
-                            <?php echo $user->username; ?>
-                        </a>
-                        <br>
-                    </div>
-                    <div class="login_section">
                         <div id="user-logged-in" data-id"<?php echo $user->id; ?>"></div>
                         <br>
-                        <?php if ($user->type->level <= 0): ?>
-                            <a href="/admin" class="btn btn-small btn-info">Admin</a>
-                        <?php endif; ?>
-                        <a href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>" class="btn btn-small btn-primary">Logout</a>
+                        <a href="#" id="username" class="btn btn-link">
+                            <?php echo $user->username; ?>
+                        </a>
+                        -
+                        <a href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>" class="btn btn-link">
+                            Logout
+                        </a>
                     </div>
                 <?php else: ?>
                     <form action="/auth/login" method="POST" id="login_form">

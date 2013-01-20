@@ -8,8 +8,9 @@
 class MS2_Controller extends CI_Controller {
     protected $shell_view       = 'shell';
     protected $application_view = 'layouts/application';
-    // protected $admin_view       = 'layouts/admin';
+    // protected $admin_view    = 'layouts/admin';
     protected $variables        = array();
+    protected $navbar           = 'public';
     
     protected $assets           = array();
     protected $css              = array();
@@ -127,7 +128,7 @@ class MS2_Controller extends CI_Controller {
         //----------------------------------------------------
         // Some default javascript to include
         //----------------------------------------------------
-        $this->javascripts = array_merge($this->javascripts, array('bootstrap-tooltip', 'bootstrap-popover'));
+        $this->javascripts = array_merge($this->javascripts, array('bootstrap-tooltip', 'bootstrap-popover', 'bootstrap-dropdown'));
         
         //----------------------------------------------------
         // DEFAULT OUTPUT
@@ -195,22 +196,6 @@ class MS2_Controller extends CI_Controller {
             $application_render = $this->load->view($this->application_view, $application_variables, TRUE);
             
             //----------------------------------------------------
-            // Navbar
-            //----------------------------------------------------
-            //
-            switch ($this->router->method) {
-                case 'index':
-                    $home_link = '/';
-                    $navbar = 'public';
-                break;
-                
-                case 'admin':
-                    $home_link = '/admin';
-                    $navbar = 'admin';
-                break;
-            }
-            
-            //----------------------------------------------------
             // SHELL
             //----------------------------------------------------
             // This loads the site shell.  The application is
@@ -223,8 +208,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['application']        = $application_render;
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
-            $layout_variables['home_link']          = $home_link;
-            $layout_variables['navbar']             = 'navs/' . $navbar;
+            $layout_variables['navbar']             = 'navs/' . $this->navbar;
             $layout_variables['active_menu']        = $this->router->class;
             $layout_variables['user']               = $this->user;
             $layout_variables['browser']            = $this->agent->browser();

@@ -8,6 +8,7 @@ $(document).ready(function(){
     $('#login_form').on('focusout', hide_login_form);
     
     $('a[rel=popover]').popover();
+    $('.dropdown-toggle').dropdown();
 });
 
 function show_login_form() {
