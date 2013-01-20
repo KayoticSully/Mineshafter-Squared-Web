@@ -125,6 +125,11 @@ class MS2_Controller extends CI_Controller {
     public function _output($output)
     {
         //----------------------------------------------------
+        // Some default javascript to include
+        //----------------------------------------------------
+        $this->javascripts = array_merge($this->javascripts, array('bootstrap-tooltip', 'bootstrap-popover'));
+        
+        //----------------------------------------------------
         // DEFAULT OUTPUT
         //----------------------------------------------------
         // By default the view at "views/controller/function.php"
@@ -213,6 +218,8 @@ class MS2_Controller extends CI_Controller {
             // of a page.  The shell contains the top bar, which
             // includes user login and other user account features.
             //
+            $this->load->library('user_agent');
+            
             $layout_variables['application']        = $application_render;
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
@@ -220,6 +227,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['navbar']             = 'navs/' . $navbar;
             $layout_variables['active_menu']        = $this->router->class;
             $layout_variables['user']               = $this->user;
+            $layout_variables['browser']            = $this->agent->browser();
             
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }

@@ -19,12 +19,12 @@ class Servers extends MS2_Controller {
         }
         
         $owner = false;
-        if ($this->in_array_id_check($this->user, $server->owners))
+        if ($this->user && $this->in_array_id_check($this->user, $server->owners))
         {
             $owner = true;
         }
         
-        $this->javascripts = array('Server', 'bootstrap-modal', 'bootstrap-transition');
+        $this->javascripts = array('Server', 'bootstrap-modal', 'bootstrap-transition', 'bootstrap-alert');
         $this->variables = array('server' => $server,
                                  'json' => json_encode($server->toAssoc()),
                                  'owner' => $owner);

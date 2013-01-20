@@ -17,7 +17,7 @@ class Server_list extends MS2_Controller {
     
     public function json($offset)
     {
-        $servers = Server::find('all', array('limit' => 5, 'offset' => $offset));
+        $servers = Server::find('all', array('limit' => 5, 'offset' => $offset, 'order' => 'vote_count desc'));
         
         $server_arr = array();
         foreach($servers as $server)
@@ -45,7 +45,10 @@ class Server_list extends MS2_Controller {
         $server_id = $server->id;
         $vote = Servervote::find_by_user_id_and_server_id($user_id, $server_id);
         
-        if($vote && $vote->delete()) {
+        // decrement server count
+        $server->vote_count--;
+        
+        if($vote && $vote->delete() && $server->save()) {
             exit('true');
         } else {
             exit('false');
@@ -71,17 +74,22 @@ class Server_list extends MS2_Controller {
             }
             else
             {
+                // log the vote for this user
                 $vote = new Servervote();
                 $vote->user_id = $user_id;
                 $vote->server_id = $server_id;
                 
-                if ($vote->save())
+                // increment server count for performance
+                $server->vote_count++;
+                
+                if ($vote->save() && $server->save())
                 {
                     echo 'true';
                 }
                 else
                 {
-                   echo 'false'; 
+                    $vote->delete();
+                    echo 'false'; 
                 }
             }
         }

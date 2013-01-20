@@ -24,7 +24,7 @@
     <div class="navbar">
         <div class="navbar-inner">
             <a class="brand" href="#">Filters</a>
-            <ul class="nav">
+            <?php /*<ul class="nav">
                 <li><a href="#">Online</a></li>
             </ul>
             <ul class="nav">
@@ -34,7 +34,7 @@
                         <button type="submit" class="btn">Search</button>
                     </form>
                 </li>
-            </ul>
+            </ul>*/ ?>
             <?php if ($user): ?>
                 <ul class="nav pull-right">
                     <li>

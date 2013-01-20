@@ -66,18 +66,6 @@ Server.prototype.votedClass = function() {
     }
 }
 
-Server.prototype.meetsRequirements = function(filter) {
-    var good = true;
-    
-    for(key in filter) {
-        if(filter[key] != '' && this[key] != filter[key]) {
-            good = false;
-        }
-    }
-    
-    return good;
-}
-
 Server.prototype.toString = function() {
     var str =   '<section id="server-' + this.id + '">' +
                     '<div class="quick-info">' +
@@ -226,6 +214,13 @@ Server.prototype.displayInfo = function() {
                     text = "Offline";
                     badge.addClass('badge-important').html('<i class="icon-remove icon-white"></i>');
                     tr.addClass('error');
+                    
+                    if($('#owner-actions').size() == 1) {
+                        $('div[id^="server-"] .navbar').after('<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                    'If your server is online, but not showing up as such, make sure' +
+                                    ' you have set enable-query=true in your server config file.' +
+                                    '</div>');
+                    }
                 }
             break;
             

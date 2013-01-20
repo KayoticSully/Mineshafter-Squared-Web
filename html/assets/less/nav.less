@@ -3,7 +3,6 @@
 //-----------------------------------
 // Nav Imports
 //-----------------------------------
-//@import 'nav-icons';
 
 //-----------------------------------
 // Nav Variables
@@ -119,57 +118,5 @@ nav {
         list-style: none;
         margin: 0px;
         padding:0px;
-    }
-}
-
-@media (max-width: 990px) {
-    nav {
-        &#main-nav {
-            position: static;
-            
-            ul li {
-                width: @nav-width - 10;
-                height:@nav-width - 16;
-            }
-            
-            #nav_list {
-                padding: 0px @top-side-padding;
-            }
-            
-            #login_form_wrapper {
-                width: 450px;
-                height:@nav-width - 15;
-                
-                .nav_form_label {
-                    width: @nav-width - 10;
-                }
-                
-                .login_section {
-                    input {
-                        font-size: 13px;
-                        padding: 2px 6px;
-                        margin-bottom: 8px;
-                    }
-                    
-                    .btn:last-child {
-                        margin-top: 0px;
-                        padding:2px 6px;
-                        font-size: 13px;
-                    }
-                }
-            }
-            
-            &#main-nav {
-                margin: -@nav-width / 2 - 16 0px 0px 0px;
-            }
-        }
-        
-        &#home_nav {
-            height:@nav-width - 16;
-            ul li {
-                width: @nav-width - 10;
-                height:@nav-width - 16;
-            }
-        }
     }
 }

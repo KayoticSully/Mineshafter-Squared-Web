@@ -4,10 +4,10 @@ $(document).ready(init);
 
 function init() {
     server = new Server($('#server-data').data('json'), true);
-    $('#update-server').on('click', addServer);
+    $('#update-server').on('click', saveServer);
 }
 
-function addServer() {
+function saveServer() {
     $('#serverlist-error').fadeOut();
     
     $('html').css('cursor', 'wait');
@@ -15,11 +15,11 @@ function addServer() {
     $.ajax({
         url : '/servers/update',
         data : $('#server-form').serialize(),
-        success : handleAddServerResponse
+        success : handleSaveServerResponse
     });
 }
 
-function handleAddServerResponse(data) {
+function handleSaveServerResponse(data) {
     $('html').css('cursor', 'auto');
     
     if(data != 'OK') {

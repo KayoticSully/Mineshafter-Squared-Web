@@ -25,7 +25,8 @@
   color: #b3b3b3;
 }
 #online-badge {
-  top: 11px;
+  top: 12px;
+  left: 20px;
   position: absolute;
 }
 #leftInfo {
