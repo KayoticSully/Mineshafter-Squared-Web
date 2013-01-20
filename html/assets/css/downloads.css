@@ -12,12 +12,15 @@
   background-repeat: no-repeat;
   background-position: left;
 }
+.medium {
+  font-size: 18px;
+}
+.strong {
+  font-weight: bold;
+}
 .row-action {
   cursor: pointer;
   margin: 0 5px;
-}
-.container {
-  margin-top: 20px;
 }
 .loading_link a,
 .loading_link a:hover {
