@@ -73,6 +73,11 @@ class Server_query extends MS2_Controller {
             $info['Online'] = $this->minecraftquery->isOnline();
             
             $this->cache->save('query-' . $server_name, $info, $this->query_cache_time);
+            
+            if($server)
+            {
+                
+            }
         }
         
         if ($filters)
