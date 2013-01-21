@@ -7,7 +7,10 @@
  */
 class Server_query extends MS2_Controller {
     
-    private $query_cache_time = 300;
+    private $query_cache_time   = 300;
+    private $query_timeout      = 2;
+    private $default_output     = 'json';
+    private $output_options     = array('json', 'pre');
     
     public function json()
     {
@@ -15,6 +18,7 @@ class Server_query extends MS2_Controller {
         $server_name = $this->input->get('server');
         $server_port = $this->input->get('port');
         $filters     = $this->input->get('filters');
+        $output      = $this->input->get('output');
         
         $info = $this->cache->get('query-' . $server_name);
         
@@ -36,6 +40,8 @@ class Server_query extends MS2_Controller {
                 {
                     $server_port = 25565;
                 }
+                
+                $server = Server::find_by_address_and_port($address, $server_port);
             }
             else
             {
@@ -74,8 +80,13 @@ class Server_query extends MS2_Controller {
             $info = array_intersect_key($info, $this->parse_filters($filters));
         }
         
+        if (!in_array($output, $this->output_options))
+        {
+            $output = $this->default_output;
+        }
+        
         // print out object as json
-        $this->load->view('json', array('json' => $info));
+        $this->load->view($output, array($output => $info));
     }
     
     private function parse_filters($filters)
