@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li <?php if($active_menu == 'textures') echo 'class="active"'; ?>>
-                    <a href="/textures">
+                    <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="The skin/cape texture system is still in development. Just as the server list was revamped in a BIG way, you can look forward to a significant improvement over the previous texture system once it is finished." data-original-title="Not Available Yet">
                         <i class="icon-th-large"></i>
                         Skins / Capes
                     </a>
