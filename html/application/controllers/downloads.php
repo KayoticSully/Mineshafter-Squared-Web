@@ -88,7 +88,7 @@ class Downloads extends MS2_Controller {
     {
         $this->protect('admin');
         
-        $this->load->helper('table');
+        $this->load->helper(array('form', 'table'));
         
         $group_name = str_replace('_', ' ', $group_name);
         $group = Downloadgroup::find_by_name($group_name);

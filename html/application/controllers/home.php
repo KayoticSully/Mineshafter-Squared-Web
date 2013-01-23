@@ -68,7 +68,7 @@ class Home extends MS2_Controller {
      * Displays the user logn form
      */
     public function login_form() {
-        
+        $this->load->helper('form');
     }
     
     /**

@@ -43,6 +43,7 @@ class Servers extends MS2_Controller {
      */
     public function form($id=0)
     {
+        $this->load->helper('form');
         if($id != 0)
         {
             $server = Server::find_by_id($id);

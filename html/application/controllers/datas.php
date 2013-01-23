@@ -25,7 +25,7 @@ class Datas extends MS2_Controller {
      */
     public function admin()
     {
-        $this->load->helper('table');
+        $this->load->helper(array('form', 'table'));
         $this->javascripts = array('editable_table');
         
         $this->variables['datas'] = Data::find('all');
