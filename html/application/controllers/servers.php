@@ -24,7 +24,7 @@ class Servers extends MS2_Controller {
             $owner = true;
         }
         
-        $this->javascripts = array('Server', 'bootstrap-modal', 'bootstrap-transition', 'bootstrap-alert');
+        $this->javascripts = array('Server', 'bootstrap-alert');
         $this->variables = array('server' => $server,
                                  'json' => json_encode($server->toAssoc()),
                                  'owner' => $owner);

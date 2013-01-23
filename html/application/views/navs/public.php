@@ -11,15 +11,6 @@
                         Home
                     </a>
                 </li>
-                <?php if($admin): ?>
-                    <li class="dropdown">
-                        <a id="admin-menu" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="admin-menu">
-                            <li><a tabindex="-1" href="/datas/admin">Data</a></li>
-                            <li><a tabindex="-1" href="/downloads/admin">Downloads</a></li>
-                        </ul>
-                    </li>
-                <?php endif; ?>
                 <li <?php if($active_menu == 'server_list') echo 'class="active"'; ?>>
                     <a href="/server_list">
                         <i class="icon-th-list"></i>
@@ -27,7 +18,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="The skin/cape texture system is still in development. Just as the server list was revamped in a BIG way, you can look forward to a significant improvement over the previous texture system once it is finished." data-original-title="Not Available Yet">
+                    <a href="/textures">
                         <i class="icon-th-large"></i>
                         Skins / Capes
                     </a>
@@ -44,7 +35,65 @@
                         Community
                     </a>
                 </li>
+                <?php if ($user): ?>
+                    <li class="dropdown">
+                        <div id="user-logged-in" data-id"<?php echo $user->id; ?>"></div>
+                        <a id="admin-menu" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i>
+                            <?php echo $user->username; ?>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="admin-menu">
+                            <li>
+                                <a tabindex="-1" href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>">
+                                    Logout
+                                </a>
+                            </li>
+                            <?php if ($user->is_admin()): ?>
+                                <li class="nav-header">
+                                    Admin
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="/datas/admin">
+                                        Data
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="/downloads/admin">
+                                        Downloads
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </li>
+                <?php else: ?>
+                    <li>
+                        <a data-toggle="modal" href="/home/login_form" id="show-login" data-target="#login-modal" role="button"  >
+                            <i class="icon-user"></i>
+                            Log in
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
 </div>
+<?php if (!$user): ?>
+    <div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>User Login</h3>
+        </div>
+        <div class="alert alert-error hide" id="login-error">
+        </div>
+        <div class="modal-body">
+            <div class="center_load">
+                &nbsp;
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button id="login" class="btn btn-primary">Log in</button>
+        </div>
+    </div>
+<?php endif; ?>

@@ -128,7 +128,9 @@ class MS2_Controller extends CI_Controller {
         //----------------------------------------------------
         // Some default javascript to include
         //----------------------------------------------------
-        $this->javascripts = array_merge($this->javascripts, array('bootstrap-tooltip', 'bootstrap-popover', 'bootstrap-dropdown'));
+        $this->javascripts = array_merge($this->javascripts, array('bootstrap-tooltip', 'bootstrap-popover',
+                                                                   'bootstrap-dropdown', 'bootstrap-modal',
+                                                                   'bootstrap-transition'));
         
         //----------------------------------------------------
         // DEFAULT OUTPUT

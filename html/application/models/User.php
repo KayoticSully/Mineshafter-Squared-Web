@@ -111,4 +111,16 @@ class User extends ActiveRecord\Model {
         // save salt and password
         $this->hashed_password = $salt . $hash;
     }
+    
+    public function is_admin()
+    {
+        if ($this->type->level == 0)
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
 }

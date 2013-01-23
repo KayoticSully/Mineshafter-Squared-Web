@@ -13,7 +13,7 @@
 (function( $ ){
     
     var time        = new Date().getTime();
-    var timeLimit   = 86400000 * 7;
+    var timeLimit   = 300000;
     
     /*-------------------------------------------
      * "Plugin Constructor"

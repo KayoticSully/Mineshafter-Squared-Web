@@ -56,6 +56,10 @@ class Home extends MS2_Controller {
         phpinfo();
     }
     
+    public function login_form() {
+        
+    }
+    
     private function tumblr_request($method, $properties)
     {
         $query = http_build_query($properties);

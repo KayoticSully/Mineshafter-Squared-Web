@@ -7269,10 +7269,10 @@ body {
 #shell-top {
   background-color: #C0C0C0;
   z-index: 999;
-  width: 992px;
+  width: 728px;
   margin: 0 auto;
   padding: 20px;
-  height: 92px;
+  height: 90px;
   clear: both;
   *zoom: 1;
   *zoom: 1;
@@ -7503,18 +7503,6 @@ ul li.active a {
 #username {
   font-size: 14px;
 }
-.login_load {
-  background-image: url('/assets/img/login-load.gif');
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 15px;
-  width: 172px;
-  padding: 54px 0px 0px 0px;
-}
-.login_message {
-  width: 250px;
-  font-size: 13px;
-}
 #site-body {
   margin-bottom: 20px;
   padding: 20px;
@@ -7528,4 +7516,7 @@ ul li.active a {
   background-repeat: no-repeat;
   background-position: center;
   height: 15px;
+}
+.visibility-hidden {
+  visibility: hidden;
 }

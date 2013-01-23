@@ -1,7 +1,7 @@
 <div id="server-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="server-modal" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3 id="myModalLabel">New Server</h3>
+        <h3>New Server</h3>
     </div>
     <div class="alert alert-error hide" id="serverlist-error">
     </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <input type="submit" value="Create" id="create-server" class="btn btn-primary" />
+        <button id="create-server" class="btn btn-primary">Create</button>
     </div>
 </div>
 <div id="server-list" class="container extra-top-padding">

@@ -35,10 +35,14 @@ function restoreText() {
     }
 }
 
-function addServer() {
-    $('#serverlist-error').fadeOut();
+function addServer(event) {
+    event.preventDefault();
     
+    // switch to loading cursor
     $('html').css('cursor', 'wait');
+    
+    // hide last error
+    $('#serverlist-error').fadeOut();
     
     $.ajax({
         url : '/server_list/add_new_server',
