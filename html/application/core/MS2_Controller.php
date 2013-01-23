@@ -8,9 +8,8 @@
 class MS2_Controller extends CI_Controller {
     protected $shell_view       = 'shell';
     protected $application_view = 'layouts/application';
-    // protected $admin_view    = 'layouts/admin';
     protected $variables        = array();
-    protected $navbar           = 'public';
+    protected $navbar           = 'navs/public';
     
     protected $assets           = array();
     protected $css              = array();
@@ -210,7 +209,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['application']        = $application_render;
             $layout_variables['css_links']          = $css_links;
             $layout_variables['javascript_links']   = $javascript_links;
-            $layout_variables['navbar']             = 'navs/' . $this->navbar;
+            $layout_variables['navbar']             = $this->navbar;
             $layout_variables['active_menu']        = $this->router->class;
             $layout_variables['user']               = $this->user;
             $layout_variables['browser']            = $this->agent->browser();

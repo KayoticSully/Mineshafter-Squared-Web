@@ -2,4 +2,8 @@ Admin Pages
 ===========
 Downloads
 ---------
-The download's admin page is in development.  The general idea is to have the ability to Add/Delete/Modify Download Sections as well as individial Download Files (Including uploading of new or updated files).
+Currently have the ability to modify or delete downloads database records.  Can not add or upload new download's yet.
+
+Datas
+-----
+Can modify or delete any record in the datas table

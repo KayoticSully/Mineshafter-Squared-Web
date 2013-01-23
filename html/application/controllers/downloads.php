@@ -7,11 +7,20 @@
  */
 class Downloads extends MS2_Controller {
     
+    /**
+     * Class Constructor
+     */
     public function __construct()
     {
         parent::__construct();
     }
     
+    /**
+     * @name    admin
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Admin page to manage downloads
+     */
     public function admin()
     {
         $this->protect('admin');
@@ -20,11 +29,23 @@ class Downloads extends MS2_Controller {
         $this->variables = array("download_groups" => Downloadgroup::find('all'));
     }
     
+    /**
+     * @name    html
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Displays html for the download's listing
+     */
     public function html()
     {
         $this->variables = array("download_groups" => Downloadgroup::find('all'));
     }
     
+    /**
+     * @name    save row
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Saves a single download's row
+     */
     public function save_row($id)
     {
         $this->protect('admin');
@@ -39,6 +60,12 @@ class Downloads extends MS2_Controller {
             echo "false";
     }
     
+    /**
+     * @name    delete row
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Deletes a single downlod's row
+     */
     public function delete_row($id)
     {
         $this->protect('admin');
@@ -51,6 +78,12 @@ class Downloads extends MS2_Controller {
             echo "false";
     }
     
+    /**
+     * @name    edit group
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Displays forms to edit a group of download's
+     */
     public function edit_group($group_name)
     {
         $this->protect('admin');
@@ -63,6 +96,12 @@ class Downloads extends MS2_Controller {
         $this->variables = array("group" => $group);
     }
     
+    /**
+     * @name    admin
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Save's edits to a group of downloads
+     */
     public function save_group($id)
     {
         $this->protect('admin');

@@ -6,7 +6,7 @@
  |---------------------------------------------------------------------
  | Author(s): Ryan Sullivan
  |   Created: 8/23/2012
- |   Updated: 8/24/2012
+ |   Updated: 1/23/2013
  |  Location: ./assets/javascript/announcements.js
  */
 

@@ -6,13 +6,22 @@
  * @author      Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Server_query extends MS2_Controller {
-    
+    /**
+     * Class Variables
+     */
     private $query_cache_time   = 300;
     private $query_timeout      = 2;
     private $default_output     = 'json';
     private $output_options     = array('json', 'pre');
     
-    public function json()
+    /**
+     * @name    run
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Runs a query at the specified server on the specified port
+     * and returns data based on the specified filters and output settings
+     */
+    public function run()
     {
         // get input
         $server_name = $this->input->get('server');
@@ -94,6 +103,13 @@ class Server_query extends MS2_Controller {
         $this->load->view($output, array($output => $info));
     }
     
+    /**
+     * @name    parse filters
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Takes in a comma separated list and returns an object
+     * where each item in the list is the key with a value of TRUE
+     */
     private function parse_filters($filters)
     {
         $filter_arr = explode(',', $filters);

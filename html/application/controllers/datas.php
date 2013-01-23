@@ -3,10 +3,13 @@
 /**
  * Data
  * 
- * @author      Ryan Sullivan
+ * @author      Ryan Sullivan <kayoticsully@gmail.com>
  */
 class Datas extends MS2_Controller {
     
+    /**
+     * Class Constructor
+     */
     public function __construct()
     {
         parent::__construct();
@@ -14,6 +17,12 @@ class Datas extends MS2_Controller {
         $this->protect('admin');
     }
     
+    /**
+     * @name    admin
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Admin page to manage site data
+     */
     public function admin()
     {
         $this->load->helper('table');
@@ -22,6 +31,12 @@ class Datas extends MS2_Controller {
         $this->variables['datas'] = Data::find('all');
     }
     
+    /**
+     * @name    save row
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Saves a single row of data to the database
+     */
     public function save_row($id)
     {
         $data = Data::find_by_id($id);
@@ -34,6 +49,12 @@ class Datas extends MS2_Controller {
             echo "false";
     }
     
+    /**
+     * @name    delete row
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Deletes a single row of data from the database
+     */
     public function delete_row($id)
     {
         $data = Data::find_by_id($id);

@@ -6,7 +6,12 @@
  * @author      Ryan Sullivan (kayoticsully@gmail.com)
  */
 class Servers extends MS2_Controller {
-    
+    /**
+     * @name    index
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Displays a server's page
+     */
     public function index($name)
     {
         $real_name = str_replace('_', ' ', $name);
@@ -24,12 +29,18 @@ class Servers extends MS2_Controller {
             $owner = true;
         }
         
-        $this->javascripts = array('Server', 'bootstrap-alert');
+        $this->javascripts = array('objects/Server', 'bootstrap-alert');
         $this->variables = array('server' => $server,
                                  'json' => json_encode($server->toAssoc()),
                                  'owner' => $owner);
     }
     
+    /**
+     * @name    form
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Displays the form needed to edit or create a server
+     */
     public function form($id=0)
     {
         if($id != 0)
@@ -39,6 +50,12 @@ class Servers extends MS2_Controller {
         }
     }
     
+    /**
+     * @name    update
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Updates a server's data
+     */
     public function update()
     {
         $this->protect('user');
@@ -75,6 +92,15 @@ class Servers extends MS2_Controller {
         }
     }
     
+    /**
+     * @name    in array id check
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Checks to see if the specified database object is in
+     * an array of database objects.
+     *
+     * @return TRUE if the object is found, FALSE otherwise
+     */
     private function in_array_id_check($needle, $haystack)
     {
         foreach($haystack as $hay)
