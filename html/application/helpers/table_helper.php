@@ -30,6 +30,8 @@ if (! function_exists('editable_table'))
         // add the extra header for actions
         $header_html .="<th>Actions</th>";
         
+        echo form_open();
+        echo form_close();
         ?>
             <legend>
                 <?php echo $table_name; ?>

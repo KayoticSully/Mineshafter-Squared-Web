@@ -2,7 +2,8 @@ var // page globals
 action_class    = '.row-action',
 ajax_uri        = '',
 delete_function = 'delete_row',
-save_function   = 'save_row';
+save_function   = 'save_row',
+csrf_id         = 'csrf_token';
 
 // Initialize the page
 function editable_table_init()
@@ -107,6 +108,8 @@ function save_row(row)
         
         data_map[field] = data;
     });
+    
+    data_map[csrf_id] = $('input[name=' + csrf_id + ']').val();
     
     // make server request
     $.ajax({

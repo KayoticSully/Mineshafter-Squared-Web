@@ -137,9 +137,9 @@ class Server_list extends MS2_Controller {
     {
         $this->protect('user');
         
-        $server_name = $this->input->get('name');
-        $server_address = $this->input->get('address');
-        $server_description = $this->input->get('description');
+        $server_name = $this->input->get('name', TRUE);
+        $server_address = $this->input->get('address', TRUE);
+        $server_description = $this->input->get('description', TRUE);
         
         if ($server_name == '' OR $server_address == '' OR $server_description == '')
         {

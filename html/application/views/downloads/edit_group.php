@@ -1,5 +1,7 @@
 <section>
-    <form id="edit_group_form" href="#" class="form-horizontal" data-group-id="<?php echo $group->id; ?>">
+    <?php echo form_open('#', array('id' => 'edit_group_form',
+                                    'class' => 'form-horizontal',
+                                    'data-group-id' => $group->id)); ?>
         <fieldset>
             <legend>
                 <span id="name-field">
@@ -20,7 +22,7 @@
                 </div>
             </div>
         </fieldset>
-    </form>
+    <?php echo form_close(); ?>
 </section>
 <section>
     <?php editable_table("Files",

@@ -1,4 +1,4 @@
-<form action="#" method="POST" id="server-form" class="form-horizontal">
+<?php echo form_open('#', array('id' => 'server-form', 'class' => 'form-horizontal')); ?>
     <input type="submit" class="visibility-hidden" />
     <?php if(isset($server)): ?>
         <input type="hidden" name="id" value="<?php echo $server->id; ?>" />
@@ -21,7 +21,7 @@
             <textarea required="required" name="description" id="description" rows="3"><?php if (isset($server)){ echo $server->description; } ?></textarea>
         </div>
     </div>
-</form>
+<?php echo form_close(); ?>
 <script>
     $('#server-form').on('submit', addServer);
 </script>
