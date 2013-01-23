@@ -10,44 +10,10 @@
 </head>
 <body>
     <?php
-        $admin = $user && $user->type->level == 0 ? true : false;
-        $this->load->view($navbar, array('admin' => $admin));
+        $this->load->view($navbar, array('user' => $user));
     ?>
     <div id="shell-top-wrapper">
         <div id="shell-top">
-            <nav id="home_nav">
-                <?php if ($user): ?>
-                    <div class="login_section">
-                        <div id="user-logged-in" data-id"<?php echo $user->id; ?>"></div>
-                        <br>
-                        <a href="#" id="username" class="btn btn-link">
-                            <?php echo $user->username; ?>
-                        </a>
-                        -
-                        <a href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>" class="btn btn-link">
-                            Logout
-                        </a>
-                    </div>
-                <?php else: ?>
-                    <form action="/auth/login" method="POST" id="login_form">
-                        <div class="login_section" id="login_fields">
-                            <input type="text" id="username" name="username" placeholder="Username" />
-                            <input type="password" id="password" name="password" placeholder="Password" />
-                        </div>
-                        <div class="login_section hide" id="login_actions">
-                            <input type="submit" value="Login" class="btn btn-small btn-primary" />
-                            <a class="btn btn-link" target="_blank" href="http://minecraft.net/resetpassword">Lost Password?</a>
-                        </div>
-                        <div class="login_section login_load hide">&nbsp;</div>
-                        <div class="login_section login_message hide">
-                            &nbsp;
-                        </div>
-                        <div class="login_section message_dismiss hide">
-                            <input type="button" class="btn btn-small btn-primary" id="dismiss" value="Ok" />
-                        </div>
-                    </form>
-                <?php endif; ?>
-            </nav>
             <div id="topAd">
                 <script type="text/javascript"><!--
                     google_ad_client = "ca-pub-2130540909688027";

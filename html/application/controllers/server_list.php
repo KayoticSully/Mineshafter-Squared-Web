@@ -10,7 +10,7 @@ class Server_list extends MS2_Controller {
     
     public function index()
     {
-        $this->javascripts = array('Server', 'ServerList', 'bootstrap-modal', 'bootstrap-transition');
+        $this->javascripts = array('Server', 'ServerList');
         
         $this->variables = array('user' => $this->user);
     }

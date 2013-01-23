@@ -1,4 +1,5 @@
 <form action="#" method="POST" id="server-form" class="form-horizontal">
+    <input type="submit" class="visibility-hidden" />
     <?php if(isset($server)): ?>
         <input type="hidden" name="id" value="<?php echo $server->id; ?>" />
     <?php endif; ?>
@@ -21,3 +22,6 @@
         </div>
     </div>
 </form>
+<script>
+    $('#server-form').on('submit', addServer);
+</script>
