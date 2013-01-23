@@ -238,18 +238,18 @@ $config['encryption_key'] = 'EbAcuuc6508ZIh8Ilke9w5qilGta4EqNJQuVPxOXPBOm1Cxvhxr
 |   when the browser window is closed
 | 'sess_encrypt_cookie'		= Whether to encrypt the cookie
 | 'sess_use_database'		= Whether to save the session data to a database
-| 'sess_table_name'			= The name of the session database table
-| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
+| 'sess_table_name'		= The name of the session database table
+| 'sess_match_ip'		= Whether to match the user's IP address when reading the session data
 | 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']	    = 'ci_session';
+$config['sess_cookie_name']	    = 'session';
 $config['sess_expiration']	    = 7200;
 $config['sess_expire_on_close']	    = FALSE;
 $config['sess_encrypt_cookie']	    = TRUE;
-$config['sess_use_database']	    = FALSE;
-$config['sess_table_name']  	    = 'ci_sessions';
+$config['sess_use_database']	    = TRUE;
+$config['sess_table_name']  	    = 'sessions';
 $config['sess_match_ip']	    = TRUE;
 $config['sess_match_useragent']	    = TRUE;
 $config['sess_time_to_update']	    = 300;
