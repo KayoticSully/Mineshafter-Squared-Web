@@ -17,7 +17,7 @@
                         Server List
                     </a>
                 </li>
-                <li>
+                <li <?php if($active_menu == 'textures') echo 'class="active"'; ?>>
                     <a href="/textures">
                         <i class="icon-th-large"></i>
                         Skins / Capes
