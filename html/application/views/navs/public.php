@@ -82,7 +82,7 @@
     <div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>User Login</h3>
+            <h3>Log in</h3>
         </div>
         <div class="alert alert-error hide" id="login-error">
         </div>
