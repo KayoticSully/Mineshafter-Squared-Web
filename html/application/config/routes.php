@@ -47,7 +47,7 @@ $route['game/getversion']       = 'game/get_version';
 
 $route['server/(:any)']         = 'servers/index/$1';
 
-$route['server_query']          = 'server_query/json';
+$route['server_query']          = 'server_query/run';
 
 
 /* End of file routes.php */

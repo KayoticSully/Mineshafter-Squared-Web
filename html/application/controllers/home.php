@@ -6,21 +6,30 @@
  * @author      Ryan Sullivan
  */
 class Home extends MS2_Controller {
-    
+    /**
+     * Class Variables
+     */
     private $tumblr_api_url = 'http://api.tumblr.com/v2/blog/';
     private $tumblr_basename = 'mineshaftersquared.tumblr.com';
     private $tumblr_oauth_key = 'qbyWHm4qD00vblTRalf3sO2LRwuAnVqZkh7F6mkhxGVlr6PLow';
     
+    /**
+     * @name    index
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Displays the site's homepage
+     */
     public function index()
     {
-        $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'post', 'announcements', 'loadAndCache');
+        $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'objects/Post', 'jquery-plugins/announcements', 'jquery-plugins/load-and-cache');
     }
     
-    public function admin()
-    {
-        $this->protect('admin');
-    }
-    
+    /**
+     * @name    announcements
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Returns announcement data in JSON form
+     */
     public function announcements($limit=1, $offset=0, $type='html')
     {
         $query = array();
@@ -52,14 +61,22 @@ class Home extends MS2_Controller {
         }
     }
     
-    public function phpinfo() {
-        phpinfo();
-    }
-    
+    /**
+     * @name    login form
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Displays the user logn form
+     */
     public function login_form() {
         
     }
     
+    /**
+     * @name    tumblr request
+     * @author  Ryan Sullivan <kayoticsully@gmail.com>
+     *
+     * Queries the tumblr api
+     */
     private function tumblr_request($method, $properties)
     {
         $query = http_build_query($properties);

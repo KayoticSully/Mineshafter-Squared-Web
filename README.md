@@ -25,6 +25,7 @@ Table of Contents
     *   [Object Oriented](Mineshafter-Squared-Web/blob/master/docs/JavaScript.md#object-oriented-javascript)
 6.  [Views](Mineshafter-Squared-Web/blob/master/docs/Views.md)
     *   [Default View](Mineshafter-Squared-Web/blob/master/docs/Views.md#default-view)
+7.  [Server Query API](Mineshafter-Squared-Web/blob/master/docs/developers/ServerQueryAPI.md)
 
 Getting Started
 ---------------

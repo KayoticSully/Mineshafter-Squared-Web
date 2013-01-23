@@ -3,7 +3,7 @@
 /**
  * Auth
  * 
- * @author      Ryan Sullivan
+ * @author      Ryan Sullivan <kayoticsully@gmail.com>
  */
 class Auth extends MS2_Controller {
     
