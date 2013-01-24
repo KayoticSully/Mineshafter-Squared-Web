@@ -20,6 +20,9 @@
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+    <?php
+        $this->load->view($navbar, array('user' => $user));
+    ?>
     <div id="shell-top-wrapper">
         <div id="shell-top">
             <div id="banner">
@@ -44,9 +47,6 @@
                 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
             </div>
         </div>
-        <?php
-            $this->load->view($navbar, array('user' => $user));
-        ?>
     </div>
     <div id="shell-application">
         <?php if($browser == "Internet Explorer"): ?>
