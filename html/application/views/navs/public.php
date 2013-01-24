@@ -1,9 +1,6 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-static-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#">
-                Mineshafter Squared
-            </a>
             <ul class="nav">
                 <li <?php if($active_menu == 'home') echo 'class="active"'; ?>>
                     <a href="/">
@@ -78,22 +75,3 @@
         </div>
     </div>
 </div>
-<?php if (!$user): ?>
-    <div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Log in</h3>
-        </div>
-        <div class="alert alert-error hide" id="login-error">
-        </div>
-        <div class="modal-body">
-            <div class="center_load">
-                &nbsp;
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <button id="login" class="btn btn-primary">Log in</button>
-        </div>
-    </div>
-<?php endif; ?>

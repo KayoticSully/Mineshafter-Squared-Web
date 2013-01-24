@@ -5,15 +5,36 @@
     <title>
         Mineshafter Squared
     </title>
+    <link rel="canonical" href="http://mineshaftersquared.com" />
 <!-- CSS -->
 <?php echo $css_links; ?>
 </head>
 <body>
-    <?php
-        $this->load->view($navbar, array('user' => $user));
-    ?>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=250095618338485";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="shell-top-wrapper">
         <div id="shell-top">
+            <div id="banner">
+                <div id="brand">
+                    Mineshafter Squared
+                </div>
+                <div id="social">
+                    <div id="facebook">
+                        <div class="fb-like" data-href="https://www.facebook.com/MineshafterSquared" data-send="false" data-layout="box_count" data-width="130" data-show-faces="false"></div>
+                    </div>
+                    <div id="googleplus">
+                        <div class="g-plusone" data-size="tall"></div>
+                    </div>
+                </div>
+            </div>
             <div id="topAd">
                 <script type="text/javascript"><!--
                     google_ad_client = "ca-pub-2130540909688027";
@@ -26,6 +47,9 @@
                 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
             </div>
         </div>
+        <?php
+            $this->load->view($navbar, array('user' => $user));
+        ?>
     </div>
     <div id="shell-application">
         <?php if($browser == "Internet Explorer"): ?>
@@ -37,6 +61,26 @@
         <?php endif; ?>
         <?php echo $application; ?>
     </div>
+    <!-- Modals -->
+    <?php if (!$user): ?>
+        <div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Log in</h3>
+            </div>
+            <div class="alert alert-error hide" id="login-error">
+            </div>
+            <div class="modal-body">
+                <div class="center_load">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button id="login" class="btn btn-primary">Log in</button>
+            </div>
+        </div>
+    <?php endif; ?>
     <footer>
         Copyright 2011 - 2012
         <a href="http://www.kayoticlabs.com" alt="">Kayotic Labs</a> |
@@ -56,6 +100,14 @@
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- Google Plus -->
+    <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
         })();
     </script>
     <!-- User Report -->

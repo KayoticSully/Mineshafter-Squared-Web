@@ -7269,7 +7269,7 @@ body {
 #shell-top {
   background-color: #C0C0C0;
   z-index: 999;
-  width: 728px;
+  width: 1028px;
   margin: 0 auto;
   padding: 20px;
   height: 90px;
@@ -7309,9 +7309,8 @@ body {
   background-color: transparent;
 }
 #shell-top-wrapper {
-  margin-top: 40px;
   background-color: #C0C0C0;
-  z-index: 888;
+  z-index: 999;
   height: 132px;
   position: fixed;
   width: 100%;
@@ -7332,6 +7331,47 @@ body > footer {
   position: absolute;
   margin-top: 170px;
   width: 100%;
+}
+#banner {
+  float: left;
+  margin-right: 15px;
+}
+#banner #brand {
+  font-size: 25px;
+}
+#banner #social {
+  width: 114px;
+  margin: 10px auto 0px auto;
+  display: none;
+  clear: both;
+  *zoom: 1;
+  *zoom: 1;
+}
+#banner #social:before,
+#banner #social:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#banner #social:after {
+  clear: both;
+}
+#banner #social:before,
+#banner #social:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#banner #social:after {
+  clear: both;
+}
+#banner #social #facebook,
+#banner #social #googleplus {
+  float: left;
+  margin: 0px 5px;
+}
+#banner #social #googleplus {
+  margin-top: 1px;
 }
 #topAd {
   width: 728px;
