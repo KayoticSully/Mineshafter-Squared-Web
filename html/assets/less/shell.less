@@ -24,7 +24,7 @@
 @shell-padding: 20px;
 @shell-top-margin: 40px;
 @shell-top-width: 80%;
-@shell-top-padding: 20px;
+@shell-top-padding: 21px;
 
 @top-side-padding: 20px;
 @shell-bg: #C0C0C0;
@@ -43,7 +43,7 @@ html, body {
     //height: @shell-top-height;
     background-color: @shell-bg;
     z-index: 999;
-    width: 997px;
+    width: 887px;
     margin: 0 auto;
     padding: @shell-top-padding;
     height: 90px;
@@ -66,7 +66,7 @@ html, body {
 }
 
 #shell-top-wrapper {
-    //margin-top: @shell-top-margin;
+    margin-top: @shell-top-margin;
     background-color: @shell-bg;
     z-index: 999;
     height: 132px;
@@ -96,17 +96,17 @@ body > footer {
 
 #banner {
     float: left;
-    margin-right: 20px;
-    
-    #brand {
-        font-size: 25px;
-        font-weight: bold;
-    }
+    margin-right: 23px;
+    padding-right: 20px;
+    border-right: 1px solid #777;
+    overflow: hidden;
     
     #social { 
         width: 114px;
-        margin: 10px auto 0px auto;
-        display: none;
+        margin: 12px auto;
+        overflow: hidden;
+        height: 66px;
+        position: relative;
         .clearfix;
         
         #facebook, #googleplus {

@@ -1,6 +1,7 @@
-<div class="navbar navbar-static-top">
+<div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
+            <a class="brand" href="#">Mineshafter Squared</a>
             <ul class="nav">
                 <li <?php if($active_menu == 'home') echo 'class="active"'; ?>>
                     <a href="/">

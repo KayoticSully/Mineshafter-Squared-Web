@@ -7269,9 +7269,9 @@ body {
 #shell-top {
   background-color: #C0C0C0;
   z-index: 999;
-  width: 1028px;
+  width: 887px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 21px;
   height: 90px;
   clear: both;
   *zoom: 1;
@@ -7309,6 +7309,7 @@ body {
   background-color: transparent;
 }
 #shell-top-wrapper {
+  margin-top: 40px;
   background-color: #C0C0C0;
   z-index: 999;
   height: 132px;
@@ -7329,20 +7330,22 @@ body > footer {
 }
 #shell-application {
   position: absolute;
-  margin-top: 170px;
+  margin-top: 172px;
   width: 100%;
 }
 #banner {
   float: left;
-  margin-right: 15px;
-}
-#banner #brand {
-  font-size: 25px;
+  margin-right: 23px;
+  padding-right: 20px;
+  border-right: 1px solid #777;
+  overflow: hidden;
 }
 #banner #social {
   width: 114px;
-  margin: 10px auto 0px auto;
-  display: none;
+  margin: 12px auto;
+  overflow: hidden;
+  height: 66px;
+  position: relative;
   clear: both;
   *zoom: 1;
   *zoom: 1;
