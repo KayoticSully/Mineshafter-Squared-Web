@@ -23,9 +23,6 @@
     <div id="shell-top-wrapper">
         <div id="shell-top">
             <div id="banner">
-                <div id="brand">
-                    Mineshafter Squared
-                </div>
                 <div id="social">
                     <div id="facebook">
                         <div class="fb-like" data-href="https://www.facebook.com/MineshafterSquared" data-send="false" data-layout="box_count" data-width="130" data-show-faces="false"></div>
