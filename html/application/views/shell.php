@@ -51,6 +51,7 @@
         _gaq.push(['_setAccount', 'UA-24037493-2']);
         _gaq.push(['_setDomainName', 'mineshaftersquared.com']);
         _gaq.push(['_addIgnoredRef', 'mineshaftersquared.com']);
+        _gaq.push(['_addIgnoredRef', 'userreport.com']);
         _gaq.push(['_trackPageview']);
         (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
