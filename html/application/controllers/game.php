@@ -7,6 +7,12 @@
  */
 class Game extends MS2_Controller {
     
+    public function __construct()
+    {
+        parent::__construct();
+        $this->config->set_item('csrf_protection', FALSE);
+    }
+    
     /**
      * @name    update
      * @author  Ryan Sullivan <kayoticsully@gmail.com>
