@@ -43,7 +43,7 @@ html, body {
     //height: @shell-top-height;
     background-color: @shell-bg;
     z-index: 999;
-    width: 728px;
+    width: 1028px;
     margin: 0 auto;
     padding: @shell-top-padding;
     height: 90px;
@@ -66,9 +66,9 @@ html, body {
 }
 
 #shell-top-wrapper {
-    margin-top: @shell-top-margin;
+    //margin-top: @shell-top-margin;
     background-color: @shell-bg;
-    z-index: 888;
+    z-index: 999;
     height: 132px;
     position: fixed;
     width:100%;
@@ -92,6 +92,31 @@ body > footer {
     position: absolute;
     margin-top: 90px + @shell-top-margin + (@shell-top-padding * 2);
     width:100%;
+}
+
+#banner {
+    float: left;
+    margin-right: 15px;
+    
+    #brand {
+        font-size: 25px;
+    }
+    
+    #social { 
+        width: 114px;
+        margin: 10px auto 0px auto;
+        display: none;
+        .clearfix;
+        
+        #facebook, #googleplus {
+            float: left;
+            margin: 0px 5px;
+        }
+        
+        #googleplus {
+            margin-top: 1px;
+        }
+    }
 }
 
 #topAd {

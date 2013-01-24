@@ -6,7 +6,13 @@ $(document).ready(function(){
     
     $('a[rel=popover]').popover();
     $('.dropdown-toggle').dropdown();
+    
+    setTimeout(showSocial, 1500);
 });
+
+function showSocial() {
+    $('#social').show();
+}
 
 function nav_click(event) {
     var location = $(this).find('>a').attr('href');
