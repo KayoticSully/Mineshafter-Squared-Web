@@ -22,10 +22,10 @@
   height: 600px;
 }
 article {
-  width: 45%;
+  width: 22%;
   position: relative;
   display: inline-block;
-  margin: 2%;
+  margin: 1%;
   border: 1px solid #000000;
 }
 article header {
@@ -81,8 +81,7 @@ section.full article {
 }
 @media (max-width: 1200px) {
   article {
-    display: block;
-    width: auto;
-    margin: 40px 0px;
+    width: 45%;
+    margin: 2%;
   }
 }

@@ -1,4 +1,4 @@
-<section id="announcements" class="col">
+<section id="announcements">
     <h1>
         Announcements
     </h1>
@@ -6,7 +6,7 @@
         
     </div>
 </section>
-<section id="downloads" class="col">
+<section id="downloads">
     <h1>
         Downloads
     </h1>
