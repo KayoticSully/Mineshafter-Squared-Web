@@ -7,7 +7,8 @@ $(document).ready(function(){
     $('a[rel=popover]').popover();
     $('.dropdown-toggle').dropdown();
     
-    setTimeout(showSocial, 1500);
+    showSocial();
+    //setTimeout(showSocial, 1500);
 });
 
 function showSocial() {
