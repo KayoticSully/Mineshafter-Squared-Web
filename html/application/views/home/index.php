@@ -14,11 +14,3 @@
        
     </div>
 </section>
-<section class="full">
-    <h1>
-        Some Other Stuff
-    </h1>
-    <article>
-        Some other information will end up going down here, not sure what yet.
-    </article>
-</section>
