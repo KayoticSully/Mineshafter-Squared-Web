@@ -9,7 +9,7 @@
  |   Updated: 1/18/2013
  |---------------------------------------------------------------------
  */
-
+var test;
 var Server = (function() {
     function Server(json, fullStatus) {
         //defaults
@@ -45,13 +45,14 @@ var Server = (function() {
         }
         
         // get status
-        setInterval(this.getStatus(), 1000);
+        test = setInterval(this.getStatus(), 1000);
     }
     
     return Server;
 })();
 
 Server.prototype.getStatus = function() {
+    alert("test");
     $.ajax({
         url : '/server_query',
         dataType : 'json',
