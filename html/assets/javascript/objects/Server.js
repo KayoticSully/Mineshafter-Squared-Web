@@ -26,6 +26,8 @@ var Server = (function() {
         
         // display data from ajax call
         this.loadStatus = function(status) {
+            console.log("Displaying Status!");
+            
             var str = '';
             for(item in status) {
                 this[item] = status[item];
