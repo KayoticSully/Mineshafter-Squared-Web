@@ -28,8 +28,12 @@ class Server_query extends MS2_Controller {
         $server_port = $this->input->get('port');
         $filters     = $this->input->get('filters');
         $output      = $this->input->get('output');
+        $realtime    = $this->input->get('realtime');
         
-        $info = $this->cache->get('query-' . $server_name);
+        if ($realtime == FALSE)
+        {
+            $info = $this->cache->get('query-' . $server_name);
+        }
         
         if (!$info)
         {
