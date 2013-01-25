@@ -25,7 +25,7 @@ var Server = (function() {
         this.fullStatus = fullStatus;
         
         // display data from ajax call
-        function loadStatus(status) {
+        this.loadStatus = function(status) {
             var str = '';
             for(item in status) {
                 this[item] = status[item];
@@ -43,20 +43,28 @@ var Server = (function() {
         }
         
         // get status
-        $.ajax({
-            url : '/server_query',
-            dataType : 'json',
-            data : {
-                server : this.name,
-                filters : this.getFilters()
-            },
-            context : this,
-            success: loadStatus
-        });
+        setInterval(this.getStatus(), 1000);
     }
     
     return Server;
 })();
+
+Server.prototype.getStatus = function() {
+    $.ajax({
+        url : '/server_query',
+        dataType : 'json',
+        data : {
+            server : this.name,
+            filters : this.getFilters()
+        },
+        context : this,
+        success: this.loadStatus
+    });
+}
+
+Server.prototype.loadStatus = function() {
+    
+}
 
 Server.prototype.votedClass = function() {
     if(this.voted) {
