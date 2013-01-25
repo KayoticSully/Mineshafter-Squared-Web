@@ -9,7 +9,6 @@
  |   Updated: 1/18/2013
  |---------------------------------------------------------------------
  */
-var test;
 var Server = (function() {
     function Server(json, fullStatus) {
         //defaults
@@ -45,14 +44,13 @@ var Server = (function() {
         }
         
         // get status
-        test = setInterval(this.getStatus(), 1000);
+        setInterval(this.getStatus, 1000);
     }
     
     return Server;
 })();
 
 Server.prototype.getStatus = function() {
-    alert("test");
     $.ajax({
         url : '/server_query',
         dataType : 'json',
@@ -63,10 +61,6 @@ Server.prototype.getStatus = function() {
         context : this,
         success: this.loadStatus
     });
-}
-
-Server.prototype.loadStatus = function() {
-    
 }
 
 Server.prototype.votedClass = function() {
