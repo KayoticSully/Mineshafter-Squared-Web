@@ -9,6 +9,7 @@
  |   Updated: 1/18/2013
  |---------------------------------------------------------------------
  */
+var $this1;
 var Server = (function() {
     function Server(json, fullStatus) {
         //defaults
@@ -43,8 +44,7 @@ var Server = (function() {
             }
         }
         
-        // get status
-        setInterval(this.getStatus, 1000);
+        this.getStatus();
     }
     
     return Server;
