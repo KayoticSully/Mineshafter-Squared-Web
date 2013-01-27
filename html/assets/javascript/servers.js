@@ -6,7 +6,13 @@ function init() {
     server = new Server($('#server-data').data('json'), true);
     $('#update-server').on('click', saveServer);
     
-    setInterval(function(){server.getStatus();}, 1000);
+    
+    setTimeout(update, 500);
+}
+
+function update() {
+    server.getStatus();
+    setTimeout(update, 500);
 }
 
 function saveServer() {
