@@ -160,4 +160,28 @@ class Server extends ActiveRecord\Model {
         
         return $address;
     }
+    
+    public function get_info()
+    {
+        $info = array();
+        $info['HostName']   = $this->host_name;
+        $info['GameType']   = $this->game_type;
+        $info['Version']    = $this->version;
+        $info['Map']        = $this->map;
+        $info['MaxPlayers'] = $this->max_players;
+        $info['Software']   = $this->software;
+        
+        return $info;
+    }
+    
+    public function save_info($info)
+    {
+        $this->host_name    = $info['HostName'];
+        $this->game_type    = $info['GameType'];
+        $this->version      = $info['Version'];
+        $this->map          = $info['Map'];
+        $this->max_players  = $info['MaxPlayers'];
+        $this->software     = $info['Software'];
+        $this->save();
+    }
 }

@@ -29,6 +29,7 @@ class Server_query extends MS2_Controller {
         $filters     = $this->input->get('filters');
         $output      = $this->input->get('output');
         $realtime    = $this->input->get('realtime');
+        $info        = FALSE;
         
         if ($realtime == FALSE)
         {
@@ -82,14 +83,25 @@ class Server_query extends MS2_Controller {
             
             // build up return object
             $info = $this->minecraftquery->getInfo();
+            
+            $from_db = FALSE;
+            if (!isset($info['HostName']) && $server)
+            {
+                $info = $server->get_info();
+                $from_db = TRUE;
+            }
+            
             $info['PlayerList'] = $this->minecraftquery->getPlayerList();
             $info['Online'] = $this->minecraftquery->isOnline();
             
-            $this->cache->save('query-' . $server_name, $info, $this->query_cache_time);
+            $this->cache->save('query-' . $address . '-' . $server_port, $info, $this->query_cache_time);
             
-            if($server)
+            // save to database if the server is in our database, was not loaded from the database
+            // and is online.  The online test is already done above.  If $server exists and $from_db
+            // is false, the server has to be online.
+            if($server && !$from_db)
             {
-                
+                $server->save_info($info);
             }
         }
         
