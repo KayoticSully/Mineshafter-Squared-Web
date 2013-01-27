@@ -26,8 +26,6 @@ var Server = (function() {
         
         // display data from ajax call
         this.loadStatus = function(status) {
-            console.log("Displaying Status!");
-            
             var str = '';
             for(item in status) {
                 this[item] = status[item];
@@ -56,7 +54,8 @@ Server.prototype.getStatus = function() {
         dataType : 'json',
         data : {
             server : this.name,
-            filters : this.getFilters()
+            filters : this.getFilters(),
+            realtime : true
         },
         context : this,
         success: this.loadStatus
