@@ -7,12 +7,12 @@ function init() {
     $('#update-server').on('click', saveServer);
     
     
-    setTimeout(update, 500);
+    setTimeout(update, 300000);
 }
 
 function update() {
     server.getStatus();
-    setTimeout(update, 500);
+    setTimeout(update, 300000);
 }
 
 function saveServer() {
