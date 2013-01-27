@@ -9,7 +9,6 @@
  |   Updated: 1/18/2013
  |---------------------------------------------------------------------
  */
-var $this1;
 var Server = (function() {
     function Server(json, fullStatus) {
         //defaults
