@@ -6,7 +6,7 @@ function init() {
     server = new Server($('#server-data').data('json'), true);
     $('#update-server').on('click', saveServer);
     
-    setInterval(server.getStatus, 1000);
+    setInterval(function(){server.getStatus();}, 1000);
 }
 
 function saveServer() {
