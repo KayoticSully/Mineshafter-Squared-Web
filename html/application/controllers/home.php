@@ -24,6 +24,10 @@ class Home extends MS2_Controller {
         $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'objects/Post', 'jquery-plugins/announcements', 'jquery-plugins/load-and-cache');
     }
     
+    public function test() {
+        echo getcwd();
+    }
+    
     /**
      * @name    announcements
      * @author  Ryan Sullivan <kayoticsully@gmail.com>

@@ -12,7 +12,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Upload</button>
+        <button class="btn btn-primary" id="create-texture">Upload</button>
     </div>
 </div>
 <div id="preview">
