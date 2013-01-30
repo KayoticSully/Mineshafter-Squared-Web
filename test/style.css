@@ -1,0 +1,26 @@
+/* 
+	earthiverse.ath.cx
+	Kent Rasmussen
+	hyprkookeez@gmail.com
+*/
+
+/* Elements */
+body {
+	background-image:url(images/bg_stone.png);
+	background-position:top center;
+	background-repeat:repeat;
+	margin:0;
+	padding:0;
+}
+img {
+	border:1px solid #000;
+}
+
+/* IDs */
+#top {
+	font-family:calibri;
+	font-size:10px;
+	left:10px;
+	position:fixed;
+	top:10px;
+}
