@@ -4,6 +4,11 @@ $(document).ready(function(){
     for(var i = 0; i < heads.length; i++){
         var head = heads[i];
         var texture = head.dataset.minecrafthead;
+        var size = head.dataset.size;
+        
+        if(size == undefined) {
+            size = 25;
+        }
         
         // create hat
         var hat_canvas = document.createElement('canvas');
@@ -18,14 +23,19 @@ $(document).ready(function(){
         head.appendChild(head_canvas);
         
         // draw
-        draw_hat('hat' + i, texture, 25);
-        draw_head('head' + i, texture, 25);
+        draw_hat('hat' + i, texture, size);
+        draw_head('head' + i, texture, size);
     }
     
     var models = document.querySelectorAll('[data-minecraftmodel]');
     for(var i = 0; i < models.length; i++) {
         var model = models[i];
         var texture = model.dataset.minecraftmodel;
+        var size = model.dataset.size;
+        
+        if(size == undefined) {
+            size = 10;
+        }
         
         // create hat scratch
         var hat_scratch = document.createElement('canvas');
@@ -51,7 +61,7 @@ $(document).ready(function(){
         model_canvas.id = 'model' + i;
         model.appendChild(model_canvas);
         
-        draw_model('model_hat' + i, 'scratch_hat' + i, texture, 10, 'true'); // true = hat
-        draw_model('model' + i, 'scratch' + i, texture, 10, 'false'); // false = no hat
+        draw_model('model_hat' + i, 'scratch_hat' + i, texture, size, 'true'); // true = hat
+        draw_model('model' + i, 'scratch' + i, texture, size, 'false'); // false = no hat
     }
 });

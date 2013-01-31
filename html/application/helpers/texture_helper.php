@@ -1,14 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 /**
  * @name    create_skin_3d_part
- * @author  Ryan Sullivan <kayoticsully@gmail.com>
- * 
- * @access  public
- * @return	
+ * @author  Kent Rasmussen @ earthiverse.ath.cx
+ * @author  Modified (slightly) Ryan Sullivan <kayoticsully@gmail.com>
+ *
+ * Pulls a chunk of a minecraft skin out and saves the part in its own image file	
  */
-
-// helper functions for this controller
 if (! function_exists('create_skin_3d_part'))
 {
     function create_skin_3d_part($original, $location, $xpos, $ypos, $width, $height, $texturesize, $name, $flipx, $flipy)
@@ -74,13 +71,11 @@ if (! function_exists('create_skin_3d_part'))
 
 /**
  * @name    chop_skin_for_3d
- * @author  Ryan Sullivan <kayoticsully@gmail.com>
- * 
- * @access  public
- * @return	
+ * @author  Kent Rasmussen @ earthiverse.ath.cx
+ * @author  Modified (slightly) Ryan Sullivan <kayoticsully@gmail.com>
+ *
+ * Chops up a minecraft skin file into its parts to use with a 3d viewer
  */
-
-// helper functions for this controller
 if (! function_exists('chop_skin_for_3d'))
 {
     function chop_skin_for_3d($file_data)
@@ -152,12 +147,9 @@ if (! function_exists('chop_skin_for_3d'))
  *
  * Creates a useable filepath from the location string
  * 
- * @access  public
  * @param   $location location string to parse
- * @return	
+ * @return  file path
  */
-
-// helper functions for this controller
 if (! function_exists('texture_file_path'))
 {
     function texture_file_path($location)

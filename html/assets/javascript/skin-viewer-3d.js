@@ -1,3 +1,10 @@
+/**
+ * 3-D Minecraft Skin Viewer
+ * By Kent Rasmussen @ earthiverse.ath.cx
+ * Using Three.Js HTML5 3D Engine from https://github.com/mrdoob/three.js/
+ *
+ * Modified (slightly) by Ryan Sullivan @ mineshaftersquared.com
+ */
 var container, info, url;
 var camera, scene, renderer;
 var xvar = 0;
