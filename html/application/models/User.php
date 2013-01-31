@@ -129,6 +129,13 @@ class User extends ActiveRecord\Model {
     public function active_skin()
     {
         $userskin = Userskin::find_by_user_id_and_active($this->id, 1);
-        return $userskin->Skin;
+        if ($userskin)
+        {
+            return $userskin->skin;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

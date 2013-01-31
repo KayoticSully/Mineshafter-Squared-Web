@@ -15,7 +15,7 @@
         <button class="btn btn-primary" id="create-texture">Upload</button>
     </div>
 </div>
-<?php if ($user): ?>
+<?php if ($user && $active_skin): ?>
     <div id="preview" data-render3d data-url="<?php echo $active_skin->file_path(); ?>">
     </div>
 <?php endif; ?>
