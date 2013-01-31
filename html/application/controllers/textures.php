@@ -50,9 +50,28 @@ class Textures extends MS2_Controller {
         {
             // save new highest location back to database
             $location->save();
+            
+            // chop up the skin for 3d view
+            chop_skin_for_3d($result['upload_data']);
         }
         
-        $this->load->view('pre', array('pre' => $result));
+        $this->load->view('json', array('json' => $result));
+    }
+    
+    public function skin_3d($skin)
+    {
+        $this->force_shell = TRUE;
+        
+        $texture = Texture::find_by_location($skin);
+        if ($texture)
+        {
+            $variables = array('location' => '/'.$this->texture_folder.'/'.$texture->file_path());
+            $this->javascripts = array('3d/RequestAnimationFrame', '3d/Three');
+            $this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
+            $this->variables = $variables;
+        }
+        
+        $this->variables = $variables;
     }
     
     /**
@@ -119,8 +138,8 @@ class Textures extends MS2_Controller {
             }
             
             $data['texture_id'] = $texture->id;
+            $data['texture_location'] = $texture->location;
             $data['texture_hash'] = $texture->hash;
-            $data['hash'] = $hash;
             
             return array('upload_data' => $data);
         }

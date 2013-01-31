@@ -15,8 +15,9 @@ function create_texture(event) {
         data: form_data,
         processData: false,  // tell jQuery not to process the data
         contentType: false,  // tell jQuery that you know better about the content
+        dataType: 'json',
         success:function(data) {
-            $('.modal-body').html(data);
+            window.location = '/textures/skin_3d/' + data['upload_data']['texture_location'];
         }
     });
 }

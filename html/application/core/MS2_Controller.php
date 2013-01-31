@@ -30,6 +30,8 @@ class MS2_Controller extends CI_Controller {
     
     protected $page_cache_key;
     protected $page_cache_time  = 60; // seconds
+    protected $force_shell      = FALSE;
+    protected $extra_js         = FALSE;
     
     // THIS MAY MOVE TO KEEP THE SUPERCLASS CLEAN
     public $user             = NULL;
@@ -154,7 +156,7 @@ class MS2_Controller extends CI_Controller {
         // There are some special methods that recieve default
         // behavior.
         //
-        if ($this->router->method == 'index' || $this->router->method == 'admin')
+        if ($this->router->method == 'index' || $this->router->method == 'admin' || $this->force_shell)
         {
             //----------------------------------------------------
             // ASSETS
@@ -213,6 +215,7 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['active_menu']        = $this->router->class;
             $layout_variables['user']               = $this->user;
             $layout_variables['browser']            = $this->agent->browser();
+            $layout_variables['extra_js']           = $this->extra_js;
             
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
