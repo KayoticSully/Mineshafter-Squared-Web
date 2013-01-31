@@ -25,7 +25,7 @@ class Textures extends MS2_Controller {
             $skins = array();
         }
         
-        $this->variables = array('skins' => $skins);
+        $this->variables = array('skins' => $skins, 'user' => $this->user);
     }
     
     public function test()
@@ -47,6 +47,8 @@ class Textures extends MS2_Controller {
     
     public function upload_skin()
     {
+        $this->protect('user');
+        
         $this->load->helper('texture');
         
         // get highest texture location value
