@@ -33,11 +33,13 @@ function set_active_skin(event) {
     
     $.ajax({
         url: '/textures/set_active_skin/' + id,
-        context: $this.parent(),
+        context: $this,
         success: function(data){
             if(data) {
-                $('.skin').css('background-color', 'transparent');
-                $(this).css('background-color', '#000');
+                var model = $(this).data('minecraftmodel');
+                model = model.replace('/base.png', '');
+                container.dataset.url = model.substring(1);
+                init3d();
             }
         }
     });

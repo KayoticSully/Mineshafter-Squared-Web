@@ -15,9 +15,10 @@
         <button class="btn btn-primary" id="create-texture">Upload</button>
     </div>
 </div>
-<div id="preview">
-    preview
-</div>
+<?php if ($user): ?>
+    <div id="preview" data-render3d data-url="<?php echo $active_skin->file_path(); ?>">
+    </div>
+<?php endif; ?>
 <div style="float:left">
     <ul class="nav nav-tabs">
         <li class="active">

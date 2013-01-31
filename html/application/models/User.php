@@ -125,4 +125,10 @@ class User extends ActiveRecord\Model {
             return FALSE;
         }
     }
+    
+    public function active_skin()
+    {
+        $userskin = Userskin::find_by_user_id_and_active($this->id, 1);
+        return $userskin->skin;
+    }
 }

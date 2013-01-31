@@ -5,7 +5,7 @@
  *
  * Modified (slightly) by Ryan Sullivan @ mineshaftersquared.com
  */
-var container, info, url;
+var container, info, url, node;
 var camera, scene, renderer;
 var xvar = 0;
 var targetRotationX = 0;
@@ -157,7 +157,16 @@ function init3d() {
     // make sure size is only as big as the containing div
     
     renderer.setSize(container.offsetWidth, container.offsetHeight);
-    container.appendChild( renderer.domElement );
+    
+    var newNode = renderer.domElement;
+    
+    if(node === undefined) {
+	container.appendChild(newNode);
+    } else {
+	container.replaceChild(newNode, node);
+    }
+    
+    node = newNode;
     
     // add events
     container.addEventListener( 'mousedown', onDocumentMouseDown, false );
