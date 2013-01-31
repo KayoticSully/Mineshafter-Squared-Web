@@ -13,7 +13,7 @@ class Textures extends MS2_Controller {
     public function index()
     {
         
-        $this->javascripts = array('Three', 'skin-viewer-iso');
+        $this->javascripts = array('Three', 'skin-viewer-iso', 'skin-viewer-3d');
         
         if (isset($this->user))
         {
@@ -25,13 +25,7 @@ class Textures extends MS2_Controller {
             $skins = array();
         }
         
-        $this->variables = array('skins' => $skins, 'user' => $this->user);
-    }
-    
-    public function test()
-    {
-        $skins = $this->user->skins;
-        echo $skins[0]->base_location();
+        $this->variables = array('skins' => $skins, 'user' => $this->user, 'active_skin' => $this->user->active_skin());
     }
     
     /**

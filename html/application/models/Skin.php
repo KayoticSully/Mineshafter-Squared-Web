@@ -20,4 +20,9 @@ class Skin extends ActiveRecord\Model {
     {
         return Textures::texture_folder . '/' . $this->texture->file_path() . '/' . Textures::texture_basename;
     }
+    
+    public function file_path()
+    {
+        return Textures::texture_folder . '/' . $this->texture->file_path();
+    }
 }
