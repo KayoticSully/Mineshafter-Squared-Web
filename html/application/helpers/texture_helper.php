@@ -85,8 +85,64 @@ if (! function_exists('chop_skin_for_3d'))
 {
     function chop_skin_for_3d($file_data)
     {
-        // create location and move file
+        //Create another image twice the size
+        $original = imagecreatefrompng($file_data['full_path']);
         
+        /////////////////////////
+        // Body Parts (for 3D) //
+        /////////////////////////
+     
+        create_skin_3d_part($original, $file_data['file_path'], 40, 0, 8, 8, 256, "hat_top", TRUE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 48, 0, 8, 8, 256, "hat_bottom", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 32, 8, 8, 8, 256, "hat_left", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 40, 8, 8, 8, 256, "hat_front", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 48, 8, 8, 8, 256, "hat_right", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 56, 8, 8, 8, 256, "hat_back", FALSE, FALSE);
+        
+        create_skin_3d_part($original, $file_data['file_path'], 8, 0, 8, 8, 256, "head_top", TRUE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 16, 0, 8, 8, 256, "head_bottom", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 0, 8, 8, 8, 256, "head_left", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 8, 8, 8, 8, 256, "head_front", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 16, 8, 8, 8, 256, "head_right", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 24, 8, 8, 8, 256, "head_back", FALSE, FALSE);
+       
+        create_skin_3d_part($original, $file_data['file_path'], 20, 16, 8, 4, 256, "body_top", TRUE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 28, 16, 8, 4, 256, "body_bottom", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 28, 20, 4, 12, 256, "body_right", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 20, 20, 8, 12, 256, "body_front", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 16, 20, 4, 12, 256, "body_left", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 32, 20, 8, 12, 256, "body_back", FALSE, FALSE);
+       
+        create_skin_3d_part($original, $file_data['file_path'], 44, 16, 4, 4, 256, "arm_left_top", TRUE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 48, 16, 4, 4, 256, "arm_left_bottom", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 40, 20, 4, 12, 256, "arm_left_outer", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 44, 20, 4, 12, 256, "arm_left_front", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 48, 20, 4, 12, 256, "arm_left_inner", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 52, 20, 4, 12, 256, "arm_left_back", FALSE, FALSE);
+       
+        create_skin_3d_part($original, $file_data['file_path'], 44, 16, 4, 4, 256, "arm_right_top", FALSE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 48, 16, 4, 4, 256, "arm_right_bottom", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 40, 20, 4, 12, 256, "arm_right_outer", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 44, 20, 4, 12, 256, "arm_right_front", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 48, 20, 4, 12, 256, "arm_right_inner", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 52, 20, 4, 12, 256, "arm_right_back", TRUE, FALSE);
+       
+        create_skin_3d_part($original, $file_data['file_path'], 4, 16, 4, 4, 256, "leg_left_top", TRUE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 8, 16, 4, 4, 256, "leg_left_bottom", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 0, 20, 4, 12, 256, "leg_left_outer", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 4, 20, 4, 12, 256, "leg_left_front", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 8, 20, 4, 12, 256, "leg_left_inner", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 12, 20, 4, 12, 256, "leg_left_back", FALSE, FALSE);
+       
+        create_skin_3d_part($original, $file_data['file_path'], 4, 16, 4, 4, 256, "leg_right_top", FALSE, TRUE);
+        create_skin_3d_part($original, $file_data['file_path'], 8, 16, 4, 4, 256, "leg_right_bottom", FALSE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 8, 20, 4, 12, 256, "leg_right_outer", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 4, 20, 4, 12, 256, "leg_right_front", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 0, 20, 4, 12, 256, "leg_right_inner", TRUE, FALSE);
+        create_skin_3d_part($original, $file_data['file_path'], 12, 20, 4, 12, 256, "leg_right_back", TRUE, FALSE);
+        
+        //Release original from memory (Skin from minecraft.net)
+        imagedestroy($original);
     }
 }
 
