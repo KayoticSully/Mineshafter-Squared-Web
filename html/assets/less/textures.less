@@ -6,7 +6,13 @@
 #preview {
     width: 300px;
     height: 169px;
-    margin: 20px -40px 15px -40px;
+    margin: 0px -40px 15px -40px;
+}
+
+#preview-hints {
+    color: #eee;
+    text-align: center;
+    padding: 10px 0px;
 }
 
 img {
@@ -24,9 +30,26 @@ div[data-minecrafthead], div[data-minecraftmodel] {
 
 .skin {
     display: inline-block;
-    padding: 0px 3px;
+    padding: 0px;
     margin: 10px;
-    border: 1px solid #888;
+    //border: 1px solid transparent;
+    position: relative;
+    
+    &:hover {
+        //border: 1px solid #888;
+        
+        button.close {
+            display: block;
+        }
+    }
+    
+    button.close {
+        display: none;
+        position: absolute;
+        right: 3px;
+        color: #FF0000;
+        font-size: 25px;
+    }
     
     .name {
         text-align: center;

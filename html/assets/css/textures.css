@@ -22,7 +22,12 @@
 #preview {
   width: 300px;
   height: 169px;
-  margin: 20px -40px 15px -40px;
+  margin: 0px -40px 15px -40px;
+}
+#preview-hints {
+  color: #eee;
+  text-align: center;
+  padding: 10px 0px;
 }
 img {
   border: 1px solid #000;
@@ -37,9 +42,19 @@ div[data-minecraftmodel] {
 }
 .skin {
   display: inline-block;
-  padding: 0px 3px;
+  padding: 0px;
   margin: 10px;
-  border: 1px solid #888;
+  position: relative;
+}
+.skin:hover button.close {
+  display: block;
+}
+.skin button.close {
+  display: none;
+  position: absolute;
+  right: 3px;
+  color: #FF0000;
+  font-size: 25px;
 }
 .skin .name {
   text-align: center;

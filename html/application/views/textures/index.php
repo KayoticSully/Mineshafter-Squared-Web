@@ -17,6 +17,9 @@
 </div>
 <div id="control-bar">
     <?php if ($user && $active_skin): ?>
+        <div id="preview-hints">
+            <small>Click + Drag to change view</small>
+        </div>
         <div id="preview" data-render3d data-url="<?php echo $active_skin->file_path(); ?>">
         </div>
     <?php endif; ?>
