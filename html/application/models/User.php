@@ -11,6 +11,8 @@ class User extends ActiveRecord\Model {
     static $has_many = array(
         array('Managers'),
         array('Servervotes'),
+        array('Userskins'),
+        array('Skins', 'through' => 'userskins'),
         array('Servers', 'through' => 'managers'),
         array('Votes', 'class' => 'Server', 'through' => 'servervotes')
     );
