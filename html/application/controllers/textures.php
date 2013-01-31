@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if     ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Textures
@@ -7,12 +7,31 @@
  */
 class Textures extends MS2_Controller {
     
-    private $texture_folder = 'assets/textures';
-    private $texture_basename = 'base.png';
+    const texture_folder = 'assets/textures';
+    const texture_basename = 'base.png';
     
     public function index()
     {
         
+        $this->javascripts = array('Three', 'skin-viewer-iso');
+        
+        if (isset($this->user))
+        {
+            $skins = $this->user->skins;
+        }
+        
+        if (!isset($skins))
+        {
+            $skins = array();
+        }
+        
+        $this->variables = array('skins' => $skins);
+    }
+    
+    public function test()
+    {
+        $skins = $this->user->skins;
+        echo $skins[0]->base_location();
     }
     
     /**
@@ -53,9 +72,42 @@ class Textures extends MS2_Controller {
             
             // chop up the skin for 3d view
             chop_skin_for_3d($result['upload_data']);
+            
+            // Create Skin Record
+            $skin = new Skin();
+            $skin->name = $this->input->post('name');
+            $skin->texture_id = $result['upload_data']['texture_id'];
+            $skin->owner_id = $this->user->id;
+            if ($skin->save())
+            {
+                // add skin to user's library
+                $user_skin = new Userskin();
+                $user_skin->user_id = $this->user->id;
+                $user_skin->skin_id = $skin->id;
+                if(!$user_skin->save()) {
+                    $this->delete_texture($result['upload_data']);
+                    $skin->delete();
+                    $result = array('error' => '???');
+                }
+            }
+            else
+            {
+                // if save failed delete texture
+                $this->delete_texture($result['upload_data']);
+                $result = array('error' => '???');
+            }
         }
         
         $this->load->view('json', array('json' => $result));
+    }
+    
+    private function delete_texture($file_data)
+    {
+        $texture = Texture::find_by_id($file_data['texture_id']);
+        $texture->delete();
+        
+        // delete images
+        unlink($file_data['file_path']);
     }
     
     public function skin_3d($skin)
@@ -65,7 +117,7 @@ class Textures extends MS2_Controller {
         $texture = Texture::find_by_location($skin);
         if ($texture)
         {
-            $variables = array('location' => '/'.$this->texture_folder.'/'.$texture->file_path());
+            $variables = array('location' => '/'.Textures::texture_folder.'/'.$texture->file_path());
             $this->javascripts = array('Three', 'skin-viewer-3d');
             //$this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
             $this->variables = $variables;
@@ -74,20 +126,15 @@ class Textures extends MS2_Controller {
         $this->variables = $variables;
     }
     
-    public function skin_iso($skin)
+    public function set_active_skin($id)
     {
-        $this->force_shell = TRUE;
+        $this->protect('user');
         
-        $texture = Texture::find_by_location($skin);
-        if ($texture)
-        {
-            $variables = array('location' => '/'.$this->texture_folder.'/'.$texture->file_path().'/base.png');
-            $this->javascripts = array('Three', 'skin-viewer-iso', 'skin-iso-start');
-            //$this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
-            $this->variables = $variables;
-        }
-        
-        $this->variables = $variables;
+        $data = array('active' => '0');
+        Userskin::table()->update($data, array('user_id' => array($this->user->id)));
+        $userskin = Userskin::find_by_id_and_user_id($id, $this->user->id);
+        $userskin->active = 1;
+        echo $userskin->save();
     }
     
     /**
@@ -101,6 +148,7 @@ class Textures extends MS2_Controller {
     private function upload($config)
     {
         $config['upload_path']      = './uploads/';
+        $config['overwrite']        = TRUE;
         
         $this->load->library('upload', $config);
         
@@ -123,21 +171,21 @@ class Textures extends MS2_Controller {
             }
             
             // move file into texture file system
-            $location_path = getcwd() . '/' . $this->texture_folder . '/' . texture_file_path($data['raw_name']);
+            $location_path = getcwd() . '/' . Textures::texture_folder . '/' . texture_file_path($data['raw_name']);
             
-            if (! mkdir($location_path, 0777, TRUE))
+            if (!is_dir($location_path) && !mkdir($location_path, 0777, TRUE))
             {
                 return array('error' => 'could not create folder'); 
             }
             
-            $new_full_path = $location_path . '/' . $this->texture_basename;
+            $new_full_path = $location_path . '/' . Textures::texture_basename;
             if (rename($data['full_path'], $new_full_path))
             {
                 // update file data info
                 $data['file_path'] = $location_path;
                 $data['full_path'] = $new_full_path;
-                $data['file_name'] = $this->texture_basename;
-                $data['raw_name']  = str_replace('.png', '', $this->texture_basename);
+                $data['file_name'] = Textures::texture_basename;
+                $data['raw_name']  = str_replace('.png', '', Textures::texture_basename);
             }
             else
             {

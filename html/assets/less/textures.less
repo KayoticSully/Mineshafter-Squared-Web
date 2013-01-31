@@ -1,3 +1,6 @@
+
+@import 'iso_views';
+
 #preview {
     width:125px;
     float:left;
@@ -9,16 +12,29 @@ img {
 
 #skin-3d {
     width: 400px;
-    height: 200px;
+    height: 225px;
 }
 
 div[data-minecrafthead], div[data-minecraftmodel] {
     display: inline-block;
 }
-.minecraft_head .head {display:none;}
-.minecraft_model .head {display:none;}
-.minecraft_head:hover .hat {display:none;}
-.minecraft_model:hover .hat {display:none;}
-.minecraft_head:hover .head {display:inline-block;}
-.minecraft_model:hover .head {display:inline-block;}
-.scratch {display:none;}
+
+#skin-pane {
+    
+}
+
+.skin {
+    display: inline-block;
+    padding: 0px 3px;
+    margin: 10px;
+    border: 1px solid #888;
+    
+    .name {
+        text-align: center;
+    }
+    
+    .minecraft_model {
+        padding: 0px 30px;
+        cursor: pointer;
+    }
+}

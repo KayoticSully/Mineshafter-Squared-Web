@@ -36,4 +36,22 @@
         <li class="active"><a href="#lA" data-toggle="tab">Skins</a></li>
         <li class=""><a href="#lB" data-toggle="tab">Capes</a></li>
     </ul>
+    <div id="skin-pane">
+        <?php foreach($skins as $skin): ?>
+            <!--<div class="minecraft_head" data-size="5" data-minecrafthead="/<?php echo $skin->base_location();?>">
+            </div>-->
+            <div class="skin">
+                <button type="button" class="close">&times;</button>
+                <div class="name">
+                    <a href="#" title="Preview Skin" class="btn btn-link btn-large">
+                        <?php echo $skin->name; ?>
+                    </a>
+                </div>
+                <div class="minecraft_model" data-size="5" title="Set Active"
+                     data-minecraftmodel="/<?php echo $skin->base_location();?>"
+                     data-id="<?php echo $skin->id; ?>">
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
