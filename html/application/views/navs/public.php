@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -11,31 +11,31 @@
                 <ul class="nav">
                     <li <?php if($active_menu == 'home') echo 'class="active"'; ?>>
                         <a href="/">
-                            <i class="icon-home"></i>
+                            <i class="icon-home icon-white"></i>
                             Home
                         </a>
                     </li>
                     <li <?php if($active_menu == 'server_list') echo 'class="active"'; ?>>
                         <a href="/server_list">
-                            <i class="icon-th-list"></i>
+                            <i class="icon-th-list icon-white"></i>
                             Server List
                         </a>
                     </li>
                     <li <?php if($active_menu == 'textures') echo 'class="active"'; ?>>
                         <a href="/textures">
-                            <i class="icon-th-large"></i>
+                            <i class="icon-th-large icon-white"></i>
                             Skins / Capes
                         </a>
                     </li>
                     <li <?php if($active_menu == 'help') echo 'class="active"'; ?>>
                         <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="Mineshafter Squared has honestly never had that great of a help system, thats about to change." data-original-title="Not Available Yet">
-                            <i class="icon-question-sign"></i>
+                            <i class="icon-question-sign icon-white"></i>
                             Help
                         </a>
                     </li>
                     <li>
                         <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="The Mineshafter Squared forums have been offline for quite some time now, and I do apologize for that.  I hope the new community will be able to make up for it." data-original-title="Not Available Yet">
-                            <i class="icon-globe"></i>
+                            <i class="icon-globe icon-white"></i>
                             Community
                         </a>
                     </li>
@@ -43,7 +43,7 @@
                         <li class="dropdown">
                             <div id="user-logged-in" data-id"<?php echo $user->id; ?>"></div>
                             <a id="admin-menu" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-user"></i>
+                                <i class="icon-user icon-white"></i>
                                 <?php echo $user->username; ?>
                                 <b class="caret"></b>
                             </a>
@@ -73,7 +73,7 @@
                     <?php else: ?>
                         <li>
                             <a data-toggle="modal" href="/home/login_form" id="show-login" data-target="#login-modal" role="button"  >
-                                <i class="icon-user"></i>
+                                <i class="icon-user icon-white"></i>
                                 Log in
                             </a>
                         </li>

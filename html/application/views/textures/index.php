@@ -15,30 +15,20 @@
         <button class="btn btn-primary" id="create-texture">Upload</button>
     </div>
 </div>
-<?php if ($user && $active_skin): ?>
-    <div id="preview" data-render3d data-url="<?php echo $active_skin->file_path(); ?>">
-    </div>
-<?php endif; ?>
-<div style="float:left">
-    <ul class="nav nav-tabs">
-        <li class="active">
-            <a href="#">Private</a>
-        </li>
-        <li>
-            <a href="#">Public</a>
-        </li>
-        <li>
+<div id="control-bar">
+    <?php if ($user && $active_skin): ?>
+        <div id="preview" data-render3d data-url="<?php echo $active_skin->file_path(); ?>">
+        </div>
+    <?php endif; ?>
+    <ul id="action-list" class="nav nav-list">
+        <li class="group">
             <?php if($user): ?>
-                <button type="button" id="upload-skin" class="btn btn-inverse" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</button>
+                <a type="button" id="upload-skin" class="btn btn-link" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</a>
             <?php endif; ?>
         </li>
     </ul>
 </div>
-<div class="tabbable tabs-left">
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#lA" data-toggle="tab">Skins</a></li>
-        <li class=""><a href="#lB" data-toggle="tab">Capes</a></li>
-    </ul>
+<div id="texture-display">
     <div id="skin-pane">
         <?php foreach($skins as $skin): ?>
             <!--<div class="minecraft_head" data-size="5" data-minecrafthead="/<?php echo $skin->base_location();?>">

@@ -7263,11 +7263,10 @@ code.comment {
 }
 html,
 body {
-  background-color: #FFFFFF;
+  background: url('/assets/img/snow.png');
   padding: 0px;
 }
 #shell-top {
-  background-color: #C0C0C0;
   z-index: 999;
   width: 887px;
   margin: 0 auto;
@@ -7310,7 +7309,7 @@ body {
 }
 #shell-top-wrapper {
   margin-top: 40px;
-  background-color: #C0C0C0;
+  background: url('/assets/img/dark_fish_skin.png');
   z-index: 999;
   height: 132px;
   position: fixed;
