@@ -18,6 +18,8 @@ class Textures extends MS2_Controller {
         if (isset($this->user))
         {
             $skins = $this->user->skins;
+            //$skins = array_merge($skins, $skins, $skins, $skins, $skins, $skins);
+            //$skins = array_merge($skins, $skins, $skins, $skins, $skins, $skins);
         }
         
         if (!isset($skins))

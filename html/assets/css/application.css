@@ -7263,14 +7263,17 @@ code.comment {
 }
 html,
 body {
-  background: url('/assets/img/snow.png');
+  background-color: #FAFAFA;
   padding: 0px;
+}
+div .brand {
+  color: #FFFFFF !important;
 }
 #shell-top {
   z-index: 999;
   width: 887px;
   margin: 0 auto;
-  padding: 21px;
+  padding: 10px;
   height: 90px;
   clear: both;
   *zoom: 1;
@@ -7307,11 +7310,15 @@ body {
 #shell-top #logo:hover {
   background-color: transparent;
 }
+h1,
+a {
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
 #shell-top-wrapper {
   margin-top: 40px;
   background: url('/assets/img/dark_fish_skin.png');
   z-index: 999;
-  height: 132px;
+  height: 110px;
   position: fixed;
   width: 100%;
 }
@@ -7322,14 +7329,13 @@ body > footer {
   width: 100%;
   font-size: 12px;
   padding: 2px 0px;
-  background-color: #c0c0c0;
 }
 .clearfix {
   clear: both;
 }
 #shell-application {
   position: absolute;
-  margin-top: 172px;
+  margin-top: 150px;
   width: 100%;
 }
 #banner {

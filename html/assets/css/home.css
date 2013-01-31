@@ -34,6 +34,7 @@ article header {
   padding: 6px;
   border-bottom: 1px solid #000000;
   background-color: #c0c0c0;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
   height: 20px;
   white-space: nowrap;
   text-overflow: ellipsis;
