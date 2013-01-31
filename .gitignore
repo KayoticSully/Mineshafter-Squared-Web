@@ -5,4 +5,5 @@ temp
 logs
 
 html/application/cache/*
+html/assets/textures/*
 html/assets/less/cache/*

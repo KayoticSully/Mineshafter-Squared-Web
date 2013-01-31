@@ -20,6 +20,7 @@ $(document).ready(function(){
 
 function init() {
     container = document.getElementById( 'display' );
+
     camera = new THREE.Camera(20, window.innerWidth / window.innerHeight, 1, 1000 );
     camera.target.position.x = 0;
     camera.target.position.y = -11;
