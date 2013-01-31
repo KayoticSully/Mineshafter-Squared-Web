@@ -1,3 +1,10 @@
+/**
+ * A hodgepodge of random scripts for making minecraft skins in html5 canvas tags.
+ * By Kent Rasmussen @ earthiverse.ath.cx
+ *
+ * Modified (slightly) by Ryan Sullivan @ mineshaftersquared.com
+ */
+
 //Draw an isometric model of a minecraft character
 function draw_model(canvas_id,scratch_id,url,scale,hat) {
     var model = document.getElementById(canvas_id).getContext('2d');
