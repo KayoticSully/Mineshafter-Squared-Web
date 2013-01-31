@@ -19,13 +19,13 @@ var mouseYOnMouseDown = 0;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-$(document).ready(function(){
-    init3d();
-    animate();
-});
-
 function init3d() {
     container = document.querySelectorAll('[data-render3d]')[0];
+    
+    if(container === undefined) {
+	return false;
+    }
+    
     url  = container.dataset.url;
     var $container = $(container);
     
@@ -172,6 +172,8 @@ function init3d() {
     container.addEventListener( 'mousedown', onDocumentMouseDown, false );
     container.addEventListener( 'touchstart', onDocumentTouchStart, false );
     container.addEventListener( 'touchmove', onDocumentTouchMove, false );
+    
+    return true;
 }
 
 function onDocumentMouseDown( event ) {

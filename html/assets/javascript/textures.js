@@ -4,6 +4,9 @@ function init() {
     $('#create-texture').on('click', create_texture);
     $('.minecraft_model').on('click', set_active_skin);
     init_iso_views();
+    if(init3d()) {
+        animate();
+    }
 }
 
 function create_texture(event) {

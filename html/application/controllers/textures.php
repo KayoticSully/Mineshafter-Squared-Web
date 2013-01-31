@@ -25,7 +25,12 @@ class Textures extends MS2_Controller {
             $skins = array();
         }
         
-        $this->variables = array('skins' => $skins, 'user' => $this->user, 'active_skin' => $this->user->active_skin());
+        $this->variables = array('skins' => $skins, 'user' => $this->user);
+        
+        if(isset($this->user))
+        {
+            $this->variables['active_skin'] = $this->user->active_skin();
+        }
     }
     
     /**
