@@ -2,6 +2,7 @@ $(document).ready(init);
 
 function init() {
     $('#create-texture').on('click', create_texture);
+    $('#texture-form').on('submit', create_texture);
     $('.minecraft_model').on('click', set_active_skin);
     init_iso_views();
     if(init3d()) {
@@ -10,6 +11,8 @@ function init() {
 }
 
 function create_texture(event) {
+    event.preventDefault();
+    
     // change to loading cursor
     $('html').css('cursor', 'wait');
     

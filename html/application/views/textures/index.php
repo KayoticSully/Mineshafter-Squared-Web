@@ -24,7 +24,7 @@
         </div>
     <?php endif; ?>
     <ul id="action-list" class="nav nav-list">
-        <li class="group">
+        <li>
             <?php if($user): ?>
                 <a type="button" id="upload-skin" class="btn btn-link" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</a>
             <?php endif; ?>
