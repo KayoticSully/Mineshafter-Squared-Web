@@ -27,7 +27,9 @@
             <a href="#">Public</a>
         </li>
         <li>
-            <button type="button" id="upload-skin" class="btn btn-inverse" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</button>
+            <?php if($user): ?>
+                <button type="button" id="upload-skin" class="btn btn-inverse" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</button>
+            <?php endif; ?>
         </li>
     </ul>
 </div>
