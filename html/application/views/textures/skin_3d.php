@@ -2,6 +2,6 @@
     <strong><?php echo $location; ?>'s skin</strong><br />
     click + drag model to change view
 </div>
-<div id="display">
-    
+<div id="skin-3d" data-render3d data-url="<?php echo $location; ?>">
+    &nbsp;
 </div>

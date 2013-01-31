@@ -66,8 +66,24 @@ class Textures extends MS2_Controller {
         if ($texture)
         {
             $variables = array('location' => '/'.$this->texture_folder.'/'.$texture->file_path());
-            $this->javascripts = array('3d/RequestAnimationFrame', '3d/Three');
-            $this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
+            $this->javascripts = array('Three', 'skin-viewer-3d');
+            //$this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
+            $this->variables = $variables;
+        }
+        
+        $this->variables = $variables;
+    }
+    
+    public function skin_iso($skin)
+    {
+        $this->force_shell = TRUE;
+        
+        $texture = Texture::find_by_location($skin);
+        if ($texture)
+        {
+            $variables = array('location' => '/'.$this->texture_folder.'/'.$texture->file_path().'/base.png');
+            $this->javascripts = array('Three', 'skin-viewer-iso', 'skin-iso-start');
+            //$this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
             $this->variables = $variables;
         }
         
