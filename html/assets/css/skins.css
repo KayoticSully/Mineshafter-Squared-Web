@@ -1,0 +1,45 @@
+.minecraft_head .head {
+  display: none;
+}
+.minecraft_model .head {
+  display: none;
+}
+.minecraft_head:hover .hat {
+  display: none;
+}
+.minecraft_model:hover .hat {
+  display: none;
+}
+.minecraft_head:hover .head {
+  display: inline-block;
+}
+.minecraft_model:hover .head {
+  display: inline-block;
+}
+.scratch {
+  display: none;
+}
+#preview-wrapper {
+  float: left;
+}
+#preview {
+  height: 500px;
+  width: 899px;
+  margin: -20px -180px 0px -180px;
+  position: relative;
+}
+#preview canvas {
+  z-index: 333;
+}
+#preview-hints {
+  text-align: center;
+  padding: 10px 0px;
+}
+#skindata {
+  float: left;
+  position: relative;
+  z-index: 777;
+}
+#skindata canvas {
+  z-index: 777;
+}

@@ -1,5 +1,32 @@
 
+@import 'iso_views';
+
+#preview-wrapper {
+    float: left;
+}
+
 #preview {
-    height: 200px;
-    width: 400px;
+    height: 500px;
+    width: 899px;
+    margin: -20px -180px 0px -180px;
+    position: relative;
+    canvas {
+        z-index: 333;
+    }
+}
+
+#preview-hints {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#skindata {
+    float: left;
+    position: relative;
+    z-index: 777;
+    
+    canvas {
+        z-index: 777;
+    }
+    
 }
