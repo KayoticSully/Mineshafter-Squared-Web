@@ -14,3 +14,11 @@
        
     </div>
 </section>
+<section id="other">
+    <h1>
+        Some Other Information
+    </h1>
+    <div style="height:200px;">
+        I will put some more information here sompoint before launch.
+    </div>
+</section>
