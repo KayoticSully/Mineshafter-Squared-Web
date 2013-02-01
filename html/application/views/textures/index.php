@@ -34,8 +34,6 @@
 <div id="texture-display">
     <div id="skin-pane">
         <?php foreach($skins as $skin): ?>
-            <!--<div class="minecraft_head" data-size="5" data-minecrafthead="/<?php echo $skin->base_location();?>">
-            </div>-->
             <div class="skin">
                 <button type="button" class="close">&times;</button>
                 <div class="name">

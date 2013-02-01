@@ -83,6 +83,8 @@ class Textures extends MS2_Controller {
             $skin->owner_id = $this->user->id;
             if ($skin->save())
             {
+                $result['skin_data']['name'] = $skin->name;
+                
                 // add skin to user's library
                 $user_skin = new Userskin();
                 $user_skin->user_id = $this->user->id;
