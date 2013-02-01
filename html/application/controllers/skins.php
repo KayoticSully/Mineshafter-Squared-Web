@@ -13,6 +13,7 @@ class Skins extends MS2_Controller {
         
         if ($skin && $this->user && $skin->owner->id == $this->user->id)
         {
+            $this->javascripts = array('Three', 'skin-viewer-3d');
             $this->variables = array('skin' => $skin);
         }
     }

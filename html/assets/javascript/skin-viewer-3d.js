@@ -155,7 +155,6 @@ function init3d() {
     // Create render NOTE: there is a WebGL version but it is buggy
     renderer = new THREE.CanvasRenderer();
     // make sure size is only as big as the containing div
-    
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     
     var newNode = renderer.domElement;

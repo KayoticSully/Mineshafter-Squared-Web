@@ -104,31 +104,6 @@ class Textures extends MS2_Controller {
         $this->load->view('json', array('json' => $result));
     }
     
-    private function delete_texture($file_data)
-    {
-        $texture = Texture::find_by_id($file_data['texture_id']);
-        $texture->delete();
-        
-        // delete images
-        unlink($file_data['file_path']);
-    }
-    
-    public function skin_3d($skin)
-    {
-        $this->force_shell = TRUE;
-        
-        $texture = Texture::find_by_location($skin);
-        if ($texture)
-        {
-            $variables = array('location' => '/'.Textures::texture_folder.'/'.$texture->file_path());
-            $this->javascripts = array('Three', 'skin-viewer-3d');
-            //$this->extra_js = $this->load->view('textures/skin_script', $variables, TRUE);
-            $this->variables = $variables;
-        }
-        
-        $this->variables = $variables;
-    }
-    
     public function set_active_skin($id)
     {
         $this->protect('user');
@@ -138,6 +113,15 @@ class Textures extends MS2_Controller {
         $userskin = Userskin::find_by_id_and_user_id($id, $this->user->id);
         $userskin->active = 1;
         echo $userskin->save();
+    }
+    
+    private function delete_texture($file_data)
+    {
+        $texture = Texture::find_by_id($file_data['texture_id']);
+        $texture->delete();
+        
+        // delete images
+        unlink($file_data['file_path']);
     }
     
     /**
