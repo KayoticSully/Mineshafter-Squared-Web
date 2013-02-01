@@ -21,20 +21,30 @@
 #about {
   height: 600px;
 }
+#downloads {
+  background: url('/assets/img/noisy_net.png');
+  color: #FEFEFE;
+  border-width: 2px 0px;
+  border-style: solid;
+  border-color: #252525;
+}
+#downloads header {
+  border-bottom: 1px solid #FEFEFE;
+}
+#downloads footer {
+  border-top: 1px solid #FEFEFE;
+}
 article {
   width: 22%;
   position: relative;
   display: inline-block;
   margin: 1%;
-  border: 1px solid #000000;
 }
 article header {
   font-weight: bold;
   font-size: 20px;
   padding: 6px;
   border-bottom: 1px solid #000000;
-  background-color: #c0c0c0;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
   height: 20px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -44,7 +54,7 @@ article header {
 article .body {
   height: 200px;
   padding: 10px;
-  overflow-y: auto;
+  overflow: hidden;
   position: relative;
 }
 article .download .description {
@@ -60,13 +70,12 @@ article .download .links li {
 }
 article footer {
   border-top: 1px solid #000000;
-  background-color: #c0c0c0;
   text-align: center;
   padding: 0px 5px;
   font-size: 12px;
 }
 section {
-  margin: 0px 3%;
+  padding: 25px;
 }
 @media (max-width: 1200px) {
   article {

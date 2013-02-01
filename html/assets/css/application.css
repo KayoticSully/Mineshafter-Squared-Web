@@ -7310,8 +7310,7 @@ div .brand {
 #shell-top #logo:hover {
   background-color: transparent;
 }
-h1,
-a {
+h1 {
   text-shadow: 0 1px 0 rgba(0,0,0,0.25);
 }
 #shell-top-wrapper {
@@ -7329,6 +7328,25 @@ body > footer {
   width: 100%;
   font-size: 12px;
   padding: 2px 0px;
+  color: #EEE;
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top,#222222,#111111);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#222222),to(#111111));
+  background-image: -webkit-linear-gradient(top,#222222,#111111);
+  background-image: -o-linear-gradient(top,#222222,#111111);
+  background-image: linear-gradient(to bottom,#222222,#111111);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222',endColorstr='#ff111111',GradientType=0);
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top,#222222,#111111);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#222222),to(#111111));
+  background-image: -webkit-linear-gradient(top,#222222,#111111);
+  background-image: -o-linear-gradient(top,#222222,#111111);
+  background-image: linear-gradient(to bottom,#222222,#111111);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222',endColorstr='#ff111111',GradientType=0);
+  border-color: #252525;
+  border-width: 1px 0 0;
 }
 .clearfix {
   clear: both;
@@ -7548,7 +7566,6 @@ ul li.active a {
 }
 #site-body {
   margin-bottom: 20px;
-  padding: 20px;
 }
 .extra-top-padding {
   padding-top: 15px;

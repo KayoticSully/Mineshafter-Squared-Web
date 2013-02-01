@@ -21,7 +21,7 @@
         information might need to be deleted before release.  I will put up
         announcements anytime data on the alpha needs to be purged.
     </div>
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
         <div class="navbar-inner">
             <a class="brand" href="#">Filters</a>
             <?php /*<ul class="nav">
