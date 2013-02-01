@@ -5,6 +5,10 @@
  *
  * @author  Ryan Sullivan (kayoticsully@gmail.com)
  */
+
+// this is needed since the Textures class constants are used
+require_once('application/controllers/textures.php');
+
 class Skin extends ActiveRecord\Model {
     static $belongs_to = array(
         array('Texture'),

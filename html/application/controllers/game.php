@@ -144,11 +144,34 @@ class Game extends MS2_Controller {
             // compatability with non-cracked clients
             $this->load->helper('connection');
             
+            // TODO
             // This will be the line of code once the site goes live
             //echo curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
             
             // for now to keep compatibility with the old system we will go through there.
             echo curlPost('http://mineshaftersquared.com/game/checkserver', 'user='.$username.'&serverId='.$server_id);
+        }
+    }
+    
+    public function get_skin($username)
+    {
+        // load up the download helper
+        $this->load->helper('download');
+        
+        // see if the username exists
+        $user = User::find_by_username($username);
+        
+        if ($user)
+        {
+            $skin = $user->active_skin();
+            
+            if ($skin)
+            {
+                // if the active skin is found, grab the file and
+                // force it upon the game client.
+                $file = $skin->base_location();
+                force_download($username . '.png', file_get_contents($file));
+            }
         }
     }
 }

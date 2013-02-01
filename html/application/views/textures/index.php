@@ -20,7 +20,7 @@
         <div id="preview-hints">
             <small>Click + Drag to change view</small>
         </div>
-        <div id="preview" data-render3d data-url="<?php echo $active_skin->file_path(); ?>">
+        <div id="preview" data-render3d data-url="/<?php echo $active_skin->file_path(); ?>">
         </div>
     <?php endif; ?>
     <ul id="action-list" class="nav nav-list">
@@ -39,12 +39,12 @@
             <div class="skin">
                 <button type="button" class="close">&times;</button>
                 <div class="name">
-                    <a href="#" title="Preview Skin" class="btn btn-link btn-large">
+                    <a href="/skin/<?php echo $skin->name; ?>" title="Preview Skin" class="btn btn-link btn-large">
                         <?php echo $skin->name; ?>
                     </a>
                 </div>
                 <div class="minecraft_model" data-size="5" title="Set Active"
-                     data-minecraftmodel="/<?php echo $skin->base_location();?>"
+                     data-minecraftmodel="/<?php echo $skin->base_location(); ?>"
                      data-id="<?php echo $skin->id; ?>">
                 </div>
             </div>
