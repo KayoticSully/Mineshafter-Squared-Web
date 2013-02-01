@@ -10,7 +10,7 @@
             <ul class="download links">
                 <?php foreach($group->downloads as $download): ?>
                     <li>
-                        <a href="<?php echo $download->link; ?>" class="btn btn-link">
+                        <a href="<?php echo $download->link; ?>">
                             <?php echo $download->name; ?>
                         </a>
                     </li>
