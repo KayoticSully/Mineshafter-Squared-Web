@@ -85,7 +85,7 @@ class Textures extends MS2_Controller {
                 
                 // Create Skin Record
                 $skin = new Skin();
-                $skin->name = 
+                $skin->name = $skin_name;
                 $skin->texture_id = $result['upload_data']['texture_id'];
                 $skin->owner_id = $this->user->id;
                 if ($skin->save())
