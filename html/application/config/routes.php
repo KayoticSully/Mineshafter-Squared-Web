@@ -38,18 +38,20 @@
 |
 */
 
-$route['default_controller']    = "home";
-$route['admin']                 = "home/admin";
-$route['404_override']          = '';
+$route['default_controller']        = "home";
+$route['admin']                     = "home/admin";
+$route['404_override']              = '';
 
-$route['update/(:any)']         = 'game/update/$1';
-$route['game/getversion']       = 'game/get_version';
+$route['update/(:any)']             = 'game/update/$1';
+$route['game/getversion']           = 'game/get_version';
 
-$route['server/(:any)']         = 'servers/index/$1';
+$route['server/(:any)']             = 'servers/index/$1';
 
-$route['server_query']          = 'server_query/run';
+$route['server_query']              = 'server_query/run';
 
-$route['skin/(:any)']          = 'skins/index/$1';
+$route['skin/set_active/(:num)']    = 'skins/set_active/$1';
+$route['skin/remove_active']        = 'skins/remove_active';
+$route['skin/(:any)']               = 'skins/index/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

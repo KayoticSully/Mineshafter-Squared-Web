@@ -43,3 +43,6 @@
 #skindata canvas {
   z-index: 777;
 }
+#new-tag {
+  margin-top: 5px;
+}
