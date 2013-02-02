@@ -13,7 +13,7 @@ class Textures extends MS2_Controller {
     public function index()
     {
         
-        $this->javascripts = array('Three', 'skin-viewer-iso', 'skin-viewer-3d');
+        $this->javascripts = array('Three', 'texture_actions', 'skin-viewer-iso', 'skin-viewer-3d');
         
         if (isset($this->user))
         {
@@ -52,69 +52,66 @@ class Textures extends MS2_Controller {
         
         $this->load->helper('texture');
         
-        // get highest texture location value
-        $location = Data::find_by_key('highest-texture-location');
-        $file_name = $location->value;
-        $file_name++;
-        $location->value = $file_name;
-        
-        // uploader settings
-        $config['allowed_types']    = 'png'; // minecraft textures need to be png's
-        $config['max_size']	    = '5';   // most minecraft textures are between 1 - 4 kb
-        $config['max_width']        = '64';  // width of a minecraft texture
-        $config['max_height']       = '32';  // height of a minecraft texture
-        $config['file_name']        = $file_name;
-        
-        $result = $this->upload($config);
-        
-        // if success
-        if (key_exists('upload_data', $result))
+        $skin_name = $this->input->post('name');
+        if (in_array($skin_name, array('set_active', 'remove_active')))
         {
-            // save new highest location back to database
-            $location->save();
+            $result = array('error' => '???');
+        }
+        else
+        {
+            // get highest texture location value
+            $location = Data::find_by_key('highest-texture-location');
+            $file_name = $location->value;
+            $file_name++;
+            $location->value = $file_name;
             
-            // chop up the skin for 3d view
-            chop_skin_for_3d($result['upload_data']);
+            // uploader settings
+            $config['allowed_types']    = 'png'; // minecraft textures need to be png's
+            $config['max_size']	    = '5';   // most minecraft textures are between 1 - 4 kb
+            $config['max_width']        = '64';  // width of a minecraft texture
+            $config['max_height']       = '32';  // height of a minecraft texture
+            $config['file_name']        = $file_name;
             
-            // Create Skin Record
-            $skin = new Skin();
-            $skin->name = $this->input->post('name');
-            $skin->texture_id = $result['upload_data']['texture_id'];
-            $skin->owner_id = $this->user->id;
-            if ($skin->save())
+            $result = $this->upload($config);
+            
+            // if success
+            if (key_exists('upload_data', $result))
             {
-                $result['skin_data']['name'] = $skin->name;
+                // save new highest location back to database
+                $location->save();
                 
-                // add skin to user's library
-                $user_skin = new Userskin();
-                $user_skin->user_id = $this->user->id;
-                $user_skin->skin_id = $skin->id;
-                if(!$user_skin->save()) {
+                // chop up the skin for 3d view
+                chop_skin_for_3d($result['upload_data']);
+                
+                // Create Skin Record
+                $skin = new Skin();
+                $skin->name = 
+                $skin->texture_id = $result['upload_data']['texture_id'];
+                $skin->owner_id = $this->user->id;
+                if ($skin->save())
+                {
+                    $result['skin_data']['name'] = $skin->name;
+                    
+                    // add skin to user's library
+                    $user_skin = new Userskin();
+                    $user_skin->user_id = $this->user->id;
+                    $user_skin->skin_id = $skin->id;
+                    if(!$user_skin->save()) {
+                        $this->delete_texture($result['upload_data']);
+                        $skin->delete();
+                        $result = array('error' => '???');
+                    }
+                }
+                else
+                {
+                    // if save failed delete texture
                     $this->delete_texture($result['upload_data']);
-                    $skin->delete();
                     $result = array('error' => '???');
                 }
-            }
-            else
-            {
-                // if save failed delete texture
-                $this->delete_texture($result['upload_data']);
-                $result = array('error' => '???');
             }
         }
         
         $this->load->view('json', array('json' => $result));
-    }
-    
-    public function set_active_skin($id)
-    {
-        $this->protect('user');
-        
-        $data = array('active' => '0');
-        Userskin::table()->update($data, array('user_id' => array($this->user->id)));
-        $userskin = Userskin::find_by_id_and_user_id($id, $this->user->id);
-        $userskin->active = 1;
-        echo $userskin->save();
     }
     
     private function delete_texture($file_data)

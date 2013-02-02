@@ -34,21 +34,3 @@ function create_texture(event) {
         }
     });
 }
-
-function set_active_skin(event) {
-    var $this = $(this);
-    var id = $this.data('id');
-    
-    $.ajax({
-        url: '/textures/set_active_skin/' + id,
-        context: $this,
-        success: function(data){
-            if(data) {
-                var model = $(this).data('minecraftmodel');
-                model = model.replace('/base.png', '');
-                container.dataset.url = model.substring(1);
-                init3d();
-            }
-        }
-    });
-}

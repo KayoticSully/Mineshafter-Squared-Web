@@ -7,7 +7,9 @@
  */
 class Texture extends ActiveRecord\Model {
     static $has_many = array(
-        array('Skins')
+        array('Skins'),
+        array('Texturetags'),
+        array('Tags', 'through' => 'texturetags')
     );
     
     public function file_path()
