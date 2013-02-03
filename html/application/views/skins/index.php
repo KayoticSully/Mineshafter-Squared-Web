@@ -1,4 +1,4 @@
-<div id="skin-container" class="extra-top-padding">
+<div id="skin-container" class="clearfix extra-top-padding">
     <div id="preview-wrapper">
         <?php if($user): ?>
             <div id="actions">
