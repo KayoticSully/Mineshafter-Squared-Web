@@ -3,7 +3,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h3>New Skin</h3>
     </div>
-    <div class="alert alert-error hide" id="texture-error">
+    <div class="alert alert-error hide" id="upload-error">
     </div>
     <div class="modal-body">
         <div class="center_load">
@@ -23,19 +23,24 @@
         <div id="preview" data-render3d data-url="/<?php echo $active_skin->file_path(); ?>">
         </div>
     <?php endif; ?>
-    <ul id="action-list" class="nav nav-list">
-        <li>
-            <?php if($user): ?>
-                <a type="button" id="upload-skin" class="btn btn-link" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</a>
-            <?php endif; ?>
-        </li>
-    </ul>
+    <div id="action-list">
+        <a type="button" id="remove-active" data-default="/<?php echo $default_skin->file_path(); ?>" class="btn btn-link">Remove Skin</a>
+        <?php if($user): ?>
+            <a type="button" id="upload-skin" class="btn btn-link" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</a>
+        <?php endif; ?>
+    </div>
 </div>
 <div id="texture-display">
     <div id="skin-pane">
         <?php foreach($skins as $skin): ?>
             <div class="skin">
-                <button type="button" class="close">&times;</button>
+                <?php if ($user): ?>
+                    <?php if(in_array_id_check($user, $skin->users)): ?>
+                        <a class="close remove-from-library" data-id="<?php echo $skin->id; ?>" title="Remove from library">&times;</a>
+                    <?php else: ?>
+                        <a class="close add-to-library" data-id="<?php echo $skin->id; ?>" title="Add to library"><i class="icon-ok"></i></a>
+                    <?php endif; ?>
+                <?php endif; ?>
                 <div class="name">
                     <a href="/skin/<?php echo $skin->name; ?>" title="Preview Skin" class="btn btn-link btn-large">
                         <?php echo $skin->name; ?>

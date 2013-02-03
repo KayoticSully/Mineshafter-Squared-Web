@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('nav li').on('click', nav_click);
     $('#login').on('click', user_login);
     
-    $('a[rel=popover]').popover();
+    $('[rel=popover]').popover();
     $('.dropdown-toggle').dropdown();
     
     setTimeout(showSocial, 1500);

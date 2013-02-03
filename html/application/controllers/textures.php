@@ -12,22 +12,31 @@ class Textures extends MS2_Controller {
     
     public function index()
     {
-        
+        $this->load->helper('array');
         $this->javascripts = array('Three', 'texture_actions', 'skin-viewer-iso', 'skin-viewer-3d');
+        
+        $public = Tag::find_by_name('Public');
+        $textures  = $public->textures;
+        
+        $skins = array();
+        foreach ($textures as $texture)
+        {
+            $skins = array_merge($skins, $texture->skins);
+        }
         
         if (isset($this->user))
         {
-            $skins = $this->user->skins;
-            //$skins = array_merge($skins, $skins, $skins, $skins, $skins, $skins);
-            //$skins = array_merge($skins, $skins, $skins, $skins, $skins, $skins);
+            $skins = array_merge($skins, $this->user->skins);
         }
         
-        if (!isset($skins))
-        {
-            $skins = array();
-        }
+        $skins = array_reduce_objects($skins);
         
-        $this->variables = array('skins' => $skins, 'user' => $this->user);
+        // get other data that is needed
+        $default = Data::find_by_key('default-skin');
+        $default_skin = Skin::find_by_name($default->value);
+        
+        // set variables for view
+        $this->variables = array('skins' => $skins, 'user' => $this->user, 'default_skin' => $default_skin);
         
         if(isset($this->user))
         {
@@ -53,9 +62,9 @@ class Textures extends MS2_Controller {
         $this->load->helper('texture');
         
         $skin_name = $this->input->post('name');
-        if (in_array($skin_name, array('set_active', 'remove_active')))
+        if (in_array($skin_name, array('index', 'set_active', 'remove_active', 'add_to_library', 'remove_from_library')))
         {
-            $result = array('error' => '???');
+            $result = array('error' => lang('error-disallowed-name'));
         }
         else
         {
@@ -67,7 +76,7 @@ class Textures extends MS2_Controller {
             
             // uploader settings
             $config['allowed_types']    = 'png'; // minecraft textures need to be png's
-            $config['max_size']	    = '5';   // most minecraft textures are between 1 - 4 kb
+            $config['max_size']	        = '5';   // most minecraft textures are between 1 - 4 kb
             $config['max_width']        = '64';  // width of a minecraft texture
             $config['max_height']       = '32';  // height of a minecraft texture
             $config['file_name']        = $file_name;
@@ -99,14 +108,14 @@ class Textures extends MS2_Controller {
                     if(!$user_skin->save()) {
                         $this->delete_texture($result['upload_data']);
                         $skin->delete();
-                        $result = array('error' => '???');
+                        $result = array('error' => lang('error-db-save'));
                     }
                 }
                 else
                 {
                     // if save failed delete texture
                     $this->delete_texture($result['upload_data']);
-                    $result = array('error' => '???');
+                    $result = array('error' => lang('error-db-save'));
                 }
             }
         }
@@ -114,6 +123,101 @@ class Textures extends MS2_Controller {
         $this->load->view('json', array('json' => $result));
     }
     
+    /**
+    * @name    add_tag
+    * @author  Ryan Sullivan <kayoticsully@gmail.com>
+    *
+    * Adds a the specified tag to a specified texture
+    */
+    public function add_tag()
+    {
+        $this->load->helper('string');
+        $this->load->helper('inflector');
+        
+        // get texture in question
+        $texture = Texture::find_by_id($this->input->get('texture_id'));
+        
+        // prepare the result array
+        $result = array();
+        $result['tags'] = array();
+        $result['errors'] = array();
+        
+        // make sure the texture exists first
+        if ($texture)
+        {
+            // remove typos of multiple commas or commas at the end of the input
+            $tags_str = reduce_multiples($this->input->get('tag'), ',', TRUE);
+            // strip out quotes
+            $tags_str = strip_quotes($tags_str);
+            
+            // translaste input to array
+            $tags = explode(',', $tags_str);
+            
+            foreach ($tags as $tag_str)
+            {
+                // format tag
+                $tag_name = ucwords(trim($tag_str));
+                // get plural
+                $tag_name_plural = plural($tags_str);
+                
+                // build array of variations on tag name
+                $possible_names = array();
+                $possible_names[] = $tag_name;
+                
+                // add plural to possible names if it is different
+                if ($tag_name !== $tag_name_plural)
+                {
+                    $possible_names[] = $tag_name_plural;
+                }
+                
+                // see if tag or similar already exists
+                $tag = Tag::first(array('conditions' => array('name in (?)', $possible_names)));
+                $already_added = false;
+                
+                if ($tag)
+                {
+                    $this->load->helper('array');
+                    if (in_array_id_check($texture, $tag->textures))
+                    {
+                        $already_added = true;
+                    }
+                }
+                else
+                {
+                    // if it is a new tag create it
+                    $tag = new Tag();
+                    $tag->name = $tag_name;
+                    $tag->save();
+                }
+                
+                // add texture to tag
+                if(!$already_added)
+                {
+                    $texture_tag = new Texturetag();
+                    $texture_tag->tag_id = $tag->id;
+                    $texture_tag->texture_id = $texture->id;
+                    $texture_tag->save();
+                    
+                    $result['tags'][] = $tag->name;
+                }
+            } // end foreach
+        } // end if ($texture)
+        else
+        {
+            echo "fail " . $this->input->get('texture_id');
+        }
+        
+        $this->load->view('json', array('json' => $result));
+    }
+    
+    /**
+    * @name    delete_texture
+    * @author  Ryan Sullivan <kayoticsully@gmail.com>
+    *
+    * @param    $file_data data about the texture to delete
+    * 
+    * Deletes a texture in the database and on disk
+    */
     private function delete_texture($file_data)
     {
         $texture = Texture::find_by_id($file_data['texture_id']);
@@ -153,7 +257,11 @@ class Textures extends MS2_Controller {
             if ($collision)
             {
                 unlink($data['full_path']);
-                return array('error' => 'COLLISION'); 
+                $result = array();
+                $result['error'] = lang('upload-collision');
+                // this is okay for now, but will need to be changed to support capes
+                $result['skin_data'] = array('name' => $collision->skins[0]->name);
+                return $result;
             }
             
             // move file into texture file system
@@ -161,7 +269,7 @@ class Textures extends MS2_Controller {
             
             if (!is_dir($location_path) && !mkdir($location_path, 0777, TRUE))
             {
-                return array('error' => 'could not create folder'); 
+                return array('error' => lang('upload-folder-crate') . $location_path); 
             }
             
             $new_full_path = $location_path . '/' . Textures::texture_basename;
@@ -175,7 +283,7 @@ class Textures extends MS2_Controller {
             }
             else
             {
-                return array('error' => 'could not move file'); 
+                return array('error' => lang('upload-move-file') . $data['full_path'] . ' to ' . $new_full_path); 
             }
             
             // create texture database record
@@ -184,8 +292,11 @@ class Textures extends MS2_Controller {
             $texture->hash = $hash;
             if (!$texture->save())
             {
-                return array('error' => 'could not create texture record');
+                return array('error' => lang('upload-texture-create'));
             }
+            
+            // give public tag
+            $texture->make_public();
             
             $data['texture_id'] = $texture->id;
             $data['texture_location'] = $texture->location;

@@ -29,4 +29,23 @@ class Skin extends ActiveRecord\Model {
     {
         return Textures::texture_folder . '/' . $this->texture->file_path();
     }
+    
+    public function is_public()
+    {
+        // kind of hacky, but it works
+        require_once('application/helpers/array_helper.php');
+        
+        // get public tag
+        $public = Tag::find_by_name('Public');
+        
+        // check to see if that tag is related to the skin's texture
+        if (in_array_id_check($public, $this->texture->tags))
+        {
+            return TRUE; 
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
 }
