@@ -43,9 +43,14 @@ class Textures extends MS2_Controller {
         // set variables for view
         $this->variables = array('skins' => $skins, 'user' => $this->user, 'default_skin' => $default_skin);
         
-        if(isset($this->user))
+        if (isset($this->user))
         {
             $this->variables['active_skin'] = $this->user->active_skin();
+        }
+        else
+        {
+            $default_skin = Data::find_by_key('default-skin');
+            $this->variables['active_skin'] = Skin::find_by_name($default_skin->value);
         }
     }
     

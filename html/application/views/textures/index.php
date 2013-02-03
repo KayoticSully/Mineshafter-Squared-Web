@@ -16,13 +16,11 @@
     </div>
 </div>
 <div id="control-bar">
-    <?php if ($user && $active_skin): ?>
-        <div id="preview-hints">
-            <small>Click + Drag to change view</small>
-        </div>
-        <div id="preview" data-render3d data-url="/<?php echo $active_skin->file_path(); ?>">
-        </div>
-    <?php endif; ?>
+    <div id="preview-hints">
+        <small>Click + Drag to change view</small>
+    </div>
+    <div id="preview" data-render3d data-url="/<?php echo $active_skin->file_path(); ?>">
+    </div>
     <div id="action-list">
         <?php if($user): ?>
             <a type="button" id="remove-active" data-default="/<?php if ($default_skin){ echo $default_skin->file_path(); } ?>" class="btn btn-link">Remove Skin</a>
