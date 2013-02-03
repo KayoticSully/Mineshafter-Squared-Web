@@ -23,7 +23,7 @@
     </div>
     <div class="navbar navbar-inverse">
         <div class="navbar-inner">
-            <a class="brand" href="#">Filters</a>
+            <a class="brand" href="#">Filters - <small>Not yet available</small></a>
             <?php /*<ul class="nav">
                 <li><a href="#">Online</a></li>
             </ul>

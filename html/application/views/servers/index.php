@@ -17,7 +17,7 @@
 </div>
 <div id="server-<?php echo $server->id; ?>" class="container extra-top-padding">
     <div id="server-data" data-json="<?php echo html_escape($json); ?>"></div>
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
         <div class="navbar-inner">
             <span id="online-badge" class="badge">
                 ?
@@ -64,7 +64,7 @@
         <section>
             <div class="row">
                 <div class="span6">
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                                 <th colspan="2">Server Info</th>
@@ -90,7 +90,7 @@
                                 <th>Software</th><td id="Software"></td>
                             </tr>
                         </tbody>
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th colspan="2">Plugins</th>
@@ -102,7 +102,7 @@
                     </table>
                 </div>
                 <div class="span4">
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                                 <th id="Players">Players</th>

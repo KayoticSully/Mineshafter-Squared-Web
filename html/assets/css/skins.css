@@ -19,6 +19,10 @@
 .scratch {
   display: none;
 }
+#skin-container {
+  width: 1000px;
+  margin: 0px auto;
+}
 #preview-wrapper {
   float: left;
 }
