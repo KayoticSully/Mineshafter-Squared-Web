@@ -1,1 +1,7 @@
 Deny from all
+
+ErrorDocument 400 /application/errors/error_general.php
+ErrorDocument 401 /application/errors/index.html
+ErrorDocument 403 /application/errors/index.html
+ErrorDocument 404 /application/errors/error_404.php
+ErrorDocument 500 /application/errors/error_db.php
