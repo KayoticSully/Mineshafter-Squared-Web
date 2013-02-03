@@ -47,7 +47,6 @@ class Textures extends MS2_Controller {
         {
             $this->variables['active_skin'] = $this->user->active_skin();
         }
-        echo "test";
     }
     
     /**
