@@ -13,3 +13,6 @@
         </div>
     </div>
 <?php echo form_close(); ?>
+<script>
+    $('#texture-form').on('submit', create_texture);
+</script>
