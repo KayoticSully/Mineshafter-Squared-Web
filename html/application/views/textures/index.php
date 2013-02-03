@@ -19,13 +19,35 @@
     <div id="preview-hints">
         <small>Click + Drag to change view</small>
     </div>
-    <div id="preview" data-render3d data-url="/<?php echo $active_skin->file_path(); ?>">
+    <div id="preview" data-render3d data-url="/<?php if(isset($active_skin)){ echo $active_skin->file_path(); } ?>">
     </div>
     <div id="action-list">
         <a type="button" id="remove-active" data-default="/<?php if ($default_skin){ echo $default_skin->file_path(); } ?>" class="btn btn-link">Remove Skin</a>
         <?php if($user): ?>
             <a type="button" id="upload-skin" class="btn btn-link" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</a>
         <?php endif; ?>
+    </div>
+    <div id="toggle-search" class="toggle-action">
+        <form class="form-search">
+            <div class="input-append">
+                <input type="text" class="span2 search-query" placeholder="tag, name, etc."
+                       rel="popover"
+                       data-toggle="popover"
+                       data-trigger="focus"
+                       data-placement="right"
+                       data-original-title="Help me make search great"
+                       data-content="In order to make search well, I first need data. Please tag and name skins appropriately so search can be as useful as possible for everyone when it is finished." >
+                <button type="submit" class="btn">Search</button>
+            </div>
+        </form>
+    </div>
+    <?php if($user): ?>
+        <div id="toggle-private" class="toggle-action">
+            My Library
+        </div>
+    <?php endif; ?>
+    <div id="toggle-public" class="toggle-action">
+        Public
     </div>
 </div>
 <div id="texture-display">

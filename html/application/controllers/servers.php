@@ -30,7 +30,7 @@ class Servers extends MS2_Controller {
             $owner = true;
         }
         
-        $this->javascripts = array('objects/Server', 'bootstrap-alert');
+        $this->javascripts = array('objects/Server', 'bootstrap-alert', 'skin-viewer-iso');
         $this->variables = array('server' => $server,
                                  'json' => json_encode($server->toAssoc()),
                                  'owner' => $owner);

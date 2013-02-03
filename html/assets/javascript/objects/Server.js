@@ -37,6 +37,7 @@ var Server = (function() {
                 
                 if(this.fullStatus) {
                     this.displayInfo();
+                    init_iso_views();
                 }
             }
         }
@@ -192,7 +193,17 @@ Server.prototype.displayInfo = function() {
                 if(this[key].length > 0) {
                     for(player in this[key]) {
                         text += '<tr>' +
-                                    '<td>' + this[key][player] + '</td>' +
+                                    '<td>' +
+                                        '<div class="media">' +
+                                            '<a class="pull-left" href="#">' +
+                                                '<div class="minecraft_head" data-size="5" data-minecrafthead="/game/get_skin/' + this[key][player] +  '">' +
+                                                '</div>' +
+                                            '</a>' +
+                                            '<div class="media-body">' +
+                                                '<h4 class="media-heading">' + this[key][player] + '</h4>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</td>' +
                                 '</tr>';
                     }
                 } else {
