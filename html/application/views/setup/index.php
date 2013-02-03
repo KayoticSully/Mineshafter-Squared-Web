@@ -1,5 +1,5 @@
 <div class="container">
     <h1>
-        Setup
+        Setup Complete
     </h1>
 </div>

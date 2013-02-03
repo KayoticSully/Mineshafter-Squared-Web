@@ -113,11 +113,14 @@ class Auth extends MS2_Controller {
         }
         else if (preg_match($this->premium_regex, $mcnetResponse) == 1 || preg_match($this->free_regex, $mcnetResponse) == 1)
         {
+            // get user type
+            $usertype = Usertype::find_by_name('User');
+            
             // create new user
             $user = new User();
             // set the password
             $user->password     = $password;
-            $user->usertype_id  = 2;
+            $user->usertype_id  = $usertype->id;
             
             // load email helper
             $this->load->helper('email');
