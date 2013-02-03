@@ -69,7 +69,7 @@ class Home extends MS2_Controller {
      * @name    login form
      * @author  Ryan Sullivan <kayoticsully@gmail.com>
      *
-     * Displays the user logn form
+     * Displays the user login form
      */
     public function login_form() {
         $this->load->helper('form');
