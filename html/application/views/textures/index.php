@@ -22,8 +22,8 @@
     <div id="preview" data-render3d data-url="/<?php echo $active_skin->file_path(); ?>">
     </div>
     <div id="action-list">
+        <a type="button" id="remove-active" data-default="/<?php if ($default_skin){ echo $default_skin->file_path(); } ?>" class="btn btn-link">Remove Skin</a>
         <?php if($user): ?>
-            <a type="button" id="remove-active" data-default="/<?php if ($default_skin){ echo $default_skin->file_path(); } ?>" class="btn btn-link">Remove Skin</a>
             <a type="button" id="upload-skin" class="btn btn-link" href="/textures/form" data-toggle="modal" data-target="#texture-modal" >Upload Skin</a>
         <?php endif; ?>
     </div>
