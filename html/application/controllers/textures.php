@@ -16,7 +16,12 @@ class Textures extends MS2_Controller {
         $this->javascripts = array('Three', 'texture_actions', 'skin-viewer-iso', 'skin-viewer-3d');
         
         $public = Tag::find_by_name('Public');
-        $textures  = $public->textures;
+        
+        $textures = array();
+        if ($public)
+        {
+            $textures  = $public->textures;
+        }
         
         $skins = array();
         foreach ($textures as $texture)
