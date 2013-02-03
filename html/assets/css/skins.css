@@ -39,10 +39,20 @@
   float: left;
   position: relative;
   z-index: 777;
+  max-width: 380px;
 }
 #skindata canvas {
   z-index: 777;
 }
 #new-tag {
   margin-top: 5px;
+}
+#tags {
+  margin-bottom: 10px;
+}
+#actions {
+  text-align: center;
+}
+.remove-tag {
+  cursor: pointer;
 }

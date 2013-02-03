@@ -135,7 +135,8 @@ class User extends ActiveRecord\Model {
         }
         else
         {
-            return null;
+            $default = Data::find_by_key('default-skin');
+            return Skin::find_by_name($default->value);
         }
     }
 }

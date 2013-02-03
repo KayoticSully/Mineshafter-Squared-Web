@@ -14,6 +14,7 @@ class Servers extends MS2_Controller {
      */
     public function index($name)
     {
+        $this->load->helper('array');
         $real_name = str_replace('_', ' ', $name);
         $server = Server::find_by_name($real_name);
         
@@ -24,7 +25,7 @@ class Servers extends MS2_Controller {
         }
         
         $owner = false;
-        if ($this->user && $this->in_array_id_check($this->user, $server->owners))
+        if ($this->user && in_array_id_check($this->user, $server->owners))
         {
             $owner = true;
         }
@@ -60,6 +61,7 @@ class Servers extends MS2_Controller {
     public function update()
     {
         $this->protect('user');
+        $this->load->helper('array');
         
         // get inputs
         $server_id = $this->input->get('id');
@@ -70,7 +72,7 @@ class Servers extends MS2_Controller {
         // find server
         $server = Server::find_by_id($server_id);
         // make sure it exists
-        if ($server && $this->in_array_id_check($this->user, $server->owners))
+        if ($server && in_array_id_check($this->user, $server->owners))
         {
             $successful = TRUE;
             try {
@@ -91,28 +93,6 @@ class Servers extends MS2_Controller {
         {
             echo "You do not have rights to this server.";
         }
-    }
-    
-    /**
-     * @name    in array id check
-     * @author  Ryan Sullivan <kayoticsully@gmail.com>
-     *
-     * Checks to see if the specified database object is in
-     * an array of database objects.
-     *
-     * @return TRUE if the object is found, FALSE otherwise
-     */
-    private function in_array_id_check($needle, $haystack)
-    {
-        foreach($haystack as $hay)
-        {
-            if($hay->id == $needle->id)
-            {
-                return true;
-            }
-        }
-        
-        return false;
     }
 }
 /* End of file server.php */

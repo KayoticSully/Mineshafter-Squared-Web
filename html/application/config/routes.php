@@ -49,9 +49,12 @@ $route['server/(:any)']             = 'servers/index/$1';
 
 $route['server_query']              = 'server_query/run';
 
-$route['skin/set_active/(:num)']    = 'skins/set_active/$1';
-$route['skin/remove_active']        = 'skins/remove_active';
-$route['skin/(:any)']               = 'skins/index/$1';
+// skin controller
+$route['skin/set_active/(:num)']            = 'skins/set_active/$1';
+$route['skin/remove_active']                = 'skins/remove_active';
+$route['skin/add_to_library/(:num)']        = 'skins/add_to_library/$1';
+$route['skin/remove_from_library/(:num)']   = 'skins/remove_from_library/$1';
+$route['skin/(:any)']                       = 'skins/index/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

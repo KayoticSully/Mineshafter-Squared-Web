@@ -46,10 +46,10 @@ div[data-minecraftmodel] {
   margin: 10px;
   position: relative;
 }
-.skin:hover button.close {
+.skin:hover a.close {
   display: block;
 }
-.skin button.close {
+.skin a.close {
   display: none;
   position: absolute;
   right: 3px;
@@ -74,7 +74,10 @@ div[data-minecraftmodel] {
   margin-left: 230px;
 }
 #action-list {
-  width: 200px;
+  text-align: center;
+}
+#action-list a {
+  text-shadow: none;
 }
 #site-body {
   padding: 0px;
