@@ -12,7 +12,7 @@ class Skins extends MS2_Controller {
         $this->load->helper('array');
         
         // get skin
-        $skin = Skin::find_by_name($skin_name);
+        $skin = Skin::find_by_name(urldecode($skin_name));
         
         // make sure skin exists
         if(!$skin) {
