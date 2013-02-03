@@ -2,7 +2,6 @@ $(document).ready(init);
 
 function init() {
     $('#create-texture').on('click', create_texture);
-    $('#texture-form').on('submit', create_texture);
     $('.minecraft_model').on('click', set_active_skin);
     $('#remove-active').on('click', remove_active_skin);
     $('.remove-from-library').on('click', remove_from_library);
