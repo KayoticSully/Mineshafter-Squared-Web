@@ -191,7 +191,8 @@ class Auth extends MS2_Controller {
         $this->load->helper('connection');
         
         // data to send to minecraft.net
-        $postParams = "user=".urlencode($username)."&password=".$password."&version=13";
+        $login_ver = "13";
+        $postParams = "user=".urlencode($username)."&password=".$password."&version=".$login_ver;
         
         // send the request
         $response = trim(curlPost($this->mc_auth_url, $postParams));
