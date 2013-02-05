@@ -17,62 +17,79 @@ class Game extends MS2_Controller {
      */
     public function update($type)
     {
-        echo Data::find_by_key("$type-version")->value;
+    	if($type == "server") // Temporary fix (destined to change)
+		{
+			echo Data::find_by_key("client-version")->value;
+		}else{
+			echo Data::find_by_key("$type-version")->value;
+		}
     }
     
     /**
      * @name    get_version
      * @author  Ryan Sullivan (kayoticsully@gmail.com)
+	 * @author  Damiano Amatruda (damihack@facebook.com)
      *
      * @returns (echoes out) login token string or error message
      * 
-     * Is hit for game login.  Performs game authentication for initial login
+     * Is hit for game login.  Performs game authentication for initial client login
      */
     public function get_version()
     {
-        // get input
-        $username = $this->input->post('user');
-        $password = $this->input->post('password');
+    	// Get input
+		$username = $this->input->post('user');
+		$password = $this->input->post('password');
+
+        // Checks if it is a Java launcher or an inclusion of the website
+		if (strpos($_SERVER['HTTP_USER_AGENT'],"Java") === 0 || strpos($_SERVER['HTTP_USER_AGENT'],$_SERVER['HTTP_HOST']) === 0 || $username != "" || $password != "") {
+
         
-        // try to log user in
-        $user = User::login($username, $password);
+			// Try to log user in
+			$user = User::login($username, $password);
+
+			// Sets the JSON type
+			header("Content-Type: application/json; charset=UTF-8");
         
-        if ($user instanceof User)
-        {
-            // load in the session helper
-            $this->load->helper('session');
+				if ($user instanceof User)
+				{
+					// load in the session helper
+					$this->load->helper('session');
             
-            // set the user's session token
-            $user->session = generate_session_id();
-            $user->last_game_login = time();
-            $user->save();
+					// set the user's session token
+					$user->session = generate_session_id();
+					$user->last_game_login = time();
+					$user->save();
             
-            // get the current game build
-            $game_build = Data::find_by_key('game-build')->value;
+					// get the current game build
+					$game_build = Data::find_by_key('game-build')->value;
             
-            // create the login token string and echo it out
-            echo $game_build . ':deprecated:' . $user->username . ':' . $user->session;
-        }
-        else
-        {
-            // there was an error, lets go handle that
-            switch ($user)
-            {
-                case BAD_INPUT:
-                    echo 'Bad input';
-                break;
+					// create the login token string and echo it out
+					echo $game_build . ':deprecated:' . $user->username . ':' . $user->session;
+					exit;
+				}
+				else
+				{
+					// there was an error, lets go handle that
+					switch ($user)
+					{
+						case BAD_INPUT:
+						break;
                 
-                case BAD_PASSWORD:
-                    echo 'Invalid password';
-                break;
+						case BAD_PASSWORD:
+							echo 'Bad login';
+						exit; break;
                 
-                case BAD_USER:
-                    $this->load->helper('url');
-                    echo 'Please sign in on the website first';
-                break;
-            }
-        }
-    }
+						case BAD_USER:
+							$this->load->helper('url');
+							echo 'Please sign in on the website first';
+						exit; break;
+					}
+				}
+		}
+		header("HTTP/1.0 404 Not Found");
+		include_once("../application/errors/error_404.php");
+		exit;
+	}
     
     /**
      * @name    join_server
