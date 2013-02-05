@@ -75,6 +75,12 @@ function add_to_library(event) {
                             success: function(json) {
                                 var texture = new Texture(json);
                                 
+                                var texture = public_skins.find_by_id(id);
+                                
+                                if(texture) {
+                                    texture.in_library = true;
+                                }
+                                
                                 if($('#toggle-private').hasClass('active')) {
                                     $('#skin_pane').append(texture.toString());
                                     init_iso_views();
@@ -110,7 +116,8 @@ function remove_from_library(event) {
                 $this.attr('id', 'add-to-library');
                 
                 if(private_skins !== undefined) {
-                    var texture = private_skins.find_by_id(id);
+                    var texture = public_skins.find_by_id(id);
+                    
                     if(texture) {
                         texture.in_library = false;
                     }
