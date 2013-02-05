@@ -247,7 +247,7 @@ class Textures extends MS2_Controller {
             {
                 unlink($data['full_path']);
                 $result = array();
-                $result['error'] = lang('upload-collision');
+                $result['info'] = lang('upload-collision');
                 // this is okay for now, but will need to be changed to support capes
                 $result['skin_data'] = array('name' => $collision->skins[0]->name);
                 return $result;
