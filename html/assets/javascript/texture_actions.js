@@ -108,7 +108,6 @@ function remove_from_library(event) {
             if(data) {
                 if($this.is('button')) {
                     $this.html('Add to Library').removeClass('btn-danger').addClass('btn-success');
-                    $this.attr('id', 'add-to-library');
                 } else {
                     $this.html('<i class="icon-ok"></i>');
                     $this.attr('title', 'Add to library');
@@ -117,6 +116,8 @@ function remove_from_library(event) {
                         $this.parents('.skin').detach();
                     }
                 }
+                
+                $this.attr('id', 'add-to-library');
                 
                 if(private_skins !== undefined) {
                     var texture = public_skins.find_by_id(id);

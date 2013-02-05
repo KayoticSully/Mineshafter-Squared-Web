@@ -1,12 +1,15 @@
 var private_skins = null;
 var public_skins = null;
 var new_page = false;
+var loading = false;
+var textureCap = false;
 $(document).ready(init);
 
 function init() {
     $('#create-texture').on('click', create_texture);
     $('#remove-active').on('click', remove_active_skin);
     $('.toggle-action').on('click', toggle_textures);
+    $(window).on('scroll', pageScroll);
     
     texture_actions();
     
@@ -63,6 +66,7 @@ function handleUploadResponse(data) {
 }
 
 function load_skins() {
+    loading = true;
     var type = 'public';
     if($('#toggle-private').hasClass('active')) {
         type = 'library';
@@ -117,10 +121,12 @@ function load_skins() {
                 init_iso_views();
                 
                 texture_actions();
+                loading = false;
             }
         });
     } else {
         texture_actions();
+        loading = false;
     }
 }
 
@@ -132,6 +138,17 @@ function toggle_textures(event) {
         
         $this.addClass('active');
         new_page = true;
+        load_skins();
+    }
+}
+
+function pageScroll(event) {
+    var $window = $(window);
+    var scrollTop = $window.scrollTop();
+    var windowHeight = $window.height();
+    var documentHeight = $(document).height();
+    
+    if(scrollTop + windowHeight >= documentHeight && !loading == 0 && !textureCap) {
         load_skins();
     }
 }
