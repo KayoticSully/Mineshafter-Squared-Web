@@ -3,6 +3,7 @@ var public_skins = null;
 var new_page = false;
 var loading = false;
 var textureCap = false;
+var timeoutLocation = null;
 $(document).ready(init);
 
 function init() {
@@ -61,7 +62,18 @@ function handleUploadResponse(data) {
     }
     
     if(data['skin_data'] != undefined) {
-        window.location = '/skin/' + data['skin_data']['name'];
+        if(data['info'] != undefined) {
+            var alert = '<h4>Info!</h4> ' + data['error'];
+            $('#upload-error').removeClass('alert-error').addClass('alert-info').html(alert).slideDown();
+            
+            timeoutLocation = '/skin/' + data['skin_data']['name'];
+            
+            setTimeout(function(){
+                window.location = timeoutLocation;
+            }, 2000);
+        } else {
+            window.location = '/skin/' + data['skin_data']['name'];
+        }
     }
 }
 
