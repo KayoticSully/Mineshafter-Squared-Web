@@ -111,6 +111,10 @@ function remove_from_library(event) {
                 } else {
                     $this.html('<i class="icon-ok"></i>');
                     $this.attr('title', 'Add to library');
+                    
+                    if($('#toggle-private').hasClass('active')) {
+                        $this.detach();
+                    }
                 }
                 
                 $this.attr('id', 'add-to-library');
