@@ -35,42 +35,27 @@
                        data-toggle="popover"
                        data-trigger="focus"
                        data-placement="right"
-                       data-original-title="Help me make search great"
-                       data-content="In order to make search well, I first need data. Please tag and name skins appropriately so search can be as useful as possible for everyone when it is finished." >
+                       data-original-title="<?php echo lang('search_popover_title'); ?>"
+                       data-content="<?php echo lang('search_popover_content'); ?>" >
                 <button type="submit" class="btn">Search</button>
             </div>
         </form>
     </div>
-    <?php if($user): ?>
-        <div id="toggle-private" class="toggle-action">
+    <?php if($user):
+        $public_active = '';
+    ?>
+        <div id="toggle-private" class="toggle-action active">
             My Library
         </div>
-    <?php endif; ?>
-    <div id="toggle-public" class="toggle-action">
+    <?php else:
+            $public_active = 'active';
+          endif; ?>
+    <div id="toggle-public" class="toggle-action <?php echo $public_active ?>">
         Public
     </div>
 </div>
 <div id="texture-display">
     <div id="skin-pane">
-        <?php foreach($skins as $skin): ?>
-            <div class="skin">
-                <?php if ($user): ?>
-                    <?php if(in_array_id_check($user, $skin->users)): ?>
-                        <a class="close remove-from-library" data-id="<?php echo $skin->id; ?>" title="Remove from library">&times;</a>
-                    <?php else: ?>
-                        <a class="close add-to-library" data-id="<?php echo $skin->id; ?>" title="Add to library"><i class="icon-ok"></i></a>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <div class="name">
-                    <a href="/skin/<?php echo $skin->name; ?>" title="Preview Skin" class="btn btn-link btn-large">
-                        <?php echo $skin->name; ?>
-                    </a>
-                </div>
-                <div class="minecraft_model" data-size="5" title="Set Active"
-                     data-minecraftmodel="/<?php echo $skin->base_location(); ?>"
-                     data-id="<?php echo $skin->id; ?>">
-                </div>
-            </div>
-        <?php endforeach; ?>
+        
     </div>
 </div>

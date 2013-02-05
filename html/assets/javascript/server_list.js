@@ -4,7 +4,7 @@ var serverCap = false;
 $(document).ready(init);
 
 function init() {
-    serverList = new ServerList();
+    serverList = new ObjectList();
     
     $('.editable').on('focusin', clearText);
     $('.editable').on('focusout', restoreText);
@@ -77,7 +77,7 @@ function loadServers(offset) {
 }
 
 function renderServers(serverArray) {
-    var newServers = new ServerList();
+    var newServers = new ObjectList();
     
     for(index in serverArray)
     {

@@ -54,7 +54,9 @@ $route['skin/set_active/(:num)']            = 'skins/set_active/$1';
 $route['skin/remove_active']                = 'skins/remove_active';
 $route['skin/add_to_library/(:num)']        = 'skins/add_to_library/$1';
 $route['skin/remove_from_library/(:num)']   = 'skins/remove_from_library/$1';
+$route['skin/json/(:num)']                  = 'skins/json_single/$1';
 $route['skin/(:any)']                       = 'skins/index/$1';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

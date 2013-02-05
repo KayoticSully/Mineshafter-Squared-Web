@@ -13,6 +13,10 @@ function init_iso_views() {
         var texture = head.dataset.minecrafthead;
         var size = head.dataset.size;
         
+        if(head.getElementsByTagName('canvas').length > 0) {
+            continue;
+        }
+        
         if(size == undefined) {
             size = 25;
         }
@@ -39,6 +43,10 @@ function init_iso_views() {
         var model = models[i];
         var texture = model.dataset.minecraftmodel;
         var size = model.dataset.size;
+        
+        if(model.getElementsByTagName('canvas').length > 0) {
+            continue;
+        }
         
         if(size == undefined) {
             size = 10;
