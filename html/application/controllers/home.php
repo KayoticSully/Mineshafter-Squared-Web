@@ -25,7 +25,7 @@ class Home extends MS2_Controller {
     }
     
     public function test() {
-        echo $user->type->level;
+        echo $this->user->type->level;
     }
     
     /**
