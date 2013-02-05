@@ -115,7 +115,7 @@ class Skins extends MS2_Controller {
         {
             case 'public':
                 // everything is public for now so we can just grab any set of skins
-                $skins = Skin::find('all', array('limit' => 1, 'offset' => $offset));
+                $skins = Skin::find('all', array('limit' => 20, 'offset' => $offset));
             break;
             
             case 'library':
