@@ -20,6 +20,32 @@ function set_active_skin(event) {
                     container.dataset.url = model.substring(1);
                     init3d();
                 }
+                
+                if(private_skins !== undefined) {
+                    // don't make a needless call if the id is already in the list
+                    if(!private_skins.has_id(id)) {
+                        $.ajax({
+                            url : '/skin/json/' + id,
+                            dataType:'json',
+                            success: function(json) {
+                                var texture = new Texture(json);
+                                
+                                var texture = public_skins.find_by_id(id);
+                                
+                                if(texture) {
+                                    texture.in_library = true;
+                                }
+                                
+                                if($('#toggle-private').hasClass('active')) {
+                                    $('#skin_pane').append(texture.toString());
+                                    init_iso_views();
+                                }
+                                
+                                private_skins.add(texture);
+                            }
+                        });
+                    }
+                }
             }
         }
     });
