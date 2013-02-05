@@ -16,11 +16,6 @@
     </div>
 </div>
 <div id="server-list" class="container extra-top-padding">
-    <div class="alert alert-block">
-        <strong>Warning!</strong> Since this is an alpha there is a chance that the server list
-        information might need to be deleted before release.  I will put up
-        announcements anytime data on the alpha needs to be purged.
-    </div>
     <div class="navbar navbar-inverse">
         <div class="navbar-inner">
             <a class="brand" href="#">Filters - <small>Not yet available</small></a>
