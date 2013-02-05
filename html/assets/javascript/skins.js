@@ -8,7 +8,7 @@ function init() {
     $('#remove-from-library').on('click', remove_from_library);
     
     // control tags popover
-    if($('#tags').html().trim() != '') {
+    if($('#tags').find('label').size() <= 1) {
         $('#new-tag input[type=text]').popover('destroy');
     } else{
         $('#new-tag input[type=text]').popover('show');
