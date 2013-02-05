@@ -19,7 +19,7 @@ class Server_list extends MS2_Controller {
      */
     public function index()
     {
-        $this->javascripts = array('objects/Server', 'objects/ServerList');
+        $this->javascripts = array('objects/Server', 'objects/ObjectList');
         
         $this->variables = array('user' => $this->user);
     }

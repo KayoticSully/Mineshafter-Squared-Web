@@ -104,11 +104,85 @@ class Skins extends MS2_Controller {
         }
     }
     
+    public function json($type, $offset = 0)
+    {
+        $this->load->helper('array');
+        $own_all_skins = FALSE;
+        
+        // based on type limit initial query
+        $skins = array();
+        switch ($type)
+        {
+            case 'public':
+                // everything is public for now so we can just grab any set of skins
+                $skins = Skin::find('all', array('limit' => 5, 'offset' => $offset));
+            break;
+            
+            case 'library':
+                if ($this->user)
+                {
+                    $own_all_skins = TRUE;
+                    $skins = $this->user->skins;
+                }
+            break;
+        }
+        
+        $logged_in = FALSE;
+        if ($this->user)
+        {
+            $logged_in = TRUE;
+        }
+        
+        $skins_assoc = array();
+        if ($skins)
+        {
+            foreach($skins as $skin)
+            {
+                $skin_assoc = $skin->to_assoc();
+                
+                if ($own_all_skins || ($logged_in && in_array_id_check($this->user, $skin->users)))
+                {
+                    $skin_assoc['in_library'] = TRUE;
+                }
+                else
+                {
+                    $skin_assoc['in_library'] = FALSE;
+                }
+                
+                $skins_assoc[] = $skin_assoc;
+            }
+        }
+        
+        $this->load->view('json', array('json' => $skins_assoc));
+    }
+    
+    public function json_single($id)
+    {
+        $skin = Skin::find_by_id($id);
+        
+        if ($skin)
+        {
+            $this->load->helper('array');
+            $skin_assoc = $skin->to_assoc();
+            if ($this->user && in_array_id_check($this->user, $skin->users))
+            {
+                $skin_assoc['in_library'] = TRUE;
+            }
+            else
+            {
+                $skin_assoc['in_library'] = FALSE;
+            }
+            
+            $this->load->view('json', array('json' => $skin_assoc));
+        }
+    }
+    
     private function create_skin_link($user_id, $skin_id)
     {
         $new_link = new Userskin();
         $new_link->skin_id = $skin_id;
         $new_link->user_id = $user_id;
+        
         if ($new_link->save())
         {
             return $new_link;

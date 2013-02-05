@@ -65,6 +65,26 @@ function add_to_library(event) {
                 }
                 
                 $this.attr('id', 'remove-from-library');
+                
+                if(private_skins !== undefined) {
+                    // don't make a needless call if the id is already in the list
+                    if(!private_skins.has_id(id)) {
+                        $.ajax({
+                            url : '/skin/json/' + id,
+                            dataType:'json',
+                            success: function(json) {
+                                var texture = new Texture(json);
+                                
+                                if($('#toggle-private').hasClass('active')) {
+                                    $('#skin_pane').append(texture.toString());
+                                    init_iso_views();
+                                }
+                                
+                                private_skins.add(texture);
+                            }
+                        });
+                    }
+                }
             }
         }
     });
@@ -88,6 +108,15 @@ function remove_from_library(event) {
                 }
                 
                 $this.attr('id', 'add-to-library');
+                
+                if(private_skins !== undefined) {
+                    var texture = private_skins.find_by_id(id);
+                    if(texture) {
+                        texture.in_library = false;
+                    }
+                    
+                    private_skins.remove(id);
+                }
             }
         }
     });

@@ -48,4 +48,16 @@ class Skin extends ActiveRecord\Model {
             return FALSE;
         }
     }
+    
+    public function to_assoc()
+    {
+        $skin = array();
+        $skin['id']          = $this->id;
+        $skin['name']        = $this->name;
+        $skin['location']    = $this->base_location();
+        
+        
+        
+        return $skin;
+    }
 }

@@ -13,35 +13,14 @@ class Textures extends MS2_Controller {
     public function index()
     {
         $this->load->helper('array');
-        $this->javascripts = array('Three', 'texture_actions', 'skin-viewer-iso', 'skin-viewer-3d');
-        
-        $public = Tag::find_by_name('Public');
-        
-        $textures = array();
-        if ($public)
-        {
-            $textures  = $public->textures;
-        }
-        
-        $skins = array();
-        foreach ($textures as $texture)
-        {
-            $skins = array_merge($skins, $texture->skins);
-        }
-        
-        if (isset($this->user))
-        {
-            $skins = array_merge($skins, $this->user->skins);
-        }
-        
-        $skins = array_reduce_objects($skins);
+        $this->javascripts = array('Three', 'texture_actions', 'skin-viewer-iso', 'skin-viewer-3d', 'objects/ObjectList', 'objects/Texture');
         
         // get other data that is needed
         $default = Data::find_by_key('default-skin');
         $default_skin = Skin::find_by_name($default->value);
         
         // set variables for view
-        $this->variables = array('skins' => $skins, 'user' => $this->user, 'default_skin' => $default_skin);
+        $this->variables = array('user' => $this->user, 'default_skin' => $default_skin);
         
         if (isset($this->user))
         {

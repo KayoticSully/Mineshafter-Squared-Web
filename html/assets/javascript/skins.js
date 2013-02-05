@@ -35,7 +35,6 @@ function add_tag(event) {
         dataType:'json',
         context: $this,
         success: function(data) {
-            
             var $this = $(this);
             var tags  = data['tags'];
             
