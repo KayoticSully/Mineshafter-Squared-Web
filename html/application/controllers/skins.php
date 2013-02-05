@@ -117,14 +117,14 @@ class Skins extends MS2_Controller {
         {
             case 'public':
                 // everything is public for now so we can just grab any set of skins
-                $skins = Skin::find('all', array('limit' => $skin_query_limit, 'offset' => $offset));
+                $skins = Skin::find('all', array('limit' => $this->skin_query_limit, 'offset' => $offset));
             break;
             
             case 'library':
                 if ($this->user)
                 {
                     $own_all_skins = TRUE;
-                    $skins = array_slice($this->user->skins, 0, $skin_query_limit);
+                    $skins = array_slice($this->user->skins, 0, $this->skin_query_limit);
                 }
             break;
         }
