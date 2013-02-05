@@ -89,6 +89,7 @@ function load_skins() {
     {
         var $skin_pane = $('#skin-pane');
         $skin_pane.html('');
+        new_page = false;
         
         switch(type) {
             case 'public':
@@ -103,7 +104,17 @@ function load_skins() {
         }
     }
     
-    if(type != 'library' || private_skins.size() == 0) {
+    switch(type) {
+        case 'public':
+            skin_list = public_skins;
+        break;
+        
+        case 'library':
+            skin_list = private_skins;
+        break;
+    }
+    
+    if(type != 'library' || skin_list.size() == 0) {
         $.ajax({
             // always pass public_skin size since it is not used in private texture loading
             url: '/skins/json/' + type + '/' + public_skins.size(),
