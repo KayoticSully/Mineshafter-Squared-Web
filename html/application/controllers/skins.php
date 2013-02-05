@@ -141,6 +141,11 @@ class Skins extends MS2_Controller {
         {
             foreach($skins as $skin)
             {
+                if($skin instanceof Userskin)
+                {
+                    $skin = $skin->skin;
+                }
+                
                 $skin_assoc = $skin->to_assoc();
                 
                 if ($own_all_skins || ($logged_in && in_array_id_check($this->user, $skin->users)))
