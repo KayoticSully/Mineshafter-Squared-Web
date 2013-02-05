@@ -59,6 +59,14 @@ div[data-minecraftmodel] {
 .skin .name {
   text-align: center;
 }
+.skin .name a {
+  display: block;
+  font-size: 17.5px;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .skin .minecraft_model {
   padding: 0px 30px;
   cursor: pointer;

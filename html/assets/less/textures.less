@@ -53,10 +53,15 @@ div[data-minecrafthead], div[data-minecraftmodel] {
     
     .name {
         text-align: center;
-        width: 100%;
-        white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+        
+        a {
+            display: block;
+            font-size: 17.5px;
+            width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
     
     .minecraft_model {
@@ -64,6 +69,8 @@ div[data-minecrafthead], div[data-minecraftmodel] {
         cursor: pointer;
     }
 }
+
+
 
 #control-bar {
     height:100%;
