@@ -63,7 +63,7 @@ function handleUploadResponse(data) {
     
     if(data['skin_data'] != undefined) {
         if(data['info'] != undefined) {
-            var alert = '<h4>Info!</h4> ' + data['error'];
+            var alert = '<h4>Info!</h4> ' + data['info'];
             $('#upload-error').removeClass('alert-error').addClass('alert-info').html(alert).slideDown();
             
             timeoutLocation = '/skin/' + data['skin_data']['name'];
