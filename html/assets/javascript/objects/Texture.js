@@ -37,7 +37,7 @@ Texture.prototype.toString = function() {
     }
     
         str += '<div class="name">' +
-                    '<a href="/skin/' + this.name + '>" title="Preview Skin" class="btn btn-link btn-large">' +
+                    '<a href="/skin/' + this.name + '" title="Preview Skin" class="btn btn-link btn-large">' +
                         this.name +
                     '</a>' +
                 '</div>' +
