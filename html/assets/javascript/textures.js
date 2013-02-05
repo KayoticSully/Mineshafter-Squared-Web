@@ -155,14 +155,12 @@ function toggle_textures(event) {
 }
 
 function pageScroll(event) {
-    console.log('scrolling');
     var $window = $(window);
     var scrollTop = $window.scrollTop();
     var windowHeight = $window.height();
     var documentHeight = $(document).height();
     
     if(scrollTop + windowHeight >= documentHeight && !loading && !textureCap) {
-        console.log('loading');
         load_skins();
     }
 }
