@@ -84,7 +84,6 @@ function load_skins() {
         type = 'library';
     }
     
-    var skin_list = null;
     if(new_page)
     {
         var $skin_pane = $('#skin-pane');
@@ -104,6 +103,7 @@ function load_skins() {
         }
     }
     
+    var skin_list = null;
     switch(type) {
         case 'public':
             skin_list = public_skins;
@@ -117,7 +117,7 @@ function load_skins() {
     if(type != 'library' || skin_list.size() == 0) {
         $.ajax({
             // always pass public_skin size since it is not used in private texture loading
-            url: '/skins/json/' + type + '/' + public_skins.size(),
+            url: '/skins/json/' + type + '/' + skin_list.size(),
             dataType:'json',
             context: this,
             success: function(textures) {
