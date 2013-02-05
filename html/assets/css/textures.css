@@ -71,6 +71,9 @@ div[data-minecraftmodel] {
   padding: 0px 30px;
   cursor: pointer;
 }
+#skin-pane {
+  padding-bottom: 30px;
+}
 #control-bar {
   height: 100%;
   width: 230px;

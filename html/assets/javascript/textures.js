@@ -15,7 +15,10 @@ function init() {
     texture_actions();
     
     private_skins = new ObjectList();
+    private_skins.cap = false;
+    
     public_skins = new ObjectList();
+    public_skins.cap = false;
     
     load_skins();
     if(init3d()) {
@@ -114,7 +117,7 @@ function load_skins() {
         break;
     }
     
-    if(type != 'library' || skin_list.size() == 0) {
+    if(!skin_list.cap) {
         $.ajax({
             // always pass public_skin size since it is not used in private texture loading
             url: '/skins/json/' + type + '/' + skin_list.size(),
@@ -138,7 +141,13 @@ function load_skins() {
                         break;
                     }
                     
+                    // max response length
+                    if(textures.length < 20) {
+                        skin_list.cap = true;
+                    }
+                    
                     skin_list.add(texture);
+                    
                 }
                 
                 init_iso_views();
