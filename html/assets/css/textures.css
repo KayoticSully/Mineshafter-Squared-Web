@@ -19,6 +19,26 @@
 .scratch {
   display: none;
 }
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+.center {
+  text-align: center;
+}
+.loading {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.medium {
+  font-size: 18px;
+}
+.strong {
+  font-weight: bold;
+}
 #preview {
   width: 300px;
   height: 169px;
@@ -115,4 +135,10 @@ div[data-minecraftmodel] {
 }
 .toggle-action.active {
   background-color: #FAFAFA;
+}
+.loading_link,
+.loading_link:hover {
+  background-image: url('/assets/img/list-load.gif');
+  background-repeat: no-repeat;
+  background-position: 160px;
 }
