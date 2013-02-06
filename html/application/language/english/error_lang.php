@@ -6,3 +6,4 @@ $lang['upload-texture-create']  = 'Could not create texture.';
 
 $lang['error-disallowed-name']  = 'That name is not allowed';
 $lang['error-db-save']          = 'Database record could not be saved.';
+$lang['name-already-used']      = 'That name has been taken.  Try something more specific!';
