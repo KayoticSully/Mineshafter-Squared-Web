@@ -1,7 +1,9 @@
 Mineshafter-Squared Documentation
 =================================
 
-###Project Status: In Early Development
+Notice: These documents are a bit out of date.  If you have any questions with what has changed or something just does not seem to make sense, feel free to contact me.
+
+###Project Status: Beta Testing
 For a more in depth look at what is done and what is planned please reference the [Status](Mineshafter-Squared-Web/blob/master/docs/Status.md) page.
 
 Not much is currently done, feel free to email me if you want to help and need to know what to work on.  A lot of the authentication code I will pull
