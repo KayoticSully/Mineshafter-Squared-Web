@@ -20,6 +20,7 @@ function init() {
     public_skins = new ObjectList();
     public_skins.cap = false;
     
+    $('.toggle-action.active').addClass('loading_link');
     load_skins();
     if(init3d()) {
         animate();
@@ -152,11 +153,14 @@ function load_skins() {
                 
                 init_iso_views();
                 
+                $('.toggle-action.active').removeClass('loading_link');
+                
                 texture_actions();
                 loading = false;
             }
         });
     } else {
+        $('.toggle-action.active').removeClass('loading_link');
         texture_actions();
         loading = false;
     }
@@ -168,7 +172,7 @@ function toggle_textures(event) {
     if($('.toggle-action.active').attr('id') != $this.attr('id')){
         $('.toggle-action').removeClass('active');
         
-        $this.addClass('active');
+        $this.addClass('active loading_link');
         new_page = true;
         load_skins();
     }
