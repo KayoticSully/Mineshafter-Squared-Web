@@ -52,7 +52,7 @@ class Textures extends MS2_Controller {
         
         $skin_name = trim($this->input->post('name'));
         
-        if (in_array($skin_name, array('index', 'set_active', 'remove_active', 'add_to_library', 'remove_from_library')))
+        if (in_array($skin_name, array('', 'index', 'set_active', 'remove_active', 'add_to_library', 'remove_from_library')))
         {
             $result = array('error' => lang('error-disallowed-name'));
         }
