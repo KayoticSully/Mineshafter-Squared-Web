@@ -134,17 +134,28 @@ Server.prototype.onlineInfo = function() {
                 '?' +
             '</span>';
         }
-        if('Players' in this) {
-            str +=
-            '<span class="players">' +
-                this.Players + ' / ' + this.MaxPlayers +
-            '</span>';
-        } else {
-            str +=
-            '<span class="players">' +
-                '? / ??'+
-            '</span>';
-        }
+        
+        str += this.getPlayerCounts();
+    
+    return str;
+}
+
+Server.prototype.getPlayerCounts = function() {
+    var str = '<span class="players">';
+    
+    if('Players' in this) {
+        str += this.Players;
+    } else {
+        str += '?';
+    }
+    
+    str += ' / ';
+    
+    if('MaxPlayers' in this) {
+        str += this.MaxPlayers;
+    } else {
+        str += '??';
+    }
     
     return str;
 }
