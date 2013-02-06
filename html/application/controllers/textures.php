@@ -50,13 +50,20 @@ class Textures extends MS2_Controller {
         
         $this->load->helper('texture');
         
-        $skin_name = $this->input->post('name');
+        $skin_name = trim($this->input->post('name'));
+        
         if (in_array($skin_name, array('index', 'set_active', 'remove_active', 'add_to_library', 'remove_from_library')))
         {
             $result = array('error' => lang('error-disallowed-name'));
         }
+        else if (Skin::find_by_name($skin_name))
+        {
+            // if name is already in use
+            $result = array('error' => lang('name-already-used'));
+        }
         else
         {
+            
             // get highest texture location value
             $location = Data::find_by_key('highest-texture-location');
             $file_name = $location->value;
