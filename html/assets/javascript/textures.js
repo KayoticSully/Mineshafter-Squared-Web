@@ -20,7 +20,6 @@ function init() {
     public_skins = new ObjectList();
     public_skins.cap = false;
     
-    $('.toggle-action.active').addClass('loading_link');
     load_skins();
     if(init3d()) {
         animate();
@@ -82,6 +81,7 @@ function handleUploadResponse(data) {
 }
 
 function load_skins() {
+    $('.toggle-action.active').addClass('loading_link');
     loading = true;
     var type = 'public';
     if($('#toggle-private').hasClass('active')) {
@@ -172,7 +172,7 @@ function toggle_textures(event) {
     if($('.toggle-action.active').attr('id') != $this.attr('id')){
         $('.toggle-action').removeClass('active');
         
-        $this.addClass('active loading_link');
+        $this.addClass('active');
         new_page = true;
         load_skins();
     }
