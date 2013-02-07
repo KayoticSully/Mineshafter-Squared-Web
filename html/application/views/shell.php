@@ -80,7 +80,7 @@
         </div>
     <?php endif; ?>
     <footer>
-        Copyright 2011 - 2012
+        Copyright 2011 - 2013
         <a href="http://www.kayoticlabs.com" alt="">Kayotic Labs</a> |
         <a href="http://www.ryansullivan.org">Ryan Sullivan</a>
     </footer>

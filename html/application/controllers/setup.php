@@ -15,6 +15,7 @@ class Setup extends MS2_Controller {
         // try and add default database values
         try
         {
+            // only if there is no data proceed
             $test = Data::first();
             if(!$test) {
                 //================
@@ -24,17 +25,17 @@ class Setup extends MS2_Controller {
                 // client-version
                 $data = new Data();
                 $data->key      = 'client-version';
-                $data->value    = '3.8.2';
+                $data->value    = '3.9.1';
                 $data->save();
                 // game-build
                 $data = new Data();
                 $data->key      = 'game-build';
-                $data->value    = '1355999243000';
+                $data->value    = '1357737036000';
                 $data->save();
                 // highest-texture-location
                 $data = new Data();
                 $data->key      = 'highest-texture-location';
-                $data->value    = 'aaaaa';
+                $data->value    = 'zzzz';
                 $data->save();
                 // default-skin
                 $data = new Data();
@@ -50,19 +51,19 @@ class Setup extends MS2_Controller {
                 $download_group = array();
                 $download_group['client'] = new Downloadgroup();
                 $download_group['client']->name = 'Client Proxy';
-                $download_group['client']->version = '3.8.3';
+                $download_group['client']->version = '3.9.1';
                 $download_group['client']->description = '<p>The client proxy is what you need if you want to play Minecraft and use our services.</p><p>Click on your Operating System to download the launcher.</p>';
                 $download_group['client']->save();
                 // server
                 $download_group['server'] = new Downloadgroup();
                 $download_group['server']->name = 'Server Proxy';
-                $download_group['server']->version = '3.8.3';
+                $download_group['server']->version = '3.9.1';
                 $download_group['server']->description = '<p>The server proxy is what you need if you want to run a multiplayer server.</p><p>You will still need to download either the official <a href="http://minecraft.net/download" target="_blank">Minecraft Server</a> or <a href="http://dl.bukkit.org/" target="_blank">Bukkit</a> Jar as well.</p>';
                 $download_group['server']->save();
                 // source
                 $download_group['source'] = new Downloadgroup();
                 $download_group['source']->name = 'Source Code';
-                $download_group['source']->version = 'Version Proxy 3.8.0 / Auth 3.0.0';
+                $download_group['source']->version = 'Version Proxy 3.9.1 / Auth 3.0.0';
                 $download_group['source']->description = '<p>Here are the links to all the source code Mineshafter Squared uses.<p><p>Feel free to use it however you like, just remember to credit us and don\'t take credit for work you did not do :)</p>';
                 $download_group['source']->save();
                 // other
