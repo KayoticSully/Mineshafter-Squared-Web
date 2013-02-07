@@ -53,6 +53,20 @@
     <div id="toggle-public" class="toggle-action <?php echo $public_active ?>">
         Public
     </div>
+    <div id="server_list_ad">
+        <script type="text/javascript">
+            <!--
+            google_ad_client = "ca-pub-2130540909688027";
+            /* Mineshafter Squared Server List */
+            google_ad_slot = "4694039834";
+            google_ad_width = 250;
+            google_ad_height = 250;
+            //-->
+        </script>
+        <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
 </div>
 <div id="texture-display">
     <div id="skin-pane">
