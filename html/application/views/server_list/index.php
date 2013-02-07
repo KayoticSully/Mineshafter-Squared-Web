@@ -43,14 +43,18 @@
     </div>
 </div>
 <div class="listAd">
-    <script type="text/javascript">
-        <!--
-        google_ad_client = "ca-pub-2130540909688027";
-        /* Server List */
-        google_ad_slot = "3737500637";
-        google_ad_width = 728;
-        google_ad_height = 90;
-        //-->
-    </script>
-    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    <?php if (ENVIRONMENT == 'production'): ?>
+        <script type="text/javascript">
+            <!--
+            google_ad_client = "ca-pub-2130540909688027";
+            /* Server List */
+            google_ad_slot = "3737500637";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    <?php else: ?>
+        <img class="ad_placehold" src="http://placehold.it/728x90&text=Ad" />
+    <?php endif; ?>
 </div>
