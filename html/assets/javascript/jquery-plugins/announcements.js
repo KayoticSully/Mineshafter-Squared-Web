@@ -123,7 +123,7 @@
         render : function(html)
         {
             this.$this.html(this.posts);
-        },
+        }
         
         /*get posts() {
             var str = '';
