@@ -107,23 +107,23 @@ class MS2_Controller extends CI_Controller {
         {
             $this->javascript_ext = '.min.js';
             
-            $cache_key = str_replace('/', '-', $this->router->uri->uri_string);
+            //$cache_key = str_replace('/', '-', $this->router->uri->uri_string);
             
-            if (trim($cache_key) == '')
-            {
-               $cache_key = "home"; 
-            }
+            //if (trim($cache_key) == '')
+            //{
+               //$cache_key = "home"; 
+            //}
             
             // cache all pages
-            $this->page_cache_key = $cache_key;
-            $page = $this->cache->get($this->page_cache_key);
+            //$this->page_cache_key = $cache_key;
+            //$page = $this->cache->get($this->page_cache_key);
             
             // if page is cached then print it and exit
-            if($page)
-            {
-                echo $page;
-                exit(0);
-            }
+            //if($page)
+            //{
+              //  echo $page;
+                //exit(0);
+            //}
         }
     }
     
@@ -233,10 +233,10 @@ class MS2_Controller extends CI_Controller {
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);
         }
         
-        if(ENVIRONMENT == "production")
-        {
-            $this->cache->save($this->page_cache_key, $output, $this->page_cache_time);
-        }
+        //if(ENVIRONMENT == "production")
+        //{
+            //$this->cache->save($this->page_cache_key, $output, $this->page_cache_time);
+        //}
         
         echo $output;
     }
