@@ -36,12 +36,14 @@ if (defined('ENVIRONMENT'))
 	{
 		case 'development':
 			define('ASSET_FORCE', '?f=' . time());
+			require 'tools/lessphp/lessc.inc.php';
 			error_reporting(E_ALL);
 		break;
 	
 		case 'testing':
 			require 'tools/lessphp/lessc.inc.php';
 			error_reporting(E_ALL);
+			define('ASSET_FORCE', '');
 		break;
 		
 		case 'production':
