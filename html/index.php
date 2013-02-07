@@ -35,12 +35,12 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			require 'tools/lessphp/lessc.inc.php';
-			error_reporting(E_ALL);
 			define('ASSET_FORCE', '?f=' . time());
+			error_reporting(E_ALL);
+		case 'testing':
+			require 'tools/lessphp/lessc.inc.php';
 		break;
 		
-		case 'testing':
 		case 'production':
 			error_reporting(0);
 			define('ASSET_FORCE', '');
