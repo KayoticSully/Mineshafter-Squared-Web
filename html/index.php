@@ -39,6 +39,7 @@ if (defined('ENVIRONMENT'))
 			error_reporting(E_ALL);
 		case 'testing':
 			require 'tools/lessphp/lessc.inc.php';
+			define('ASSET_FORCE', '');
 		break;
 		
 		case 'production':
