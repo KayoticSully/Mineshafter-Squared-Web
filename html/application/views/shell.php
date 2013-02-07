@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Mineshafter Squared
+        Mineshafter Squared 
     </title>
     <link rel="canonical" href="http://mineshaftersquared.com" />
 <!-- CSS -->
