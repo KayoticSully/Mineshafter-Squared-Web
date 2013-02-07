@@ -17,7 +17,8 @@ class Game extends MS2_Controller {
      */
     public function update($type)
     {
-        echo Data::find_by_key("$type-version")->value;
+        $version = Data::find_by_key("$type-version")->value;
+        $this->load->view('raw', array('raw' => $version));
     }
     
     /**
@@ -51,7 +52,8 @@ class Game extends MS2_Controller {
             $game_build = Data::find_by_key('game-build')->value;
             
             // create the login token string and echo it out
-            echo $game_build . ':deprecated:' . $user->username . ':' . $user->session;
+            $tokens = $game_build . ':deprecated:' . $user->username . ':' . $user->session;
+            $this->load->view('raw', array('raw' => $tokens));
         }
         else
         {
@@ -59,16 +61,15 @@ class Game extends MS2_Controller {
             switch ($user)
             {
                 case BAD_INPUT:
-                    echo 'Bad input';
+                    $this->load->view('raw', array('raw' => 'Bad input'));
                 break;
                 
                 case BAD_PASSWORD:
-                    echo 'Invalid password';
+                    $this->load->view('raw', array('raw' => 'Invalid password'));
                 break;
                 
                 case BAD_USER:
-                    $this->load->helper('url');
-                    echo 'Please sign in on the website first';
+                    $this->load->view('raw', array('raw' => 'Please sign in on the website first'));
                 break;
             }
         }
@@ -102,16 +103,16 @@ class Game extends MS2_Controller {
             if($user->save())
             {   
                 // everything saved properly
-                echo "OK";
+                $this->load->view('raw', array('raw' => 'OK'));
             }
             else
             {
-                echo "Problem with login";
+                $this->load->view('raw', array('raw' => 'Problem with login'));
             }
         }
         else
         {
-            echo "Bad login";
+            $this->load->view('raw', array('raw' => 'Bad login'));
         }
     }
     
@@ -136,7 +137,7 @@ class Game extends MS2_Controller {
         {
             // if everything checks out, let the server know
             // the player is good to go
-            echo "YES";
+            $this->load->view('raw', array('raw' => 'YES'));
         }
         else
         {
@@ -146,10 +147,11 @@ class Game extends MS2_Controller {
             
             // TODO
             // This will be the line of code once the site goes live
-            //echo curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
+            // $response = curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
             
             // for now to keep compatibility with the old system we will go through there.
-            echo curlPost('http://mineshaftersquared.com/game/checkserver', 'user='.$username.'&serverId='.$server_id);
+            $response = curlPost('http://mineshaftersquared.com/game/checkserver', 'user='.$username.'&serverId='.$server_id);
+            $this->load->view('raw', array('raw' => $response));
         }
     }
     

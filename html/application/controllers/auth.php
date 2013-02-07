@@ -57,11 +57,11 @@ class Auth extends MS2_Controller {
         if($user instanceof User)
         {
             $this->session->set_userdata('user_id', $user->id);
-            echo "OK";
+            $this->load->view('raw', array('raw' => 'OK'));
         }
         else
         {
-            echo $user;
+            $this->load->view('raw', array('raw' => $user));
         }
     }
     

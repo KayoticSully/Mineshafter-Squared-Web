@@ -44,9 +44,13 @@ class Datas extends MS2_Controller {
         $data->value = trim($this->input->post('value'));
         
         if ($data->save())
-            echo "true";
+        {
+            $this->load->view('raw', array('raw' => 'true'));
+        }
         else
-            echo "false";
+        {
+            $this->load->view('raw', array('raw' => 'false'));
+        }
     }
     
     /**
@@ -60,9 +64,13 @@ class Datas extends MS2_Controller {
         $data = Data::find_by_id($id);
         
         if($data->delete())
-            echo "true";
+        {
+            $this->load->view('raw', array('raw' => 'true'));
+        }
         else
-            echo "false";
+        {
+            $this->load->view('raw', array('raw' => 'false'));
+        }
     }
 }
 

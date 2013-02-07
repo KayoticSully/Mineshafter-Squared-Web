@@ -55,9 +55,13 @@ class Downloads extends MS2_Controller {
         $file->link = trim($this->input->post('link'));
         
         if ($file->save())
-            echo "true";
+        {
+            $this->load->view('raw', array('raw' => 'true'));
+        }
         else
-            echo "false";
+        {
+            $this->load->view('raw', array('raw' => 'false'));
+        }
     }
     
     /**
@@ -73,9 +77,13 @@ class Downloads extends MS2_Controller {
         $file = Download::find_by_id($id);
         
         if($file->delete())
-            echo "true";
+        {
+            $this->load->view('raw', array('raw' => 'true'));
+        }
         else
-            echo "false";
+        {
+            $this->load->view('raw', array('raw' => 'false'));
+        }
     }
     
     /**
@@ -113,9 +121,13 @@ class Downloads extends MS2_Controller {
         $group->description = trim($this->input->post('description'));
         
         if ($group->save())
-            echo "true";
+        {
+            $this->load->view('raw', array('raw' => 'true'));
+        }
         else
-            echo "false";
+        {
+            $this->load->view('raw', array('raw' => 'false'));
+        }
     }
 }
 

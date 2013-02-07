@@ -200,7 +200,8 @@ class Textures extends MS2_Controller {
         } // end if ($texture)
         else
         {
-            echo "fail " . $this->input->get('texture_id');
+            $response = "fail " . $this->input->get('texture_id');
+            $this->load->view('raw', array('raw' => $response));
         }
         
         $this->load->view('json', array('json' => $result));

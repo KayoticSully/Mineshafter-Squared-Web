@@ -160,9 +160,7 @@ class Setup extends MS2_Controller {
         }
         catch(Exception $ex)
         {
-            echo '<pre>';
-            print_r($ex);
-            echo '</pre>';
+            $this->load->view('pre', array('pre' => $ex));
         }
     }
 }
