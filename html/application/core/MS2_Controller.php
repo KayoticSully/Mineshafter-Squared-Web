@@ -88,8 +88,13 @@ class MS2_Controller extends CI_Controller {
             $this->less->setFormatter('lessjs');
             $this->less->setImportDir($this->less_path);
         }
+        //----------------------------------------------------
+        // Testing setup
+        //----------------------------------------------------
         else if (ENVIRONMENT == 'testing')
         {
+            $this->javascript_ext = '.min.js';
+            
             $this->less = new lessc;
             $this->less->setFormatter('compressed');
             $this->less->setImportDir($this->less_path);
@@ -98,8 +103,10 @@ class MS2_Controller extends CI_Controller {
         //----------------------------------------------------
         // Production setup
         //----------------------------------------------------
-        if (ENVIRONMENT == 'production')
+        else if (ENVIRONMENT == 'production')
         {
+            $this->javascript_ext = '.min.js';
+            
             $cache_key = str_replace('/', '-', $this->router->uri->uri_string);
             
             if (trim($cache_key) == '')
