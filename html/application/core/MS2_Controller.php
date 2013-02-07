@@ -88,6 +88,12 @@ class MS2_Controller extends CI_Controller {
             $this->less->setFormatter('lessjs');
             $this->less->setImportDir($this->less_path);
         }
+        else if (ENVIRONMENT == 'testing')
+        {
+            $this->less = new lessc;
+            $this->less->setFormatter('compressed');
+            $this->less->setImportDir($this->less_path);
+        }
         
         //----------------------------------------------------
         // Production setup
@@ -168,7 +174,7 @@ class MS2_Controller extends CI_Controller {
             $asset_force = '';
             foreach (array_merge($this->assets, $this->css) as $less_asset)
             {
-                if (ENVIRONMENT == 'development')
+                if (ENVIRONMENT == 'development' || ENVIRONMENT == 'testing')
                 {
                     $this->compile_less($less_asset);
                 }
