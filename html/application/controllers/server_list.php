@@ -98,7 +98,7 @@ class Server_list extends MS2_Controller {
             $vote = Servervote::find_by_user_id_and_server_id($user_id, $server_id);
             // if they have voted kill script here
             if($vote) {
-                echo 'false';
+                $this->load->view('raw', array('raw' => 'false'));
             }
             else
             {
@@ -112,18 +112,18 @@ class Server_list extends MS2_Controller {
                 
                 if ($vote->save() && $server->save())
                 {
-                    echo 'true';
+                    $this->load->view('raw', array('raw' => 'true'));
                 }
                 else
                 {
                     $vote->delete();
-                    echo 'false'; 
+                    $this->load->view('raw', array('raw' => 'false'));
                 }
             }
         }
         else
         {
-            echo 'false';
+            $this->load->view('raw', array('raw' => 'false'));
         }
     }
     
@@ -143,7 +143,7 @@ class Server_list extends MS2_Controller {
         
         if ($server_name == '' OR $server_address == '' OR $server_description == '')
         {
-            echo 'All fields are required';
+            $this->load->view('raw', array('raw' => 'All fields are required'));
         }
         else
         {
@@ -154,7 +154,7 @@ class Server_list extends MS2_Controller {
                 $server->address        = $server_address;
                 $server->description    = $server_description;
             } catch (Exception $ex) {
-                echo $ex->getMessage();
+                $this->load->view('raw', array('raw' => $ex->getMessage()));
                 $server = false;
             }
             
@@ -166,12 +166,12 @@ class Server_list extends MS2_Controller {
                 
                 if ($manager->save())
                 {
-                    echo("OK");
+                    $this->load->view('raw', array('raw' => 'OK'));
                 }
                 else
                 {
                     $server->delete();
-                    echo "There has been a database error, please report this";
+                    $this->load->view('raw', array('raw' => 'There has been a database error, please report this'));
                 }
             }
         }

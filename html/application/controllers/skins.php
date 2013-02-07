@@ -52,7 +52,7 @@ class Skins extends MS2_Controller {
             }
             
             $userskin->active = 1;
-            echo $userskin->save();
+            $this->load->view('raw', array('raw' => $userskin->save()));
         }
     }
     
@@ -63,7 +63,7 @@ class Skins extends MS2_Controller {
         $data = array('active' => '0');
         Userskin::table()->update($data, array('user_id' => array($this->user->id)));
         
-        echo 'true';
+        $this->load->view('raw', array('raw' => 'true'));
     }
     
     public function add_to_library($id)
@@ -80,11 +80,11 @@ class Skins extends MS2_Controller {
             if(!$link) {
                 if ($this->create_skin_link($this->user->id, $skin->id))
                 {
-                    echo 'true';
+                    $this->load->view('raw', array('raw' => 'true'));
                 }
                 else
                 {
-                    echo 'false';
+                    $this->load->view('raw', array('raw' => 'false'));
                 }
             }
         }
@@ -101,7 +101,7 @@ class Skins extends MS2_Controller {
             $link = Userskin::find_by_skin_id_and_user_id($skin->id, $this->user->id);
             
             if($link) {
-                echo $link->delete();
+                $this->load->view('raw', array('raw' => $link->delete()));
             }
         }
     }

@@ -80,18 +80,18 @@ class Servers extends MS2_Controller {
                 $server->address = $server_address;
                 $server->description = $server_description;
             } catch(Exception $ex) {
-                echo $ex->getMessage();
+                $this->load->view('raw', array('raw' => $ex->getMessage()));
                 $successful = FALSE;
             }
             
             if ($successful && $server->save())
             {
-                echo "OK";
+                $this->load->view('raw', array('raw' => 'OK'));
             }
         }
         else
         {
-            echo "You do not have rights to this server.";
+            $this->load->view('raw', array('raw' => 'You do not have rights to this server.'));
         }
     }
 }
