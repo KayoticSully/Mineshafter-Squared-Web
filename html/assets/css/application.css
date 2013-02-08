@@ -7454,6 +7454,11 @@ body > footer {
     margin-top: 0px;
   }
 }
+img.ad_placehold {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
 nav .horizontal_nav ul li {
   display: inline-block;
   width: 94px;

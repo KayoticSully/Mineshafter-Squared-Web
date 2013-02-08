@@ -77,7 +77,7 @@
     Announcements.prototype = {
         retrievePosts : function(options) {
             var props = $.extend({
-                limit: 4,
+                limit: 2,
                 offset: 0,
                 callback: this.ajaxLoad
             }, options);
