@@ -194,7 +194,7 @@ class Auth extends MS2_Controller {
         $postParams = "user=".urlencode($username)."&password=".$password."&version=13";
         
         // send the request
-        $response = trim(curlPost($this->mc_auth_url, $postParams));
+        $response = trim(curlGet($this->mc_auth_url, $postParams));
         
         return $response;
     }
