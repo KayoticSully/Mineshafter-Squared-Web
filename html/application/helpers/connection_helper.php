@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * curlPost
+ * curlGet
  *
- * Sends a CURL post to specified url
+ * Sends a CURL get request to specified url
  *
  * @access	public
  * @param	string  url to send request to
@@ -12,9 +12,9 @@
  * @return	string  response
  */
 
-if ( ! function_exists('curlPost'))
+if ( ! function_exists('curlGet'))
 {
-    function curlPost($url, $parameters='', $port = null)
+    function curlGet($url, $parameters='', $port = null)
     {
         // create curl
         $churl = curl_init();

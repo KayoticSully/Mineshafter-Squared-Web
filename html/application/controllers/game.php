@@ -147,10 +147,10 @@ class Game extends MS2_Controller {
             
             // TODO
             // This will be the line of code once the site goes live
-            // $response = curlPost('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
+            // $response = curlGet('http://session.minecraft.net/game/checkserver.jsp', 'user='.$username.'&serverId='.$server_id);
             
             // for now to keep compatibility with the old system we will go through there.
-            $response = curlPost('http://mineshaftersquared.com/game/checkserver', 'user='.$username.'&serverId='.$server_id);
+            $response = curlGet('http://mineshaftersquared.com/game/checkserver', 'user='.$username.'&serverId='.$server_id);
             $this->load->view('raw', array('raw' => $response));
         }
     }
