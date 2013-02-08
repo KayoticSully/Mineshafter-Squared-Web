@@ -53,7 +53,7 @@
                 Uploaded on <?php echo date('F jS, Y', strtotime($skin->created_at)); ?>
             </div>
         </div>
-        <div>
+        <div id="skin_ad">
             <?php if (ENVIRONMENT == 'production'): ?>
                 <script type="text/javascript">
                     <!--
