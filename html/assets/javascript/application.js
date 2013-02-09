@@ -48,7 +48,7 @@ function handle_login(response) {
         break;
         
         case 'OK':
-            window.location = window.location;
+            location.reload(true);
         break;
         
         case 'locked':
