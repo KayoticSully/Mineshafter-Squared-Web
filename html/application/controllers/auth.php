@@ -24,8 +24,8 @@ class Auth extends MS2_Controller {
     public function login()
     {
         // get input
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
+        $username = $this->input->get_post("username");
+        $password = $this->input->get_post("password");
         
         // check against local database
         $user = User::login($username, $password);
@@ -101,7 +101,7 @@ class Auth extends MS2_Controller {
         // block the rest of the function and let the client know.
         if ($bad_count >= 9)
         {
-            return "locked : " . $bad_count;
+            return "locked";
         }
         
         // query MCNet
@@ -157,7 +157,6 @@ class Auth extends MS2_Controller {
                 }
             }
             
-            // TODO Uncomment
             $user->save();
             
             // respond with serialized new user

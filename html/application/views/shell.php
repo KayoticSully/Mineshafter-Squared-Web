@@ -91,7 +91,7 @@
     <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-24037493-2']);
+        _gaq.push(['_setAccount', 'UA-24037493-1']);
         _gaq.push(['_setDomainName', 'mineshaftersquared.com']);
         _gaq.push(['_addIgnoredRef', 'mineshaftersquared.com']);
         _gaq.push(['_trackPageview']);
