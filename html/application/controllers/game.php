@@ -32,8 +32,8 @@ class Game extends MS2_Controller {
     public function get_version()
     {
         // get input
-        $username = $this->input->post('user');
-        $password = $this->input->post('password');
+        $username = $this->input->get_post('user');
+        $password = $this->input->get_post('password');
         
         // try to log user in
         $user = User::login($username, $password);

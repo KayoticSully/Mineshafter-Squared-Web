@@ -24,8 +24,8 @@ class Auth extends MS2_Controller {
     public function login()
     {
         // get input
-        $username = $this->input->get_post("username");
-        $password = $this->input->get_post("password");
+        $username = $this->input->post("username");
+        $password = $this->input->post("password");
         
         // check against local database
         $user = User::login($username, $password);
