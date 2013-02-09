@@ -52,7 +52,7 @@ class Textures extends MS2_Controller {
         
         $skin_name = trim($this->input->post('name'));
         
-        else if (in_array($skin_name, array('', 'index', 'set_active', 'remove_active', 'add_to_library', 'remove_from_library')) || preg_match('/[^A-Za-z0-9.#\\-$]/', $skin_name))
+        if (in_array($skin_name, array('', 'index', 'set_active', 'remove_active', 'add_to_library', 'remove_from_library')) || preg_match('/[^A-Za-z0-9.#\\-$]/', $skin_name))
         {
             $result = array('error' => lang('error-disallowed-name'));
         }
