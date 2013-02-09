@@ -7,6 +7,14 @@ $(document).ready(function(){
     $('[rel=popover]').popover();
     $('.dropdown-toggle').dropdown();
     
+    if(localStorage.getItem('stopit-count') == undefined) {
+        localStorage.setItem('stopit-count', 0);
+    }
+    
+    if(localStorage.getItem('stopit-timeout') == undefined) {
+        localStorage.setItem('stopit-timeout', 0);
+    }
+    
     setTimeout(showSocial, 1500);
 });
 
@@ -30,13 +38,28 @@ function user_login(event) {
     // hide errors
     $('#login-error').slideUp();
     
-    // submit form over ajax
-    $.ajax({
-        url     : '/auth/login',
-        type    : 'POST',
-        data    : $('#login_form').serialize(),
-        success : handle_login
-    });
+    // get stoppit time
+    stopitCount = parseInt(localStorage.getItem('stopit-count'));
+    stopitTimeout = new Date(localStorage.getItem('stopit-timeout'));
+    
+    if(stopitTimeout - new Date() > 600000) {
+        stopitCount = 0;
+        localStorage.setItem('stopit-count', stopitCount);
+        stopitTimeout = new Date();
+        localStorage.setItem('stopit-timeout', stopitTimeout)
+    }
+    
+    if(stopitCount < 2 && (stopitTimeout - new Date()) < 0 ) {
+        // submit form over ajax
+        $.ajax({
+            url     : '/auth/login',
+            type    : 'POST',
+            data    : $('#login_form').serialize(),
+            success : handle_login
+        });
+    } else {
+        handle_login('lockedout');
+    }
 }
 
 function handle_login(response) {
@@ -55,10 +78,20 @@ function handle_login(response) {
             display_login_message('New user signup has been disabled. Please wait 5 minutes and try again.');
         break;
         
+        case 'lockedout':
+            display_login_message('You have been locked out of signing in due to too many failed attempts.  Please wait 10 Minutes before trying again.');
+        break;
+        
         case 'bad login':
         case 'Bad Input':
         case 'Bad Password':
         default:
+            // get stoppit time
+            stopitCount = parseInt(localStorage.getItem('stopit-count'));
+            stopitCount++;
+            localStorage.setItem('stopit-count', stopitCount);
+            localStorage.setItem('stopit-timeout', new Date());
+            
             display_login_message('Either your username or password is invalid.  Check that you can login on <a href="http://minecraft.net/login">Minecraft.net</a> before trying again.');
         break;
     }

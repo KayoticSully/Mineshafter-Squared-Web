@@ -45,6 +45,10 @@ class MS2_Controller extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+    
+        if($this->agent->is_browser('Internet Explorer') && $this->router->class != 'badbrowser') {
+            redirect('/badbrowser');
+        }
         
         //----------------------------------------------------
         // Setup derived properties
@@ -201,7 +205,6 @@ class MS2_Controller extends CI_Controller {
             // of a page.  The shell contains the top bar, which
             // includes user login and other user account features.
             //
-            $this->load->library('user_agent');
             
             $layout_variables['application']        = $application_render;
             $layout_variables['css_links']          = $css_links;
@@ -209,7 +212,6 @@ class MS2_Controller extends CI_Controller {
             $layout_variables['navbar']             = $this->navbar;
             $layout_variables['active_menu']        = $this->router->class;
             $layout_variables['user']               = $this->user;
-            $layout_variables['browser']            = $this->agent->browser();
             $layout_variables['extra_js']           = $this->extra_js;
             
             $output = $this->load->view($this->shell_view, $layout_variables, TRUE);

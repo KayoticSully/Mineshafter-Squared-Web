@@ -54,13 +54,6 @@
         </div>
     </div>
     <div id="shell-application">
-        <?php if($browser == "Internet Explorer"): ?>
-            <div class="alert alert-block alert-error center">
-                This website does not work well with Internet Explorer.  I make no guarantees that any features on this site
-                will work.  For a better experience on the web consider <a href="http://browsehappy.com/">
-                upgrading to a better browser.</a>
-            </div>
-        <?php endif; ?>
         <?php echo $application; ?>
     </div>
     <!-- Modals -->
