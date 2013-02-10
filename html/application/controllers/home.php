@@ -28,6 +28,8 @@ class Home extends MS2_Controller {
         $connection = array('address' => 'server.mineshaftersquared.com', 'password' => 'testtest');
         
         $this->load->library('Growl');
+        $this->growl->addNotification('Notification Name');
+        
         $this->growl->register($connection);
         $this->growl->notify($connection, 'Notification Name', 'Some Title', 'Some message to display');
     }
