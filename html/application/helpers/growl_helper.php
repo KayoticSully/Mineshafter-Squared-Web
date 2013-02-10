@@ -24,7 +24,7 @@ if ( ! function_exists('growl'))
             
             if (!$CI->growl_active)
             {
-                $CI->load->library('Growl', 'Mineshafter Squared');
+                $CI->load->library('Growl', array('Mineshafter Squared'));
                 $CI->growl->addNotification($type);
                 $CI->growl->register($connection);
                 $CI->growl_active = TRUE;
