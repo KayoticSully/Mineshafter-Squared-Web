@@ -78,7 +78,7 @@
         {
             if((!defined('GROWL_SOCK') && function_exists('socket_create') && function_exists('socket_sendto')) || (GROWL_SOCK === 'socket'))
             {
-                $sck = ( strlen(inet_pton($this->address)) > 4 && defined('AF_INET6') )
+                $sck = ( strlen(@inet_pton($this->address)) > 4 && defined('AF_INET6') )
                     ? socket_create(AF_INET6, SOCK_DGRAM, SOL_UDP)
                     : socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
                 socket_sendto($sck, $data, strlen($data), 0x100, $this->address, $this->port);
