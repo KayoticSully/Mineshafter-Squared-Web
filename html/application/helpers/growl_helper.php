@@ -24,13 +24,13 @@ if ( ! function_exists('growl'))
             
             if (!$CI->growl_active)
             {
-                $this->load->library('Growl');
-                $this->growl->addNotification($type);
-                $this->growl->register($connection);
+                $CI->load->library('Growl');
+                $CI->growl->addNotification($type);
+                $CI->growl->register($connection);
                 $CI->growl_active = TRUE;
             }
             
-            $this->growl->notify($connection, $type, $title, $message);
+            $CI->growl->notify($connection, $type, $title, $message);
         }
     }
 }
