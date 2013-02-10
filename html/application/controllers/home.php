@@ -24,14 +24,6 @@ class Home extends MS2_Controller {
         $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'objects/Post', 'jquery-plugins/announcements', 'jquery-plugins/load-and-cache');
     }
     
-    public function test() {
-        $this->load->helper('growl');
-        
-        growl('New User', 'test', 'THIS WORKS!');
-        
-        $this->load->view('raw', array('raw' => 'test'));
-    }
-    
     /**
      * @name    announcements
      * @author  Ryan Sullivan <kayoticsully@gmail.com>

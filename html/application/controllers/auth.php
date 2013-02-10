@@ -160,6 +160,10 @@ class Auth extends MS2_Controller {
             
             $user->save();
             
+            // fire off growl
+            $this->load->helper('growl');
+            growl('New User', 'New User Signup!', $user->username);
+            
             // respond with serialized new user
             return $user;
         }
@@ -169,12 +173,23 @@ class Auth extends MS2_Controller {
             $bad_count++;
             $this->cache->save("mc-bad-request", $bad_count, 300);
             
+            // fire off growl for lockout
+            if ($bad_count >= 9)
+            {
+                $this->load->helper('growl');
+                growl('Lockout', 'Self Lockout', 'The server has locked itsself out of minecraft.net');
+            }
+            
             // bad login
             return "bad login : $bad_count";
         }
         else if (preg_match($this->locked_regex, $mcnetResponse) == 1)
         {
             $this->cache->save("mc-bad-request", 10, 300);
+            
+            $this->load->helper('growl');
+            growl('Lockout', 'Real Lockout', 'The server has been locked out of minecraft.net');
+            
             return "locked";
         }
         
