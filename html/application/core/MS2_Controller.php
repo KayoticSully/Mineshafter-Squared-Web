@@ -34,6 +34,7 @@ class MS2_Controller extends CI_Controller {
     protected $extra_js         = FALSE;
     
     /* PLEASE CHANGE THIS */
+    public $growl_appname    = 'MS^2';
     public $growl_address    = 'server.mineshaftersquared.com';
     public $growl_password   = 'GrowlKayoticPass01';  // I'm leaving this here because i'm lazy.  Please be nice.
     public $growl_active     = FALSE; // dont touch this
