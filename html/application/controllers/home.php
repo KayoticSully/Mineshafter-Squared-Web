@@ -26,7 +26,10 @@ class Home extends MS2_Controller {
     
     public function test() {
         $this->load->helper('growl');
-        growl('New User', 'test', 'YAY THIS WORKS!');
+        
+        growl('New User', 'test', 'THIS WORKS!');
+        
+        $this->load->view('raw', array('raw' => 'test'));
     }
     
     /**
