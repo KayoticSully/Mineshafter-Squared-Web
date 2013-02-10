@@ -14,8 +14,9 @@
         private $password;
         private $port;
 
-        public function __construct($app_name = 'PHP Growl')
+        public function __construct($params)
         {
+            $app_name = $params['app_name'];
             $this->appName       = utf8_encode($app_name);
             $this->address       = null;
             $this->notifications = array();
