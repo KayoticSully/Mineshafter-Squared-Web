@@ -33,6 +33,10 @@ class MS2_Controller extends CI_Controller {
     protected $force_shell      = FALSE;
     protected $extra_js         = FALSE;
     
+    protected $growl_address    = 'server.mineshaftersquared.com';
+    protected $growl_password   = 'GrowlKayoticPass01';  // I'm leaving this here because i'm lazy.  Please be nice.
+    protected $growl_active     = FALSE; // dont touch this
+    
     // THIS MAY MOVE TO KEEP THE SUPERCLASS CLEAN
     public $user             = NULL;
 

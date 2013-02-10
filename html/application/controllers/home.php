@@ -25,15 +25,8 @@ class Home extends MS2_Controller {
     }
     
     public function test() {
-        $connection = array('address' => 'server.mineshaftersquared.com', 'password' => 'testtest');
-        
-        $this->load->library('Growl');
-        $this->growl->addNotification('New User');
-        
-        $this->growl->register($connection);
-        $this->growl->notify($connection, 'New User', 'Some Title', 'Some message to display');
-        
-        $this->load->view('raw', array('raw' => 'test!'));
+        $this->load->helper('growl');
+        growl('New User', 'test', 'YAY THIS WORKS!');
     }
     
     /**
