@@ -32,6 +32,8 @@ class Home extends MS2_Controller {
         
         $this->growl->register($connection);
         $this->growl->notify($connection, 'Notification Name', 'Some Title', 'Some message to display');
+        
+        $this->load->view('raw', array('raw' => 'test!'));
     }
     
     /**
