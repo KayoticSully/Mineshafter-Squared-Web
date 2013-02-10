@@ -101,6 +101,7 @@ class Auth extends MS2_Controller {
         // block the rest of the function and let the client know.
         if ($bad_count >= 9)
         {
+            
             return "locked";
         }
         
