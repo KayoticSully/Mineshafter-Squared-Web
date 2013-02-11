@@ -4,7 +4,8 @@
     <hr>
     <h4>
         I am sorry about this, but Mineshafter Squared does not work with Internet Explorer. For a
-        better experience on the web consider <a href="http://browsehappy.com/">upgrading to a better browser.</a>
+        better experience on this site and the web in general consider
+        <a href="http://dontuseie.com/">upgrading to a better browser.</a>
         You won't regret it and web developers will love you.
     </h4>
     <h4>
