@@ -34,7 +34,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/community">
+                        <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="The Mineshafter Squared forums have been offline for quite some time now, and I do apologize for that.  I hope the new community will be able to make up for it." data-original-title="Not Available Yet">
                             <i class="icon-globe icon-white"></i>
                             Community
                         </a>

@@ -71,6 +71,7 @@ class MS2_Controller extends CI_Controller {
         //----------------------------------------------------
         $this->assets = array('application', $this->router->fetch_class());
         
+        
         //----------------------------------------------------
         // Check if user is logged in
         //----------------------------------------------------

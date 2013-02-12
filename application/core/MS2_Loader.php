@@ -55,6 +55,7 @@ class MS2_Loader extends CI_Loader
         parent::__construct();
     }
 
+    
     /**
      * To accomodate CI 2.1.0, we override the initialize() method instead of
      *  the ci_autoloader() method. Once sparks is integrated into CI, we
