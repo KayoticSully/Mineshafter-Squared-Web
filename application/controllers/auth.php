@@ -57,6 +57,7 @@ class Auth extends MS2_Controller {
         // account
         if($user instanceof User)
         {
+            
             if ($remember)
             {
                 $this->rememberme->setCookie($user->id);
