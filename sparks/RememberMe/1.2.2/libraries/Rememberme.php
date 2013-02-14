@@ -69,19 +69,21 @@ class Rememberme {
 		$host = explode('.', $_SERVER['SERVER_NAME']);
 		$segments = count($host) - 1;
 		$domain = ($_SERVER['SERVER_NAME'] == "localhost") ? false : $host[($segments - 1)] . "." . $host[$segments];
+		$name = 'rmtoken_' . str_replace('.', '_', $_SERVER['SERVER_NAME']);
+		//echo session_name("aASDFASDFASDF");
 		
 		if (!$nocookie) {
 			// set cookie for 1 year
 			$cookie = array(
-				'name' => 'rmtoken_' . str_replace('.', '_', $_SERVER['SERVER_NAME']),
+				'name' => $name,
 				'value' => $cookie_id,
 				'expire' => 31557600,
 				'domain' => $domain,
 				'path' => preg_replace('/^(http|https):\/\/(www\.)?' . $_SERVER['SERVER_NAME'] . '/', '', preg_replace('/\/$/','', base_url())),
 				'secure' => isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : 0
 			);
+			
 			$this->CI->input->set_cookie($cookie);
-		
 			// establish session
 			$this->CI->session->set_userdata('rememberme_session', $netid);	
 		}		
@@ -121,11 +123,12 @@ class Rememberme {
 		delete_cookie('rememberme_token');
 	}
 	
-	function verifyCookie() {			
+	function verifyCookie() {
+		
 		if (!$this->CI->input->cookie('rmtoken_' . str_replace('.', '_', $_SERVER['SERVER_NAME']))) { 
 			return false; 
 		}
-		
+
 		$query = $this->CI->db->get_where('ci_cookies', array(
 			'cookie_id' => $this->CI->input->cookie('rmtoken_' . str_replace('.', '_', $_SERVER['SERVER_NAME']))
 		));

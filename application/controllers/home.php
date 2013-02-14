@@ -25,6 +25,11 @@ class Home extends MS2_Controller {
         $this->javascripts = array('bootstrap-button', 'bootstrap-tab', 'objects/Post', 'jquery-plugins/announcements', 'jquery-plugins/load-and-cache');
     }
     
+    public function test() {
+        $test = urldecode('a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22a189805ebe3ce09b59807055c0b80914%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A13%3A%22192.168.1.106%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A108%3A%22Mozilla%2F5.0+%28Windows+NT+6.2%3B+WOW64%29+AppleWebKit%2F537.22+%28KHTML%2C+like+Gecko%29+Chrome%2F25.0.1364.84+Safari%2F537.22%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1360843503%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D3cf3f67cc9fc86baa8f863d579cf6d33');
+        $this->load->view('pre', array('pre' => $this->input->cookie('PHPSESSID')));
+    }
+    
     /**
      * @name    announcements
      * @author  Ryan Sullivan <kayoticsully@gmail.com>

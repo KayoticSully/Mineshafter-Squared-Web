@@ -54,9 +54,9 @@ class MS2_Controller extends CI_Controller {
     {
         parent::__construct();
     
-        if($this->agent->is_browser('Internet Explorer') && $this->router->class != 'badbrowser') {
-            redirect('/badbrowser');
-        }
+        //if($this->agent->is_browser('Internet Explorer') && $this->router->class != 'badbrowser') {
+          //  redirect('/badbrowser');
+        //}
         
         //----------------------------------------------------
         // Setup derived properties

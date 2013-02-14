@@ -16,6 +16,11 @@
 */
 $config['base_url']	= '';
 
+// just here so the remember me plugin doesnt freak out
+// you can remove this line if your site is sitting on a
+// domain
+$_SERVER['SERVER_NAME'] = 'mineshaftersquared.com';
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -246,7 +251,7 @@ $config['encryption_key'] = 'EbAcuuc6508ZIh8Ilke9w5qilGta4EqNJQuVPxOXPBOm1Cxvhxr
 $config['sess_cookie_name']	    = 'session';
 $config['sess_expiration']	    = 7200;
 $config['sess_expire_on_close']	    = TRUE;
-$config['sess_encrypt_cookie']	    = TRUE;
+$config['sess_encrypt_cookie']	    = FALSE;
 $config['sess_use_database']	    = TRUE;
 $config['sess_table_name']  	    = 'sessions';
 $config['sess_match_ip']	    = TRUE;
