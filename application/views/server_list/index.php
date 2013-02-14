@@ -15,21 +15,10 @@
         <button id="create-server" class="btn btn-primary">Create</button>
     </div>
 </div>
-<div id="server-list" class="container extra-top-padding">
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
+<div id="submenu" class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
             <a class="brand" href="#">Filters - <small>Not yet available</small></a>
-            <?php /*<ul class="nav">
-                <li><a href="#">Online</a></li>
-            </ul>
-            <ul class="nav">
-                <li>
-                    <form class="navbar-form">
-                        <input type="text" class="span2">
-                        <button type="submit" class="btn">Search</button>
-                    </form>
-                </li>
-            </ul>*/ ?>
             <?php if ($user): ?>
                 <ul class="nav pull-right">
                     <li>
@@ -41,6 +30,8 @@
             <?php endif; ?>
         </div>
     </div>
+</div>
+<div id="server-list" class="container extra-top-padding">
 </div>
 <div class="listAd">
     <?php if (ENVIRONMENT == 'production'): ?>

@@ -1,5 +1,6 @@
 var serverList = null;
 var serverCap = false;
+var submenuOffset = 0;
 
 $(document).ready(init);
 
@@ -11,6 +12,19 @@ function init() {
     $('#create-server').on('click', addServer);
     $(window).on('scroll', pageScroll);
     $(window).scroll();
+    
+    submenuOffset = $('#submenu').offset();
+    
+    $(document).scroll(function(){
+        var submenu = $('#submenu');
+        var scroll = parseInt($('body').scrollTop()) + 40;
+        
+        if(scroll >= submenuOffset.top) {
+            submenu.addClass('navbar-fixed-top').removeClass('navbar-static-top');
+        } else if(scroll < submenuOffset.top) {
+            submenu.addClass('navbar-static-top').removeClass('navbar-fixed-top');
+        }
+    });
 }
 
 function clearText() {
