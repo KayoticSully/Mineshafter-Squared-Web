@@ -56,8 +56,6 @@ class Skin extends ActiveRecord\Model {
         $skin['name']        = $this->name;
         $skin['location']    = $this->base_location();
         
-        
-        
         return $skin;
     }
 }

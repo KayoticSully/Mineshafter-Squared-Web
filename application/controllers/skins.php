@@ -186,6 +186,17 @@ class Skins extends MS2_Controller {
         }
     }
     
+    public function download($skinId)
+    {
+        $this->load->helper('download');
+        $skin = Skin::find_by_id($skinId);
+        $texture_location = $skin->base_location();
+        $texture_contents = file_get_contents($texture_location);
+        $name = $skin->name . '.png';
+        
+        force_download($name, $texture_contents);
+    }
+    
     private function create_skin_link($user_id, $skin_id)
     {
         $new_link = new Userskin();

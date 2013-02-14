@@ -1,7 +1,7 @@
 <div id="skin-container" class="clearfix extra-top-padding">
     <div id="preview-wrapper">
-        <?php if($user): ?>
-            <div id="actions">
+        <div id="actions">
+            <?php if($user): ?>
                 <?php if($user->active_skin()->id == $skin->id): ?>
                     <button id="remove-active" class="btn" data-id="<?php echo $skin->id; ?>">Remove Active</button>
                 <?php else: ?>
@@ -13,8 +13,9 @@
                 <?php else: ?>
                     <button id="add-to-library" data-id="<?php echo $skin->id; ?>" class="btn btn-success">Add to Library</button>
                 <?php endif; ?>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+            <a href="/skin/download/<?php echo $skin->id; ?>" class="btn btn-inverse">Download</a>
+        </div>
         <div id="preview-hints">
             <small>Click + Drag to change view</small>
         </div>
@@ -39,7 +40,7 @@
                            data-trigger="manual"
                            data-placement="right"
                            data-original-title="<?php echo lang('newtag_popover_title'); ?>"
-                           data-content="<?php echo lang('newtag_popover_content'); ?>"/>
+                           data-content="<?php echo lang('newtag_popover_content'); ?>" />
                 </form>
             <?php endif; ?>
         </div>
