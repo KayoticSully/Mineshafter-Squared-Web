@@ -16,11 +16,6 @@
 */
 $config['base_url']	= '';
 
-// just here so the remember me plugin doesnt freak out
-// you can remove this line if your site is sitting on a
-// domain
-$_SERVER['SERVER_NAME'] = 'mineshaftersquared.com';
-
 /*
 |--------------------------------------------------------------------------
 | Index File

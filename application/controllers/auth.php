@@ -57,16 +57,28 @@ class Auth extends MS2_Controller {
         // account
         if($user instanceof User)
         {
-            
+            $data = '';
             if ($remember)
             {
-                $this->rememberme->setCookie($user->id);
+                $uid = uniqid();
+                // make sure uid is, in face, unique
+                $not_unique = User::find_by_remember_me($uid);
+                
+                // if unique
+                if (!$not_unique)
+                {
+                    $user->remember_me = $uid;
+                    if ($user->save())
+                    {
+                       $data = $uid;
+                    }
+                }
             }
             
-            $this->session->set_userdata('user_id', $user->id);            
+            $this->session->set_userdata('user_id', $user->id);
             $user->last_web_login = time();
             $user->save();
-            $this->load->view('raw', array('raw' => 'OK'));
+            $this->load->view('raw', array('raw' => 'OK' . ':' . $data));
         }
         else
         {
@@ -85,7 +97,6 @@ class Auth extends MS2_Controller {
         $this->load->helper('url');
         
         $this->session->unset_userdata('user_id');
-        $this->rememberme->deleteCookie();
         
         $dest = $this->input->get('page') ? $this->input->get('page') : '/';
         redirect($dest);

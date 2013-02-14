@@ -15,11 +15,12 @@
     <div class="control-group">
         <div class="controls">
             <label class="checkbox">
-                <input type="checkbox" name="rememberme"> Remember me
+                <input type="checkbox" name="rememberme"> <a href="#" data-toggle="tooltip" title="Stay logged in for 30 days" data-placement="right">Remember me</a>
             </label>
         </div>
     </div>
 <?php echo form_close(); ?>
 <script>
     $('#login_form').on('submit', user_login);
+    $('[data-toggle=tooltip]').tooltip();
 </script>

@@ -53,7 +53,6 @@ class MS2_Controller extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-    
         //if($this->agent->is_browser('Internet Explorer') && $this->router->class != 'badbrowser') {
           //  redirect('/badbrowser');
         //}
@@ -75,23 +74,26 @@ class MS2_Controller extends CI_Controller {
         //----------------------------------------------------
         // Check if user is logged in
         //----------------------------------------------------
-        $remember = $this->rememberme->verifyCookie();
-        if ($remember)
+        $user_id = $this->session->userdata('user_id');
+        if ($user_id)
         {
-            // find user id of cookie_user stored in application database
-            $this->user = User::find_by_id($remember);
-            // set session if necessary
-            if (!$this->session->userdata('user_id'))
-            {
-                $this->session->set_userdata('user_id', $this->user->id);
-            }
+            $this->user = User::find_by_id($user_id);
         }
-        else
+        else if(isset($_COOKIE['rememberme']))
         {
-            $user_id = $this->session->userdata('user_id');
-            if ($user_id)
+            // check to see if they had a long term cookie set
+            $remember = $_COOKIE['rememberme'];
+            if ($remember)
             {
-                $this->user = User::find_by_id($user_id);
+                $user = User::find_by_remember_me($remember);
+                if($user)
+                {
+                    $user->last_web_login = time();
+                    $user->save();
+                    
+                    $this->user = $user;
+                    $this->session->set_userdata('user_id', $user->id);   
+                }
             }
         }
         

@@ -3,6 +3,7 @@ var login_form_animation_timeout;
 $(document).ready(function(){
     $('nav li').on('click', nav_click);
     $('#login').on('click', user_login);
+    $('#logout').on('click', removeRemember);
     
     $('[rel=popover]').popover();
     $('.dropdown-toggle').dropdown();
@@ -64,13 +65,22 @@ function user_login(event) {
 
 function handle_login(response) {
     $('html').css('cursor', 'auto');
+    var chunks = response.split(':');
     
-    switch(response) {
+    switch(chunks[0]) {
         case 'migrated':
             display_login_message('This account has been migrated to a Mojang account.  Please use your email address to log in for the first time.');
         break;
         
         case 'OK':
+            if(chunks[1].trim() != '') {
+                var now = new Date();
+                var time = now.getTime();
+                time += 2592000;
+                now.setTime(time);
+                document.cookie = 'rememberme=' + chunks[1] + ';expires=' + now.toGMTString();
+            }
+            
             location.reload(true);
         break;
         
@@ -95,6 +105,12 @@ function handle_login(response) {
             display_login_message('Either your username or password is invalid.  Check that you can login on <a href="http://minecraft.net/login">Minecraft.net</a> before trying again.');
         break;
     }
+}
+
+function removeRemember(event) {
+    event.preventDefault();
+    document.cookie = 'rememberme=;expires=' + new Date().toGMTString();
+    window.location = '/auth/logout?page=' + window.location;
 }
 
 function display_login_message(data) {
