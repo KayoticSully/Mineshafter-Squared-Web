@@ -1,20 +1,132 @@
-#chat {
-    width:50%;
-    margin:10px auto;
-    max-height:500px;
-    overflow-y: scroll;
+.topics {
+    padding:20px 0px;
 }
 
-#controls {
-    width: 50%;
-    margin:0 auto;
-    position: relative;
+.topic {
+    margin:40px 0px;
+    //cursor: pointer;
     
-    #message {
-        width: 100%;
+    &:first-child {
+        margin:10px 0px 0px 0px;
+    }
+    
+    .title-post {
+        margin-bottom: 10px;
+    }
+    
+    .topic-thread {
+        height:0px;
+        position: relative;
+        overflow: hidden;
+        //-webkit-transition: height .5s ease-in-out;  
+        //-moz-transition: height .5s ease-in-out;  
+        //-o-transition: height .5s ease-in-out;  
+        //-ms-transition: height .5s ease-in-out;  
+        //transition: height .5s ease-in-out;
+        
+        &.expand {
+            height:auto;
+        }
     }
 }
 
-.note {
-    padding:5px;
+article {
+    padding:10px 0px;
+}
+
+.comments {
+    //background: #555;
+    color: #FFFFFF;
+    padding: 0px 74px 20px 74px;
+    background: url('/assets/img/noisy_net.png');
+    position: relative;
+    //font-size: 14px;
+    //line-height: 16px;
+    
+    //h5 {
+     //   line-height: 18px;
+    //}
+}
+
+.actions {
+    //background: #555;
+    background: url('/assets/img/noisy_net.png');
+    text-align: center;
+    margin-top: 5px;
+    color:#FFF;
+    padding:10px 0px 10px 0px;
+    
+    &.open {
+        padding:10px 0px 0px 0px;
+    }
+}
+
+.show-comments, .get-older {
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+
+.show-comments {
+    display: inline;
+}
+
+.get-older {
+    display: none;
+    
+    &.show {
+        display: inline;
+    }
+}
+
+#new-topic {
+    textarea.input {
+        //display: none;
+        height:40px;
+    }
+    
+    textarea.input:focus {
+        height: 100px;
+    }
+    
+    input[type=text] {
+        width: 98%;
+        -webkit-transition: width .3s ease-in-out;  
+        -moz-transition: width .3s ease-in-out;  
+        -o-transition: width .3s ease-in-out;  
+        -ms-transition: width .3s ease-in-out;  
+        transition: width .3s ease-in-out; 
+    }
+}
+
+.input {  
+    height: 20px;
+    width: 98%;
+    resize: none;
+    -webkit-transition: height .3s ease-in-out;  
+    -moz-transition: height .3s ease-in-out;  
+    -o-transition: height .3s ease-in-out;  
+    -ms-transition: height .3s ease-in-out;  
+    transition: height .3s ease-in-out;  
+}
+
+.input:focus {  
+    height: 100px;  
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
+
+.submenu-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#sideAd {
+    -webkit-transition: margin .3s ease-in-out;  
+    -moz-transition: margin .3s ease-in-out;  
+    -o-transition: margin .3s ease-in-out;  
+    -ms-transition: margin .3s ease-in-out;  
+    transition: margin .3s ease-in-out; 
+    margin-top: 40px;
 }

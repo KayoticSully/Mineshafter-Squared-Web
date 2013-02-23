@@ -27,14 +27,8 @@
                             Skins / Capes
                         </a>
                     </li>
-                    <li <?php if($active_menu == 'help') echo 'class="active"'; ?>>
-                        <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="Mineshafter Squared has honestly never had that great of a help system, thats about to change." data-original-title="Not Available Yet">
-                            <i class="icon-question-sign icon-white"></i>
-                            Help
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" rel="popover" data-toggle="popover" data-placement="bottom" data-content="The Mineshafter Squared forums have been offline for quite some time now, and I do apologize for that.  I hope the new community will be able to make up for it." data-original-title="Not Available Yet">
+                    <li <?php if($active_menu == 'community') echo 'class="active"'; ?>>
+                        <a href="/community" rel="popover">
                             <i class="icon-globe icon-white"></i>
                             Community
                         </a>

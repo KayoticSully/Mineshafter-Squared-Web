@@ -53,7 +53,7 @@ ObjectList.prototype.has_id = function(id) {
     return false;
 }
 
-ObjectList.prototype.find_by_id= function(id) {
+ObjectList.prototype.find_by_id = function(id) {
     for(var index in this.objects) {
         var object = this.objects[index];
         if(object.id == id)

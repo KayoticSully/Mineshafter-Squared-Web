@@ -9,15 +9,38 @@ class Community extends MS2_Controller {
     
     public function index()
     {
-       $this->javascripts = array('socket.io');
-       if($this->user) {
-        $userid = $this->user->id;
-       }
-       else
-       {
-        $userid = -1;
-       }
-       $this->variables = array('userid' => $userid);
+        $this->javascripts = array('socket.io', 'objects/ObjectList', 'objects/Topic');
+        
+        if (isset($this->user))
+        {
+            $uid = $this->get_unique_token();
+            
+            $this->user->async_token = $uid;
+            if (!$this->user->save())
+            {
+               $uid = 0; 
+            }
+        }
+        else
+        {
+            $uid = 0; 
+        }
+        
+        $this->variables = array('async_token' => $uid);
+    }
+    
+    private function get_unique_token()
+    {
+        $uid = uniqid();
+        
+        if (User::find_by_async_token($uid))
+        {
+            return $this->get_unique_token();
+        }
+        else
+        {
+            return $uid;
+        }
     }
 }
 
