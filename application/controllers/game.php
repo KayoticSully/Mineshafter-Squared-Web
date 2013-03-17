@@ -91,6 +91,12 @@ class Game extends MS2_Controller {
         $session_id = $this->input->get('sessionId');
         $server_id  = $this->input->get('serverId');
         
+        $noVerify   = explode(';', urldecode($this->input->get('noverify')));
+        if (in_array($username, $noVerify)) {
+            $this->load->view('raw', array('raw' => 'OK'));
+            return;
+        }
+        
         // retrieve user info and verify session for user
         $user = User::find_by_username_and_session($username, $session_id);
         
