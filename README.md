@@ -1,13 +1,9 @@
 Mineshafter-Squared Documentation
 =================================
-
 Notice: These documents are a bit out of date.  If you have any questions with what has changed or something just does not seem to make sense, feel free to contact me.
 
-###Project Status: Beta Testing
+###Project Status: Initial Release
 For a more in depth look at what is done and what is planned please reference the [Status](Mineshafter-Squared-Web/blob/master/docs/Status.md) page.
-
-Not much is currently done, feel free to email me if you want to help and need to know what to work on.  A lot of the authentication code I will pull
-over from the current site when I have a chance.  I am still working out the new database structure.
 
 Table of Contents
 ------------------
@@ -33,12 +29,14 @@ Getting Started
 ---------------
 To get this project up and running on a Windows machine you will need to install the following:
 *   __PHP__ - The project assumes that you have PHP installed at _C:\php_. If you have it installed in a different location, or want to install it elsewhere, you will need to modify the _start-server.bat_ file and replace the two instance of _C:\php_ with your desired location.
-*   __MySQL__ - You need to install MySQL and set your database storage location to the database folder in this project.  If you need to set up a root password I am using _ms2dev_ as the MySql password on this project.
+*   __MySQL__ - You need to get mysql setup and change the database config file (in application/config/database.php) to use that database.  There is a sql-setup.sql file you need to import to get the MineshafterSquared database structure setup.
     *   You need to copy the contents of **database\data** to **C:\ProgramData\MySQL\MySQL Server 5.5\data**. (You will need to do this anytime there is a database update).
     *   Alternatively you can set **datadir** in your MySql config file to the location of **database\data** on your computer. (This prevents you from having to do anything ever again).
 *   __OpenSSL__ - If you are getting errors talking about issues with _curl_ try installing OpenSSL.
 
 [NGINX](http://www.nginx.org/) is the web server of choice and this repo comes with a fully configured NGINX environment. Just double click the **start-server.js** file and navigate to _http://localhost_ in your browser.
+
+*   __Site Setup__ Go to _http://localhost/setup_ to get the database setup with default values.
 
 ### Once The Server is Started
  **Site:** [localhost](http://localhost)
