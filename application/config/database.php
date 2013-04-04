@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '192.168.1.103'; // my internal dev server change this to localhost or the address of your mysql server
 $db['default']['username'] = 'root';
 $db['default']['password'] = 'caroline'; // change this to your password
-$db['default']['database'] = 'Mineshafter-Squared-Dev';
+$db['default']['database'] = 'MineshafterSquaredDev';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;

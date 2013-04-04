@@ -3,6 +3,7 @@
 *.old.*
 
 application/cache/*
+application/config/database.php
 assets/textures/*
 assets/less/cache/*
 assets/css/*
