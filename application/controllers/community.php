@@ -9,6 +9,9 @@ class Community extends MS2_Controller {
     
     public function index()
     {
+        // TEMP REDIRECT WHILE THIS IS IN DEVELOPMENT
+        redirect('http://www.reddit.com/r/MineshafterSquared');
+        
         $this->javascripts = array('socket.io', 'objects/ObjectList', 'objects/Topic');
         
         if (isset($this->user))
@@ -31,6 +34,9 @@ class Community extends MS2_Controller {
     
     private function get_unique_token()
     {
+        // TEMP REDIRECT WHILE THIS IS IN DEVELOPMENT
+        redirect('http://www.reddit.com/r/MineshafterSquared');
+        
         $uid = uniqid();
         
         if (User::find_by_async_token($uid))

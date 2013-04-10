@@ -30,17 +30,16 @@
         <div id="shell-top">
             <div id="banner">
                 <div id="social">
-                    <div id="beerme">
-                        <a href="https://www.beerdonation.com/p/KayoticSully/">
-                            <img src="https://www.beerdonation.com/p/KayoticSully/badge" alt="Beer Me!" title="Beer Me!" />
-                        </a>
-                    </div>
                     <div id="facebook">
                         <div class="fb-like" data-href="https://www.facebook.com/MineshafterSquared" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false"></div>
                     </div>
                     <div id="googleplus">
                         <div class="g-plusone" data-size="medium"></div>
                     </div>
+                    <div id="twitter">
+                        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    </div> 
                 </div>
             </div>
             <div id="topAd">

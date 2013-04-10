@@ -28,7 +28,7 @@
                         </a>
                     </li>
                     <li <?php if($active_menu == 'community') echo 'class="active"'; ?>>
-                        <a href="/community" rel="popover">
+                        <a href="http://www.reddit.com/r/MineshafterSquared" rel="popover">
                             <i class="icon-globe icon-white"></i>
                             Community
                         </a>

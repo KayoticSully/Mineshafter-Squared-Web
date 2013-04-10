@@ -24,6 +24,34 @@
 <section id="downloads">
     <div class="container">
         <h1>
+            Support
+        </h1>
+        <div>
+            <p>
+                You can support Minesahfter Squared in a few ways, just don't forget to support
+                <a href="http://minecraft.net/store">Minecraft / Mojang</a> also!
+            </p>
+            <ul class="hlist">
+                <li>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="LS5J536XJYGQQ">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </li>
+                <li>
+                    <div id="beerme">
+                        <a href="https://www.beerdonation.com/p/KayoticSully/">
+                            <img src="https://www.beerdonation.com/p/KayoticSully/badge" alt="Beer Me!" title="Beer Me!" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h1>
             Downloads
         </h1>
         <div id="download_track" data-href="/downloads/html">
