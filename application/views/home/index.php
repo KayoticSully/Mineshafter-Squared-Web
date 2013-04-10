@@ -4,6 +4,7 @@
             <ul class="nav">
                 <li class="active"><a href="#announcements">Announcements</a></li>
                 <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#support">Support</a></li>
                 <li><a href="#other">About</a></li>
             </ul>
         </div>
@@ -23,6 +24,14 @@
 </section>
 <section id="downloads">
     <div class="container">
+        <h1>
+            Downloads
+        </h1>
+        <div id="download_track" data-href="/downloads/html">
+           
+        </div>
+    </div>
+    <div class="container" id="support">
         <h1>
             Support
         </h1>
@@ -48,14 +57,6 @@
                     </div>
                 </li>
             </ul>
-        </div>
-    </div>
-    <div class="container">
-        <h1>
-            Downloads
-        </h1>
-        <div id="download_track" data-href="/downloads/html">
-           
         </div>
     </div>
 </section>
