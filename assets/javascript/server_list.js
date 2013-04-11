@@ -25,6 +25,8 @@ function init() {
             submenu.addClass('navbar-static-top').removeClass('navbar-fixed-top');
         }
     });
+    
+    loadServers(0);
 }
 
 function clearText() {
