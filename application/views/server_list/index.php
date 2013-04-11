@@ -32,6 +32,9 @@
     </div>
 </div>
 <div id="server-list" class="container extra-top-padding">
+    <div class="server_list_load remove">
+        &nbsp;
+    </div>
 </div>
 <div class="fixed-bottom-wrapper">
     <div class="listAd">
