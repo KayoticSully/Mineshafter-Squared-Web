@@ -102,6 +102,11 @@ class Auth extends MS2_Controller {
         redirect($dest);
     }
     
+    public function test() {
+        $test = $this->queryMCNet('KayoticSully@gmail.com', 'Por2alMC310');
+        $this->load->view('raw', array('raw' => $test));
+    }
+    
     private function proxyAuth($username, $password)
     {
         $this->load->helper('connection');

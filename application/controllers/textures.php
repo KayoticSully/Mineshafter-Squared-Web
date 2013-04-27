@@ -63,7 +63,6 @@ class Textures extends MS2_Controller {
         }
         else
         {
-            
             // get highest texture location value
             $location = Data::find_by_key('highest-texture-location');
             $file_name = $location->value;
@@ -266,7 +265,7 @@ class Textures extends MS2_Controller {
             
             if (!is_dir($location_path) && !mkdir($location_path, 0777, TRUE))
             {
-                return array('error' => lang('upload-folder-crate') . $location_path); 
+                return array('error' => lang('upload-folder-crate') . $location_path);
             }
             
             $new_full_path = $location_path . '/' . Textures::texture_basename;
@@ -277,11 +276,22 @@ class Textures extends MS2_Controller {
                 $data['full_path'] = $new_full_path;
                 $data['file_name'] = Textures::texture_basename;
                 $data['raw_name']  = str_replace('.png', '', Textures::texture_basename);
+                
             }
             else
             {
-                return array('error' => lang('upload-move-file') . $data['full_path'] . ' to ' . $new_full_path); 
+                return array('error' => lang('upload-move-file') . $data['full_path'] . ' to ' . $new_full_path);
             }
+            
+            // upload to rackspace for testing...
+            $textureContainer = $this->rackspace->CloudFiles($this->config->item('container', 'rackspace'));
+            
+            $rTexture = $textureContainer->DataObject();
+            $rTexture->Create(
+                array('name' => $config['file_name'].'.png',
+                      'content_type' => 'image/png'),
+                      $new_full_path
+            );
             
             // create texture database record
             $texture = new Texture();

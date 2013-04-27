@@ -53,6 +53,11 @@ class MS2_Controller extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        //----------------------------------------------------
+        // Load extra config files
+        //----------------------------------------------------
+        $this->config->load('rackspace', TRUE);
+        $this->config->load('mineshaftersquared', TRUE);
         
         //----------------------------------------------------
         // I'm not dealing with IE right now
@@ -109,6 +114,14 @@ class MS2_Controller extends CI_Controller {
         if (! $this->cache->apc->is_supported())
         {
             $this->load->driver('cache', array('adapter' => 'file'));
+        }
+        
+        //----------------------------------------------------
+        // Setup Rackspace
+        //----------------------------------------------------
+        if($this->config->item('use_rackspace', 'mineshaftersquared'))
+        {
+            $this->load->library('Rackspace');
         }
         
         //----------------------------------------------------
