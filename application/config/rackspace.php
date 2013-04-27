@@ -10,8 +10,8 @@
 $config['identity_url'] = 'https://identity.api.rackspacecloud.com/v2.0';
 
 // login credentials
-$config['username']     = 'kayoticsullym';
-$config['apiKey']       = '717c4058653bcb986b2f95fd15d1b336';
+$config['username']     = 'Your Rackspace Username';
+$config['apiKey']       = 'Your API Key';
 
 // CloudFiles specifics
 $config['region']       = 'DFW';
@@ -20,5 +20,5 @@ $config['containerURL'] = '/cdn/textures'; // this is a shortcut to an NGINX pro
                                            // This is needed otherwise cross-origin errors will crop up.
 
 
-/* End of file mineshaftersquared.php */
-/* Location: ./application/config/mineshaftersquared.php */
+/* End of file rackspace.php */
+/* Location: ./application/config/rackspace.php */
