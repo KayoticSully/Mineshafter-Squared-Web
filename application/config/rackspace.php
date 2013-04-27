@@ -10,8 +10,8 @@
 $config['identity_url'] = 'https://identity.api.rackspacecloud.com/v2.0';
 
 // login credentials
-$config['username']     = 'kayoticsullym';
-$config['apiKey']       = '717c4058653bcb986b2f95fd15d1b336';
+$config['username']     = 'Your Rackspace Username';
+$config['apiKey']       = 'Your API Key';
 
 // CloudFiles specifics
 $config['region']       = 'DFW';
