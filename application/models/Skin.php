@@ -52,9 +52,19 @@ class Skin extends ActiveRecord\Model {
     public function to_assoc()
     {
         $skin = array();
-        $skin['id']          = $this->id;
-        $skin['name']        = $this->name;
-        $skin['location']    = $this->base_location();
+        $skin['id']             = $this->id;
+        $skin['name']           = $this->name;
+        
+        if(RACKSPACE)
+        {
+            $skin['location']   = TEXTURE_CDN.'/'.$this->texture->location.'.png';
+        }
+        else
+        {
+            // the forward slash is to force the file to be loaded from the site's
+            // url and not the CDN
+            $skin['location']   = '/'.$this->base_location();
+        }
         
         return $skin;
     }

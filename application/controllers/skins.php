@@ -137,6 +137,10 @@ class Skins extends MS2_Controller {
             $logged_in = TRUE;
         }
         
+        // get rackspace information just incase
+        $rackspace = $this->config->item('use_rackspace', 'mineshaftersuqared');
+        $rsLocation = $this->config->item('containerURL', 'rackspace');
+        
         $skins_assoc = array();
         if ($skins)
         {

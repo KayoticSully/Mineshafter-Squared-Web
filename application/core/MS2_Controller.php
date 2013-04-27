@@ -122,6 +122,12 @@ class MS2_Controller extends CI_Controller {
         if($this->config->item('use_rackspace', 'mineshaftersquared'))
         {
             $this->load->library('Rackspace');
+            define('RACKSPACE', TRUE);
+            define('TEXTURE_CDN', $this->config->item('containerURL', 'rackspace'));
+        }
+        else
+        {
+            define('RACKSPACE', FALSE);
         }
         
         //----------------------------------------------------

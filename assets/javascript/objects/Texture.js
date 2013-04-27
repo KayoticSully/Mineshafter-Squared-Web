@@ -42,7 +42,7 @@ Texture.prototype.toString = function() {
                     '</a>' +
                 '</div>' +
                 '<div class="minecraft_model" data-size="5" title="Set Active" ' +
-                     'data-minecraftmodel="/' + this.location + '" ' +
+                     'data-minecraftmodel="' + this.location + '" ' +
                      'data-id="' + this.id + '">' +
                 '</div>' +
             '</div>'; // closes the div opened earlier of class skin

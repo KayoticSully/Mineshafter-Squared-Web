@@ -168,8 +168,16 @@ class Game extends MS2_Controller {
             {
                 // if the active skin is found, grab the file and
                 // force it upon the game client.
-                $file = $skin->base_location();
-                force_download($username . '.png', file_get_contents($file));
+                if($this>config->item('use_rackspace', 'mineshafter'))
+                {
+                    $file = $skin->texture->location;
+                    redirect(TEXTURE_CDN.'/'.$file.'.png');
+                }
+                else
+                {
+                    $file = $skin->base_location();
+                    force_download($username . '.png', file_get_contents($file));
+                }
             }
         }
     }
