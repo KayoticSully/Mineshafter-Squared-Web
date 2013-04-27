@@ -1,0 +1,3 @@
+[submodule "php-opencloud"]
+  path = php-opencloud
+  url = git://github.com/rackspace/php-opencloud.git
