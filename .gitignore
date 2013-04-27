@@ -9,3 +9,4 @@ assets/less/cache/*
 assets/css/*
 app.js
 node_modules/*
+application/config/rackspace.php
