@@ -6,6 +6,9 @@
  * @author      Ryan Sullivan <kayoticsully@gmail.com>
  */
 class Game extends MS2_Controller {
+    
+    private $minecraft_skin_url = 'http://skins.minecraft.net/MinecraftSkins/';
+    
     /**
      * @name    update
      * @author  Ryan Sullivan <kayoticsully@gmail.com>
@@ -179,6 +182,10 @@ class Game extends MS2_Controller {
                     force_download($username . '.png', file_get_contents($file));
                 }
             }
+        }
+        else
+        {
+            redirect($this->minecraft_skin_url.$username.'.png');
         }
     }
 }
