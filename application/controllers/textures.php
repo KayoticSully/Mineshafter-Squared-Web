@@ -283,7 +283,7 @@ class Textures extends MS2_Controller {
                 return array('error' => lang('upload-move-file') . $data['full_path'] . ' to ' . $new_full_path);
             }
             
-            if($this->config->item('use_rackspace', 'mineshafter'))
+            if(RACKSPACE)
             {
                 // upload to rackspace for testing...
                 $textureContainer = $this->rackspace->CloudFiles($this->config->item('container', 'rackspace'));
