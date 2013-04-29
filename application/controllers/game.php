@@ -185,7 +185,7 @@ class Game extends MS2_Controller {
         }
         else
         {
-            redirect($this->minecraft_skin_url.$username.'.png');
+            force_download($username.'.png', file_get_contents($this->minecraft_skin_url.$username.'.png'));
         }
     }
 }
