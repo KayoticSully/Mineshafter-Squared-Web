@@ -24,6 +24,8 @@ function init() {
     
     load_skins();
     
+    init3d();
+    
     $('#control-bar').css('height', $(document).height());
     
     $(document).scroll(function(){
