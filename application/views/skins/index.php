@@ -46,7 +46,7 @@
         </div>
         <div class="media">
             <a class="pull-left" href="#">
-                <div class="minecraft_head" data-size="8" data-minecrafthead="/<?php echo $skin->owner->active_skin()->base_location();?>">
+                <div class="minecraft_head" data-size="8" data-minecrafthead="<?php echo TEXTURE_CDN . '/' . $skin->owner->active_skin()->texture->location .'.png';?>">
                 </div>
             </a>
             <div class="media-body">
