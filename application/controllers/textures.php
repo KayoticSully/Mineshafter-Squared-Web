@@ -75,7 +75,7 @@ class Textures extends MS2_Controller {
                 }
                 
                 // save file
-                $result = file_put_contents($file, file_get_contents('http://localhost' . TEXTURE_CDN . '/' . $texture->location . '.png'));
+                $result = file_put_contents($file, file_get_contents(site_url() . TEXTURE_CDN . '/' . $texture->location . '.png'));
                 if($result !== FALSE)
                 {
                     // 2. chop file
