@@ -5,7 +5,6 @@ var loading = false;
 var textureCap = false;
 var timeoutLocation = null;
 var controlBarLock = false;
-var animated = false;
 
 $(document).ready(init);
 

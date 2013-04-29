@@ -18,6 +18,7 @@ var mouseY = 0;
 var mouseYOnMouseDown = 0;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
+var animated = false;
 
 function init3d() {
     container = document.querySelectorAll('[data-render3d]')[0];
