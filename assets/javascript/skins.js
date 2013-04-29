@@ -15,9 +15,8 @@ function init() {
     }
     
     init_iso_views();
-    if(init3d()) {
-        animate();
-    }
+    
+    init3d()
 }
 
 function add_tag(event) {
