@@ -5,6 +5,7 @@ var loading = false;
 var textureCap = false;
 var timeoutLocation = null;
 var controlBarLock = false;
+var animated = false;
 
 $(document).ready(init);
 
@@ -23,10 +24,6 @@ function init() {
     public_skins.cap = false;
     
     load_skins();
-    
-    if(init3d()) {
-        animate();
-    }
     
     $('#control-bar').css('height', $(document).height());
     

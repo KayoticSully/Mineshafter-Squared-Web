@@ -47,6 +47,9 @@ function init3d() {
 	success : function(data){
 	    if (data == '1') {
 		load3d(url, container);
+		if (!animated) {
+		    animate();
+		}
 	    }
 	}
     });
@@ -283,6 +286,7 @@ function onDocumentTouchMove( event ) {
 }
 
 function animate() {
+    animated = true;
     requestAnimationFrame( animate );
     render();
 }
