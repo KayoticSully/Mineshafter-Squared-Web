@@ -10,6 +10,7 @@ class Textures extends MS2_Controller {
     const texture_folder    = 'assets/textures';
     const texture_basename  = 'base.png';
     
+    
     public function index()
     {
         $this->load->helper('array');
@@ -42,6 +43,61 @@ class Textures extends MS2_Controller {
     public function form()
     {
         $this->load->helper('form');
+    }
+    
+    public function ensureParts($texture)
+    {
+        $this->load->helper('texture');
+        
+        // get texture
+        $texture = Texture::find_by_location($texture);
+        
+        // make sure the texture exists
+        if($texture)
+        {
+            // check to see if it is cached
+            $file_location = Textures::texture_folder . '/' . $texture->file_path();
+            $file =  getcwd() . '/' . $file_location . '/' . Textures::texture_basename;
+            
+            if(file_exists($file))
+            {
+                $this->load->view('raw', array('raw' => '1'));
+            }
+            else if(RACKSPACE)
+            {
+                // get the file and chop it up for 3d view
+                // 1. save texture to base file
+                
+                // make sure folder exists
+                if(!is_dir($file_location))
+                {
+                    mkdir($file_location, 0777, TRUE);
+                }
+                
+                // save file
+                $result = file_put_contents($file, file_get_contents('http://localhost' . TEXTURE_CDN . '/' . $texture->location . '.png'));
+                if($result !== FALSE)
+                {
+                    // 2. chop file
+                    chop_skin_for_3d(array('full_path' => $file,
+                                           'file_path' => $file_location));
+                    
+                    $this->load->view('raw', array('raw' => '1'));
+                }
+                else
+                {
+                    $this->load->view('raw', array('raw' => '0'));
+                }
+            }
+            else
+            {
+                $this->load->view('raw', array('raw' => '0'));
+            }
+        }
+        else
+        {
+            $this->load->view('raw', array('raw' => '0'));
+        }
     }
     
     public function upload_skin()

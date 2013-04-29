@@ -23,6 +23,7 @@ function init() {
     public_skins.cap = false;
     
     load_skins();
+    
     if(init3d()) {
         animate();
     }

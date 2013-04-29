@@ -80,6 +80,7 @@ if (! function_exists('chop_skin_for_3d'))
 {
     function chop_skin_for_3d($file_data)
     {
+        
         //Create another image twice the size
         $original = imagecreatefrompng($file_data['full_path']);
         

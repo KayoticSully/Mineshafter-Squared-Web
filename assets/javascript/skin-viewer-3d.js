@@ -27,6 +27,35 @@ function init3d() {
     }
     
     url  = container.dataset.url;
+    var texture = null;
+    
+    if (url.indexOf('cdn/') === 0)
+    {
+	var urlParts = url.split('/');
+	texture = urlParts[urlParts.length - 1].replace('.png', '');
+	url = '/assets/textures/' + texture.substr(0, 3) + '/' + texture.substr(3);
+    }
+    else
+    {
+	var urlParts = url.split('/');
+	var urlPartsLength = urlParts.length;
+	texture = urlParts[urlPartsLength-2] + urlParts[urlPartsLength-1];	
+    }
+    
+    $.ajax({
+	url : '/textures/ensureParts/' + texture,
+	success : function(data){
+	    if (data == '1') {
+		load3d(url, container);
+	    }
+	}
+    });
+    
+    return true;
+    //return load3d(url, container);
+}
+
+function load3d(url, container) {
     var $container = $(container);
     
     // Camera :ToDo: Figure out what these parameters are and what they do
