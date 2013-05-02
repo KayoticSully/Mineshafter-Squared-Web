@@ -19,7 +19,7 @@ class Servers extends MS2_Controller {
         $this->title = $name . ' Server';
         $this->load->helper('array');
         $real_name = str_replace('_', ' ', $name);
-        $server = Server::find_by_name($real_name);
+        $server = Server::find_by_name($real_name, array('include' => array('owners', 'votes')));
         
         if (!$server)
         {

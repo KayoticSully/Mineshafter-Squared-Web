@@ -15,7 +15,7 @@ class Skins extends MS2_Controller {
         $this->load->helper('array');
         
         // get skin
-        $skin = Skin::find_by_name(urldecode($skin_name));
+        $skin = Skin::find_by_name(urldecode($skin_name), array('include' => array('texture', 'users')));
         
         // make sure skin exists
         if(!$skin) {
@@ -118,7 +118,8 @@ class Skins extends MS2_Controller {
         {
             case 'public':
                 // everything is public for now so we can just grab any set of skins
-                $skins = Skin::find('all', array('limit' => $this->skin_query_limit, 'offset' => $offset));
+                $skins = Skin::find('all', array('limit' => $this->skin_query_limit, 'offset' => $offset,
+                                                 'include' => array('texture', 'users')));
             break;
             
             case 'library':
@@ -126,7 +127,8 @@ class Skins extends MS2_Controller {
                 {
                     $own_all_skins = TRUE;
                     $skins = Userskin::find('all', array('conditions' => array('user_id = ?', $this->user->id),
-                                                         'limit' => $this->skin_query_limit, 'offset' => $offset));
+                                                         'limit' => $this->skin_query_limit, 'offset' => $offset,
+                                                         'include' => array('texture', 'users')));
                 }
             break;
         }
@@ -171,7 +173,7 @@ class Skins extends MS2_Controller {
     
     public function json_single($id)
     {
-        $skin = Skin::find_by_id($id);
+        $skin = Skin::find_by_id($id, array('include' => array('users', 'texture')));
         
         if ($skin)
         {
