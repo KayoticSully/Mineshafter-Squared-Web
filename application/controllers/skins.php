@@ -7,7 +7,7 @@
  */
 class Skins extends MS2_Controller {
     
-    private $skin_query_limit = 27;
+    private $skin_query_limit = 36;
     
     public function index($skin_name)
     {

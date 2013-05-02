@@ -34,7 +34,7 @@ class Server_list extends MS2_Controller {
      */
     public function json($offset)
     {
-        $servers = Server::find('all', array('limit' => 5, 'offset' => $offset, 'order' => 'vote_count desc', 'include' => array('votes')));
+        $servers = Server::find('all', array('limit' => 8, 'offset' => $offset, 'order' => 'vote_count desc', 'include' => array('votes')));
         
         $server_arr = array();
         foreach($servers as $server)
