@@ -128,7 +128,7 @@ class Skins extends MS2_Controller {
                     $own_all_skins = TRUE;
                     $skins = Userskin::find('all', array('conditions' => array('user_id = ?', $this->user->id),
                                                          'limit' => $this->skin_query_limit, 'offset' => $offset,
-                                                         'include' => array('texture', 'users')));
+                                                         'include' => array('skin')));
                 }
             break;
         }
