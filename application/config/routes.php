@@ -48,6 +48,8 @@ $route['game/getskin']              = 'game/get_skin';
 
 $route['server/(:any)']             = 'servers/index/$1';
 
+$route['user/(:any)']               = 'users/index/$1';
+
 $route['server_query']              = 'server_query/run';
 
 // skin controller

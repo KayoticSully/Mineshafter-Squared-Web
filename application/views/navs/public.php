@@ -43,6 +43,11 @@
                             </a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="admin-menu">
                                 <li>
+                                    <a id="profile" tabindex="-1" href="/user/<?php echo $user->username; ?>">
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
                                     <a id="logout" tabindex="-1" href="/auth/logout?page=<?php echo $_SERVER['REQUEST_URI']; ?>">
                                         Logout
                                     </a>

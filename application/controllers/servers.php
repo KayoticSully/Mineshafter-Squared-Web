@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Server
+ * Servers
  * 
  * @author      Ryan Sullivan (kayoticsully@gmail.com)
  */
