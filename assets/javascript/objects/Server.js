@@ -211,7 +211,7 @@ Server.prototype.displayInfo = function() {
                                                 '</div>' +
                                             '</a>' +
                                             '<div class="media-body">' +
-                                                '<h4 class="media-heading">' + this[key][player] + '</h4>' +
+                                                '<h4 class="media-heading"><a href="/user/' + this[key][player] + '">' + this[key][player] + '</a></h4>' +
                                             '</div>' +
                                         '</div>' +
                                     '</td>' +

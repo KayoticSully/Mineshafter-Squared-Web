@@ -16,7 +16,7 @@ class Users extends MS2_Controller {
      */
     public function index($name)
     {
-        $this->title = $name . ' Profile';
+        $this->title = $name . '\'s Profile';
         $user = User::find_by_username($name);
         $this->javascripts = array('Three', 'skin-viewer-3d', 'objects/ObjectList', 'objects/Server');
         

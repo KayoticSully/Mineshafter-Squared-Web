@@ -50,7 +50,7 @@
                 </div>
             </a>
             <div class="media-body">
-                <h4 class="media-heading"><?php echo $skin->owner->username; ?></h4>
+                <h4 class="media-heading"><a href="/user/<?php echo $skin->owner->username; ?>"><?php echo $skin->owner->username; ?></a></h4>
                 Uploaded on <?php echo date('F jS, Y', strtotime($skin->created_at)); ?>
             </div>
         </div>

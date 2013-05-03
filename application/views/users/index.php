@@ -1,6 +1,6 @@
 <div class="container extra-top-padding">
     <h1>
-        <?php echo $user->username; ?>
+        <?php echo $user->username; ?>'s Profile
     </h1>
     <div id="info">
         <div class="clearfix">
