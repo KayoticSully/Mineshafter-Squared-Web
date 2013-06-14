@@ -10,3 +10,4 @@ assets/css/*
 app.js
 node_modules/*
 application/config/rackspace.php
+realtime_api/*

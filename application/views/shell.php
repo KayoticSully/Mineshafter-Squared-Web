@@ -77,6 +77,7 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <a href="/signup">Trouble signing in?</a>&nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
                 <button id="login" class="btn btn-primary">Log in</button>
             </div>
