@@ -1,4 +1,4 @@
-<?php echo form_open('auth/login', array('class' => 'form-horizontal', 'id' => 'login_form')); ?>
+<?=form_open("auth/login", array("class" => "form-horizontal", "id" => "login_form));?>
     <input type="submit" class="visibility-hidden" />
     <div class="control-group">
         <label class="control-label strong" for="username">Username</label>
@@ -17,8 +17,8 @@
             </label>
         </div>
     </div>
-<?php echo form_close(); ?>
+<?=form_close();?>
 <script>
-    $('#login_form').on('submit', user_login);
+    $("form#login_form").on('submit', user_login);
     $('[data-toggle=tooltip]').tooltip();
 </script>
