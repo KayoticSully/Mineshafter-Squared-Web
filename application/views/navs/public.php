@@ -27,7 +27,7 @@
                             Skins / Capes
                         </a>
                     </li>
-                    <li <?php if($active_menu == 'community') echo 'class="active"'; ?>>
+                    <li>
                         <a href="http://www.reddit.com/r/MineshafterSquared" rel="popover">
                             <i class="icon-globe icon-white"></i>
                             Community
@@ -38,7 +38,7 @@
                             <div id="user-logged-in" data-id"<?php echo $user->id; ?>"></div>
                             <a id="admin-menu" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="icon-user icon-white"></i>
-                                <?php echo $user->username; ?>
+                                <?=$user->username;?>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="admin-menu">
@@ -73,7 +73,7 @@
                         <li>
                             <a data-toggle="modal" href="/home/login_form" id="show-login" data-target="#login-modal" role="button"  >
                                 <i class="icon-user icon-white"></i>
-                                Log in
+                                Login
                             </a>
                         </li>
                     <?php endif; ?>
